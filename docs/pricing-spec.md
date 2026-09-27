@@ -22,7 +22,7 @@
 | сайт `polevaya-kuhnya` ветка `test` | `f2b7beb6fa3d7491b5ae67115c156d72ec6cb006` | `js/state.js`, `js/ui/renderCart.js`, `js/ui/profileManager.js`, `js/config.js` |
 | Аудит | [FL-00-12](tasks/FL-00-12.md) | карта сервер/клиент |
 
-Runtime на тестовых пользователях — вне этой версии (FL-02-10 и серверные задачи этапа 2).  
+Runtime на тестовых пользователях — [набор сверки FL-02-10](pricing-reconciliation.md) (синтетика готова; реальные RC-R* и Zak ждут данных).  
 **Согласование:** пользователь 27.09.2026 — «согласовано Q1–Q8».
 
 ---

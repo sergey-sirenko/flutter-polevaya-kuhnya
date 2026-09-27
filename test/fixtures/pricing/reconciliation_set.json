@@ -1,0 +1,293 @@
+{
+  "version": 1,
+  "spec": "pricing-spec v1.0",
+  "note": "Синтетический набор FL-02-10: эталон клиента. Не ответы Zak. Реальные RC-R* — после обезличенного захвата.",
+  "cases": [
+    {
+      "id": "RC-S01",
+      "title": "Одно блюдо без скидок",
+      "provenance": "synthetic",
+      "profile": {},
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 190, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 190, "baseTotal": 190, "discountAmount": 0, "discountClientAmount": 0 }],
+        "weekFinalByType": { "current": 190 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S02",
+      "title": "Процент 10% от 190",
+      "provenance": "synthetic",
+      "profile": { "DiscountPercentage": 10 },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 190, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 171, "baseTotal": 190, "discountAmount": 19, "discountClientAmount": 0 }],
+        "weekFinalByType": { "current": 171 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S03",
+      "title": "Без оплаты 50 без дотации",
+      "provenance": "synthetic",
+      "profile": { "DiscountClient": 50, "DiscountPromotion": 0 },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 190, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 140, "baseTotal": 190, "discountAmount": 0, "discountClientAmount": 50 }],
+        "weekFinalByType": { "current": 140 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S04",
+      "title": "Распределение DC 150 по A→B",
+      "provenance": "synthetic",
+      "profile": { "DiscountClient": 150 },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [
+            { "price": 100, "quantity": 1, "menuOrder": 1 },
+            { "price": 100, "quantity": 1, "menuOrder": 2 }
+          ]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 50, "baseTotal": 200, "discountAmount": 0, "discountClientAmount": 150 }],
+        "weekFinalByType": { "current": 50 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S05",
+      "title": "Дотация с MPA",
+      "provenance": "synthetic",
+      "profile": {
+        "DiscountClient": 250,
+        "DiscountPromotion": 1,
+        "MinimumPaymentAmount": 100
+      },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [
+            { "price": 200, "quantity": 1, "menuOrder": 1 },
+            { "price": 200, "quantity": 1, "menuOrder": 2 }
+          ]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 150, "baseTotal": 400, "discountAmount": 0, "discountClientAmount": 250 }],
+        "weekFinalByType": { "current": 150 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S06",
+      "title": "Дотация обнулена порогом MPA",
+      "provenance": "synthetic",
+      "profile": {
+        "DiscountClient": 50,
+        "DiscountPromotion": 1,
+        "MinimumPaymentAmount": 100
+      },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 80, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 80, "baseTotal": 80, "discountAmount": 0, "discountClientAmount": 0 }],
+        "weekFinalByType": { "current": 80 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S07",
+      "title": "Процент + дотация + MPA",
+      "provenance": "synthetic",
+      "profile": {
+        "DiscountPercentage": 10,
+        "DiscountClient": 250,
+        "DiscountPromotion": 1,
+        "MinimumPaymentAmount": 100
+      },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [
+            { "price": 200, "quantity": 1, "menuOrder": 1 },
+            { "price": 200, "quantity": 1, "menuOrder": 2 }
+          ]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 110, "baseTotal": 400, "discountAmount": 40, "discountClientAmount": 250 }],
+        "weekFinalByType": { "current": 110 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S08",
+      "title": "Ниже минимума заказа",
+      "provenance": "synthetic",
+      "profile": { "MinimumOrderAmount": 200 },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 150, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 150, "baseTotal": 150, "discountAmount": 0, "discountClientAmount": 0 }],
+        "weekFinalByType": { "current": 150 },
+        "minimum": [{ "dayKey": "d1", "effectiveMinimum": 200, "isBelowMinimum": true }]
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S09",
+      "title": "Лимит недели по двум дням меню",
+      "provenance": "synthetic",
+      "profile": { "Limit": 350, "LimitPeriod": "неделя" },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 200, "quantity": 1, "menuOrder": 1 }]
+        },
+        {
+          "weekType": "current",
+          "dayKey": "d2",
+          "lines": [{ "price": 200, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [
+          { "dayKey": "d1", "finalTotal": 200, "baseTotal": 200, "discountAmount": 0, "discountClientAmount": 0 },
+          { "dayKey": "d2", "finalTotal": 200, "baseTotal": 200, "discountAmount": 0, "discountClientAmount": 0 }
+        ],
+        "weekFinalByType": { "current": 400 },
+        "limit": {
+          "isWeekPeriod": true,
+          "comparedFinalTotal": 400,
+          "isExceeded": true,
+          "remainder": -50
+        }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S10",
+      "title": "Округление 10.5 и DC со запятой",
+      "provenance": "synthetic",
+      "profile": { "DiscountClient": "49,6" },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 10.5, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [{ "dayKey": "d1", "finalTotal": 0, "baseTotal": 11, "discountAmount": 0, "discountClientAmount": 11 }],
+        "weekFinalByType": { "current": 0 }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S11",
+      "title": "LimitPeriod месяц сравнивается как день",
+      "provenance": "synthetic",
+      "profile": { "Limit": 500, "LimitPeriod": "Месяц" },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "d1",
+          "lines": [{ "price": 300, "quantity": 1, "menuOrder": 1 }]
+        },
+        {
+          "weekType": "current",
+          "dayKey": "d2",
+          "lines": [{ "price": 300, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [
+          { "dayKey": "d1", "finalTotal": 300, "baseTotal": 300, "discountAmount": 0, "discountClientAmount": 0 },
+          { "dayKey": "d2", "finalTotal": 300, "baseTotal": 300, "discountAmount": 0, "discountClientAmount": 0 }
+        ],
+        "weekFinalByType": { "current": 600 },
+        "limit": {
+          "isWeekPeriod": false,
+          "comparedFinalTotal": 300,
+          "compareDayKey": "d1",
+          "isExceeded": false,
+          "remainder": 200
+        }
+      },
+      "observedServer": null
+    },
+    {
+      "id": "RC-S12",
+      "title": "Пустой день не влияет на неделю",
+      "provenance": "synthetic",
+      "profile": { "Limit": 500, "LimitPeriod": "неделя", "MinimumOrderAmount": 200 },
+      "days": [
+        {
+          "weekType": "current",
+          "dayKey": "empty",
+          "lines": []
+        },
+        {
+          "weekType": "current",
+          "dayKey": "full",
+          "lines": [{ "price": 250, "quantity": 1, "menuOrder": 1 }]
+        }
+      ],
+      "expectedClient": {
+        "days": [
+          { "dayKey": "empty", "finalTotal": 0, "baseTotal": 0, "discountAmount": 0, "discountClientAmount": 0 },
+          { "dayKey": "full", "finalTotal": 250, "baseTotal": 250, "discountAmount": 0, "discountClientAmount": 0 }
+        ],
+        "weekFinalByType": { "current": 250 },
+        "minimum": [
+          { "dayKey": "empty", "skippedEmptyDay": true, "isBelowMinimum": false },
+          { "dayKey": "full", "effectiveMinimum": 200, "isBelowMinimum": false }
+        ],
+        "limit": {
+          "isWeekPeriod": true,
+          "comparedFinalTotal": 250,
+          "isExceeded": false,
+          "remainder": 250
+        }
+      },
+      "observedServer": null
+    }
+  ]
+}
