@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "code": "rate_limited",
+  "message": "Повторите позже",
+  "error": "",
+  "retryAfter": 60
+}

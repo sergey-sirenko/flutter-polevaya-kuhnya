@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "message": "Вход выполнен",
+  "token": "FIXTURE_TOKEN_NOT_VALID",
+  "user": {
+    "login": "fixture-user",
+    "order": []
+  }
+}

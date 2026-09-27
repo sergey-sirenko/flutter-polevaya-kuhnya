@@ -1,0 +1,42 @@
+# Codemagic: проверка iOS-сборки каркаса (остаток FL-01-16).
+#
+# Файл должен лежать в корне репозитория и попасть в удалённый Git —
+# без коммита/push Codemagic его не увидит.
+# Workflow: debug .app для iPhoneSimulator (без магазинной подписи).
+# Артефакт Runner.app → Quick Launch / App Preview (только для команд Codemagic).
+# Публичные --dart-define = test из docs/environments.md; секреты сюда не класть.
+# Источники: docs.codemagic.io/yaml-distributing/app-preview/,
+#           docs.codemagic.io/flutter-configuration/flutter-projects/
+
+workflows:
+  ios-simulator-test:
+    name: iOS Simulator (test)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      flutter: 3.47.1
+      xcode: latest
+      cocoapods: default
+      vars:
+        APP_ENV: test
+        API_BASE_URL: https://hleb-sol.su/Zakaz_http/hs/Obmen/
+        DATA_BASE_URL: https://flutter-test.obedmoscow.ru/data/
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter pub get --enforce-lockfile
+      - name: Analyze
+        script: |
+          flutter analyze --no-pub
+      - name: Unit and widget tests
+        script: |
+          flutter test --no-pub -r compact
+      - name: Build iOS debug for simulator
+        script: |
+          flutter build ios --debug --simulator --no-pub \
+            --dart-define=APP_ENV="$APP_ENV" \
+            --dart-define=API_BASE_URL="$API_BASE_URL" \
+            --dart-define=DATA_BASE_URL="$DATA_BASE_URL"
+    artifacts:
+      - build/ios/iphonesimulator/Runner.app
+      - /tmp/xcodebuild_logs/*.log

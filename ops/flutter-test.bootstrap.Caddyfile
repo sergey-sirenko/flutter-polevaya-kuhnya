@@ -1,0 +1,19 @@
+# Source for the active bootstrap vhost on flutter-test.obedmoscow.ru.
+# Keep the existing production and legacy test blocks unchanged when updating it.
+# The Flutter build and 1C API are deliberately not connected at this stage.
+flutter-test.obedmoscow.ru {
+	encode gzip
+	header {
+		X-Robots-Tag "noindex, nofollow, noarchive"
+		X-Content-Type-Options "nosniff"
+		Cache-Control "no-store"
+		Content-Type "text/plain; charset=utf-8"
+	}
+	@unconfigured path /data /data/* /api /api/*
+	handle @unconfigured {
+		respond "Test data and API are not configured." 503
+	}
+	handle {
+		respond "Polevaya kuhnya: Flutter test host. Application is not deployed." 200
+	}
+}

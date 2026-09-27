@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "code": "invalid_session",
+  "message": "Сессия завершена"
+}

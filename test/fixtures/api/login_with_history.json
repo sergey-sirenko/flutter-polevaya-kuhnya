@@ -1,0 +1,28 @@
+{
+  "success": true,
+  "message": "Данные получены",
+  "user": {
+    "login": "fixture-user",
+    "order": [
+      {
+        "date": "2030-01-02T00:00:00",
+        "weekType": "current",
+        "changes": false,
+        "status": "Доступен",
+        "dishes": [
+          {
+            "dish": "00000000-0000-4000-8000-000000000001",
+            "name": "Тестовое блюдо",
+            "menunumber": 1,
+            "quantity": 1,
+            "sum": 100,
+            "DiscountPercentage": 0,
+            "DiscountClient": 0
+          }
+        ],
+        "discount": 0,
+        "sum": 100
+      }
+    ]
+  }
+}

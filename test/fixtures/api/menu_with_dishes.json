@@ -1,0 +1,32 @@
+{
+  "weeks": [
+    {
+      "weekType": "current",
+      "weekNumber": 1,
+      "days": [
+        {
+          "date": "2030-01-02",
+          "dayNumber": 1,
+          "hasDelivery": true,
+          "categories": [
+            {
+              "categoryId": "fixture-category-soups",
+              "categoryName": "Супы",
+              "categoryOrder": 1,
+              "dishes": [
+                {
+                  "dishId": "FIXTURE-DISH-0001",
+                  "dishName": "Суп овощной (фикстура)",
+                  "menuOrder": 1,
+                  "price": 190,
+                  "servingweight": 250,
+                  "imagePath": "fixture-soup"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
