@@ -2,7 +2,7 @@
 
 ## Возобновление работы
 
-**Текущая точка остановки:** остаток FL-01-16 (iOS/Codemagic). Есть `codemagic.yaml` (`ios-simulator-test`); Git `master` на origin [flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya) (SSH); приложение Codemagic добавлено. Облачный билд ещё не запускался. Следующий шаг пользователя: Start build → `master` → workflow `ios-simulator-test` → артефакт `Runner.app`. App Preview — только для команды. Шаги — в `docs/tasks/FL-01-16.md`. Автоматически не начинать FL-02-01. Подробности — в PROJECT_STATE.
+**Текущая точка остановки:** FL-01-16 завершена: Web/Android release ранее; Codemagic workflow `ios-simulator-test` finished (Mac mini M2, ~3м 35с, артефакт `Runner.app.zip`, Quick launch доступен; билдил коммит `077fc58`). Origin: [flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya). Этап 1 по сборкам трёх платформ выполнен (компиляция). После нового подтверждения предлагается FL-02-01 (словарь условий клиента); автоматически не начинать. Подробности — в PROJECT_STATE.
 
 1. Прочитай общие правила `../AGENTS.md`, затем [PROJECT_STATE.md](PROJECT_STATE.md).
 2. Открой указанную там карточку текущей/следующей задачи и соответствующий раздел [дорожной карты](<Дорожная карта.md>).

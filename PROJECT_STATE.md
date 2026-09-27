@@ -1,12 +1,12 @@
 # Текущее состояние проекта
 
-**Обновлено:** 27.09.2026, FL-01-16 (приложение Codemagic добавлено; ждёт билд)  
-**Фаза:** FL-01-17 завершена ранее. Остаток FL-01-16: `codemagic.yaml`, `master` на [sergey-sirenko/flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya), приложение Codemagic добавлено. Ждёт Start build `ios-simulator-test`. Этап 1 не принят полностью, пока нет успешной iOS-сборки.
+**Обновлено:** 27.09.2026, FL-01-16 завершена  
+**Фаза:** FL-01-16 закрыта: Web, Android и iOS (Codemagic simulator) собраны. Этап 1 по критерию сборок выполнен. После подтверждения предлагается FL-02-01 (этап 2).
 **Решения пользователя:** останавливаться после каждой подзадачи; до выполнения следующей оценивать сложность (1–10), трудоёмкость (уровень и доля трудозатрат всего этапа в процентах) и предлагать категорию LLM (лёгкая / средняя / сложная) с обоснованием. Отдельный API/база 1С не нужны — тестирование тестовыми пользователями рабочей базы.
 
 ## Точка остановки
 
-**Частично выполняется [FL-01-16](docs/tasks/FL-01-16.md)** (остаток iOS). Web/Android release собраны ранее; [codemagic.yaml](codemagic.yaml) (`ios-simulator-test`). Origin: `git@github.com:sergey-sirenko/flutter-polevaya-kuhnya.git`, `master` запушен; приложение Codemagic добавлено. Облачный билд **не** выполнялся. Следующий шаг: Start build → `master` → **`ios-simulator-test`** → артефакт `Runner.app`. App Preview дополнительно требует команду Codemagic.
+**Завершена [FL-01-16](docs/tasks/FL-01-16.md).** Web release и Android release APK собраны ранее. iOS: Codemagic workflow **iOS Simulator (test)** / `ios-simulator-test` — **finished** (Mac mini M2, 3м 35с, ветка `master`, коммит `077fc58`); артефакт `Runner.app.zip` (~61 MB), кнопка Quick launch доступна. Origin: [sergey-sirenko/flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya). Приёмка на физическом устройстве, магазинная подпись и публикация не входили в задачу.
 
 Ранее завершена [FL-01-17](docs/tasks/FL-01-17.md): эталонный `features/menu`, 101 тест, analyze чист; модуль не в router.
 
@@ -62,7 +62,7 @@ FL-00-14c завершена ранее: настроен отдельный Cad
 | [FL-01-13](docs/tasks/FL-01-13.md) | Сессия и DI, постоянный UUID, secure storage, защита от поздних ответов; анализ и 70 тестов прошли, живая интеграция впереди |
 | [FL-01-14](docs/tasks/FL-01-14.md) | 9 локальных обезличенных ответов и каталог доказательности; анализ и 74 теста прошли, 1С не вызывалась |
 | [FL-01-15](docs/tasks/FL-01-15.md) | Проверочный CI на GitHub Actions; YAML, анализ и 74 теста прошли локально, runner не проверен |
-| [FL-01-16](docs/tasks/FL-01-16.md) | Частично: Web/Android готовы; `codemagic.yaml` подготовлен; iOS-билд ждёт коммит/remote/Codemagic |
+| [FL-01-16](docs/tasks/FL-01-16.md) | Завершена: Web/Android release + Codemagic iOS Simulator (test) finished, `Runner.app.zip` |
 | [FL-01-17](docs/tasks/FL-01-17.md) | Эталонный модуль `features/menu` (Model→Repository→Controller→UI); 101 тест прошли; не подключён к router |
 
 FL-00-01–13 завершены; точные проверки — в карточках. Каркас, тема, router, адаптивная компоновка, транспорт и инфраструктура сессии реализованы в FL-01-03–13; локальные ответы подготовлены в FL-01-14, проверочный CI — в FL-01-15, эталонный читающий модуль — в FL-01-17. Формы входа, бизнес-модули, интеграционная приёмка и iOS-сборка впереди. Остальные задачи не начаты, если для них нет карточки.
@@ -71,7 +71,7 @@ FL-00-01–13 завершены; точные проверки — в карт�
 
 ## Следующий шаг после подтверждения
 
-Продолжение остатка **FL-01-16**: Start build `ios-simulator-test` на `master` (`sergey-sirenko/flutter-polevaya-kuhnya`). Приложение Codemagic уже добавлено. После успешного `Runner.app` задача FL-01-16 может быть закрыта; затем предлагается **FL-02-01**. Автоматически не продолжать.
+**FL-02-01** — составить словарь условий клиента (скидка, дотация, признак акции, минимальная оплата, минимальный заказ, лимиты). Оценка всей FL-02-01: сложность 5/10; трудоёмкость средняя, ≈5% этапа 2 (20 подзадач FL-02-01–20); LLM средняя — внимательный разбор правил Zak/сайта без домысливания семантики. Карточку создать только при начале. Автоматически не продолжать.
 
 ## Не подтверждено
 
@@ -80,11 +80,11 @@ FL-00-01–13 завершены; точные проверки — в карт�
 - Прямое состояние пользовательской записи в рабочей базе не проверялось; для проверки API использовался тестовый пользователь и созданный пользователем тестовый заказ.
 - FL-00-14d: регистрация `registered`; повторный login — HTTP 200 `success:true`, один заказ в `user.order`; OPTIONS preflight — HTTP 200 с разрешёнными POST/JSON. Browser CORS отложен и не проверен.
 - Владелец аккаунтов магазинов; доступ к Codemagic, команда/App Preview, версии облачного Xcode после первого билда; подписи, тексты политики и старый APK.
-- Готовность инструментов: Flutter/Dart и Android SDK установлены; пользователь принял Android-лицензии, Command-line Tools 22.0 подтвердил все лицензии, а `flutter doctor -v` видит Web и Android SDK с JDK 17.0.14. Web/Android release собраны в FL-01-16; `codemagic.yaml` подготовлен локально; эмуляторы и облачный iOS-билд не проверены.
+- Готовность инструментов: Flutter/Dart и Android SDK установлены; пользователь принял Android-лицензии; `flutter doctor -v` видит Web и Android SDK. Web/Android release и Codemagic iOS simulator-сборка проверены в FL-01-16.
 
 ## Фактическое состояние
 
-Собственный Git-репозиторий Flutter: `master` → origin [sergey-sirenko/flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya) по SSH (`git@github.com:sergey-sirenko/flutter-polevaya-kuhnya.git`). В корне HlebSol `.git` нет. Flutter 3.47.1/Dart 3.13.1 установлены в `C:\Users\Sergey\develop\flutter`; активный Android SDK — в `C:\Users\Sergey\develop\android-sdk-cli22` с Command-line Tools 22.0. Пользователь принял лицензии; `flutter doctor -v` подтверждает Android toolchain и Web. Предыдущие копии SDK и установочные архивы сохранены вне HlebSol для последующей очистки. Минимальный Flutter-каркас для Web/Android/iOS создан, `flutter analyze --no-pub` без замечаний; Web/Android release собраны в FL-01-16; запусков и публикаций приложения нет, iOS не собрана. В FL-01-17 добавлен эталонный модуль `features/menu`; полный набор тестов — 101 (74 прежних + 27 новых), все проходят. Для остатка FL-01-16 подготовлен корневой `codemagic.yaml` (симуляторный iOS debug); облачный прогон не запускался. Для сборки дополнительно установлены Platform 35 revision 2 и CMake 3.22.1. Постоянные идентификаторы Android/iOS не определены. Исходное ТЗ сохранено без изменения. Исходники сайта/PWA, Zak и Mob не изменялись. На сервере ранее добавлен только отдельный Caddy-vhost; рабочие/старые сайты не заменялись. До применения создана проверенная резервная копия `/var/backups/caddy/Caddyfile.before-flutter-test-20260926T141000Z` (SHA-256 `27eb8a499f093afe9a9b514897d61297e9ffd9af678740e0d386cea165573f8f`). Зафиксированный в FL-00-14c `/etc/caddy/Caddyfile` SHA-256 `19fc073be643ba807fa1e6d4637cb3930047e602728725de485fbb778b44d3d6`, Caddy 2.10.0 active; повторно в FL-01-01 сервер не проверялся. В FL-00-14d тестовая регистрация устройства и login в рабочем API успешны; повторный login после создания тестового заказа вернул один элемент `user.order`; OPTIONS preflight выполнен. Browser CORS не проверен и временно отложен; прямое состояние базы не проверялось. Фоновых процессов нет.
+Собственный Git-репозиторий Flutter: `master` → origin [sergey-sirenko/flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya) по SSH. В корне HlebSol `.git` нет. Flutter 3.47.1/Dart 3.13.1; Web/Android release и Codemagic iOS Simulator (test) собраны в FL-01-16 (`Runner.app.zip`). В FL-01-17 — эталонный `features/menu`, 101 тест.
 
 ## История решений
 
@@ -129,3 +129,4 @@ FL-00-01–13 завершены; точные проверки — в карт�
 - 27.09.2026: пользователь выбрал вернуться к остатку FL-01-16 и настроить Codemagic. Добавлен корневой `codemagic.yaml` (workflow `ios-simulator-test`, Flutter 3.47.1, debug `.app` для симулятора, test dart-define). Карточка FL-01-16 дополнена пошаговой настройкой и таблицей препятствий. Коммит, push и облачный билд не выполнялись; остановка до указания пользователя по remote/аккаунту.
 - 27.09.2026: по «выполняй» создан первый коммит `714200d` (проект + `codemagic.yaml`). Push не выполнен: remote нет, GitHub CLI не залогинен. Остановка на origin и подключении Codemagic.
 - 27.09.2026: пользователь создал новый GitHub-репозиторий (не сайт `polevaya-kuhnya`). По «готово» добавлен SSH origin `sergey-sirenko/flutter-polevaya-kuhnya`, `master` запушен. Дальше — приложение Codemagic и билд `ios-simulator-test`.
+- 27.09.2026: приложение Codemagic добавлено; пользователь показал успешный билд `ios-simulator-test` (finished, Mac mini M2, 3м 35с, коммит `077fc58`, артефакт `Runner.app.zip`, Quick launch). FL-01-16 закрыта. Следующий шаг после подтверждения — FL-02-01.
