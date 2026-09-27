@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "message": "Авторизация успешна",
+  "token": "FIXTURE_TOKEN_REFRESH_SAME",
+  "user": {
+    "name": "Fixture Org",
+    "email": "fixture@example.test",
+    "phone": "+70000000000",
+    "login": "fixture-user",
+    "employee": "Fixture Employee",
+    "DiscountPercentage": 10,
+    "DiscountClient": 50,
+    "DiscountPromotion": 1,
+    "Limit": 500,
+    "LimitPeriod": "день",
+    "MinimumOrderAmount": 200,
+    "MinimumPaymentAmount": 100,
+    "order": [
+      {
+        "date": "2030-01-02T00:00:00",
+        "weekType": "current",
+        "changes": false,
+        "status": "Доступен",
+        "dishes": [
+          {
+            "dish": "00000000-0000-4000-8000-000000000001",
+            "name": "Тестовое блюдо",
+            "menunumber": 1,
+            "quantity": 1,
+            "sum": 190,
+            "DiscountPercentage": 19,
+            "DiscountClient": 0
+          }
+        ],
+        "discount": 19,
+        "sum": 171
+      }
+    ]
+  }
+}

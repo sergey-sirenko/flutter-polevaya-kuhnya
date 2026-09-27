@@ -7,7 +7,10 @@
 | Файл | Маршрут / HTTP | Сценарий | Основание и статус |
 |---|---|---|---|
 | [login_success.json](../test/fixtures/api/login_success.json) | `POST V1/User/login`, 200 | Успех входа, пустая история | Форма `success/token/user` известна по FL-00-05, успешный login наблюдался в FL-00-14d. Значения и состав усечённого `user` синтетические. |
-| [login_with_history.json](../test/fixtures/api/login_with_history.json) | `POST V1/User/login`, 200 | Токеновое обновление профиля и один заказ | Форма `user.order` описана в FL-00-11; один заказ в login наблюдался в FL-00-14d. Конкретные поля, значения и отсутствие нового токена в этом примере иллюстративны; полнота токенового профиля требует FL-02-11. |
+| [login_with_history.json](../test/fixtures/api/login_with_history.json) | `POST V1/User/login`, 200 | Токеновое обновление профиля и один заказ | Форма `user.order` описана в FL-00-11; один заказ в login наблюдался в FL-00-14d. Конкретные поля иллюстративны. |
+| [login_token_profile_full.json](../test/fixtures/api/login_token_profile_full.json) | `POST V1/User/login`, 200 | Полный профиль по токену: условия + история | Синтетика по полям BSL `ШаблонUserLogin` (FL-02-11); не runtime. |
+| [login_token_invalid.json](../test/fixtures/api/login_token_invalid.json) | `POST V1/User/login`, 400 | Неверный/устаревший токен | Текст как в `ОтветОшибка` Zak; HTTP 400, не 401 (см. FL-02-17). |
+| [login_token_access_denied.json](../test/fixtures/api/login_token_access_denied.json) | `POST V1/User/login`, 400 | Отказ доступа устройства | Текст «Нет доступа» после проверки привязки на token-ветке (FL-02-11). |
 | [menudates_available.json](../test/fixtures/api/menudates_available.json) | `POST V1/Orders/menudates`, 200 | Доступный день | Форма по FL-00-05/10; конкретная дата синтетическая. |
 | [menudates_empty.json](../test/fixtures/api/menudates_empty.json) | `POST V1/Orders/menudates`, 200 | Нет доступных дней | Пустой массив — тестовый граничный случай формы FL-00-05/10, живой ответ не проверялся. |
 | [legacy_error_400.json](../test/fixtures/api/legacy_error_400.json) | `POST V1/User/login`, 400 | Старая неоднозначная ошибка | `success:false,error` следует из FL-00-05. Этот ответ **не доказывает** истечение токена и не должен удалять его при восстановлении сессии. |

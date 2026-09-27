@@ -5,6 +5,7 @@ import 'package:polevaya_kuhnya/core/api/api_exception.dart';
 import 'package:polevaya_kuhnya/core/auth/session_api.dart';
 import 'package:polevaya_kuhnya/core/auth/session_repository.dart';
 import 'package:polevaya_kuhnya/core/auth/session_state.dart';
+import 'package:polevaya_kuhnya/core/auth/user_profile.dart';
 
 final sessionControllerProvider =
     NotifierProvider<SessionController, SessionState>(SessionController.new);
@@ -21,6 +22,7 @@ final sessionApiProvider = Provider<SessionApi?>((ref) {
 class SessionController extends Notifier<SessionState> {
   int _generation = 0;
   SessionCredentials? _credentials;
+  UserProfile? _profile;
   late SessionRepository _repository;
 
   @override
@@ -28,9 +30,11 @@ class SessionController extends Notifier<SessionState> {
     _repository = ref.watch(sessionRepositoryProvider);
     final generation = ++_generation;
     _credentials = null;
+    _profile = null;
     ref.onDispose(() {
       _generation++;
       _credentials = null;
+      _profile = null;
     });
     unawaited(Future<void>.microtask(() => _restore(generation, _repository)));
     return SessionState(SessionStatus.restoring, generation);
@@ -41,6 +45,7 @@ class SessionController extends Notifier<SessionState> {
   int _begin() {
     final generation = ++_generation;
     _credentials = null;
+    _profile = null;
     state = SessionState(SessionStatus.restoring, generation);
     return generation;
   }
@@ -100,11 +105,15 @@ class SessionController extends Notifier<SessionState> {
   ) async {
     final verified = await repository.verify(credentials);
     if (!_current(generation)) return;
-    await repository.storage.writeToken(verified.token);
+    await repository.storage.writeToken(verified.credentials.token);
     if (!_current(generation)) return;
-    _credentials = verified;
+    _credentials = verified.credentials;
+    _profile = verified.profile;
     state = SessionState(SessionStatus.signedIn, generation);
   }
+
+  /// Профиль последней успешной проверки; не пишется в хранилище.
+  UserProfile? get profile => _profile;
 
   Future<void> _handleFailure(
     Object error,
@@ -113,6 +122,7 @@ class SessionController extends Notifier<SessionState> {
   ) async {
     if (!_current(generation)) return;
     _credentials = null;
+    _profile = null;
     if (error is ApiException && error.invalidSession) {
       try {
         await repository.storage.deleteToken();
