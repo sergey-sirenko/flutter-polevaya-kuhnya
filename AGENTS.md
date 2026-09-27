@@ -2,7 +2,7 @@
 
 ## Возобновление работы
 
-**Текущая точка остановки:** остаток FL-01-16 (iOS/Codemagic). Есть `codemagic.yaml` (`ios-simulator-test`) и коммиты на `master` (HEAD `d8e6600`, первый с yaml — `714200d`). Remote нет (`gh` не авторизован); облачный билд не запускался. Блокеры: origin (URL или `gh auth login` + создание репо) и аккаунт/приложение Codemagic; App Preview — только для команды. Шаги — в `docs/tasks/FL-01-16.md`. Push без явного разрешения и URL не делать. Автоматически не начинать FL-02-01. Подробности — в PROJECT_STATE.
+**Текущая точка остановки:** остаток FL-01-16 (iOS/Codemagic). Есть `codemagic.yaml` (`ios-simulator-test`); Git `master` на origin [flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya) (SSH). Облачный билд ещё не запускался. Блокер: аккаунт/приложение Codemagic → Start build `ios-simulator-test`. App Preview — только для команды. Шаги — в `docs/tasks/FL-01-16.md`. Автоматически не начинать FL-02-01. Подробности — в PROJECT_STATE.
 
 1. Прочитай общие правила `../AGENTS.md`, затем [PROJECT_STATE.md](PROJECT_STATE.md).
 2. Открой указанную там карточку текущей/следующей задачи и соответствующий раздел [дорожной карты](<Дорожная карта.md>).
