@@ -6,12 +6,12 @@
 |---|---|---|
 | 1. Словарь условий клиента | FL-02-01 | заполнен |
 | 2. Нормализация значений | FL-02-02 | заполнен |
-| 3. Порядок вычислений и округление | FL-02-03 | не начат |
+| 3. Порядок вычислений и округление | FL-02-03 | заполнен |
 | 4. Ограничения заказа (детализация периодов) | FL-02-04 | не начат |
 | 5. Примеры расчёта | FL-02-05 | не начат |
 | 6. Согласование заказчиком | FL-02-06 | не начат |
 
-**Версия спецификации:** 0.2 (черновик; §1–§2 заполнены, не согласовано с заказчиком).  
+**Версия спецификации:** 0.3 (черновик; §1–§3 заполнены, не согласовано с заказчиком).  
 **Источник истины итогов заказа:** сервер Zak ([FL-00-12](tasks/FL-00-12.md)); клиентский расчёт — только предварительный показ (BL-2).
 
 **Источники (статическое чтение, 27.09.2026):**
@@ -207,6 +207,103 @@ Runtime-значения на тестовых пользователях и с�
 
 ---
 
-## 3–6. (Заготовки)
+## 3. Порядок вычислений и округление (FL-02-03)
 
-Разделы заполняются в FL-02-03…FL-02-06. Dart-модуль `pricing.dart` начинать после заполнения §3 и примеров по плану этапа (не раньше согласованного объёма FL-02-03+).
+Эталон — `getLineTotalsWithDiscount`, `calculateDayTotalAfterPercentage`, `resolveEffectiveDiscountClientForDay`, `getDayLinesWithDiscounts`, `calculateDayTotalsWithDiscount`, `calculateWeekTotalsWithDiscount`, `getCartTotalsForUserLimit` в `js/state.js`. Клиентский расчёт — только предварительный показ; сервер Zak пересчитывает при записи заказа ([FL-00-12](tasks/FL-00-12.md), §1 preamble).
+
+### 3.1. Уровень строки (одно блюдо в дне)
+
+Вход: `price`, `quantity`, `discountPercentage`, `discountClientAvailable` (остаток дневной «без оплаты», доступный **на момент этой строки** — см. §3.3).
+
+Шаги `getLineTotalsWithDiscount`, **в этом порядке**:
+
+1. `normalizedPrice = Number(price)` (не finite → `0`); `normalizedQuantity = Number(quantity)` (не finite → `0`).
+2. `baseTotal = max(0, round(normalizedPrice × normalizedQuantity))` — **округление суммы строки уже здесь**, до применения любой скидки.
+3. `discountAmount = calculateDiscountAmount(baseTotal, discountPercentage)` = `round(baseTotal × normalizedPercent / 100)`, где `normalizedPercent` — по §2.2 (клип 0…100); при `baseTotal ≤ 0` или проценте `≤ 0` → `0`.
+4. `totalAfterPercentage = max(0, round(baseTotal − discountAmount))`.
+5. `normalizedDiscountClient = normalizeDiscountClient(discountClientAvailable)` (по §2.2, уже целое ≥ 0).
+6. `discountClientAmount = min(totalAfterPercentage, normalizedDiscountClient)` — «без оплаты» по строке не может превысить остаток после процентной скидки **и** не может превысить переданный остаток дневного лимита дотации/скидки.
+7. `finalTotal = max(0, round(totalAfterPercentage − discountClientAmount))`.
+
+Результат строки: `{baseTotal, discountAmount, totalAfterPercentage, discountClientAmount, finalTotal}`. **Порядок скидок: сначала процентная, затем фиксированная «без оплаты» — от суммы, уже уменьшенной процентом.**
+
+### 3.2. Эффективная дневная сумма «без оплаты» (до распределения по строкам)
+
+`resolveEffectiveDiscountClientForDay(weekType, dayNumber, discountPercentage, discountClient, discountClientOptions)`:
+
+1. `normalizedDiscountClient = normalizeDiscountClient(discountClient)`; если `≤ 0` → эффективная сумма дня = `0` (шаги 2–4 не выполняются).
+2. Если `isDiscountPromotion` **ложно** ИЛИ `minimumPaymentAmount ≤ 0` → эффективная сумма дня = `normalizedDiscountClient` (весь профильный лимит доступен на день, без дальнейшего усечения).
+3. Иначе (режим дотации с MPA > 0):
+   - `dayTotalAfterPercentage = calculateDayTotalAfterPercentage(weekType, dayNumber, discountPercentage)` — сумма **всех строк дня** после процентной скидки, **без** учёта дотации (шаги 3.1 п.1–4 по каждой строке, просуммированные и округлённые `round(Σ totalAfterPercentage)`).
+   - Если `dayTotalAfterPercentage ≤ minimumPaymentAmount` → эффективная сумма дня = `0` (дотация не положена: и так меньше/равно минимальной оплате).
+   - Иначе → эффективная сумма дня = `min(normalizedDiscountClient, max(0, round(dayTotalAfterPercentage − minimumPaymentAmount)))`.
+
+**Смысл:** при дотации сотрудник должен заплатить минимум `MinimumPaymentAmount`; дотация «съедает» только то, что выше этого порога, и не больше профильного лимита за день.
+
+### 3.3. Распределение дневной суммы «без оплаты» по строкам
+
+`getDayLinesWithDiscounts`:
+
+1. Взять `remainingDiscountClient` = результат §3.2 (эффективная сумма на весь день).
+2. Отсортировать блюда дня по порядку в меню (`menuOrder`, иначе `Number.MAX_SAFE_INTEGER` — без порядка меню в конец).
+3. Для каждой строки **по порядку**:
+   - Вызвать §3.1 с `discountClientAvailable = remainingDiscountClient` (текущий остаток).
+   - `remainingDiscountClient = max(0, remainingDiscountClient − totals.discountClientAmount)`.
+4. Следующая строка получает **уменьшенный остаток**; «без оплаты» расходуется последовательно от первой строки меню к последней, не превышая по каждой строке её `totalAfterPercentage` (п.3.1.6).
+
+**Важно:** это клиентский порядок распределения по строкам для предпросмотра; сервер при записи заказа пересчитывает свои строки самостоятельно (см. [FL-00-12](tasks/FL-00-12.md), `БезОплатыДень`/`СкидкаКлиентуСумма`) — согласование поштрочного округления HTTP-записи и JS не доказано (открытый пункт §1.9 п.2).
+
+### 3.4. Итог дня
+
+`calculateDayTotalsWithDiscount`:
+
+1. Просуммировать по всем строкам дня (результат §3.3) отдельно `baseTotal`, `discountAmount`, `discountClientAmount`, `finalTotal`.
+2. Округлить **каждую** из четырёх сумм: `round(Σ baseTotal)`, `round(Σ discountAmount)`, `round(Σ discountClientAmount)`, `round(Σ finalTotal)`.
+
+Поскольку слагаемые уже целые (round на уровне строки), это округление в основном не меняет сумму, но формально применяется всегда — фиксируем как часть контракта (на случай дробных % без промежуточного round, см. §2.2 «без `Math.round`» для процента).
+
+### 3.5. Итог недели
+
+`calculateWeekTotalsWithDiscount(weekType, ...)`:
+
+1. Для **каждой даты корзины**, относящейся к данному `weekType` (по `getWeekTypeForDate`), получить дневные итоги §3.4 для дня этой даты.
+2. Просуммировать все 4 поля по дням недели.
+3. Округлить каждую сумму (`round(...)`) — аналогично §3.4.
+
+### 3.6. Сравнение с лимитом (`Limit` / `LimitPeriod`)
+
+`getCartTotalsForUserLimit(limitPeriod, weekType, dayNumber, ...)`:
+
+- Если нормализованный `LimitPeriod` (§2.4) строго `'неделя'` → используются итоги §3.5 (**вся неделя** `weekType`, а не только выбранный день).
+- Иначе → итоги §3.4 для конкретного `dayNumber` (**один день**).
+- Сравнивается `finalTotal` этих итогов с `Limit`; остаток для UI = `round(Limit − finalTotal)`, показывается только если `hasLimit` (см. §1.7 / §2.2).
+
+Сравнение всегда идёт по **`finalTotal`** (после процентной **и** дневной «без оплаты» скидок) — не по `baseTotal`.
+
+### 3.7. Сводная последовательность (сверху вниз)
+
+1. Строка: цена×кол-во → round → **%-скидка** (round) → «без оплаты» по остатку строки/дня (min, затем убывающий остаток) → round.
+2. День: сумма строк по каждому из 4 полей → round каждого поля.
+3. Неделя (если нужна): сумма дневных итогов по `weekType` → round каждого поля.
+4. Лимит: выбор день/неделя по `LimitPeriod` → сравнение `finalTotal` с `Limit`.
+5. Минимальный заказ (эффективный, §1.6/1.4) сравнивается с `finalTotal` дня отдельно — вне цепочки лимита, конкретные пороги и период — FL-02-04.
+
+### 3.8. Округление — сводка правил
+
+| Что округляется | Функция округления | Когда |
+|---|---|---|
+| Сумма строки до скидок (`price × quantity`) | `Math.round`, затем `max(0, …)` | всегда |
+| Сумма процентной скидки | `Math.round` | всегда, из уже округлённого `baseTotal` |
+| Остаток после процента | `Math.round`, `max(0, …)` | всегда |
+| Сумма «без оплаты» по строке | целое (уже из `normalizeDiscountClient`, `min` целых) | — (min двух целых) |
+| Итог строки после «без оплаты» | `Math.round`, `max(0, …)` | всегда |
+| Итоги дня/недели (4 поля) | `Math.round` каждого просуммированного поля | всегда, после суммирования округлённых слагаемых |
+| Остаток лимита для UI | `Math.round` | при активном лимите |
+
+**Открыто:** согласование этой последовательности и округлений с фактическим серверным HTTP-пересчётом Zak не подтверждено runtime — перенесено в реестр несоответствий и предстоящую сверку FL-02-09/FL-02-10.
+
+---
+
+## 4–6. (Заготовки)
+
+Разделы заполняются в FL-02-04…FL-02-06. Dart-модуль `pricing.dart` начинать после согласования §1–§4 (или по отдельному явному указанию с пометкой черновика).
