@@ -1,12 +1,12 @@
 # Текущее состояние проекта
 
-**Обновлено:** 27.09.2026, FL-01-16 (origin на GitHub; ждёт Codemagic)  
-**Фаза:** FL-01-17 завершена ранее. Остаток FL-01-16: `codemagic.yaml` и `master` на [sergey-sirenko/flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya). Облачный прогон ждёт приложение Codemagic и билд `ios-simulator-test`. Этап 1 не принят полностью, пока нет успешной iOS-сборки.
+**Обновлено:** 27.09.2026, FL-01-16 (приложение Codemagic добавлено; ждёт билд)  
+**Фаза:** FL-01-17 завершена ранее. Остаток FL-01-16: `codemagic.yaml`, `master` на [sergey-sirenko/flutter-polevaya-kuhnya](https://github.com/sergey-sirenko/flutter-polevaya-kuhnya), приложение Codemagic добавлено. Ждёт Start build `ios-simulator-test`. Этап 1 не принят полностью, пока нет успешной iOS-сборки.
 **Решения пользователя:** останавливаться после каждой подзадачи; до выполнения следующей оценивать сложность (1–10), трудоёмкость (уровень и доля трудозатрат всего этапа в процентах) и предлагать категорию LLM (лёгкая / средняя / сложная) с обоснованием. Отдельный API/база 1С не нужны — тестирование тестовыми пользователями рабочей базы.
 
 ## Точка остановки
 
-**Частично выполняется [FL-01-16](docs/tasks/FL-01-16.md)** (остаток iOS). Web/Android release собраны ранее; [codemagic.yaml](codemagic.yaml) (`ios-simulator-test`). Origin: `git@github.com:sergey-sirenko/flutter-polevaya-kuhnya.git`, `master` запушен (сайт `polevaya-kuhnya` не использовался). Облачный билд **не** выполнялся. Блокер: аккаунт/приложение Codemagic и Start build `ios-simulator-test`. App Preview дополнительно требует команду Codemagic. Шаги — в карточке FL-01-16, «Настройка Codemagic».
+**Частично выполняется [FL-01-16](docs/tasks/FL-01-16.md)** (остаток iOS). Web/Android release собраны ранее; [codemagic.yaml](codemagic.yaml) (`ios-simulator-test`). Origin: `git@github.com:sergey-sirenko/flutter-polevaya-kuhnya.git`, `master` запушен; приложение Codemagic добавлено. Облачный билд **не** выполнялся. Следующий шаг: Start build → `master` → **`ios-simulator-test`** → артефакт `Runner.app`. App Preview дополнительно требует команду Codemagic.
 
 Ранее завершена [FL-01-17](docs/tasks/FL-01-17.md): эталонный `features/menu`, 101 тест, analyze чист; модуль не в router.
 
@@ -71,7 +71,7 @@ FL-00-01–13 завершены; точные проверки — в карт�
 
 ## Следующий шаг после подтверждения
 
-Продолжение остатка **FL-01-16**: приложение Codemagic → Start build `ios-simulator-test` на `master` репозитория `sergey-sirenko/flutter-polevaya-kuhnya`. Remote уже есть. Оценка остатка без внешнего ожидания: сложность 7/10; трудоёмкость высокая, ≈4% этапа 1; LLM сложная. После успешного `Runner.app` задача FL-01-16 может быть закрыта; затем предлагается **FL-02-01**. Автоматически не продолжать.
+Продолжение остатка **FL-01-16**: Start build `ios-simulator-test` на `master` (`sergey-sirenko/flutter-polevaya-kuhnya`). Приложение Codemagic уже добавлено. После успешного `Runner.app` задача FL-01-16 может быть закрыта; затем предлагается **FL-02-01**. Автоматически не продолжать.
 
 ## Не подтверждено
 
