@@ -1,1 +1,21 @@
-{"version":"0.1.0","build":2}
+{
+  "version": "1.0.0",
+  "build": 70,
+  "policy": {
+    "schema": 1,
+    "environment": "test",
+    "minimum": {
+      "version": "0.1.0",
+      "build": 1
+    },
+    "releases": {
+      "web": {
+        "version": "1.0.0",
+        "build": 70,
+        "url": "https://flutter-test.obedmoscow.ru/"
+      },
+      "android": null,
+      "ios": null
+    }
+  }
+}

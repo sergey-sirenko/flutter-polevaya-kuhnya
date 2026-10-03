@@ -2,14 +2,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:polevaya_kuhnya/features/menu/menu_models.dart';
 import 'package:polevaya_kuhnya/features/menu/menu_repository.dart';
 
-/// Эталон Controller для FL-01-17 (ADR-6). Состояние — `AsyncValue`, поэтому
-/// UI различает loading/data/error без отдельного enum, как в
-/// `SessionController` для составного статуса сессии.
+/// Эталон Controller для меню (ADR-6). Состояние — `AsyncValue`.
 ///
-/// `retry: null` отключает скрытый автоматический повтор Riverpod
-/// (`ProviderContainer.defaultRetry`, до 10 попыток с задержкой до 6.4 c).
-/// Явный повтор для чтения — только через кнопку пользователя ([reload]),
-/// без бесшумных фоновых попыток, которые задержали бы видимую ошибку.
+/// `retry: null` отключает скрытый автоматический повтор Riverpod.
 final menuControllerProvider =
     AsyncNotifierProvider<MenuController, List<MenuWeek>>(
       MenuController.new,

@@ -31,10 +31,7 @@ LineTotals calculateLineTotals({
   final baseTotal = pricingRound(normalizedPrice * normalizedQuantity);
   final safeBase = baseTotal < 0 ? 0 : baseTotal;
 
-  final discountAmount = calculateDiscountAmount(
-    safeBase,
-    discountPercentage,
-  );
+  final discountAmount = calculateDiscountAmount(safeBase, discountPercentage);
   final afterPct = pricingRound(safeBase - discountAmount);
   final totalAfterPercentage = afterPct < 0 ? 0 : afterPct;
 
@@ -82,8 +79,7 @@ int resolveEffectiveDiscountClientForDay({
   if (normalizedDiscountClient <= 0) {
     return 0;
   }
-  if (!conditions.isDiscountPromotion ||
-      conditions.minimumPaymentAmount <= 0) {
+  if (!conditions.isDiscountPromotion || conditions.minimumPaymentAmount <= 0) {
     return normalizedDiscountClient;
   }
 
@@ -210,10 +206,7 @@ AggregateTotals calculateWeekTotals({
 
 /// Полный расчёт корзины: все дни + недельные агрегаты по встречающимся weekType.
 final class CartPricingResult {
-  const CartPricingResult({
-    required this.days,
-    required this.weekTotalsByType,
-  });
+  const CartPricingResult({required this.days, required this.weekTotalsByType});
 
   final List<PricingDayResult> days;
   final Map<String, AggregateTotals> weekTotalsByType;
@@ -235,11 +228,7 @@ CartPricingResult calculateCart({
   final weekTypes = <String>{for (final d in days) d.weekType};
   final weeks = <String, AggregateTotals>{
     for (final wt in weekTypes)
-      wt: calculateWeekTotals(
-        weekType: wt,
-        days: days,
-        conditions: conditions,
-      ),
+      wt: calculateWeekTotals(weekType: wt, days: days, conditions: conditions),
   };
   return CartPricingResult(days: dayResults, weekTotalsByType: weeks);
 }

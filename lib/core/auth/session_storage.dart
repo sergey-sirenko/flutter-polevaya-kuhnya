@@ -19,12 +19,11 @@ final class SessionStorageException implements Exception {
 
 /// Операции упорядочены: удаление после незавершённой записи не потеряется.
 class SessionStorage {
-  SessionStorage({
-    required AppConfig config,
-    this._storage = const FlutterSecureStorage(),
-  }) : _scope =
-           'field_kitchen.v1.${config.environment.name}.'
-           '${base64Url.encode(utf8.encode(config.apiBaseUri.toString()))}';
+  SessionStorage({required AppConfig config, FlutterSecureStorage? storage})
+    : _storage = storage ?? const FlutterSecureStorage(),
+      _scope =
+          'field_kitchen.v1.${config.environment.name}.'
+          '${base64Url.encode(utf8.encode(config.apiBaseUri.toString()))}';
 
   final FlutterSecureStorage _storage;
   final String _scope;
@@ -59,9 +58,9 @@ class SessionStorage {
   Future<String> deviceId() => _serialize(() async {
     final key = '$_scope.device_id';
     final saved = await _storage.read(key: key);
-    if (saved != null && saved.isNotEmpty) {
+    if (saved != null) {
       if (!RegExp(
-        r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$',
+        r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$',
       ).hasMatch(saved)) {
         throw const SessionStorageException();
       }

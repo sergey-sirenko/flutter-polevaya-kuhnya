@@ -1,0 +1,30 @@
+{
+  "locale": "ru-RU",
+  "status": "draft_for_owner_review",
+  "name": "Полевая кухня",
+  "latinNameReference": "Polevaya kuhnya",
+  "shortDescription": "Меню на неделю и заказ обедов в офис для клиентов «Полевой кухни».",
+  "appleSubtitle": "Обеды в офис по меню",
+  "appleKeywords": "обеды,доставка,офис,меню,заказ,Москва",
+  "fullDescription": "«Полевая кухня» — приложение для клиентов службы доставки обедов в офисы и на предприятия в Москве и ближайшем Подмосковье.\n\nПросматривайте меню текущей и следующей недели, выбирайте день и знакомьтесь с блюдами: фотографиями, составом, весом порции и ценами. Меню доступно без входа.\n\nДля заказа войдите с кодом клиента и паролем, полученными у менеджера. Если у вас ещё нет доступа, свяжитесь с «Полевой кухней» по контактам ниже. Регистрация в приложении также начинается с выданного кода и пароля.\n\nПосле входа вы можете:\n• выбрать блюда и количество порций на несколько дней;\n• проверить состав корзины и суммы перед отправкой заказа;\n• просматривать историю заказов;\n• переносить блюда из прежнего заказа в корзину и проверять их по актуальному меню.\n\nДоставка выполняется по предварительному заказу. Доступные даты, сроки оформления, минимальная сумма и другие условия зависят от обслуживания вашего клиента. Уточняйте их у менеджера.\n\nДля загрузки актуального меню, входа и отправки заказа необходимо подключение к интернету.\n\nПоддержка и подключение к обслуживанию:\nzakaz@obedmoscow.ru\n+7 903 128-57-15\nhttps://obedmoscow.ru/",
+  "support": {
+    "email": "zakaz@obedmoscow.ru",
+    "phone": "+79031285715",
+    "url": "https://obedmoscow.ru/#contacts",
+    "website": "https://obedmoscow.ru/",
+    "status": "matches_current_site_and_source_owner_review_pending"
+  },
+  "privacy": {
+    "url": null,
+    "existingAgreementCandidate": "https://obedmoscow.ru/#terms",
+    "flutterRouteReference": "/privacy",
+    "status": "not_ready_for_store_submission_review_content_and_publish_stable_url"
+  },
+  "publicationPrerequisites": [
+    "owner_accepts_texts_and_support_contacts",
+    "live_order_and_history_acceptance",
+    "approved_public_privacy_url_and_FL-07-12_declarations",
+    "FR-A6_account_deletion_resolved",
+    "iOS_build_and_acceptance_before_App_Store_submission"
+  ]
+}

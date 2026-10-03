@@ -11,8 +11,10 @@ import 'package:polevaya_kuhnya/core/config/app_config.dart';
 import 'package:polevaya_kuhnya/core/config/app_config_provider.dart';
 import 'package:polevaya_kuhnya/features/menu/menu_controller.dart';
 import 'package:polevaya_kuhnya/features/menu/menu_models.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final config = AppConfig.parse(
+  appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
   environment: 'test',
   apiBaseUrl: 'https://api.example.test/Obmen/',
   dataBaseUrl: 'https://data.example.test/data/',
@@ -52,6 +54,7 @@ Future<AsyncValue<List<MenuWeek>>> settled(ProviderContainer container) async {
 }
 
 void main() {
+  setUp(() => SharedPreferences.setMockInitialValues({}));
   test('успешная загрузка переводит состояние в AsyncData с блюдами', () async {
     final body = await fixture('menu_with_dishes');
     final container = mount(

@@ -1,0 +1,206 @@
+{
+  "createdAt": "2026-10-01T21:08:23.615037+03:00",
+  "build": "0.1.0+55",
+  "published": false,
+  "publicBuildAtWork": 54,
+  "sourceSHA256": {
+    "lib/app/theme.dart": "7164506806c7d0b28364402205b2a15349f00193edd65801e64e80b197e033ae",
+    "lib/app/order_layout.dart": "ba2410130782e108b5c4e77f71c8133383d06e3fd993a22e1ce603d15ff38bb4",
+    "lib/app/adaptive_app_shell.dart": "c75d090900d8d0fb9ff621d1fb42063112ee1e180331ba17868ebab126258ff3",
+    "lib/app/router.dart": "e88b751a6cf94043ae39b50b876af9f9395c327dbfdd6da65e5fd68c7c7e163e",
+    "lib/features/menu/menu_page.dart": "c5643ff3f388b8043f5a9e6ea23ecb4b2d45e68587a58b0afe460dceaa5f95b1",
+    "lib/features/menu/menu_image.dart": "585d45ce11df08efa0b60edf5c2e55dc1176442f885af4c1e5f06995a794a892",
+    "lib/features/menu/order_sheets.dart": "5558797580a7f7cd983be0728cb1ee690e2db07170ddd39f8a4c5f2e8e0dec06",
+    "lib/features/site/site_pages.dart": "c2199c3acb6c730e5c6158e761c68cbc3b50f8837f19eba1fd082a49d19c7de4",
+    "lib/features/site/site_widgets.dart": "55a6ab4bcf173ec9b28f42470251acbd19557f76366649337ccc1eb0f8d9fba7",
+    "lib/features/cart/cart_summary_bar.dart": "04f0e62b5d345bccd9a85cc72d4fb6300d6b55332221f4f03fd9f0bd710e2866",
+    "lib/features/cart/orders_page.dart": "a908116a6cd9a4e4c7a092723780c6b0d5c347e706bb8a1ab750722205c1c1f1",
+    "lib/shared/price_text.dart": "d573cbb40bde2995b43d5f85ccc31fe4be5b77608f1ac5cd3d27cf914f6a30c6",
+    "pubspec.yaml": "a7720f7e9d9c65728c9a7ae73648ea76b592a4bb2f049a5706137a0dccb1b074",
+    "web/version.json": "fa9bf11107d032bd1fa188f1718e4468a717ca628581be2602f0ad048f368f3a",
+    "web/index.html": "631b3bfa8214aa72b02c8b59adcf397da5546b49b237d1c6c1b0b7ee2fce2f2c",
+    "web/manifest.json": "3abf45e290c8d446ac69650dbb619c83f445e5bec6287115d502a3d9df0154ec"
+  },
+  "releaseSHA256": {
+    "main.dart.js": "1c3b03ab802ebfd04adcdf88518f8b4bda5b2d81cf4ffda3a110e935462d61b0",
+    "version.json": "fa9bf11107d032bd1fa188f1718e4468a717ca628581be2602f0ad048f368f3a",
+    "index.html": "0d2109817b7545d696bfea84be3345f20c6bfbe47c0f40d5300327214f83ff5e",
+    "manifest.json": "3abf45e290c8d446ac69650dbb619c83f445e5bec6287115d502a3d9df0154ec"
+  },
+  "logoSHA256": "cb1bbbb6c0df984c206058572185d3f9b54aeec7c2a0aacdefb57f491ec320e9",
+  "checks": {
+    "flutterAnalyze": "No issues found",
+    "flutterTests": 701,
+    "uxTests": 24,
+    "syntheticPreviews": 4,
+    "widths": [
+      320,
+      390,
+      600,
+      768,
+      1024,
+      1200,
+      1440
+    ],
+    "textScales": [
+      1,
+      1.6
+    ]
+  },
+  "apiBase": "https://hleb-sol.su/Zakaz_http/hs/Obmen/",
+  "dataBase": "https://obedmoscow.ru/data/",
+  "versionUrl": "https://flutter-test.obedmoscow.ru/version.json",
+  "limitations": [
+    "Not published",
+    "Local preview is not Web acceptance",
+    "Android not rebuilt or tested on device",
+    "iOS not run",
+    "No real orders or messages"
+  ],
+  "previews": [
+    {
+      "file": "cart-390-synthetic.png",
+      "size": [
+        390,
+        1000
+      ],
+      "sha256": "3036da167f977d4a2ddd2088f4271753ee5de31ec798237a0262bbf770f537a4",
+      "synthetic": true
+    },
+    {
+      "file": "cart-400-synthetic.png",
+      "size": [
+        400,
+        1000
+      ],
+      "sha256": "6f238fbbace35ec8400991b6a54ce31561904f7dcaf33b207a5f2f64eb10f47f",
+      "synthetic": true
+    },
+    {
+      "file": "home-desktop.png",
+      "size": [
+        1440,
+        1080
+      ],
+      "sha256": "acc83a27f1f3d034bf03932e0d798bc6581396c3d265ff621acead55d9ed626b",
+      "synthetic": false
+    },
+    {
+      "file": "home-mobile.png",
+      "size": [
+        390,
+        844
+      ],
+      "sha256": "72888e5516f8e25afd46b0e75f3550ecae42f63ce9f0d9772c8f2b8cc875c676",
+      "synthetic": false
+    },
+    {
+      "file": "menu-1024.png",
+      "size": [
+        1024,
+        900
+      ],
+      "sha256": "2bdc92c1c0d744808cd21806d175229fe6e2decab2e4b3d25ea786d3325bbe09",
+      "synthetic": false
+    },
+    {
+      "file": "menu-1200.png",
+      "size": [
+        1200,
+        1000
+      ],
+      "sha256": "36366a0f8eb5621aee0f02bb42998ebb8aefff0bdf75593624042f1fb47edae8",
+      "synthetic": false
+    },
+    {
+      "file": "menu-320.png",
+      "size": [
+        320,
+        900
+      ],
+      "sha256": "395a61f85c71774feeff56ac404a3258ba00fe08fc2f22970722fa3ce831688e",
+      "synthetic": false
+    },
+    {
+      "file": "menu-600.png",
+      "size": [
+        600,
+        900
+      ],
+      "sha256": "077923495e6ab889dc26d45b9aa8e646b0f1cf3c0a52973cc01176c0696ef976",
+      "synthetic": false
+    },
+    {
+      "file": "menu-768.png",
+      "size": [
+        768,
+        900
+      ],
+      "sha256": "ae5863a29d7fd3c2fefd14769797884b6ccc42e314675b1c829191b4bf6f1e9e",
+      "synthetic": false
+    },
+    {
+      "file": "menu-desktop.png",
+      "size": [
+        1440,
+        1080
+      ],
+      "sha256": "ff9ca17f15608bd1e99de38dcbc636792991165c82fe3a95b8264749ab1e944a",
+      "synthetic": false
+    },
+    {
+      "file": "menu-mobile.png",
+      "size": [
+        390,
+        844
+      ],
+      "sha256": "2ed78ecbdd425aed7ea39c579af698fb2f33a1aed65638279d164f69b1677213",
+      "synthetic": false
+    },
+    {
+      "file": "profile-390-synthetic.png",
+      "size": [
+        390,
+        1000
+      ],
+      "sha256": "1cd2fa527039b933c680cf0b93d29f7018c1098d9d7ae5999c01a97ad31b11a7",
+      "synthetic": true
+    },
+    {
+      "file": "profile-400-synthetic.png",
+      "size": [
+        400,
+        1000
+      ],
+      "sha256": "7c985ba08f36d6cbb2aefe3b01bf088de1a4c836517b6251110b75ec08d88bef",
+      "synthetic": true
+    },
+    {
+      "file": "sign-in-desktop.png",
+      "size": [
+        1440,
+        1080
+      ],
+      "sha256": "65576372f1ca7dd987979da482c2d5312d01bd590e4e3010687135f2aa31c469",
+      "synthetic": false
+    }
+  ],
+  "browserWidthsVisuallyChecked": [
+    320,
+    390,
+    600,
+    768,
+    1024,
+    1200,
+    1440
+  ],
+  "visualNotes": {
+    "600": "one column with NavigationRail",
+    "768": "two columns",
+    "1024": "three columns",
+    "1200": "two columns; panels224/400",
+    "1440": "three columns; panels224/400",
+    "390": "two columns",
+    "320": "one column"
+  }
+}

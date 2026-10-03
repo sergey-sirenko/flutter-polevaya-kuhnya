@@ -1,0 +1,590 @@
+[
+  {
+    "name": "1-home-desktop",
+    "width": 1440,
+    "height": 1080,
+    "clientWidth": 1425,
+    "columns": null,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 14,
+    "placeholders": 0,
+    "scrollWidth": 1425,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": null,
+    "cardHeightAfter": null,
+    "nativeCaptureWidth": 1425,
+    "nativeCaptureHeight": 1069,
+    "pngWidth": 1440,
+    "pngHeight": 1080
+  },
+  {
+    "name": "1-home-mobile",
+    "width": 390,
+    "height": 844,
+    "clientWidth": 375,
+    "columns": null,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 14,
+    "placeholders": 0,
+    "scrollWidth": 375,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": null,
+    "cardHeightAfter": null,
+    "nativeCaptureWidth": 375,
+    "nativeCaptureHeight": 812,
+    "pngWidth": 390,
+    "pngHeight": 844
+  },
+  {
+    "name": "1-menu-desktop",
+    "width": 1440,
+    "height": 1080,
+    "clientWidth": 1425,
+    "columns": 3,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 19,
+    "placeholders": 0,
+    "scrollWidth": 1425,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": 465.28125,
+    "cardHeightAfter": 465.28125,
+    "nativeCaptureWidth": 1425,
+    "nativeCaptureHeight": 1069,
+    "pngWidth": 1440,
+    "pngHeight": 1080
+  },
+  {
+    "name": "1-menu-mobile",
+    "width": 390,
+    "height": 844,
+    "clientWidth": 375,
+    "columns": 2,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 9,
+    "placeholders": 0,
+    "scrollWidth": 375,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": 379.359375,
+    "cardHeightAfter": 379.359375,
+    "nativeCaptureWidth": 375,
+    "nativeCaptureHeight": 812,
+    "pngWidth": 390,
+    "pngHeight": 844
+  },
+  {
+    "name": "2-home-desktop",
+    "width": 1440,
+    "height": 1080,
+    "clientWidth": 1425,
+    "columns": null,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 14,
+    "placeholders": 0,
+    "scrollWidth": 1425,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": null,
+    "cardHeightAfter": null,
+    "nativeCaptureWidth": 1425,
+    "nativeCaptureHeight": 1069,
+    "pngWidth": 1440,
+    "pngHeight": 1080
+  },
+  {
+    "name": "2-home-mobile",
+    "width": 390,
+    "height": 844,
+    "clientWidth": 375,
+    "columns": null,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 14,
+    "placeholders": 0,
+    "scrollWidth": 375,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": null,
+    "cardHeightAfter": null,
+    "nativeCaptureWidth": 375,
+    "nativeCaptureHeight": 812,
+    "pngWidth": 390,
+    "pngHeight": 844
+  },
+  {
+    "name": "2-menu-desktop",
+    "width": 1440,
+    "height": 1080,
+    "clientWidth": 1425,
+    "columns": 3,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 19,
+    "placeholders": 0,
+    "scrollWidth": 1425,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": 475.28125,
+    "cardHeightAfter": 475.28125,
+    "nativeCaptureWidth": 1425,
+    "nativeCaptureHeight": 1069,
+    "pngWidth": 1440,
+    "pngHeight": 1080
+  },
+  {
+    "name": "2-menu-mobile",
+    "width": 390,
+    "height": 844,
+    "clientWidth": 375,
+    "columns": 2,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 9,
+    "placeholders": 0,
+    "scrollWidth": 375,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": 387.359375,
+    "cardHeightAfter": 387.359375,
+    "nativeCaptureWidth": 375,
+    "nativeCaptureHeight": 812,
+    "pngWidth": 390,
+    "pngHeight": 844
+  },
+  {
+    "name": "3-home-desktop",
+    "width": 1440,
+    "height": 1080,
+    "clientWidth": 1425,
+    "columns": null,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 14,
+    "placeholders": 0,
+    "scrollWidth": 1425,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": null,
+    "cardHeightAfter": null,
+    "nativeCaptureWidth": 1425,
+    "nativeCaptureHeight": 1069,
+    "pngWidth": 1440,
+    "pngHeight": 1080
+  },
+  {
+    "name": "3-home-mobile",
+    "width": 390,
+    "height": 844,
+    "clientWidth": 375,
+    "columns": null,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 14,
+    "placeholders": 0,
+    "scrollWidth": 375,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": null,
+    "cardHeightAfter": null,
+    "nativeCaptureWidth": 375,
+    "nativeCaptureHeight": 812,
+    "pngWidth": 390,
+    "pngHeight": 844
+  },
+  {
+    "name": "3-menu-desktop",
+    "width": 1440,
+    "height": 1080,
+    "clientWidth": 1425,
+    "columns": 3,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 19,
+    "placeholders": 0,
+    "scrollWidth": 1425,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": 444.28125,
+    "cardHeightAfter": 444.28125,
+    "nativeCaptureWidth": 1425,
+    "nativeCaptureHeight": 1069,
+    "pngWidth": 1440,
+    "pngHeight": 1080
+  },
+  {
+    "name": "3-menu-mobile",
+    "width": 390,
+    "height": 844,
+    "clientWidth": 375,
+    "columns": 2,
+    "failedPhotos": [],
+    "overflow": false,
+    "photoStyles": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      },
+      {
+        "background": "rgb(255, 255, 255)",
+        "fit": "contain"
+      }
+    ],
+    "photos": 9,
+    "placeholders": 0,
+    "scrollWidth": 375,
+    "smallControls": [],
+    "smallText": [],
+    "scrollY": 0,
+    "cardHeightBefore": 368.359375,
+    "cardHeightAfter": 368.359375,
+    "nativeCaptureWidth": 375,
+    "nativeCaptureHeight": 812,
+    "pngWidth": 390,
+    "pngHeight": 844
+  }
+]

@@ -9,6 +9,7 @@ import 'package:polevaya_kuhnya/core/config/app_config.dart';
 
 void main() {
   final config = AppConfig.parse(
+    appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
     environment: 'test',
     apiBaseUrl: 'https://api.example.test/Obmen/',
     dataBaseUrl: 'https://data.example.test/data/',
@@ -65,7 +66,7 @@ void main() {
   test('старый HTTP 400 и новый code нормализуются как бизнес-отказ', () async {
     for (final fixture in <String>[
       '{"success":false,"error":"Неверный токен"}',
-      '{"success":false,"code":"rate_limited","message":"Позже","error":""}',
+      '{"success":false,"code":"rate_limited","message":"Позже","error":"","retryAfter":60}',
     ]) {
       final client = ApiClient(
         config: config,
@@ -77,10 +78,82 @@ void main() {
           isA<ApiException>()
               .having((e) => e.kind, 'kind', ApiErrorKind.business)
               .having((e) => e.invalidSession, 'invalidSession', isFalse)
+              .having((e) => e.requiresReauth, 'requiresReauth', isFalse)
               .having((e) => e.statusCode, 'statusCode', 400),
         ),
       );
     }
+  });
+
+  test('переходный 400 с invalid_session и device_mismatch классифицируются', () async {
+    final cases = <(String, ApiErrorKind, bool, bool)>[
+      (
+        '{"success":false,"code":"invalid_session","message":"Сеанс","error":""}',
+        ApiErrorKind.unauthorized,
+        true,
+        true,
+      ),
+      (
+        '{"success":false,"code":"invalid_token","message":"Токен","error":""}',
+        ApiErrorKind.unauthorized,
+        true,
+        true,
+      ),
+      (
+        '{"success":false,"code":"device_mismatch","message":"Устройство","error":""}',
+        ApiErrorKind.forbidden,
+        false,
+        true,
+      ),
+      (
+        '{"success":false,"code":"session_unbound","message":"Войдите","error":""}',
+        ApiErrorKind.forbidden,
+        false,
+        true,
+      ),
+      (
+        '{"success":false,"code":"access_denied","message":"Нет доступа","error":""}',
+        ApiErrorKind.forbidden,
+        false,
+        false,
+      ),
+    ];
+    for (final fixture in cases) {
+      final client = ApiClient(
+        config: config,
+        client: MockClient((_) async => utf8Response(fixture.$1, 400)),
+      );
+      await expectLater(
+        client.postJson('V1/User/login', {}),
+        throwsA(
+          isA<ApiException>()
+              .having((e) => e.kind, 'kind', fixture.$2)
+              .having((e) => e.invalidSession, 'invalidSession', fixture.$3)
+              .having((e) => e.requiresReauth, 'requiresReauth', fixture.$4),
+        ),
+      );
+    }
+  });
+
+  test('rate_limited сохраняет retryAfter', () async {
+    final client = ApiClient(
+      config: config,
+      client: MockClient(
+        (_) async => utf8Response(
+          '{"success":false,"code":"rate_limited","message":"Позже","error":"","retryAfter":45}',
+          400,
+        ),
+      ),
+    );
+    await expectLater(
+      client.postJson('V1/User/registrationresend', {}),
+      throwsA(
+        isA<ApiException>()
+            .having((e) => e.code, 'code', 'rate_limited')
+            .having((e) => e.retryAfter, 'retryAfter', 45)
+            .having((e) => e.requiresReauth, 'requiresReauth', isFalse),
+      ),
+    );
   });
 
   test(
@@ -100,12 +173,38 @@ void main() {
                   'invalidSession',
                   status == 401,
                 )
+                .having(
+                  (e) => e.requiresReauth,
+                  'requiresReauth',
+                  status == 401,
+                )
                 .having((e) => e.statusCode, 'statusCode', status),
           ),
         );
       }
     },
   );
+
+  test('403 device_mismatch требует повторного входа', () async {
+    final client = ApiClient(
+      config: config,
+      client: MockClient(
+        (_) async => utf8Response(
+          '{"success":false,"code":"device_mismatch","message":"Устройство","error":""}',
+          403,
+        ),
+      ),
+    );
+    await expectLater(
+      client.postJson('V1/User/login', {}),
+      throwsA(
+        isA<ApiException>()
+            .having((e) => e.kind, 'kind', ApiErrorKind.forbidden)
+            .having((e) => e.requiresReauth, 'requiresReauth', isTrue)
+            .having((e) => e.invalidSession, 'invalidSession', isFalse),
+      ),
+    );
+  });
 
   test('успех HTTP с success false не считается успешной записью', () async {
     final client = ApiClient(
@@ -222,6 +321,34 @@ void main() {
     );
   });
 
+  test('GET API передаёт query и не добавляет токен', () async {
+    final client = ApiClient(
+      config: config,
+      client: MockClient((request) async {
+        expect(request.method, 'GET');
+        expect(request.followRedirects, isFalse);
+        expect(request.headers.containsKey('authorization'), isFalse);
+        expect(request.body, isEmpty);
+        expect(request.url.path, '/Obmen/V1/User/message');
+        expect(request.url.queryParameters, {
+          'name': 'Анна',
+          'phone': '8-903-000-00-00',
+          'email': '',
+          'message': 'Нужен обед',
+        });
+        return http.Response('{"success":true,"message":"ok"}', 200);
+      }),
+    );
+
+    final result = await client.getApiJson('V1/User/message', {
+      'name': 'Анна',
+      'phone': '8-903-000-00-00',
+      'email': '',
+      'message': 'Нужен обед',
+    });
+    expect(result['success'], isTrue);
+  });
+
   test('путь нельзя подменить URL, параметрами или выходом из базы', () async {
     final client = ApiClient(
       config: config,
@@ -237,6 +364,7 @@ void main() {
     ]) {
       await expectLater(client.postJson(path, {}), throwsArgumentError);
       await expectLater(client.getDataJson(path), throwsArgumentError);
+      await expectLater(client.getApiJson(path, {}), throwsArgumentError);
     }
   });
 }

@@ -10,11 +10,25 @@ import 'package:polevaya_kuhnya/core/auth/user_profile.dart';
 final sessionControllerProvider =
     NotifierProvider<SessionController, SessionState>(SessionController.new);
 
-/// Feature Repository должен зависеть от этого provider, чтобы смена сессии
-/// инвалидировала его данные. Публичные файлы используют apiClientProvider.
-final sessionApiProvider = Provider<SessionApi?>((ref) {
+/// Свежий профиль доступен UI только после серверного подтверждения сессии.
+/// Поколение в SessionState инвалидирует потребителей при повторной проверке.
+final sessionProfileProvider = Provider<UserProfile?>((ref) {
   final session = ref.watch(sessionControllerProvider);
   return session.status == SessionStatus.signedIn
+      ? ref.read(sessionControllerProvider.notifier).profile
+      : null;
+});
+
+/// Feature Repository должен зависеть от этого provider, чтобы смена сессии
+/// инвалидировала его данные. Публичные файлы используют apiClientProvider.
+/// Следит только за status/generation: обновление полей профиля не пересоздаёт API.
+final sessionApiProvider = Provider<SessionApi?>((ref) {
+  final session = ref.watch(
+    sessionControllerProvider.select(
+      (value) => (value.status, value.generation),
+    ),
+  );
+  return session.$1 == SessionStatus.signedIn
       ? ref.read(sessionControllerProvider.notifier)._createApi()
       : null;
 });
@@ -23,6 +37,7 @@ class SessionController extends Notifier<SessionState> {
   int _generation = 0;
   SessionCredentials? _credentials;
   UserProfile? _profile;
+  String? _snapshotOwnerScope;
   late SessionRepository _repository;
 
   @override
@@ -31,10 +46,12 @@ class SessionController extends Notifier<SessionState> {
     final generation = ++_generation;
     _credentials = null;
     _profile = null;
+    _snapshotOwnerScope = null;
     ref.onDispose(() {
       _generation++;
       _credentials = null;
       _profile = null;
+      _snapshotOwnerScope = null;
     });
     unawaited(Future<void>.microtask(() => _restore(generation, _repository)));
     return SessionState(SessionStatus.restoring, generation);
@@ -46,6 +63,7 @@ class SessionController extends Notifier<SessionState> {
     final generation = ++_generation;
     _credentials = null;
     _profile = null;
+    _snapshotOwnerScope = null;
     state = SessionState(SessionStatus.restoring, generation);
     return generation;
   }
@@ -93,7 +111,12 @@ class SessionController extends Notifier<SessionState> {
         repository,
       );
     } catch (error) {
-      await _handleFailure(error, generation, repository);
+      if (error is ApiException && _current(generation)) {
+        // Парольный вход ещё не сохранил токен: отказ API оставляет гостя.
+        state = SessionState(SessionStatus.signedOut, generation);
+      } else {
+        await _handleFailure(error, generation, repository);
+      }
       if (_current(generation)) rethrow;
     }
   }
@@ -115,6 +138,66 @@ class SessionController extends Notifier<SessionState> {
   /// Профиль последней успешной проверки; не пишется в хранилище.
   UserProfile? get profile => _profile;
 
+  /// Обновить профиль, сохранив поколение сессии и mounted-экраны.
+  Future<UserProfile> refreshProfile() async {
+    final generation = _generation;
+    final credentials = _credentials;
+    if (credentials == null || state.status != SessionStatus.signedIn) {
+      throw const StaleSessionException();
+    }
+    try {
+      final verified = await _repository.verify(credentials);
+      if (!_current(generation)) throw const StaleSessionException();
+      if (verified.profile.login != _profile?.login) {
+        throw const FormatException('Владелец обновлённого профиля изменился.');
+      }
+      await _repository.storage.writeToken(verified.credentials.token);
+      if (!_current(generation)) throw const StaleSessionException();
+      _credentials = verified.credentials;
+      _profile = verified.profile;
+      state = SessionState(SessionStatus.signedIn, generation);
+      return verified.profile;
+    } on ApiException catch (error) {
+      if (error.requiresReauth) {
+        await _handleFailure(error, generation, _repository);
+      }
+      rethrow;
+    }
+  }
+
+  /// Применение уже проверенного снимка без запроса, токена и смены поколения.
+  void applyProfileSnapshot(
+    UserProfile profile, {
+    required int generation,
+    required String ownerScope,
+  }) {
+    if (!_current(generation) ||
+        state.status != SessionStatus.signedIn ||
+        _credentials == null ||
+        _profile == null) {
+      throw const StaleSessionException();
+    }
+    if (profile.login != _profile!.login ||
+        (_snapshotOwnerScope != null && _snapshotOwnerScope != ownerScope)) {
+      throw const FormatException('Владелец снимка заказа изменился.');
+    }
+    _snapshotOwnerScope = ownerScope;
+    _profile = profile;
+    state = SessionState(SessionStatus.signedIn, generation);
+  }
+
+  /// Подтверждённый новый email без повторного login и без смены generation.
+  void applyConfirmedEmail(String email) {
+    final generation = state.generation;
+    if (!_current(generation) ||
+        state.status != SessionStatus.signedIn ||
+        _profile == null) {
+      return;
+    }
+    _profile = _profile!.withEmail(email);
+    state = SessionState(SessionStatus.signedIn, generation);
+  }
+
   Future<void> _handleFailure(
     Object error,
     int generation,
@@ -123,7 +206,8 @@ class SessionController extends Notifier<SessionState> {
     if (!_current(generation)) return;
     _credentials = null;
     _profile = null;
-    if (error is ApiException && error.invalidSession) {
+    _snapshotOwnerScope = null;
+    if (error is ApiException && error.requiresReauth) {
       try {
         await repository.storage.deleteToken();
         if (_current(generation)) {
@@ -139,7 +223,16 @@ class SessionController extends Notifier<SessionState> {
     }
   }
 
-  Future<void> signOut() async {
+  Future<void> signOut() => _endSession(revoke: true);
+
+  /// Сервер уже отозвал доступ (истечение или `devicedisconnect`): без logout.
+  Future<void> clearLocalSession() => _endSession(revoke: false);
+
+  /// Сервер уже признал токен недействительным: закрываем доступ без logout.
+  Future<void> _expireSession() => _endSession(revoke: false);
+
+  Future<void> _endSession({required bool revoke}) async {
+    final credentials = _credentials;
     final generation = _begin();
     final repository = _repository;
     try {
@@ -147,8 +240,22 @@ class SessionController extends Notifier<SessionState> {
       if (_current(generation)) {
         state = SessionState(SessionStatus.signedOut, generation);
       }
+      if (revoke && credentials != null) {
+        unawaited(_revokeSilently(repository, credentials));
+      }
     } catch (error) {
       await _handleFailure(error, generation, repository);
+    }
+  }
+
+  Future<void> _revokeSilently(
+    SessionRepository repository,
+    SessionCredentials credentials,
+  ) async {
+    try {
+      await repository.revoke(credentials);
+    } catch (_) {
+      // Локальный выход уже завершён; сеть не может вернуть прежнюю сессию.
     }
   }
 
@@ -158,7 +265,7 @@ class SessionController extends Notifier<SessionState> {
       api: _repository.api,
       credentials: _credentials!,
       isCurrent: () => _current(generation) && _credentials != null,
-      onUnauthorized: signOut,
+      onUnauthorized: _expireSession,
     );
   }
 }

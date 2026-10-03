@@ -11,9 +11,7 @@ Map<String, Object?> _asStringKeyedMap(Object? raw) {
   if (raw is! Map) {
     throw FormatException('Ожидался объект, получено $raw');
   }
-  return {
-    for (final entry in raw.entries) entry.key.toString(): entry.value,
-  };
+  return {for (final entry in raw.entries) entry.key.toString(): entry.value};
 }
 
 List<PricingDayInput> _daysFromJson(List<dynamic> daysJson) {
@@ -37,7 +35,7 @@ List<PricingDayInput> _daysFromJson(List<dynamic> daysJson) {
                   quantity: line['quantity'],
                   menuOrder: line['menuOrder'] is num
                       ? (line['menuOrder'] as num).toInt()
-                      : 0x7fffffffffffffff,
+                      : missingMenuOrder,
                 );
               }(),
           ],
@@ -55,9 +53,7 @@ void main() {
     root = _asStringKeyedMap(jsonDecode(file.readAsStringSync()));
     final rawCases = root['cases'];
     expect(rawCases, isA<List>());
-    cases = [
-      for (final item in rawCases as List) _asStringKeyedMap(item),
-    ];
+    cases = [for (final item in rawCases as List) _asStringKeyedMap(item)];
   });
 
   test('набор содержит не меньше 10 кейсов', () {
@@ -88,7 +84,11 @@ void main() {
         final exp = _asStringKeyedMap(expectedDays[i]);
         final actual = cart.days[i];
         expect(actual.dayKey, exp['dayKey'], reason: '$id dayKey');
-        expect(actual.totals.finalTotal, exp['finalTotal'], reason: '$id final');
+        expect(
+          actual.totals.finalTotal,
+          exp['finalTotal'],
+          reason: '$id final',
+        );
         expect(actual.totals.baseTotal, exp['baseTotal'], reason: '$id base');
         expect(
           actual.totals.discountAmount,
@@ -117,17 +117,18 @@ void main() {
         final compareDayKey = lim['compareDayKey'];
         final dayTotals = compareDayKey == null
             ? cart.days.first.totals
-            : cart.days
-                  .firstWhere((d) => d.dayKey == compareDayKey)
-                  .totals;
+            : cart.days.firstWhere((d) => d.dayKey == compareDayKey).totals;
         final weekType = dayInputs.first.weekType;
         final preview = previewLimit(
           conditions: conditions,
           dayTotals: dayTotals,
-          weekTotals:
-              cart.weekTotalsByType[weekType] ?? AggregateTotals.zero,
+          weekTotals: cart.weekTotalsByType[weekType] ?? AggregateTotals.zero,
         );
-        expect(preview.isWeekPeriod, lim['isWeekPeriod'], reason: '$id lim week');
+        expect(
+          preview.isWeekPeriod,
+          lim['isWeekPeriod'],
+          reason: '$id lim week',
+        );
         expect(
           preview.comparedFinalTotal,
           lim['comparedFinalTotal'],

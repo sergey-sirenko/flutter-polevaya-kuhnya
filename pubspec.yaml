@@ -1,8 +1,7 @@
 name: polevaya_kuhnya
 description: "Приложение «Полевая кухня» для Web, Android и iOS."
 publish_to: 'none'
-version: 0.1.0+2
-
+version: 1.0.0+70
 environment:
   sdk: ^3.13.1
 
@@ -17,14 +16,24 @@ dependencies:
   flutter_secure_storage: ^11.2.0
   shared_preferences: ^2.5.5
   cached_network_image: ^4.0.2
+  cached_network_image_platform_interface: ^5.0.2
   url_launcher: ^6.3.2
   package_info_plus: ^10.2.1
   intl: ^0.20.3
+  flutter_svg: ^2.3.0
+  web: ^1.1.1
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/branding/app-logo-cb1bbbb6c0df.png
+    - assets/design/city-lunch/hero-wide.webp
+    - assets/design/city-lunch/hero-mobile.webp
+    - assets/site/badges/

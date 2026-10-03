@@ -8,10 +8,9 @@ import 'package:polevaya_kuhnya/core/auth/session_controller.dart';
 
 // Применяется и для адреса личного раздела, и для соседней колонки на широком экране.
 class SessionGatePage extends ConsumerWidget {
-  const SessionGatePage({required this.title, required this.isTest, super.key});
+  const SessionGatePage({required this.title, super.key});
 
   final String title;
-  final bool isTest;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,7 +31,6 @@ class SessionGatePage extends ConsumerWidget {
       title: heading,
       message: message,
       isLoading: status == SessionStatus.restoring,
-      isTest: isTest,
       onHome: () => context.go('/'),
       onRetry: status == SessionStatus.unavailable
           ? () => ref.read(sessionControllerProvider.notifier).restore()

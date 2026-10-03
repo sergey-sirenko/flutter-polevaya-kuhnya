@@ -1,0 +1,33 @@
+{
+  "build": "0.1.0+64",
+  "head": "7a375d161d31e1eb84087f0025c767e25252af1e",
+  "sha256": {
+    "lib/features/cart/cart_edit_controller.dart": "e5faeb793f4a9f5995cc619d67fede994091db157b5c544e6d8b7088985e11fb",
+    "lib/features/cart/cart_work_store.dart": "2cf98d9d88bb22dc4ee507644fcee4554c1faca2a0d717cc7874d72894e1eaaf",
+    "lib/features/cart/cart_work_banner.dart": "e7ec34afb9150be91b36d1bb57e3d565d0ae4565a7dd11644ccc69b089dd0dda",
+    "lib/features/cart/cart_page.dart": "7f942609c9bfc5edba91fcdd85f7b68bd1a180744f334f3507e284e436912335",
+    "lib/features/cart/cart_submit_controller.dart": "9dab9b450ff5801129e020319d3eb1bd9a8a84d06dccfe200b1e4091c4d5947f",
+    "lib/features/cart/cart_pricing_bridge.dart": "649f1dfebf88f50599775436e2b115582eb2cba7065e76ca3394f944820202b7",
+    "lib/features/cart/cart_summary_bar.dart": "3e7a015f178d264bd405f788460c2d25b87d7785f24ba2edd3dfa8976d01e617",
+    "lib/features/cart/cart_repeat_controller.dart": "72c7d64990eec18bada0c245af12686907ede9bb3fe9cb096a26dc2ca3008997",
+    "lib/features/cart/orders_page.dart": "473ecacb574bf7a3e26ffe57d55dcb27ed295f24db6018ea41dd0442d2b7e6f1",
+    "test/features/cart/cart_multiday_flow_test.dart": "75a81bf9188c4ad92587cc9c201327faa2bb5f2d583e81c0ca8edbb944dea948",
+    "test/features/cart/cart_work_store_test.dart": "f4bacf21f63ece61de38b1a5133968871820f55d513db8b0740bdffb1e92de83",
+    "test/features/cart/cart_edit_flow_test.dart": "ab847be6c3b17384fe89f76369c2e3cb9d37f71ecfe1e4766661024ef05b39eb",
+    "test/features/cart/cart_readability_test.dart": "0e39913ab9faf3aa0ef9e2f1771e237a01e19d390e1af1ba6ed51b68f9fb5cdb",
+    "test/features/cart/cart_saved_result_test.dart": "2bfa21b0794be1c81ddfba4ea1357806913560a9b068ae837f1e22a181a8cc09",
+    "test/features/cart/cart_snapshot_test.dart": "1f07e97456bff309bb472813aeabf9c960dd80e20724f4233d0b3ac493ba2e6b",
+    "test/features/cart/cart_summary_bar_test.dart": "107f04b2692fd0cdc92a5543630c1eebd29b5dd8fc56c77031485ed3f8a67627",
+    "test/features/auth/sign_in_page_test.dart": "a4d8945e6b787c2f04a28e4f814ca8891936356024598365a468fa87633bbd84",
+    "test/features/auth/sign_up_page_test.dart": "bc8f8bcde7dcb341f20b58ab6ca6a1ca9331fa52cc4af23575696c408af22633",
+    "tools/ux/cart_multiday_preview_test.dart": "11185c107067177a5a796218711c831afa96f12171bfd8e06fcea90c54949aa7",
+    "pubspec.yaml": "ead80fc3b2c315eaa08d15343dce9d50e7b40f36c0245d4020804260b8d5f74f",
+    "web/version.json": "e5f5ef63dfb4ffba842d2d8efbc9b133f1652cb2fc2b85be69cc03d575fe213c",
+    "build/web/main.dart.js": "d8e7aa7de2a259b8f706b8853714fca32b0df83068f6abb7d88c8f1283d1b512",
+    "build/web/version.json": "e5f5ef63dfb4ffba842d2d8efbc9b133f1652cb2fc2b85be69cc03d575fe213c",
+    "docs/testing/FL-UX-27b/cart-390-100.png": "962475160738c718e9104430c6bbf401028f00bd9db755fc71ed27e968a08219",
+    "docs/testing/FL-UX-27b/cart-390-160.png": "851146380748463d3cfaffb134716bf68d971866733247d07988ffff4aa272c5",
+    "docs/testing/FL-UX-27b/cart-1440-100.png": "90e6e5c2f9554331db4fb508b7e74fd854cd05a5af49e5ff4082e287364c0e09",
+    "docs/testing/FL-UX-27b/cart-1440-160.png": "409efd46cb60181149d94cc58f97b2b3d953a6ccbd4e30e5bfb5347bb10c60c8"
+  }
+}

@@ -7,11 +7,13 @@ void main() {
 
   test('test и prod различаются, адреса разрешаются от базовых путей', () {
     final testConfig = AppConfig.parse(
+      appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
       environment: 'test',
       apiBaseUrl: api,
       dataBaseUrl: data,
     );
     final prodConfig = AppConfig.parse(
+      appVersionUrl: 'https://new.obedmoscow.ru/version.json',
       environment: 'prod',
       apiBaseUrl: api,
       dataBaseUrl: 'https://obedmoscow.ru/data/',
@@ -28,12 +30,17 @@ void main() {
 
   test('неизвестное окружение и отсутствующие адреса отвергаются', () {
     expect(
-      () =>
-          AppConfig.parse(environment: '', apiBaseUrl: api, dataBaseUrl: data),
+      () => AppConfig.parse(
+        appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
+        environment: '',
+        apiBaseUrl: api,
+        dataBaseUrl: data,
+      ),
       throwsStateError,
     );
     expect(
       () => AppConfig.parse(
+        appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
         environment: 'test',
         apiBaseUrl: '',
         dataBaseUrl: data,
@@ -51,6 +58,7 @@ void main() {
     ]) {
       expect(
         () => AppConfig.parse(
+          appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
           environment: 'test',
           apiBaseUrl: invalid,
           dataBaseUrl: data,

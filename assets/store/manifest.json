@@ -1,0 +1,110 @@
+[
+  {
+    "path": "assets/store/google-play-feature-1024x500.png",
+    "sha256": "9fcbca4c5e58211a8d4e4ed8a5d002efd08b7533787581839b7ee4cfac349e25",
+    "bytes": 61968,
+    "size": [
+      1024,
+      500
+    ]
+  },
+  {
+    "path": "assets/store/google-play-icon-512.png",
+    "sha256": "7f329f512d1b20222773b10c10a8b7eafc213bc57fb1ce40663f730509282946",
+    "bytes": 234756,
+    "size": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "assets/store/icon-1024.png",
+    "sha256": "421e10cbce9ba7f7fa4fc393cc0cb3b5c619587918ed1afcea32dbf897f338c6",
+    "bytes": 878940,
+    "size": [
+      1024,
+      1024
+    ]
+  },
+  {
+    "path": "assets/store/rustore-icon-512.png",
+    "sha256": "ef815da41aaca576a48a4dfc9eecc705429cc6477c4650b31a188e8d34a77bee",
+    "bytes": 214383,
+    "size": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-phone/01-menu.png",
+    "sha256": "419c27554ffc2be64d1d077f05e0717f4dfccb78e35456b0c9dabb976062980f",
+    "bytes": 237069,
+    "size": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-phone/02-registration.png",
+    "sha256": "7bfd1bbdea3520ae7ed29167a8a1eaf18c039426f7fb1eaa5dd0de5228cd2f61",
+    "bytes": 68496,
+    "size": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-phone/03-next-day.png",
+    "sha256": "96fd8054f263878219f2ccbfb8d86261cc4974ee9885ab8c6e7c043ed7d1a7a0",
+    "bytes": 240664,
+    "size": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-phone/04-sign-in.png",
+    "sha256": "4d84849b3c1d3ad04403887b63ca13b94942cdf9252b0a4370eb5bfec7e9b8d5",
+    "bytes": 68634,
+    "size": [
+      1080,
+      1920
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-tablet-preview/01-menu.png",
+    "sha256": "d717ea207a0e3bbc0a522ff954aa4d971e2c8d1b1dcacd2fff0f41b4adfcb7cb",
+    "bytes": 161792,
+    "size": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-tablet-preview/02-next-day.png",
+    "sha256": "9be70a2ad6057c9c8083cda102ff74e27460eea1c34b99843c0cbfec0f2798d2",
+    "bytes": 147444,
+    "size": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-tablet-preview/03-sign-in.png",
+    "sha256": "2d2e364d3aec4332b14e87cb3b5acee7cc48b808a25db3c0551ada55f5fbb7d1",
+    "bytes": 53590,
+    "size": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "path": "assets/store/screenshots/android-tablet-preview/04-registration.png",
+    "sha256": "c4c0a757075a01f452ea716e623277c3eb01365e34ca049984a71915a8b140c0",
+    "bytes": 53972,
+    "size": [
+      1920,
+      1080
+    ]
+  }
+]

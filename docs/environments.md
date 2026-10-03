@@ -7,6 +7,7 @@
 | `APP_ENV` | `test` или `prod` | Обязателен; тестовый экран помечен «тест» |
 | `API_BASE_URL` | HTTPS-база HTTP-сервиса 1С с завершающим `/` | Обязателен, без логина/пароля в URL, query и fragment |
 | `DATA_BASE_URL` | HTTPS-база каталога `data/` с завершающим `/` | Обязателен; меню — `dishes.json`, изображения — `pictures/` |
+| `APP_VERSION_URL` | HTTPS `/version.json` Flutter-домена среды | Обязателен, без userinfo/query/fragment; не зависит от базы меню |
 
 При отсутствии или неверном значении запуск прерывается с ошибкой конфигурации. В проекте нет скрытого URL по умолчанию. Правила проверки адресов не доказывают доступность сервиса, CORS или наличие меню.
 
@@ -14,23 +15,46 @@
 
 | Окружение | Web origin | API | Данные |
 |---|---|---|---|
-| test | `https://flutter-test.obedmoscow.ru/` | `https://hleb-sol.su/Zakaz_http/hs/Obmen/` | `https://flutter-test.obedmoscow.ru/data/` |
-| prod | `https://obedmoscow.ru/` | `https://hleb-sol.su/Zakaz_http/hs/Obmen/` | `https://obedmoscow.ru/data/` |
+| test | `https://flutter-test.obedmoscow.ru/` | `https://hleb-sol.su/Zakaz_http/hs/Obmen/` | `https://obedmoscow.ru/data/` |
+| prod (старый сайт/PWA) | `https://obedmoscow.ru/` / `https://www.obedmoscow.ru/` | тот же API | runtime `…/data/` старого сайта |
+| prod (Flutter Web) | `https://new.obedmoscow.ru/` | `https://hleb-sol.su/Zakaz_http/hs/Obmen/` | `https://obedmoscow.ru/data/` |
 
-В [ТЗ, INF-2](<../Техническое задание.md>) указан `test.obedmoscow.ru`; он занят прежним сайтом. Для нового Flutter test выбран отдельный `flutter-test.obedmoscow.ru` по [FL-00-14c](tasks/FL-00-14c.md). Выбор `APP_ENV` определяет конфигурацию приложения, а опубликованный origin задаётся размещением сборки. Оба окружения обращаются к **одному рабочему API и базе 1С** по решению пользователя. Тестовые сценарии выполняются только выделенными тестовыми пользователями после подтверждения их роли и данных; `test` не означает изоляцию базы.
+В [ТЗ, INF-2](<../Техническое задание.md>) указан `test.obedmoscow.ru`; он занят прежним сайтом. Для нового Flutter test выбран отдельный `flutter-test.obedmoscow.ru` по [FL-00-14c](tasks/FL-00-14c.md).
 
-На 26.09.2026 новый test-vhost показывает служебную страницу, а `/data/*` и `/api/*` отвечают 503. Таблица задаёт **планируемый** адрес данных test; его доступность и наполнение не подтверждены. Прямой API 1С указан по [API-указателю 0.1](api-1c.md), но browser CORS с нового origin отложен пользователем и не проверен. Продакшен-данные и API не запрашивались в FL-01-06.
+**Размещение prod (решение пользователя 27.09.2026):** старый сайт/PWA prod и Flutter Web prod работают **параллельно**. Apex/`www` остаются у старого сайта; Flutter Web prod — `https://new.obedmoscow.ru/` (O-05) с возможностью в любой момент переключиться на старый сайт и обратно. CORS API: [cors-policy](../../Zak/docs/cors-policy.md) v1.0.3.
+
+Выбор `APP_ENV` определяет конфигурацию приложения, а опубликованный origin задаётся размещением сборки. Оба окружения обращаются к **одному рабочему API и базе 1С** по решению пользователя. Тестовые сценарии выполняются только выделенными тестовыми пользователями после подтверждения их роли и данных; `test` не означает изоляцию базы.
+
+После FL-06-20m на 28.09.2026 `https://flutter-test.obedmoscow.ru/` отдаёт тестовую сборку Flutter `0.1.0+8`. `/data/*` и `/api/*` этого vhost по-прежнему отвечают 503. DNS и Caddy для `new.obedmoscow.ru` до выпуска не подтверждены. Прямой API 1С указан по [API-указателю 0.1](api-1c.md). Browser CORS — FL-02-17f.
 
 ## Примеры команд
+
+FL-04-16a: Web test 0.1.0+3 с исправлением строкового servingweight выложен по SSH на flutter-test.obedmoscow.ru; публичная версия, 41 хеш и меню/фото проверены. Android-артефакты остаются 0.1.0+1 до подписанной пересборки; iOS отложена. Подробности и резерв — в карточке задачи.
+
+**Общий источник, решение 28.09.2026:** Android prod и Web test/prod используют `DATA_BASE_URL=https://obedmoscow.ru/data/` — меню и фотографии действующего рабочего сайта. [Android-скрипт](../tools/build_android_release.ps1), [Web test-скрипт](../tools/build_web_test.ps1), карточки [FL-07-07a](tasks/FL-07-07a.md) и [FL-07-07b](tasks/FL-07-07b.md). Существующие APK/AAB требуют пересборки; при возобновлении iOS-сборки передавать тот же источник, запрет iOS-тестирования сохраняется. Для Web используются существующие CORS-заголовки публичных файлов; Web origin и источник данных независимы.
 
 Команды показывают передачу публичных параметров. Их выполнение не равнозначно разрешению публикации или интеграционного сценария.
 
 ```powershell
-flutter run -d chrome --dart-define=APP_ENV=test --dart-define=API_BASE_URL=https://hleb-sol.su/Zakaz_http/hs/Obmen/ --dart-define=DATA_BASE_URL=https://flutter-test.obedmoscow.ru/data/
+flutter run -d chrome --dart-define=APP_ENV=test --dart-define=API_BASE_URL=https://hleb-sol.su/Zakaz_http/hs/Obmen/ --dart-define=DATA_BASE_URL=https://obedmoscow.ru/data/ --dart-define=APP_VERSION_URL=https://flutter-test.obedmoscow.ru/version.json
 ```
 
 ```powershell
-flutter build web --dart-define=APP_ENV=prod --dart-define=API_BASE_URL=https://hleb-sol.su/Zakaz_http/hs/Obmen/ --dart-define=DATA_BASE_URL=https://obedmoscow.ru/data/
+flutter build web --dart-define=APP_ENV=prod --dart-define=API_BASE_URL=https://hleb-sol.su/Zakaz_http/hs/Obmen/ --dart-define=DATA_BASE_URL=https://obedmoscow.ru/data/ --dart-define=APP_VERSION_URL=https://new.obedmoscow.ru/version.json
 ```
 
 Для Android и будущей iOS-сборки передаются те же три параметра с выбранными значениями. Адреса картинок и меню не подменяются API. Общий транспорт реализован в FL-01-12 без живых вызовов; внедрение сессии и вызовы конкретных модулей выполняются далее. Версии пакетов проверены в FL-01-07. Проверка сборок и публикация находятся в отдельных задачах.
+
+Для выпускных Web/Android-артефактов используйте [инструкцию FL-07-07](release-builds.md): Android AAB и APK подписываются разными ключами по согласованной схеме, без секретов в проекте. Команда сборки не публикует файлы.
+
+Разделение проверок Web — в [инструкции](testing-web-android.md). LLM собирает артефакт и гоняет локальные тесты. Живой сценарий в браузере выполняет пользователь на `https://flutter-test.obedmoscow.ru` после выкладки `build/web` по SSH. `localhost` не является приёмкой. Тестирование iOS временно отложено по указанию пользователя от 27.09.2026 до отдельного поручения.
+
+## Проект источника версий W07
+
+По [FL-06-20n](tasks/FL-06-20n.md) подготовлен [единый контракт v0.1](app-version-contract.md). Предлагается новый APP_VERSION_URL на /version.json Flutter-домена среды, одинаковый для Android/iOS/Web, отдельно от источника меню/фото. Параметр ещё не реализован в AppConfig/скриптах, JSON-policy не опубликована, порог/источник требуют решения владельца. Действующие параметры выше сохраняются; это не инструкция запускать сборку с уже поддерживаемым новым параметром.
+
+FL-06-20o: принятый источник W07 для test — `https://flutter-test.obedmoscow.ru/version.json`, prod — `https://new.obedmoscow.ru/version.json`. Параметр обязателен для Web/Android/iOS, включая будущие iOS-команды при снятии запрета. На завершение FL-06-20o контроллер ещё не был подключён к старту; FL-06-20p подключила его в локальном +10; опубликованный +8 ещё отдаёт legacy JSON без policy. Источник prod задан конфигурацией, доступность и policy prod не подтверждены. [Контракт](app-version-contract.md), [карточка](tasks/FL-06-20o.md).
+
+FL-06-20p подключила один startup GET APP_VERSION_URL перед сессией/router для Android/iOS/Web; новые локальные исходники +10, test +8. Legacy JSON без policy даёт unknown/явное продолжение. Policy/source prod не опубликованы; запрет iOS runtime сохраняется.
+
+FL-06-20q: на flutter-test опубликован Web 0.1.0+16 с test-policy. Минимум 0.1.0+1, Web-выпуск совпадает с корнем, Android и iOS — null. Сборка совпадает с выпуском, старт этой версии — current. Prod по-прежнему без policy. Действие обновления не начато: ADR-9 не принята.

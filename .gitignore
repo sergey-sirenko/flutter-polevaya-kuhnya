@@ -44,5 +44,12 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Android release signing secrets and certificate exports
+*.p12
+*.jks
+*.keystore
+*.pem
+**/key.properties
+
 # Widget Preview related
 .widget_preview/

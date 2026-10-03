@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <rect width="1024" height="500" fill="#FAF8F5"/>
+  <path d="M0 420Q300 280 580 400T1024 390V500H0Z" fill="#F4EDE8"/>
+  <circle cx="818" cy="242" r="108" fill="#B8572A"/>
+  <circle cx="818" cy="242" r="76" fill="none" stroke="#FAF8F5" stroke-width="9"/>
+  <circle cx="818" cy="242" r="53" fill="none" stroke="#FAF8F5" stroke-width="5"/>
+  <text x="86" y="221" fill="#4A3429" font-family="Segoe UI, sans-serif" font-size="58" font-weight="700">Полевая кухня</text>
+  <text x="89" y="287" fill="#6B5349" font-family="Segoe UI, sans-serif" font-size="32">Обеды для вашего офиса</text>
+</svg>

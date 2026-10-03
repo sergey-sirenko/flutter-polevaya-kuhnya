@@ -1,0 +1,4370 @@
+{
+  "capturedAt": "2026-10-01T19:53:04.225216+03:00",
+  "menuSource": "https://obedmoscow.ru/data/dishes.json",
+  "menuSHA256": "0d5e440aa6001a22684fd8ea2a85f5d6811a9529f3d325d1f283c159b9c87efb",
+  "initialDate": "2026-10-05",
+  "logoSource": "assets/branding/app-logo-cb1bbbb6c0df.png",
+  "logoSHA256": "cb1bbbb6c0df984c206058572185d3f9b54aeec7c2a0aacdefb57f491ec320e9",
+  "photos": [
+    {
+      "path": "0127abc9_1e57_11e9_8a73_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/0127abc9_1e57_11e9_8a73_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZi0="
+      ],
+      "bytes": 22934,
+      "sha256": "fb101b7bf7cd7cf376fdfe4f5b77140a968ea4f0c7e9b4d158154f67d5ee6b36",
+      "status": "ok"
+    },
+    {
+      "path": "02661c5a_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661c5a_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 7634,
+      "sha256": "7ef23b78b3694a5e56644256af1b150945320a8d148df3b3ed4efd2294b934f0",
+      "status": "ok"
+    },
+    {
+      "path": "02661c84_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661c84_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcc4="
+      ],
+      "bytes": 72485,
+      "sha256": "25e5399671a9625f623a7ed105b89f23c8bdfa8550efea72181dc0d22112fdc4",
+      "status": "ok"
+    },
+    {
+      "path": "02661c89_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661c89_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcdM="
+      ],
+      "bytes": 69651,
+      "sha256": "cdaeca9c5f03e6eb8a48118beebd69ee88d4ac4876e8d9c2978fdb4958828cf2",
+      "status": "ok"
+    },
+    {
+      "path": "02661c96_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661c96_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 6797,
+      "sha256": "87f06c3ad4c0e6f8434bdf12d90878cb9bba17a240c0e63a0a13dd10a30be8a3",
+      "status": "ok"
+    },
+    {
+      "path": "02661ca7_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661ca7_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 7024,
+      "sha256": "71d50a0ccabdd99da7054fd44e6e2c7096f164bf5eb317a10f50d5c99e9b61e8",
+      "status": "ok"
+    },
+    {
+      "path": "02661ca9_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661ca9_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcfM="
+      ],
+      "bytes": 69349,
+      "sha256": "956b5ee468d24c3e741650138c782da0b01940e034e9cb4a43dfda751795ac4d",
+      "status": "ok"
+    },
+    {
+      "path": "02661ce2_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661ce2_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcio="
+      ],
+      "bytes": 30101,
+      "sha256": "0ae80aa668146c19360c59bd5ec173f1d84df86dde1149ec022642a44fd7c4a8",
+      "status": "ok"
+    },
+    {
+      "path": "02661d11_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661d11_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVclc="
+      ],
+      "bytes": 72597,
+      "sha256": "bc0ab1e3b7c3e76dc0827303cef3c75ef2828e6ed869519cc9949d5606aabf42",
+      "status": "ok"
+    },
+    {
+      "path": "04a4eba3_b71f_11f0_8dd4_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/04a4eba3_b71f_11f0_8dd4_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYfw="
+      ],
+      "bytes": 68269,
+      "sha256": "3d7caf0cb91329f744b659aed458c312321ce114b1b545a97c978430106f1117",
+      "status": "ok"
+    },
+    {
+      "path": "05fa4cd0_8281_11f0_8dd1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/05fa4cd0_8281_11f0_8dd1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ9k="
+      ],
+      "bytes": 57920,
+      "sha256": "437a0f873b634d775f71bf9987cde4cd59b29f121a05cfaa61405901350996d0",
+      "status": "ok"
+    },
+    {
+      "path": "06774b3f_b969_11eb_8dba_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/06774b3f_b969_11eb_8dba_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ1w="
+      ],
+      "bytes": 69753,
+      "sha256": "e709ebbece941bf49245d8662b202554768c37adefef02454e9f41ecafaa8690",
+      "status": "ok"
+    },
+    {
+      "path": "06eb9bff_8f88_11ee_8df7_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/06eb9bff_8f88_11ee_8df7_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVacs="
+      ],
+      "bytes": 71152,
+      "sha256": "1aa9eff20332b6c2a53b6b2ff85a78dad826962ea6b8e8c8b7c70e28e7d3095b",
+      "status": "ok"
+    },
+    {
+      "path": "091d5a2a_1e5c_11e9_8a73_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/091d5a2a_1e5c_11e9_8a73_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZjQ="
+      ],
+      "bytes": 31476,
+      "sha256": "5a03f18115d9642415f58253a7c65e3c8ba3ff6c48c671aa359d06c1eb8a01a0",
+      "status": "ok"
+    },
+    {
+      "path": "09c38eb5_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38eb5_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcm8="
+      ],
+      "bytes": 66590,
+      "sha256": "927217b4898ca334014194764adcb1e4ed7206b017389bb6613d5c23935c61c7",
+      "status": "ok"
+    },
+    {
+      "path": "09c38eda_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38eda_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcpI="
+      ],
+      "bytes": 66505,
+      "sha256": "033bd72d5c467a4e6744ca6ba9f6592d40e669a9cbd7cc0937cf8bf74e2f4f8b",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f01_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f01_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcrc="
+      ],
+      "bytes": 71571,
+      "sha256": "56068db01d96c3a0f13a4f154f8aa4ba69ef50b78828e223dea5f87d63622250",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f1e_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f1e_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVctI="
+      ],
+      "bytes": 68975,
+      "sha256": "d64ed9d075839243ca1b88ff0ddae2cfd2748d7af14c87908a8aa42708024114",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f32_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f32_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcuQ="
+      ],
+      "bytes": 70557,
+      "sha256": "44d32b595a298c775250625258dc63c2c80ae9624ebd1089194dd46713815865",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f7d_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f7d_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcyo="
+      ],
+      "bytes": 68106,
+      "sha256": "c23835ddac78a6de772212043d6daa7f0d10f26490b875b2adbb578e65c2bc29",
+      "status": "ok"
+    },
+    {
+      "path": "09c59d44_d9c3_11e9_b749_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/09c59d44_d9c3_11e9_b749_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeWw="
+      ],
+      "bytes": 31949,
+      "sha256": "f0ba4133420f1601c4e3f7399d363b960daf3588f0ad9f884fff198d6247a133",
+      "status": "ok"
+    },
+    {
+      "path": "0b08b1a2_7684_11eb_8db6_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/0b08b1a2_7684_11eb_8db6_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZxY="
+      ],
+      "bytes": 13792,
+      "sha256": "8ad83958e335f5a588cf0826f4cc2ba703484c6958abee703f9c85457d60130a",
+      "status": "ok"
+    },
+    {
+      "path": "0ba406de_b5ca_11e4_91fb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/0ba406de_b5ca_11e4_91fb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVas8="
+      ],
+      "bytes": 22141,
+      "sha256": "5136dc798d2ba86023e79a5a36b226581a9ac9626eefb0ffe448ab70becd2ab3",
+      "status": "ok"
+    },
+    {
+      "path": "0d6071af_6e35_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/0d6071af_6e35_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaQs="
+      ],
+      "bytes": 72918,
+      "sha256": "6948fec13efc87e94f9a5c852ab98d439611a898dadd8ca6bc5773990e6ea464",
+      "status": "ok"
+    },
+    {
+      "path": "11da7c23_278e_11f1_8de1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/11da7c23_278e_11f1_8de1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaMs="
+      ],
+      "bytes": 69629,
+      "sha256": "53855e63590960fe648a5c05a7a630561919f1ba78c2e5fecdfb3fe18604c7ec",
+      "status": "ok"
+    },
+    {
+      "path": "14e11c18_9177_11f1_88bf_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/14e11c18_9177_11f1_88bf_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZfU="
+      ],
+      "bytes": 70281,
+      "sha256": "efd57d45ad89116ed05b50dff9fa6dc65ae8f0cff1a51ac4c2c00d2651a9c943",
+      "status": "ok"
+    },
+    {
+      "path": "17fdfe70_8a4e_11f1_88bc_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/17fdfe70_8a4e_11f1_88bc_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZe8="
+      ],
+      "bytes": 68721,
+      "sha256": "f4f8752d71f75894ac4234c6005d0f431a8d81fa981f4721e0a8e0ddd015fa9a",
+      "status": "ok"
+    },
+    {
+      "path": "19e06cdc_4adc_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/19e06cdc_4adc_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7c="
+      ],
+      "bytes": 66736,
+      "sha256": "b1faf78a5820e49fc11d4e23af19f7f5cf75822d805282327ddc35672100267c",
+      "status": "ok"
+    },
+    {
+      "path": "1c770d26_6e3f_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/1c770d26_6e3f_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaQw="
+      ],
+      "bytes": 69308,
+      "sha256": "361aa512bbcf35a3124c76bb804651cf3d9234595be828d90268bb726469fe2d",
+      "status": "ok"
+    },
+    {
+      "path": "22c19068_5d14_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/22c19068_5d14_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaPc="
+      ],
+      "bytes": 71211,
+      "sha256": "4141b4a33f2bbaa3280a25cc728ee4eb2c4ee855894eb7f73c66ce67fd3a1dbe",
+      "status": "ok"
+    },
+    {
+      "path": "25bded52_79e2_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/25bded52_79e2_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWzCM="
+      ],
+      "bytes": 71458,
+      "sha256": "b4f48ffa53abfc466bf4f14c69dd0ef941a2749b0a1a7b371406c92d302c9b9b",
+      "status": "ok"
+    },
+    {
+      "path": "2795ba0c_5471_11e0_8c0f_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/2795ba0c_5471_11e0_8c0f_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVZl4="
+      ],
+      "bytes": 59874,
+      "sha256": "5930f242b508dae307383af60c73bc7b9969fa51a4ef03b6359bc555b03a115a",
+      "status": "ok"
+    },
+    {
+      "path": "2ac78187_8066_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/2ac78187_8066_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSI="
+      ],
+      "bytes": 67488,
+      "sha256": "635016373a26ee6a0752f428b1ab24e1a50b4b4146ed63a0cba79d9343a26116",
+      "status": "ok"
+    },
+    {
+      "path": "2ee26828_9176_11f1_88bf_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/2ee26828_9176_11f1_88bf_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWy/M="
+      ],
+      "bytes": 73309,
+      "sha256": "ad86e77f61d37b72cf666b7ec490d4b4be4818fb83aed0559c4bd075595337af",
+      "status": "ok"
+    },
+    {
+      "path": "2fe167f1_b120_11e4_91c9_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/2fe167f1_b120_11e4_91c9_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVap0="
+      ],
+      "bytes": 23832,
+      "sha256": "1e35b09718ed34c0a3cc6f3983ff4d59b85096f559ce0f39288f964c2ae5fded",
+      "status": "ok"
+    },
+    {
+      "path": "32b90a1c_1e5b_11e9_8a73_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/32b90a1c_1e5b_11e9_8a73_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZi8="
+      ],
+      "bytes": 18080,
+      "sha256": "fb95c31777a32c4bcb0f7255ca60c9e3005f07064d32e0f08f06686b63b68a5b",
+      "status": "ok"
+    },
+    {
+      "path": "34b7c98d_7485_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/34b7c98d_7485_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaRc="
+      ],
+      "bytes": 70997,
+      "sha256": "56dbcbc6b26667197dafd926a586837748589d82786867d94fd39060a692fd3f",
+      "status": "ok"
+    },
+    {
+      "path": "35a25dc1_b11f_11e4_91c9_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/35a25dc1_b11f_11e4_91c9_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVapk="
+      ],
+      "bytes": 23216,
+      "sha256": "292df412ae3cec3115a732855eb34d1f3db705f8ccf5463e19f0f5ed940d7f1a",
+      "status": "ok"
+    },
+    {
+      "path": "360e6310_7e03_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/360e6310_7e03_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWzB8="
+      ],
+      "bytes": 71434,
+      "sha256": "94ae46e97880481f33ab687038c802d8e3fed2807681eedaaf0c6158afba4cde",
+      "status": "ok"
+    },
+    {
+      "path": "3754523e_9708_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/3754523e_9708_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ+M="
+      ],
+      "bytes": 60231,
+      "sha256": "ab24c900d89aeb231a6fd53a0e55ed5a2ecf4620b6c76d7c7c740cc298115d4e",
+      "status": "ok"
+    },
+    {
+      "path": "384b6a60_42d8_11e8_9cde_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/384b6a60_42d8_11e8_9cde_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcCw="
+      ],
+      "bytes": 61630,
+      "sha256": "4854f350105fb884633f881d26366219551ff9f983009280cdfe4e8fe7ca5066",
+      "status": "ok"
+    },
+    {
+      "path": "3a49ce9b_225e_11eb_8db5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/3a49ce9b_225e_11eb_8db5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZss="
+      ],
+      "bytes": 21475,
+      "sha256": "e89668b7d9d6d6fcc6a2c0a001809c58b15846ce1394456c6dc09d48d9ac8486",
+      "status": "ok"
+    },
+    {
+      "path": "3a90e4b5_1750_11ef_8e07_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/3a90e4b5_1750_11ef_8e07_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaiM="
+      ],
+      "bytes": 67374,
+      "sha256": "37fd503a0d4ecc54b4cf04c969a23b68578b26ea0511aa50fdc538122626b952",
+      "status": "ok"
+    },
+    {
+      "path": "3c3360d0_5d2c_11ea_a163_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/3c3360d0_5d2c_11ea_a163_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcQc="
+      ],
+      "bytes": 68453,
+      "sha256": "aa43993b8612624a844a6184b5262c38312fd55103a8f2332af74d7e55dc1a76",
+      "status": "ok"
+    },
+    {
+      "path": "3fcc9c7b_5d12_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/3fcc9c7b_5d12_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaPY="
+      ],
+      "bytes": 61356,
+      "sha256": "51011ed82bc6198da5433e471c905cc914fc5b6f976927c2902ea2a2e2c078a9",
+      "status": "ok"
+    },
+    {
+      "path": "4053fce8_a205_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/4053fce8_a205_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYfo="
+      ],
+      "bytes": 71335,
+      "sha256": "f32ba342febd4eac5dfc5937f979b123bebd4da65801b03cf7f12e1e5c907591",
+      "status": "ok"
+    },
+    {
+      "path": "47bf3eda_eda1_11e0_93ef_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/47bf3eda_eda1_11e0_93ef_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVa1U="
+      ],
+      "bytes": 72911,
+      "sha256": "d5dfda1f59abd78d62a402f1240d7b4731cf53ce453e5ac7dbfa279d2dd4b85e",
+      "status": "ok"
+    },
+    {
+      "path": "4f8313f7_b68e_11f1_88c5_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/4f8313f7_b68e_11f1_88c5_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZg4="
+      ],
+      "bytes": 66191,
+      "sha256": "b738367ed27d6bd182b2d0607dca022871f654903f115e990f21fe5deca7c0e9",
+      "status": "ok"
+    },
+    {
+      "path": "5142adef_ce5e_11ed_8dee_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/5142adef_ce5e_11ed_8dee_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaY0="
+      ],
+      "bytes": 30931,
+      "sha256": "d358fd11553a357f0c3869f59d58678829fe83db9555803124c64e4b54765b3c",
+      "status": "ok"
+    },
+    {
+      "path": "53e1b4e1_bf71_11ee_8df9_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/53e1b4e1_bf71_11ee_8df9_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaes="
+      ],
+      "bytes": 32515,
+      "sha256": "b94403562d6fcd68b33e732cf63f434f5a89a380780f36a01a68b2ae4f3f85b0",
+      "status": "ok"
+    },
+    {
+      "path": "53e395c9_5d18_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/53e395c9_5d18_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaPo="
+      ],
+      "bytes": 69039,
+      "sha256": "e232059d61002e8dfb94452c075651f579ca73fb1440c7a618d272faad2befca",
+      "status": "ok"
+    },
+    {
+      "path": "5470e6e4_66e4_11e7_bc2b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/5470e6e4_66e4_11e7_bc2b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWQN4="
+      ],
+      "bytes": 63974,
+      "sha256": "0e59875cdce740e640cca58527997c298c4ea8186e7d76d4c32c8bd1d114e981",
+      "status": "ok"
+    },
+    {
+      "path": "56394ff2_1e5b_11e9_8a73_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/56394ff2_1e5b_11e9_8a73_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZjA="
+      ],
+      "bytes": 22459,
+      "sha256": "47026f5df64264b0e5007e47e293071f9eba85d2029589e9e4cdde1c5a1fd606",
+      "status": "ok"
+    },
+    {
+      "path": "56550ed7_ef21_11e0_93ef_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/56550ed7_ef21_11e0_93ef_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVboY="
+      ],
+      "bytes": 73685,
+      "sha256": "decebfdd0bc77d37bbf1d73d03d6b81c7d8c333bffcb4833703908f4a6f98861",
+      "status": "ok"
+    },
+    {
+      "path": "58ae44dc_9232_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/58ae44dc_9232_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZzA="
+      ],
+      "bytes": 30889,
+      "sha256": "a547a89352050117c901971110e150ff2ac54d9999cb045cce752c44befe3090",
+      "status": "ok"
+    },
+    {
+      "path": "5da42415_395f_11e7_ba0c_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/5da42415_395f_11e7_ba0c_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeZE="
+      ],
+      "bytes": 73276,
+      "sha256": "341eac1da66558fb49460b5cabf41c305906bdc5e9d67fc8cb32935bae63117d",
+      "status": "ok"
+    },
+    {
+      "path": "5dd4258d_6800_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/5dd4258d_6800_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaQM="
+      ],
+      "bytes": 63177,
+      "sha256": "f6431c9be3f47666878e45cd9f8f0b82d81db5ce67bcd02d45a5f12efcba8cff",
+      "status": "ok"
+    },
+    {
+      "path": "6372ff6c_12e1_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/6372ff6c_12e1_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ5s="
+      ],
+      "bytes": 71738,
+      "sha256": "ebb2db102673e4ae477d346db9e60212f777af675f969af65ae3fa5eccc78edd",
+      "status": "ok"
+    },
+    {
+      "path": "65c2472b_bf71_11ee_8df9_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/65c2472b_bf71_11ee_8df9_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaew="
+      ],
+      "bytes": 23992,
+      "sha256": "01c3da23f8f8b0f0b9ea4d01d66776b8e414a50b84ab901879987d1ba5b1d786",
+      "status": "ok"
+    },
+    {
+      "path": "66e656bd_b02c_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/66e656bd_b02c_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVedI="
+      ],
+      "bytes": 68545,
+      "sha256": "9db070956f4cd7ed2a217572dcdde16d785ffea5a8d385b3037b5b6b33645463",
+      "status": "ok"
+    },
+    {
+      "path": "6dd30f10_c3d3_11f0_8dd7_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/6dd30f10_c3d3_11f0_8dd7_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaB0="
+      ],
+      "bytes": 68540,
+      "sha256": "7c1e5eb8b6ee515f7d09c143791e6a5f14f32b2fea5518e315e6ddbb41f09c75",
+      "status": "ok"
+    },
+    {
+      "path": "6dfd44e7_35a2_11e5_926b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/6dfd44e7_35a2_11e5_926b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVayc="
+      ],
+      "bytes": 72391,
+      "sha256": "941b4b3112fde4ef17ef3a9098957d582a6efbafee82f05064749ad87caf98bd",
+      "status": "ok"
+    },
+    {
+      "path": "6e3eb680_e340_11e4_96a2_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/6e3eb680_e340_11e4_96a2_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVb9Q="
+      ],
+      "bytes": 69620,
+      "sha256": "e98fa49b0b4d37c0310afe8ba4c2beb01e85cbf9e204a82595f0560d9e1a3589",
+      "status": "ok"
+    },
+    {
+      "path": "7054e051_ec00_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/7054e051_ec00_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVeG0="
+      ],
+      "bytes": 70358,
+      "sha256": "2aee4518c7d98ff04628341b444c88675248c2efaf68c7039e3fae21d223179f",
+      "status": "ok"
+    },
+    {
+      "path": "7055c770_42c8_11e4_a1a4_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/7055c770_42c8_11e4_a1a4_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcRM="
+      ],
+      "bytes": 70490,
+      "sha256": "6a49ccd5a59e2ce8efd44d250c62fe641b12f79230af1fec505d45d4cea2db90",
+      "status": "ok"
+    },
+    {
+      "path": "714388b2_3452_11eb_8db5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/714388b2_3452_11eb_8db5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZvE="
+      ],
+      "bytes": 28749,
+      "sha256": "4409972616bd0be9850af7ea1fd0c09c4fca99444bc7df6a7247770a64740659",
+      "status": "ok"
+    },
+    {
+      "path": "77058c4f_4b8b_11ec_8dd8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/77058c4f_4b8b_11ec_8dd8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaCw="
+      ],
+      "bytes": 66402,
+      "sha256": "9c7a6a3e9ee4f80008069cd3419df232523c3fc9f4248670c250f178812e0562",
+      "status": "ok"
+    },
+    {
+      "path": "77bd0338_bf71_11ee_8df9_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/77bd0338_bf71_11ee_8df9_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVae0="
+      ],
+      "bytes": 32515,
+      "sha256": "b94403562d6fcd68b33e732cf63f434f5a89a380780f36a01a68b2ae4f3f85b0",
+      "status": "ok"
+    },
+    {
+      "path": "7f081446_7a54_11ef_8e10_ac1f6badb50d",
+      "source": "https://obedmoscow.ru/data/pictures/7f081446_7a54_11ef_8e10_ac1f6badb50d.jpg",
+      "photoVersions": [
+        "AAAAAAAVaj8="
+      ],
+      "bytes": 70086,
+      "sha256": "566d5162e202efbde2160cb2982299a24ffad3a1cbbd914855a24cfd6aac1317",
+      "status": "ok"
+    },
+    {
+      "path": "7f8706ff_4356_11e6_9dfe_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/7f8706ff_4356_11e6_9dfe_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcKk="
+      ],
+      "bytes": 61578,
+      "sha256": "0d72ccecc9b035153d766534899257be6dbe77f3dfe1db45788ef67562a563a4",
+      "status": "ok"
+    },
+    {
+      "path": "83c7f738_e5ef_11ee_8dff_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/83c7f738_e5ef_11ee_8dff_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVafk="
+      ],
+      "bytes": 62902,
+      "sha256": "6f6b407f8225046f51b6502e3b24782dee0017aa02cd4d4e26c5bf0b6e15f01a",
+      "status": "ok"
+    },
+    {
+      "path": "85dfa2c5_2f5e_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/85dfa2c5_2f5e_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ6Y="
+      ],
+      "bytes": 68108,
+      "sha256": "4c73aba105023e734a1d6033e5a4dee9147028b8405ab27349455c523e491017",
+      "status": "ok"
+    },
+    {
+      "path": "85e2a993_5b55_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/85e2a993_5b55_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYfg="
+      ],
+      "bytes": 71493,
+      "sha256": "421bdf6edb04bed117200e8713d1f43b195c9e0cbdc8ed604d79f223d367ca3c",
+      "status": "ok"
+    },
+    {
+      "path": "8715ed7f_79e1_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/8715ed7f_79e1_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaRo="
+      ],
+      "bytes": 66736,
+      "sha256": "1aa70ab885a2c7f88e8f1b63a82c1961b61b62c10195a30b483f20daae8d0e46",
+      "status": "ok"
+    },
+    {
+      "path": "89379066_f706_11ee_8e00_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/89379066_f706_11ee_8e00_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVahk="
+      ],
+      "bytes": 66651,
+      "sha256": "5588d88c1786d817dd5d52a6c1c27f0168b2179dce5258ad2230f77d79772caa",
+      "status": "ok"
+    },
+    {
+      "path": "8c938902_06d2_11e6_9df8_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/8c938902_06d2_11e6_9df8_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWQNw="
+      ],
+      "bytes": 67282,
+      "sha256": "249ed85d997dc62a73c69e1b3e528e9d6c68c640f5ae29928a18f6b295d87bbb",
+      "status": "ok"
+    },
+    {
+      "path": "8e7c7b85_8cf1_11e5_8636_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/8e7c7b85_8cf1_11e5_8636_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWYfY="
+      ],
+      "bytes": 60496,
+      "sha256": "ab6a09ec9a453f167a374cc0000253da1f2682d14b8ac6ebb6e7c83307e3a316",
+      "status": "ok"
+    },
+    {
+      "path": "8f5ddbdc_3a2f_11e3_aba5_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/8f5ddbdc_3a2f_11e3_aba5_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdOU="
+      ],
+      "bytes": 13057,
+      "sha256": "088374537c2202c787bc76c150441e32fa9874e93503aeea9ba8c8da32eda9c9",
+      "status": "ok"
+    },
+    {
+      "path": "902dba85_90d8_11e0_a1cd_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/902dba85_90d8_11e0_a1cd_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVcR4="
+      ],
+      "bytes": 70554,
+      "sha256": "46080727eec262b0dae1746b1fa931c3ab4556e31118ba5a12079976ac563615",
+      "status": "ok"
+    },
+    {
+      "path": "917d81a5_dc3f_11e4_a7fe_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/917d81a5_dc3f_11e4_a7fe_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdE0="
+      ],
+      "bytes": 71609,
+      "sha256": "b7948d4738e8b0b4b3bd878396515baffadfe33aaa6adbe3181313a137657535",
+      "status": "ok"
+    },
+    {
+      "path": "92ca45d1_3ce1_11ea_a177_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/92ca45d1_3ce1_11ea_a177_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcQ8="
+      ],
+      "bytes": 30718,
+      "sha256": "f5b3e9a26ba8ac0e2aa8452ed81d2464744ddc87670744919e817bae0d535c00",
+      "status": "ok"
+    },
+    {
+      "path": "933ef8b5_744a_11ef_8e0f_ac1f6badb50d",
+      "source": "https://obedmoscow.ru/data/pictures/933ef8b5_744a_11ef_8e0f_ac1f6badb50d.jpg",
+      "photoVersions": [
+        "AAAAAAAVajo="
+      ],
+      "bytes": 69121,
+      "sha256": "89f33876c3b92bbc11cb05312e1f3933ddb386f6d30c23cbcd3038b487f37e25",
+      "status": "ok"
+    },
+    {
+      "path": "93b6a20e_7484_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/93b6a20e_7484_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaRU="
+      ],
+      "bytes": 69639,
+      "sha256": "952cde4f86421606540b8c0cad7453905742a564995f92ff5da67307d217383a",
+      "status": "ok"
+    },
+    {
+      "path": "95a634aa_917d_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/95a634aa_917d_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZys="
+      ],
+      "bytes": 19368,
+      "sha256": "fedb85b2ddbfc6a436d6c0b57ebe3a97b49154c896dda359bb2b7782b7d609f9",
+      "status": "ok"
+    },
+    {
+      "path": "96409b23_b02a_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/96409b23_b02a_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 5372,
+      "sha256": "028192a53299e21b021c9b40bb12e930c35c45f438b8a35da54cae339b07d512",
+      "status": "ok"
+    },
+    {
+      "path": "97b6e59a_b030_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/97b6e59a_b030_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVedU="
+      ],
+      "bytes": 66842,
+      "sha256": "b99a234c7b67d432c96ac656e5a29e46a84be624569721655a452aa4bef842fc",
+      "status": "ok"
+    },
+    {
+      "path": "9dfb84f2_b6f2_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/9dfb84f2_b6f2_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaLk="
+      ],
+      "bytes": 30036,
+      "sha256": "df7bef9c9f4e7f1bf5f613d6466b6fccb5b2a16acc487ed6f069eb3084de3026",
+      "status": "ok"
+    },
+    {
+      "path": "a3f3085b_bb29_11f1_88c9_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/a3f3085b_bb29_11f1_88c9_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWzIc="
+      ],
+      "bytes": 70108,
+      "sha256": "86fda1b7dae3e793d4dd44b88f812f8e8be714f1ff29b71520351a1306bc8207",
+      "status": "ok"
+    },
+    {
+      "path": "a52eb51e_4817_11e6_9244_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/a52eb51e_4817_11e6_9244_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVavk="
+      ],
+      "bytes": 67483,
+      "sha256": "1f8cd6bbce5b370c70431dd517f35f9b59962f0505b192fdf1c6aeb6d7dffb02",
+      "status": "ok"
+    },
+    {
+      "path": "a979928f_4bc3_11e5_bc29_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/a979928f_4bc3_11e5_bc29_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVehg="
+      ],
+      "bytes": 25970,
+      "sha256": "98d61bf1a07594fd0a73ad8d767e9ecbd503fadccc22aa44e4b7bf8a910b9831",
+      "status": "ok"
+    },
+    {
+      "path": "aac1bb87_150c_11ee_8def_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/aac1bb87_150c_11ee_8def_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAWYlU="
+      ],
+      "bytes": 69877,
+      "sha256": "021aabeae5784b673024117ee79fedb8ad13d7e3c4328c5f5ec3570007f732e2",
+      "status": "ok"
+    },
+    {
+      "path": "aba9bcff_eb58_11e5_92a0_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/aba9bcff_eb58_11e5_92a0_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVazE="
+      ],
+      "bytes": 66399,
+      "sha256": "89ac9741481fa0c3052d116c61a719608dcc273692f4e55ce543914f0be47283",
+      "status": "ok"
+    },
+    {
+      "path": "ac6c7434_5c0e_11e9_bf46_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ac6c7434_5c0e_11e9_bf46_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeoY="
+      ],
+      "bytes": 72877,
+      "sha256": "62d6a29a26419bd46c9443f69cdb75f33405712cc73f42c6247995f354062bfc",
+      "status": "ok"
+    },
+    {
+      "path": "ada69c5c_bbf9_11f1_88c9_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/ada69c5c_bbf9_11f1_88c9_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWYcA="
+      ],
+      "bytes": 51209,
+      "sha256": "d1cd01d3c5e81b52aab60407069d74b316e2805e578355d0f1a041072d482250",
+      "status": "ok"
+    },
+    {
+      "path": "ada69c5e_bbf9_11f1_88c9_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/ada69c5e_bbf9_11f1_88c9_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWYc8="
+      ],
+      "bytes": 51423,
+      "sha256": "b6d0c353f9f0bf7176fc6ee929868cb23e2ea0aeace73ed23baf42b0b8778a70",
+      "status": "ok"
+    },
+    {
+      "path": "adbf62fb_6afa_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/adbf62fb_6afa_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaQc="
+      ],
+      "bytes": 67941,
+      "sha256": "70be2e45821d83fc57603bd2635ef81c34bef8531c575a5b3bfc0f50d1f0c0dd",
+      "status": "ok"
+    },
+    {
+      "path": "ae250184_21a8_11e0_aef1_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/ae250184_21a8_11e0_aef1_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdqY="
+      ],
+      "bytes": 66898,
+      "sha256": "9c83a2ed62e4ad3590a54aa553c87ad89941131e3ef3f9b87265e0ff482fdfc9",
+      "status": "ok"
+    },
+    {
+      "path": "aee7b170_13bb_11eb_8db2_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/aee7b170_13bb_11eb_8db2_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZsY="
+      ],
+      "bytes": 64900,
+      "sha256": "207cb50c70cd51d56b922c9211502926cfccb8ddba46a518e5663aa305e7be38",
+      "status": "ok"
+    },
+    {
+      "path": "b16e7e6d_8c78_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/b16e7e6d_8c78_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZyc="
+      ],
+      "bytes": 30688,
+      "sha256": "66ac8c0dbd89f97684b241860e0017cf7ab1a526e34330e453cb011bc42c396e",
+      "status": "ok"
+    },
+    {
+      "path": "b1ade53c_9232_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/b1ade53c_9232_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZzE="
+      ],
+      "bytes": 28550,
+      "sha256": "67f99042963daec5b44ffa885244d0fdedb78681ad0b0cbde94166cfc378e9a3",
+      "status": "ok"
+    },
+    {
+      "path": "b3c404ae_8fa0_11e6_9ce7_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/b3c404ae_8fa0_11e6_9ce7_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcDE="
+      ],
+      "bytes": 67720,
+      "sha256": "0ac120f06bf199ab6dd8012c37cae2e3f26f70827bf17fa58774da5a17b073f1",
+      "status": "ok"
+    },
+    {
+      "path": "b55cfe88_dc3f_11e4_a7fe_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/b55cfe88_dc3f_11e4_a7fe_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdE8="
+      ],
+      "bytes": 69942,
+      "sha256": "db84544e61b6055bd00ad96d45efa4c6f9e3efc337e211e47a3ce94a1050c799",
+      "status": "ok"
+    },
+    {
+      "path": "b5c101fa_fff6_11e1_aecb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/b5c101fa_fff6_11e1_aecb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWYb8="
+      ],
+      "bytes": 70833,
+      "sha256": "487b59d0c2d0c42e0183ec57601bd1cca6c678f24d21c1535b70e75561cd75a4",
+      "status": "ok"
+    },
+    {
+      "path": "b7c19e48_8900_11ee_8df7_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/b7c19e48_8900_11ee_8df7_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVacM="
+      ],
+      "bytes": 22560,
+      "sha256": "30c05a1fe5d127fc491ec2854e832fa89489288399b08831c1f7e97db3352e98",
+      "status": "ok"
+    },
+    {
+      "path": "ba4af0c7_b02a_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ba4af0c7_b02a_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 6850,
+      "sha256": "e101cba5d43c0d64498bee88147a01585017a97d147d78fc4d63e2fb45932aee",
+      "status": "ok"
+    },
+    {
+      "path": "c63fedd2_4e43_11ef_8e0d_ac1f6badb50d",
+      "source": "https://obedmoscow.ru/data/pictures/c63fedd2_4e43_11ef_8e0d_ac1f6badb50d.jpg",
+      "photoVersions": [
+        "AAAAAAAVajI="
+      ],
+      "bytes": 67933,
+      "sha256": "18253ed1f8dc351c6cf3250e3f77ea4a19da040206f843250ea08d9e45050cfb",
+      "status": "ok"
+    },
+    {
+      "path": "c7ccbedf_3c2d_11ea_ac6b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/c7ccbedf_3c2d_11ea_ac6b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 7402,
+      "sha256": "c8be22d6ff1d54ba67946965a7c8bc5b782094f301bf59464f25bfb6754b84c0",
+      "status": "ok"
+    },
+    {
+      "path": "c90c0233_9175_11f1_88bf_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/c90c0233_9175_11f1_88bf_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWzB0="
+      ],
+      "bytes": 72675,
+      "sha256": "ea0e8bd9ee28e1b235fedf59f925a43153b3a2c9b30116f3cb541d50ca906eb1",
+      "status": "ok"
+    },
+    {
+      "path": "ca9837ca_b12e_11e4_91c9_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ca9837ca_b12e_11e4_91c9_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVap8="
+      ],
+      "bytes": 29674,
+      "sha256": "ebed55a4b4b871653b640e3310984cb7469eba16d463f13c5c9cb71da1df3001",
+      "status": "ok"
+    },
+    {
+      "path": "cc2248fa_657f_11f0_8dd1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/cc2248fa_657f_11f0_8dd1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ8g="
+      ],
+      "bytes": 70157,
+      "sha256": "a46e1a1908409892e57876e0a556cbc14727d25bb229d62c0ac909bb5665ed34",
+      "status": "ok"
+    },
+    {
+      "path": "ce1b48c2_a06e_11f1_88c2_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/ce1b48c2_a06e_11f1_88c2_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZf8="
+      ],
+      "bytes": 62848,
+      "sha256": "307fd682c627aba606463ae5971e19361744f56005e05d5e607c00d41519acc5",
+      "status": "ok"
+    },
+    {
+      "path": "ced31354_f10e_11ee_8e00_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/ced31354_f10e_11ee_8e00_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVahY="
+      ],
+      "bytes": 61163,
+      "sha256": "709a76487e957562db00b9ddada73106e35ad059d4dcc3a3f87755da15ab785c",
+      "status": "ok"
+    },
+    {
+      "path": "d64b5fd2_0a83_11ea_8a23_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/d64b5fd2_0a83_11ea_8a23_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWYf4="
+      ],
+      "bytes": 62752,
+      "sha256": "1fb145b7a04edbb0ddd572f5432f12d3d5bc253b01da0fbd8de3e4b330f1dfc2",
+      "status": "ok"
+    },
+    {
+      "path": "db00d9ff_5f8e_11ed_8dec_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/db00d9ff_5f8e_11ed_8dec_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAWYgE="
+      ],
+      "bytes": 71706,
+      "sha256": "03277f4dd222d5390b7b3b600b87f4dd4fc2511221e4ffcaa57a21ab0c22d926",
+      "status": "ok"
+    },
+    {
+      "path": "dbfb8cf0_d37f_11e9_b6bc_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/dbfb8cf0_d37f_11e9_b6bc_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeVY="
+      ],
+      "bytes": 69010,
+      "sha256": "bf23c84cb6e4a38336fe92ebcf86420b0eb6c6b69dbae45ef6b89a06dd23b8b7",
+      "status": "ok"
+    },
+    {
+      "path": "dd94786d_51c3_11ec_8dd8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/dd94786d_51c3_11ec_8dd8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaDM="
+      ],
+      "bytes": 62034,
+      "sha256": "98e44f8a914c1f1284472bfd14374aef414d1bbc2806f87439f0ea33d7bd7edc",
+      "status": "ok"
+    },
+    {
+      "path": "deafeec1_9f75_11ec_8ddb_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/deafeec1_9f75_11ec_8ddb_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaHE="
+      ],
+      "bytes": 68483,
+      "sha256": "605ff99bb5fbbc2ab08da3a89ec2170723c569ec0ec474fa221a90a092ef65ca",
+      "status": "ok"
+    },
+    {
+      "path": "e28f7222_a154_11e4_9183_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e28f7222_a154_11e4_9183_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVan4="
+      ],
+      "bytes": 63212,
+      "sha256": "dcdee3943b9943088bd88e18d55f73bf73792ba9e32871c3d5475bad534bba86",
+      "status": "ok"
+    },
+    {
+      "path": "e364c7b4_6afa_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/e364c7b4_6afa_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaQg="
+      ],
+      "bytes": 66612,
+      "sha256": "fa9cbc047ef844e87916f6f47604726ca22ccea9adf3cc94c48664b7871c6b2a",
+      "status": "ok"
+    },
+    {
+      "path": "e52870e6_1e5b_11e9_8a73_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e52870e6_1e5b_11e9_8a73_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZjM="
+      ],
+      "bytes": 31352,
+      "sha256": "0a0f0a20db17dd45b7c82b39e66559ded21970d060e5fdbb84941323e587733c",
+      "status": "ok"
+    },
+    {
+      "path": "e6b127cc_3672_11e8_bee3_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e6b127cc_3672_11e8_bee3_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVen4="
+      ],
+      "bytes": 28249,
+      "sha256": "45103a1f9d079e956e58b1c03d20479affd03a486ab84a912dd1e135360c7ab8",
+      "status": "ok"
+    },
+    {
+      "path": "e84e8ede_3392_11eb_8db5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/e84e8ede_3392_11eb_8db5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZu4="
+      ],
+      "bytes": 63634,
+      "sha256": "c8a92ffd37c25a070029326551349884a878ec85a61584a4de3d81d354566a00",
+      "status": "ok"
+    },
+    {
+      "path": "e87e4db6_e259_11e4_8615_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e87e4db6_e259_11e4_8615_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZXI="
+      ],
+      "bytes": 62137,
+      "sha256": "4aeb0f1ba8f6f10856372f6241de92885ee3ad99b60e50d4c0a44836893007ef",
+      "status": "ok"
+    },
+    {
+      "path": "f0bc3f79_16e0_11e2_92fa_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/f0bc3f79_16e0_11e2_92fa_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVazs="
+      ],
+      "bytes": 30048,
+      "sha256": "1794ea8845f996a96727793b4e2f4192dd6ff4418ccc20903bfbf492f00d3fda",
+      "status": "ok"
+    },
+    {
+      "path": "f1097d42_4e00_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/f1097d42_4e00_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaOs="
+      ],
+      "bytes": 62060,
+      "sha256": "36923973d12cbe4b5779c3531715bdb13a09ae58e61ff3df2db23c525cf35a7c",
+      "status": "ok"
+    },
+    {
+      "path": "f144f1f3_194f_11f1_8dde_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/f144f1f3_194f_11f1_8dde_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaJQ="
+      ],
+      "bytes": 65553,
+      "sha256": "590a9c9591961c2f0d335588d2725c334b895e1790e8bd9248500b60d51bc5e0",
+      "status": "ok"
+    },
+    {
+      "path": "f30335c9_00fa_11ed_8de2_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/f30335c9_00fa_11ed_8de2_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaNw="
+      ],
+      "bytes": 66433,
+      "sha256": "affb085c00862b37414d8bb307fbaca3d11b505b3ec88114365fbb6d04c8be4d",
+      "status": "ok"
+    },
+    {
+      "path": "f3e788f1_167d_11ea_ac7d_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/f3e788f1_167d_11ea_ac7d_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdTY="
+      ],
+      "bytes": 71806,
+      "sha256": "e6012ac6507acd4dfda1675e34bef652e81f611e86482e304e738f2dafe43b8c",
+      "status": "ok"
+    },
+    {
+      "path": "fb7a1f16_b541_11ee_8df7_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/fb7a1f16_b541_11ee_8df7_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaeI="
+      ],
+      "bytes": 67511,
+      "sha256": "24c2a18604d06d25547f832c402cedc1bb1f47e3755d7fc27c800eb3cd557f6f",
+      "status": "ok"
+    },
+    {
+      "path": "fe5ab2cf_1e38_11e9_8a73_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/fe5ab2cf_1e38_11e9_8a73_f46d0464acc0.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 7526,
+      "sha256": "78d2984908ba4896b1022ba8351f5c5fea2f26633e5d19da7d00f105a52a9268",
+      "status": "ok"
+    },
+    {
+      "path": "ff0daadb_7484_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/ff0daadb_7484_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaRY="
+      ],
+      "bytes": 70917,
+      "sha256": "f191def30bceb46cdfeeb7b2e65dd3e94f52983cfec5dcea84bc30f3560764d5",
+      "status": "ok"
+    },
+    {
+      "path": "ffcafc64_4f14_11e6_9ab3_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ffcafc64_4f14_11e6_9ab3_f46d0464acc0.jpg",
+      "photoVersions": [
+        "legacy"
+      ],
+      "bytes": 6980,
+      "sha256": "fdc129073ffe8a086b4b47096c20e37ddba1a786cf11940eb967d3ad771f0d86",
+      "status": "ok"
+    },
+    {
+      "path": "00ce5549_fff0_11e1_aecb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/00ce5549_fff0_11e1_aecb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdbk="
+      ],
+      "bytes": 61647,
+      "sha256": "5bc9510a0d3de465dc12ab8b4ecebc6b4ef7f5930aa612bbe07039c08c303b1f",
+      "status": "ok"
+    },
+    {
+      "path": "00ce557b_fff0_11e1_aecb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/00ce557b_fff0_11e1_aecb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdcg="
+      ],
+      "bytes": 71112,
+      "sha256": "cd7a9bd6a1ffa025cc1c13f4c6ba79f3b08f87bb85ff4d77f102a0669ac95528",
+      "status": "ok"
+    },
+    {
+      "path": "00ce5599_fff0_11e1_aecb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/00ce5599_fff0_11e1_aecb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVddA="
+      ],
+      "bytes": 72624,
+      "sha256": "cd6800ad44abcfa11f0a2b981f7926c0bb3dd6d89047e4d207c7f928aaef91d8",
+      "status": "ok"
+    },
+    {
+      "path": "0184cf83_a854_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/0184cf83_a854_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWvxM="
+      ],
+      "bytes": 70178,
+      "sha256": "83e199247b1e1e16ca197bae9d2b2a98a5f70594df8683d1832c9bf67bf7a702",
+      "status": "ok"
+    },
+    {
+      "path": "01d60a80_2f5c_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/01d60a80_2f5c_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ6U="
+      ],
+      "bytes": 65516,
+      "sha256": "0f2a9a5000c38bed1ed9c96437ec81b00edbd5f9e92bb7c994f890712559ab69",
+      "status": "ok"
+    },
+    {
+      "path": "0216ba84_ef05_11f0_8ddc_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/0216ba84_ef05_11f0_8ddc_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaHY="
+      ],
+      "bytes": 73027,
+      "sha256": "a9a35614475ed96ac69852a5ebb9633b2c47ebb0cd1fd78e40cb8dbd67f38ce1",
+      "status": "ok"
+    },
+    {
+      "path": "0261596c_5cda_11e8_b2d4_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/0261596c_5cda_11e8_b2d4_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVd7U="
+      ],
+      "bytes": 29730,
+      "sha256": "908aa4e0826eacbced8191ad1fddee1f5f1b0e29ae3bb74e915fbbdf592ce6af",
+      "status": "ok"
+    },
+    {
+      "path": "02661c8b_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661c8b_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcdU="
+      ],
+      "bytes": 60394,
+      "sha256": "4c4de7ba84b827ae05f7945d61696990ea293d16db40f925fe2f03e28e7a89ec",
+      "status": "ok"
+    },
+    {
+      "path": "02661c8c_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661c8c_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcdY="
+      ],
+      "bytes": 70514,
+      "sha256": "43f30dac1d8b3f33ce21f824642e317a24c6ac5c7aa3e970165259743ec4b770",
+      "status": "ok"
+    },
+    {
+      "path": "02661ca5_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661ca5_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVce8="
+      ],
+      "bytes": 67139,
+      "sha256": "514237b24109b660ffe7b8b95d44e447c740b78510aeff429afe0b2a8181e1d4",
+      "status": "ok"
+    },
+    {
+      "path": "02661cc5_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661cc5_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcg0="
+      ],
+      "bytes": 66596,
+      "sha256": "6a81e90cd2c7bb04df6d431ab300948567939cd6515a5b11a3806038e9c2431c",
+      "status": "ok"
+    },
+    {
+      "path": "02661cc8_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661cc8_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVchA="
+      ],
+      "bytes": 64191,
+      "sha256": "bd1c26644cb7659683089bd4c569ee85108279e181c3e1dc60b5203361a0f9de",
+      "status": "ok"
+    },
+    {
+      "path": "02661ccb_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661ccb_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVchM="
+      ],
+      "bytes": 71977,
+      "sha256": "2642d3a89d690c5d786ff1b36e3fe8fa17c4a0efddb540ec9bbf82c69f9676c1",
+      "status": "ok"
+    },
+    {
+      "path": "02661ccd_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661ccd_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVchU="
+      ],
+      "bytes": 71860,
+      "sha256": "a9cf6822e38b053dd3dc073937dccef2cac34cb39749ada3afbfc4a579dec0c8",
+      "status": "ok"
+    },
+    {
+      "path": "02661ce5_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661ce5_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAWrbA="
+      ],
+      "bytes": 63019,
+      "sha256": "a158f08a91720fb1171dfc528a94353230b28525ca57a25238ce6b29d5c913d1",
+      "status": "ok"
+    },
+    {
+      "path": "02661cfc_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661cfc_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVckI="
+      ],
+      "bytes": 69432,
+      "sha256": "d7b717467419b8e12f534b673b2962e67733a7df2bc3e6d6bf6635c786daf53f",
+      "status": "ok"
+    },
+    {
+      "path": "02661d00_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661d00_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVckY="
+      ],
+      "bytes": 29953,
+      "sha256": "12bcb7dafe93f9de0b241ff52cb521a53327ad595e977a006bbec3fbd4fb8b43",
+      "status": "ok"
+    },
+    {
+      "path": "02661d07_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/02661d07_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVck0="
+      ],
+      "bytes": 59903,
+      "sha256": "051149b45fb4c0d1cab453f97a85c40b3f078fef557f51891e8b90ce82264fbf",
+      "status": "ok"
+    },
+    {
+      "path": "03420f0a_1766_11ef_8e07_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/03420f0a_1766_11ef_8e07_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaiQ="
+      ],
+      "bytes": 73458,
+      "sha256": "00ba0979603b620dc36ad1caa266de582d85ff37b4c937197935b3d5c38d524d",
+      "status": "ok"
+    },
+    {
+      "path": "03f7358c_0077_11ea_abb4_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/03f7358c_0077_11ea_abb4_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdPQ="
+      ],
+      "bytes": 32035,
+      "sha256": "72f8540c6d90c6860d7ce9501b6fb95b0770876b27c4e70394585c0d90865d6c",
+      "status": "ok"
+    },
+    {
+      "path": "046d2a36_b4fb_11f1_88c4_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/046d2a36_b4fb_11f1_88c4_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWzRA="
+      ],
+      "bytes": 70043,
+      "sha256": "9beca22f4d3a9a00e01f07f48e3959b0dbdb15cfc1304eafc2594889596c148c",
+      "status": "ok"
+    },
+    {
+      "path": "04ffee1f_3ce1_11ea_a177_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/04ffee1f_3ce1_11ea_a177_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcQ4="
+      ],
+      "bytes": 25482,
+      "sha256": "742ab708177c0ceb1e47c893b6926bc539bac2eeb02f5b17df4db354e1dcfe4e",
+      "status": "ok"
+    },
+    {
+      "path": "060c9b91_e534_11ee_8dff_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/060c9b91_e534_11ee_8dff_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAWYxE="
+      ],
+      "bytes": 62259,
+      "sha256": "ac2332e72ae464c635ec8c1099c994568a9af2804b649c98f4716fc456bb75d9",
+      "status": "ok"
+    },
+    {
+      "path": "0622e5c1_9d29_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/0622e5c1_9d29_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZz4="
+      ],
+      "bytes": 67548,
+      "sha256": "14cb7641cc7963bf0a18b51c322ff5dfa815d16ba8663aef0f90801fa7ce9434",
+      "status": "ok"
+    },
+    {
+      "path": "066d8cdc_6155_11ec_8dda_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/066d8cdc_6155_11ec_8dda_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaFU="
+      ],
+      "bytes": 65094,
+      "sha256": "f27380d700f1bcb528badbdfd18cac27ce70417c3f49ac2796b000fb47eef99f",
+      "status": "ok"
+    },
+    {
+      "path": "09c38ead_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38ead_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAWYgU="
+      ],
+      "bytes": 69248,
+      "sha256": "8faa6d6dc1434710952035ccb4cbe06eb7e8caf5f60d705c41b0708ffb76d426",
+      "status": "ok"
+    },
+    {
+      "path": "09c38ec5_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38ec5_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcn8="
+      ],
+      "bytes": 32638,
+      "sha256": "33cd5d254fd89bed1ebc000db8a6f7c7aaafed257e5b135ce327ae10dafd2a00",
+      "status": "ok"
+    },
+    {
+      "path": "09c38ec6_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38ec6_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcoA="
+      ],
+      "bytes": 67934,
+      "sha256": "1323ad68ea13e8b0a38609b5fc2917b6493f47ed0b3b03d7dbcc46101cfa58af",
+      "status": "ok"
+    },
+    {
+      "path": "09c38ecc_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38ecc_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcoY="
+      ],
+      "bytes": 25713,
+      "sha256": "9efa2f6990bc94abe001da92c6639d5563f5f5878b52b3100fcb7eaa68d7c478",
+      "status": "ok"
+    },
+    {
+      "path": "09c38ecf_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38ecf_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcok="
+      ],
+      "bytes": 31341,
+      "sha256": "945b72ee7c6b26e3d05998fdc06aa8a361b77f1ab92d85830cd8de47535f6e57",
+      "status": "ok"
+    },
+    {
+      "path": "09c38ed5_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38ed5_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVco8="
+      ],
+      "bytes": 71836,
+      "sha256": "53b5e87b8f6b4adfa24ad4eca9c59645b49848e4faabb28f95f707ddb8a7e477",
+      "status": "ok"
+    },
+    {
+      "path": "09c38ed9_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38ed9_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcpE="
+      ],
+      "bytes": 66895,
+      "sha256": "4632df668a2c49e831af2a9ccccb964bced58e3e391d5c582dac02e838e5de16",
+      "status": "ok"
+    },
+    {
+      "path": "09c38eec_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38eec_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcqQ="
+      ],
+      "bytes": 32393,
+      "sha256": "472ccf711cba4e417354c9ebc95838e59bf17ffd6919091884d09b0bc5fec865",
+      "status": "ok"
+    },
+    {
+      "path": "09c38eee_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38eee_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAWrZc="
+      ],
+      "bytes": 29247,
+      "sha256": "1413a3870aaa21d8eeb64c9ede948841ecb9a30a5b6b437983ebb79ac162b22c",
+      "status": "ok"
+    },
+    {
+      "path": "09c38efb_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38efb_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcrM="
+      ],
+      "bytes": 72938,
+      "sha256": "be9c3697615ffd20dfa77e4944a82bf4dc3ee5ea20c4a1c7ce1081003eeba6eb",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f42_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f42_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcvQ="
+      ],
+      "bytes": 66594,
+      "sha256": "b841022820017abf46f033edc090a454cda52b142ed45a72ff1144a1b1677957",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f7e_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f7e_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVcys="
+      ],
+      "bytes": 63601,
+      "sha256": "052e10e644eabde692952ec1b5eb3757b78500fa20a985663e96ee4a47b062d4",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f83_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f83_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAWYhE="
+      ],
+      "bytes": 69619,
+      "sha256": "f7be11771081cee8283c1459deac38930d2312d1a42847c4ef042359b48e678e",
+      "status": "ok"
+    },
+    {
+      "path": "09c38f8a_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/09c38f8a_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVczU="
+      ],
+      "bytes": 30330,
+      "sha256": "bb892267e445c715c8e783165fa440d16ec847a514621c69a63b238dd26701e4",
+      "status": "ok"
+    },
+    {
+      "path": "0b238c6f_b49a_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/0b238c6f_b49a_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaK8="
+      ],
+      "bytes": 70722,
+      "sha256": "7b2ffecb6e39ee5f9f049f25cdedda3cd6a5283206a80be7ebc799b36c1eb0c3",
+      "status": "ok"
+    },
+    {
+      "path": "0c46f3da_4fa0_11e0_ab03_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/0c46f3da_4fa0_11e0_ab03_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdMY="
+      ],
+      "bytes": 68083,
+      "sha256": "3941e1586131c73cef232dbd940c12ad60b7f71b22ad6722e72a087a44350b70",
+      "status": "ok"
+    },
+    {
+      "path": "0d28db7a_0058_11f1_8ddc_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/0d28db7a_0058_11f1_8ddc_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaH0="
+      ],
+      "bytes": 66736,
+      "sha256": "b1faf78a5820e49fc11d4e23af19f7f5cf75822d805282327ddc35672100267c",
+      "status": "ok"
+    },
+    {
+      "path": "0d5a1394_1775_11e2_92fa_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/0d5a1394_1775_11e2_92fa_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVaz8="
+      ],
+      "bytes": 64273,
+      "sha256": "e59d9d295493e4027ca0371297edc0c8d56297fc8861f3c944b7a3c43498ae7d",
+      "status": "ok"
+    },
+    {
+      "path": "0d7b6d3f_0a87_11f1_8ddc_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/0d7b6d3f_0a87_11f1_8ddc_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaI8="
+      ],
+      "bytes": 68359,
+      "sha256": "417a7ae386edefba4ffb51bae7e0ae005def9418085d7bd4254a53c83d27e455",
+      "status": "ok"
+    },
+    {
+      "path": "0ddf4338_9f77_11ec_8ddb_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/0ddf4338_9f77_11ec_8ddb_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaHI="
+      ],
+      "bytes": 66498,
+      "sha256": "ad3f5634b21427729ff8aabbc30a54940463d357a8ea8e9cfc4feb086855480f",
+      "status": "ok"
+    },
+    {
+      "path": "0e62c1a3_3260_11e8_b326_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/0e62c1a3_3260_11e8_b326_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVd9c="
+      ],
+      "bytes": 64465,
+      "sha256": "5f4fbf07370a6d4e4f33249c16dfc6a16fa071f237885d40e241cc578f6dcb4b",
+      "status": "ok"
+    },
+    {
+      "path": "0e78ec5f_b4c2_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/0e78ec5f_b4c2_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaLc="
+      ],
+      "bytes": 62799,
+      "sha256": "358ef83e639b5ed9863ea27afe4803db3ae1da6d6dbd6f2d13964dba82e2a0b9",
+      "status": "ok"
+    },
+    {
+      "path": "0efc3b51_cb06_11ea_8db0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/0efc3b51_cb06_11ea_8db0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZpk="
+      ],
+      "bytes": 69643,
+      "sha256": "03152e845843c056fac0ceb308fde79f75ac17f1b623a58dd51bb095a29ba349",
+      "status": "ok"
+    },
+    {
+      "path": "1091b81e_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/1091b81e_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVc08="
+      ],
+      "bytes": 68237,
+      "sha256": "1f2eeb3599fb0d5309a7c8a1c368271b33d1d7cdbdc3d2e82e5ecac231ae620d",
+      "status": "ok"
+    },
+    {
+      "path": "1091b829_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/1091b829_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVc1g="
+      ],
+      "bytes": 60143,
+      "sha256": "e70b1179ad98ee5f5562001f6a0d61f284625de6ba22d32e9716c4a7567aa13f",
+      "status": "ok"
+    },
+    {
+      "path": "1091b83f_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/1091b83f_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVc2w="
+      ],
+      "bytes": 68350,
+      "sha256": "f0cebf022e224be0e7a83c910894a9a30ffb369ef5b39aebfe192bbe9818b90b",
+      "status": "ok"
+    },
+    {
+      "path": "1091b841_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/1091b841_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVc24="
+      ],
+      "bytes": 66745,
+      "sha256": "228ad2e131b6138e9eb5e5568d1d2a6cfa1fd4cec50fe9b60e841068048964e0",
+      "status": "ok"
+    },
+    {
+      "path": "1091b84c_e124_11df_a4cd_e0cb4ec1499d",
+      "source": "https://obedmoscow.ru/data/pictures/1091b84c_e124_11df_a4cd_e0cb4ec1499d.jpg",
+      "photoVersions": [
+        "AAAAAAAVc3k="
+      ],
+      "bytes": 59366,
+      "sha256": "f9eab23af5e0a96af5a5b180d85df22d812df21ae229f873b47d95bc62c279b1",
+      "status": "ok"
+    },
+    {
+      "path": "1122c875_7669_11ed_8ded_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/1122c875_7669_11ed_8ded_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaWI="
+      ],
+      "bytes": 28634,
+      "sha256": "b7e2e51207ce6d2f962db49a77316ef078af804e3fa347162887572ca66807e2",
+      "status": "ok"
+    },
+    {
+      "path": "1173a6b9_8401_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/1173a6b9_8401_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSY="
+      ],
+      "bytes": 63324,
+      "sha256": "92d9677ac1445723a3811761538298e87fe438f2463c3d477a96d22e4c241396",
+      "status": "ok"
+    },
+    {
+      "path": "1316df88_c7b0_11f0_8dd7_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/1316df88_c7b0_11f0_8dd7_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaB8="
+      ],
+      "bytes": 70938,
+      "sha256": "6ed75efccf65e35a58d7e38581ae439b3978b2ad3343b40284b8501f5daf446b",
+      "status": "ok"
+    },
+    {
+      "path": "13cac390_9879_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/13cac390_9879_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ+c="
+      ],
+      "bytes": 73062,
+      "sha256": "7f000f087089c1f3cfa38d3d721e60b1cba39f4a5ce45755b8174ab29b18b1a8",
+      "status": "ok"
+    },
+    {
+      "path": "15e55cbd_b71c_11f0_8dd4_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/15e55cbd_b71c_11f0_8dd4_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaAw="
+      ],
+      "bytes": 64493,
+      "sha256": "c42d21251101088377c31b6e880ed5a29dc2f4bf710cba359557fe27b807a848",
+      "status": "ok"
+    },
+    {
+      "path": "17123fdc_3728_11e8_a883_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/17123fdc_3728_11e8_a883_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdIA="
+      ],
+      "bytes": 67027,
+      "sha256": "cde3a332cb64c91ab2768057358b153f2495643c43289c1abc0aa98b3d626db6",
+      "status": "ok"
+    },
+    {
+      "path": "17a136d3_6b10_11e0_8ded_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/17a136d3_6b10_11e0_8ded_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVaVs="
+      ],
+      "bytes": 67892,
+      "sha256": "c348dfedd39d73c16d2db483741fb3bbd60b9b76cea00e014fdc8c5f89e0f2b4",
+      "status": "ok"
+    },
+    {
+      "path": "181f67d0_ebf0_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/181f67d0_ebf0_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVeGY="
+      ],
+      "bytes": 69554,
+      "sha256": "5d9e658a216136c6a7c85e6e472ce42d6a2217a1c0f5af43795dd26a7d27fcbf",
+      "status": "ok"
+    },
+    {
+      "path": "186557b4_8a4e_11f1_88bc_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/186557b4_8a4e_11f1_88bc_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZfA="
+      ],
+      "bytes": 61611,
+      "sha256": "5e6722eb1afda34766eff8e0aa01c6260d5a734026efcbcb14169d3af7fb5412",
+      "status": "ok"
+    },
+    {
+      "path": "195b9a6a_9089_11ef_8e19_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/195b9a6a_9089_11ef_8e19_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaks="
+      ],
+      "bytes": 71607,
+      "sha256": "0dca511a5b34ae59c4e8a6a6eb9d7ef914c007ca8fe9f323bfe3c63f26771ea8",
+      "status": "ok"
+    },
+    {
+      "path": "1c9c526b_431a_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/1c9c526b_431a_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaOk="
+      ],
+      "bytes": 70046,
+      "sha256": "e659467c663bac6e6426878362886b6ab44063cdd035a5d13502748e5c747465",
+      "status": "ok"
+    },
+    {
+      "path": "1d1d668d_3966_11e7_ba0c_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/1d1d668d_3966_11e7_ba0c_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeZI="
+      ],
+      "bytes": 69051,
+      "sha256": "23a22558fe9a84718c9a29ba40762005754849dc518d16b62a6fc42f907522ed",
+      "status": "ok"
+    },
+    {
+      "path": "1d843d7e_149e_11f0_8dce_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/1d843d7e_149e_11f0_8dce_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ54="
+      ],
+      "bytes": 65033,
+      "sha256": "46546651206edca1139d517c14c6d2242bbbb0b2dd0b8093263e58f8c04e3491",
+      "status": "ok"
+    },
+    {
+      "path": "20118ba5_1374_11ef_8e07_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/20118ba5_1374_11ef_8e07_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaiI="
+      ],
+      "bytes": 67817,
+      "sha256": "541d7cbc5f5028a0a9837609a6dbf23bdaa42fb369142ac62609af99507fbd30",
+      "status": "ok"
+    },
+    {
+      "path": "21c1f4c5_1bc3_11f1_8dde_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/21c1f4c5_1bc3_11f1_8dde_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaJU="
+      ],
+      "bytes": 65407,
+      "sha256": "a0cbcd28e3855e19c1e7d521f4ce23ec290df1957db633355a091ff5671d5203",
+      "status": "ok"
+    },
+    {
+      "path": "2218364d_05d9_11ea_a0a6_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/2218364d_05d9_11ea_a0a6_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcO4="
+      ],
+      "bytes": 64861,
+      "sha256": "80871f7883c1420a0331361abab203dcdf75d1d9adfaabef391d6290064b45cc",
+      "status": "ok"
+    },
+    {
+      "path": "244cc7a2_d139_11f0_8dd9_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/244cc7a2_d139_11f0_8dd9_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWrd8="
+      ],
+      "bytes": 72377,
+      "sha256": "3bcfb97918147249e5a46c43e03520dbbe45ef72f89fb95533a1160dc11d2d52",
+      "status": "ok"
+    },
+    {
+      "path": "2465980a_0d22_11e2_ad37_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/2465980a_0d22_11e2_ad37_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdWE="
+      ],
+      "bytes": 71471,
+      "sha256": "14d4596a7c30d5c2d07158cc7b73bded13d7af9f2c666e7cae8084154cafd255",
+      "status": "ok"
+    },
+    {
+      "path": "2704a5f4_ca0a_11eb_8dbb_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/2704a5f4_ca0a_11eb_8dbb_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ2Q="
+      ],
+      "bytes": 66786,
+      "sha256": "0b791444aa8ac964a953dcd868cb66532328d87965918899779f978b0810373e",
+      "status": "ok"
+    },
+    {
+      "path": "271d0c70_0f13_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/271d0c70_0f13_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ48="
+      ],
+      "bytes": 68567,
+      "sha256": "25b9ddaff31e645b656fe05249def6a2fa74e3a3eec56a28ce011bebe23c776f",
+      "status": "ok"
+    },
+    {
+      "path": "290ebbbf_0f29_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/290ebbbf_0f29_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ5M="
+      ],
+      "bytes": 63895,
+      "sha256": "e2bd086e78840cb4cba7b5d3be68776a6c8402bc0d5ee52735707424e31a263f",
+      "status": "ok"
+    },
+    {
+      "path": "29f7c009_2a86_11f1_8de1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/29f7c009_2a86_11f1_8de1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaM4="
+      ],
+      "bytes": 65651,
+      "sha256": "4aeee8963330edb6aeeb8302b32843aafeb3ed30f0752a6af36b76870204d6a6",
+      "status": "ok"
+    },
+    {
+      "path": "2abe3c8e_79f4_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/2abe3c8e_79f4_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYuo="
+      ],
+      "bytes": 63232,
+      "sha256": "b311091f30b6f0cb0b7197762ef2a662607ab921932ad85bbb8a257baa5d4a54",
+      "status": "ok"
+    },
+    {
+      "path": "2af07592_a4e1_11ef_8e19_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/2af07592_a4e1_11ef_8e19_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAValI="
+      ],
+      "bytes": 71179,
+      "sha256": "d5c8d77a7d301fa534ab39e54902c2dd960f6945d3fcec2d843fcffa022384ae",
+      "status": "ok"
+    },
+    {
+      "path": "2b326df2_c7b2_11f0_8dd7_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/2b326df2_c7b2_11f0_8dd7_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaCI="
+      ],
+      "bytes": 60862,
+      "sha256": "cdf53d6f4afb0093d475a504af454e6e7039a4bdb02057261cd82a123d80c7f8",
+      "status": "ok"
+    },
+    {
+      "path": "2bde21bf_b03a_11f1_88c4_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/2bde21bf_b03a_11f1_88c4_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZgg="
+      ],
+      "bytes": 69350,
+      "sha256": "acd8cec937b1161f7f092b7d4f183e4156992b8e04fddc869a0883b2b69741ee",
+      "status": "ok"
+    },
+    {
+      "path": "2dd8a105_88b9_11e3_a065_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/2dd8a105_88b9_11e3_a065_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcNQ="
+      ],
+      "bytes": 29645,
+      "sha256": "171eccf2bfc057a03c1253cdc3bad283299f4cfcffd778201306b755fc777f00",
+      "status": "ok"
+    },
+    {
+      "path": "2f5c0a13_b4fa_11f1_88c4_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/2f5c0a13_b4fa_11f1_88c4_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWtrw="
+      ],
+      "bytes": 69579,
+      "sha256": "a97d57f3567e08d9924a159fe47efa750c5100d47f9df16a9d51ede2e7ea1b1e",
+      "status": "ok"
+    },
+    {
+      "path": "2f73abec_5dde_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/2f73abec_5dde_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaP4="
+      ],
+      "bytes": 63965,
+      "sha256": "1037ac2ad7dd7494a28effdac8e2e87d541b97e27cb5b64ae13d2338d242331a",
+      "status": "ok"
+    },
+    {
+      "path": "30e5257d_0c46_11ea_966e_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/30e5257d_0c46_11ea_966e_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVb7k="
+      ],
+      "bytes": 31885,
+      "sha256": "c33f879097560bd73e4423b211160bbbedb3603e80c73f147208674428e887c0",
+      "status": "ok"
+    },
+    {
+      "path": "32992c64_ac49_11f0_8dd3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/32992c64_ac49_11f0_8dd3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaAE="
+      ],
+      "bytes": 67474,
+      "sha256": "aac89c863ff31b29c22b6f395614921275261702ec9cc3637a77592da6164ca5",
+      "status": "ok"
+    },
+    {
+      "path": "330ab896_6d7f_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/330ab896_6d7f_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaQk="
+      ],
+      "bytes": 69978,
+      "sha256": "39e7d1ddfa1f11a7f9c834dba84985721e68290d9d9d76ebb10b1cd1bab0d56e",
+      "status": "ok"
+    },
+    {
+      "path": "33cf48a9_4818_11e6_9244_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/33cf48a9_4818_11e6_9244_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVavo="
+      ],
+      "bytes": 72435,
+      "sha256": "f2d4d139dbbd74f582f644c106b855246d94aad92af60051c22d78639e5fceca",
+      "status": "ok"
+    },
+    {
+      "path": "3514a06d_87c7_11f0_8dd1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/3514a06d_87c7_11f0_8dd1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ9w="
+      ],
+      "bytes": 64795,
+      "sha256": "8d7cc210d34ffbb765e9dfb0485bc00d4cce121e9543196c058bf50f49880a23",
+      "status": "ok"
+    },
+    {
+      "path": "35d6b0ee_7796_11f0_8dd1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/35d6b0ee_7796_11f0_8dd1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ88="
+      ],
+      "bytes": 67442,
+      "sha256": "aa8ccb46b03a5a88ec31851459a152901f062e7a9e88dd1c099f850c813c1a7d",
+      "status": "ok"
+    },
+    {
+      "path": "374104e3_00f5_11ed_8de2_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/374104e3_00f5_11ed_8de2_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaNo="
+      ],
+      "bytes": 31184,
+      "sha256": "4813b05c2553a235704ce2fedaa69759d862f5b6784c64ceeb32cea68d6496e7",
+      "status": "ok"
+    },
+    {
+      "path": "37feb52e_d381_11f0_8dd9_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/37feb52e_d381_11f0_8dd9_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaEQ="
+      ],
+      "bytes": 69819,
+      "sha256": "8ac71ffe6f22cc4f57a46f4c0a51f2871bac9dc914f4f73dc9f3ecba481bfb3f",
+      "status": "ok"
+    },
+    {
+      "path": "38deee9b_0b56_11ea_ab9b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/38deee9b_0b56_11ea_ab9b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdOI="
+      ],
+      "bytes": 65130,
+      "sha256": "82d7e3f5fec3790fa04fd260991ced5ace6246c0a3ade92843686c30c9d31a58",
+      "status": "ok"
+    },
+    {
+      "path": "3981b30b_a556_11f1_88c3_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/3981b30b_a556_11f1_88c3_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWYik="
+      ],
+      "bytes": 62375,
+      "sha256": "5e5de52e428bf6a0b21229971b18c1a6d2ca4fa2673fba4a8bfebe5fd839b683",
+      "status": "ok"
+    },
+    {
+      "path": "3983b530_2e63_11e4_8684_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/3983b530_2e63_11e4_8684_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZYg="
+      ],
+      "bytes": 67280,
+      "sha256": "88126d88218981e1e1366864c6f357a2f3eac0ad29918acfbb6f420c99e52a95",
+      "status": "ok"
+    },
+    {
+      "path": "3a30b14e_2886_11eb_8db5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/3a30b14e_2886_11eb_8db5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZuE="
+      ],
+      "bytes": 70420,
+      "sha256": "c6c43d3d083b1117cf780da218447a594d8fb92543df3ef616b0fb437c1b2811",
+      "status": "ok"
+    },
+    {
+      "path": "3a82d29c_3667_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/3a82d29c_3667_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7I="
+      ],
+      "bytes": 67765,
+      "sha256": "3419c81fa8dfde96b8661592c1fed315e7da8f1da9b00d142795fcbe140b601d",
+      "status": "ok"
+    },
+    {
+      "path": "3b569b91_3391_11eb_8db5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/3b569b91_3391_11eb_8db5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZu0="
+      ],
+      "bytes": 62338,
+      "sha256": "b4cd6be2902ffebb10f0cec68a955976744ead55251a43e3887c577fcca51c72",
+      "status": "ok"
+    },
+    {
+      "path": "3b907d11_d777_11e8_a94b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/3b907d11_d777_11e8_a94b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdJA="
+      ],
+      "bytes": 73494,
+      "sha256": "274ee5b11c6ffde0193cfc5eeb26a045fbe5e13b3650746e8eabe7432b5f9a87",
+      "status": "ok"
+    },
+    {
+      "path": "3b907d13_d777_11e8_a94b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/3b907d13_d777_11e8_a94b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdJE="
+      ],
+      "bytes": 26578,
+      "sha256": "59cef86557421c09c92334e45ddbe7a9057216f769ffc2c581003a5597e7ed50",
+      "status": "ok"
+    },
+    {
+      "path": "3ed85c57_e0b5_11e3_b055_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/3ed85c57_e0b5_11e3_b055_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdyA="
+      ],
+      "bytes": 66408,
+      "sha256": "b37326c77820d6c39fd4daa3263a1b8b9b913e5e38717de4e9207d3f7f32edda",
+      "status": "ok"
+    },
+    {
+      "path": "3f1ac36b_224f_11ea_b69a_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/3f1ac36b_224f_11ea_b69a_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeVE="
+      ],
+      "bytes": 66847,
+      "sha256": "16b9b61367fa8549e52cb8f9d2d264e4b16cd21cbb2af52426f7dd95cf0a6db9",
+      "status": "ok"
+    },
+    {
+      "path": "3f3f85ae_448c_11e0_b08f_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/3f3f85ae_448c_11e0_b08f_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdyo="
+      ],
+      "bytes": 68605,
+      "sha256": "17178c813adcfc0455448d58519c564f68902d43ec1586ba676c760c10cff4d8",
+      "status": "ok"
+    },
+    {
+      "path": "40c106f8_7fe7_11ef_8e10_ac1f6badb50d",
+      "source": "https://obedmoscow.ru/data/pictures/40c106f8_7fe7_11ef_8e10_ac1f6badb50d.jpg",
+      "photoVersions": [
+        "AAAAAAAVakI="
+      ],
+      "bytes": 68758,
+      "sha256": "a8d29a90ba882136172e9f24967fa423cbae1767be1d9feabe5929b64ae399e8",
+      "status": "ok"
+    },
+    {
+      "path": "430c18d3_d50e_11e9_b452_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/430c18d3_d50e_11e9_b452_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeB8="
+      ],
+      "bytes": 31630,
+      "sha256": "00cb52a6f0a6cc950c473818a496b77ffea42b576dab6e14e1f354a1a885843b",
+      "status": "ok"
+    },
+    {
+      "path": "461aeacf_8b5e_11f1_88be_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/461aeacf_8b5e_11f1_88be_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZfI="
+      ],
+      "bytes": 68836,
+      "sha256": "bb8b3df50c94b3d48b3e7875f167f7c8bbf0bab856fc0f136730047ad2227022",
+      "status": "ok"
+    },
+    {
+      "path": "46dc7958_a150_11e4_9183_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/46dc7958_a150_11e4_9183_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVanw="
+      ],
+      "bytes": 68482,
+      "sha256": "94dac02a428c7a16a9226de8ef9c0f8b95f185047462816cbafed3f3a69f753a",
+      "status": "ok"
+    },
+    {
+      "path": "47eec4bf_b1b8_11e4_918d_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/47eec4bf_b1b8_11e4_918d_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVaok="
+      ],
+      "bytes": 66526,
+      "sha256": "c09744d06586416e6430cdfdf7c87ec72c8f795d874f887c29e8b0998c243b9a",
+      "status": "ok"
+    },
+    {
+      "path": "4806c8de_ade7_11e5_a8a8_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/4806c8de_ade7_11e5_a8a8_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdIU="
+      ],
+      "bytes": 65037,
+      "sha256": "49a6f12419a1f1f853bc817b59e8260337341d16fb38b53e1781b3d7c686575e",
+      "status": "ok"
+    },
+    {
+      "path": "49a4bfb4_bc89_11f1_88ca_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/49a4bfb4_bc89_11f1_88ca_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWrco="
+      ],
+      "bytes": 100722,
+      "sha256": "4037bad2fbc03f981c4e815e2d82333c72596d31035a974e67dbf4fdf451c8d6",
+      "status": "ok"
+    },
+    {
+      "path": "4ca38661_b8ea_11f1_88c6_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/4ca38661_b8ea_11f1_88c6_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWse0="
+      ],
+      "bytes": 100722,
+      "sha256": "4037bad2fbc03f981c4e815e2d82333c72596d31035a974e67dbf4fdf451c8d6",
+      "status": "ok"
+    },
+    {
+      "path": "4cee0f6b_a783_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/4cee0f6b_a783_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ/U="
+      ],
+      "bytes": 70157,
+      "sha256": "a46e1a1908409892e57876e0a556cbc14727d25bb229d62c0ac909bb5665ed34",
+      "status": "ok"
+    },
+    {
+      "path": "4e50346a_4d8a_11ee_8df1_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/4e50346a_4d8a_11ee_8df1_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaa0="
+      ],
+      "bytes": 67692,
+      "sha256": "5cddfe0664c3aeb4857b3ee6f8dd14b4bac96e5ff91f1378863337f6fbd91182",
+      "status": "ok"
+    },
+    {
+      "path": "4ea34ba8_66f2_11e7_bc2b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/4ea34ba8_66f2_11e7_bc2b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeh0="
+      ],
+      "bytes": 66736,
+      "sha256": "b1faf78a5820e49fc11d4e23af19f7f5cf75822d805282327ddc35672100267c",
+      "status": "ok"
+    },
+    {
+      "path": "4ed52c6e_c146_11e8_b377_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/4ed52c6e_c146_11e8_b377_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeAU="
+      ],
+      "bytes": 29626,
+      "sha256": "818c76a55ae35339071be134c0bc41b7ca0d83df99e75eea87fd9b8e15976f00",
+      "status": "ok"
+    },
+    {
+      "path": "4f0fc835_5902_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/4f0fc835_5902_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaO4="
+      ],
+      "bytes": 69978,
+      "sha256": "39e7d1ddfa1f11a7f9c834dba84985721e68290d9d9d76ebb10b1cd1bab0d56e",
+      "status": "ok"
+    },
+    {
+      "path": "4f12e23c_a27c_11eb_8db9_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/4f12e23c_a27c_11eb_8db9_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ0Q="
+      ],
+      "bytes": 31427,
+      "sha256": "11676c17d30877fa13e59ea26c276831b793c390d9a480226bf79bccd5705889",
+      "status": "ok"
+    },
+    {
+      "path": "4fd0799d_eb66_11eb_8dca_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/4fd0799d_eb66_11eb_8dca_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ3s="
+      ],
+      "bytes": 32349,
+      "sha256": "f4ca2ef95c68034481249b3fee677280d5e7fab76f4b55888a3ff0c37a7f1495",
+      "status": "ok"
+    },
+    {
+      "path": "50847933_a7ef_11eb_8db9_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/50847933_a7ef_11eb_8db9_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ00="
+      ],
+      "bytes": 73412,
+      "sha256": "7117322ba297695781ae0a2a63a5d59e26937ae085db3f7a43fbfc542f699c12",
+      "status": "ok"
+    },
+    {
+      "path": "53141c51_5dcf_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/53141c51_5dcf_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaPw="
+      ],
+      "bytes": 63238,
+      "sha256": "975dfb9f6c34b9c7d3ac3053f587484baff17310ceca0b148ec51c2341f953f0",
+      "status": "ok"
+    },
+    {
+      "path": "54e10ab2_b09b_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/54e10ab2_b09b_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVefY="
+      ],
+      "bytes": 66594,
+      "sha256": "b841022820017abf46f033edc090a454cda52b142ed45a72ff1144a1b1677957",
+      "status": "ok"
+    },
+    {
+      "path": "553a5b3b_e5f4_11ee_8dff_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/553a5b3b_e5f4_11ee_8dff_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVafo="
+      ],
+      "bytes": 67935,
+      "sha256": "95e7e66473a935651b9b06925dffa2f096cc71af0c9450d491b13c9d065120ca",
+      "status": "ok"
+    },
+    {
+      "path": "5556694f_367f_11f1_8de1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/5556694f_367f_11f1_8de1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWrdg="
+      ],
+      "bytes": 73484,
+      "sha256": "d844345784732f413c44bc8a9ccb99405a1e553fc45daa0e638dbed6196c09e2",
+      "status": "ok"
+    },
+    {
+      "path": "55de94b7_4ea9_11e4_b1da_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/55de94b7_4ea9_11e4_b1da_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVd4o="
+      ],
+      "bytes": 60954,
+      "sha256": "6699e7e6855e61cf7c304c9e17fc0a475d74da907a3512ff7239a2fe7d9ef32f",
+      "status": "ok"
+    },
+    {
+      "path": "56a23e78_eda1_11e0_93ef_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/56a23e78_eda1_11e0_93ef_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVa5I="
+      ],
+      "bytes": 71265,
+      "sha256": "0923292f4d119bb98a46ea094ac49a5f138a5dfc6e58b8d69dbedd4c32c826e8",
+      "status": "ok"
+    },
+    {
+      "path": "56b7049d_0f0e_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/56b7049d_0f0e_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ44="
+      ],
+      "bytes": 63287,
+      "sha256": "7dc96572cb5213183bbe56ff7f40bd0574fe4193f0441b27bad46a56bee67667",
+      "status": "ok"
+    },
+    {
+      "path": "575117fb_0c9e_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/575117fb_0c9e_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ4c="
+      ],
+      "bytes": 64127,
+      "sha256": "177af513a38d09e463a16add904442973ae77cef2bc81e260606db6326cfec73",
+      "status": "ok"
+    },
+    {
+      "path": "589feb38_bd22_11eb_8dba_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/589feb38_bd22_11eb_8dba_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ14="
+      ],
+      "bytes": 68646,
+      "sha256": "2b21458dc42c6b7e871593bab504f725926ca67542201872a6332583587ddd9c",
+      "status": "ok"
+    },
+    {
+      "path": "5a4ceb69_71a1_11eb_8db6_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/5a4ceb69_71a1_11eb_8db6_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZxM="
+      ],
+      "bytes": 30290,
+      "sha256": "06bd913855f599becb6bc747fbf15e2f746ccf4cd1fabbf5a5938f97e39a3743",
+      "status": "ok"
+    },
+    {
+      "path": "5b8f17c1_b041_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/5b8f17c1_b041_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeeI="
+      ],
+      "bytes": 73217,
+      "sha256": "adbc095da0eeb6cb52c9af9569cfbadc736345a501801c313475da37cddffd1b",
+      "status": "ok"
+    },
+    {
+      "path": "5bac744a_0f36_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/5bac744a_0f36_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ5g="
+      ],
+      "bytes": 69574,
+      "sha256": "10ac1fa628546bdcf50114595c172a29c825314f0f6e2eb437ad397103fedd95",
+      "status": "ok"
+    },
+    {
+      "path": "5dbd27a8_c155_11e8_b377_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/5dbd27a8_c155_11e8_b377_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeAg="
+      ],
+      "bytes": 71274,
+      "sha256": "6bd0a0222b4f0375d11917f87a0e47c465a0f39c3393c6114d8b2622e4c0bad2",
+      "status": "ok"
+    },
+    {
+      "path": "5e921e00_fff5_11e1_aecb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/5e921e00_fff5_11e1_aecb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdeg="
+      ],
+      "bytes": 72431,
+      "sha256": "ff99105b9ca2acca5db90f44a49d40b0797d0eec22809515a29ba4107b2c0104",
+      "status": "ok"
+    },
+    {
+      "path": "601ffa6d_ae57_11e7_b100_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/601ffa6d_ae57_11e7_b100_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWx+E="
+      ],
+      "bytes": 73720,
+      "sha256": "f7f53e18a0909b6a49b2b1b8c6f95bb60c776756d13fd9a6d8e7c330c722dc0c",
+      "status": "ok"
+    },
+    {
+      "path": "61c0169c_ce54_11eb_8dbc_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/61c0169c_ce54_11eb_8dbc_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ2Y="
+      ],
+      "bytes": 70346,
+      "sha256": "30881e847c7f314e016d00dfe2b55cf797b9e4bc5bc712d31049c58b7c522a34",
+      "status": "ok"
+    },
+    {
+      "path": "61e0eec0_1d1c_11ed_8de6_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/61e0eec0_1d1c_11ed_8de6_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSw="
+      ],
+      "bytes": 69394,
+      "sha256": "e2f8cd6bb5c85573e054ff1f9ca5806063fe0fcb8da45504f717bf02006a1505",
+      "status": "ok"
+    },
+    {
+      "path": "62c4fae8_463a_11ee_8df1_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/62c4fae8_463a_11ee_8df1_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaaw="
+      ],
+      "bytes": 30914,
+      "sha256": "c6191fb6d703cc65606d63f3092196427890cb976fe74a4384bb63f5e35533e2",
+      "status": "ok"
+    },
+    {
+      "path": "63d2dc21_7742_11ee_8df5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/63d2dc21_7742_11ee_8df5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVabo="
+      ],
+      "bytes": 69105,
+      "sha256": "2d4bc99b8a4f17eeed80662aa636a88e0a33dc671561e56c656b5b1df8c880d4",
+      "status": "ok"
+    },
+    {
+      "path": "645560ea_ffef_11e1_aecb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/645560ea_ffef_11e1_aecb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdaM="
+      ],
+      "bytes": 67071,
+      "sha256": "7612dac50ba2e636d9c064c60355b2928250765aad913bbd0c2d0f289aaf7937",
+      "status": "ok"
+    },
+    {
+      "path": "659f6db4_eda1_11e0_93ef_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/659f6db4_eda1_11e0_93ef_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVbIM="
+      ],
+      "bytes": 64668,
+      "sha256": "7a0c9f10a246626db0a85d434a03e4b1975b058eabb876d2f332b60231446e86",
+      "status": "ok"
+    },
+    {
+      "path": "674358ed_85b8_11e4_91aa_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/674358ed_85b8_11e4_91aa_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVaos="
+      ],
+      "bytes": 70046,
+      "sha256": "a358a82c811482108610eed0eb1b7f317335ee6dc3881f6399847bc52747f4bf",
+      "status": "ok"
+    },
+    {
+      "path": "67e7401d_a4d0_11ef_8e19_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/67e7401d_a4d0_11ef_8e19_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAValE="
+      ],
+      "bytes": 58389,
+      "sha256": "3b39f7551fca9323e385ab45afad090b6dededa1b73157fb22a40dc242d02634",
+      "status": "ok"
+    },
+    {
+      "path": "68346798_5cc2_11ec_8dda_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/68346798_5cc2_11ec_8dda_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaE8="
+      ],
+      "bytes": 72357,
+      "sha256": "ed9d522a76a0d827e896be5d11ecbb724c914fd0bee662a1610489b1201748b4",
+      "status": "ok"
+    },
+    {
+      "path": "68f12297_0bae_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/68f12297_0bae_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ4U="
+      ],
+      "bytes": 68839,
+      "sha256": "b6de736bb57ec3cbb8bfc51dca2063af7cd4791a6867dd1e710dac3f6f184f2f",
+      "status": "ok"
+    },
+    {
+      "path": "69ce0cb4_61a5_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/69ce0cb4_61a5_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaP8="
+      ],
+      "bytes": 68210,
+      "sha256": "2870276ce7777c6470b10e2faca7461c1d632d4d5ce6087d9fda736b7a88e2f8",
+      "status": "ok"
+    },
+    {
+      "path": "6c4aaaf4_0e64_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/6c4aaaf4_0e64_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ4s="
+      ],
+      "bytes": 67519,
+      "sha256": "8a172f1996ea74264f7efd9a96d18bc32dd1f27624d32ce9c4e378fe7754d47a",
+      "status": "ok"
+    },
+    {
+      "path": "6ca9bda6_5ffe_11f0_8dd1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/6ca9bda6_5ffe_11f0_8dd1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ8Y="
+      ],
+      "bytes": 67765,
+      "sha256": "3419c81fa8dfde96b8661592c1fed315e7da8f1da9b00d142795fcbe140b601d",
+      "status": "ok"
+    },
+    {
+      "path": "6d385cdb_989f_11f1_88bf_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/6d385cdb_989f_11f1_88bf_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAWRq4="
+      ],
+      "bytes": 64465,
+      "sha256": "5f4fbf07370a6d4e4f33249c16dfc6a16fa071f237885d40e241cc578f6dcb4b",
+      "status": "ok"
+    },
+    {
+      "path": "6d8ae8db_fa04_11f0_8ddc_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/6d8ae8db_fa04_11f0_8ddc_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaHk="
+      ],
+      "bytes": 60806,
+      "sha256": "457c9f484761bcaa5bdff9d6a6ede0967d3cf946adf5cf0a566a67f51394a413",
+      "status": "ok"
+    },
+    {
+      "path": "6eccbf51_840d_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/6eccbf51_840d_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSc="
+      ],
+      "bytes": 66916,
+      "sha256": "9d3a5b6ef7577e07c9a70ddd1cdc617d61b87e629f7c13bf905dedb416436a67",
+      "status": "ok"
+    },
+    {
+      "path": "705888fd_14a0_11f0_8dce_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/705888fd_14a0_11f0_8dce_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ58="
+      ],
+      "bytes": 73576,
+      "sha256": "f809068dd1009653a365c89dcd96d33aad6fec8268192c533214a6d695f13e5a",
+      "status": "ok"
+    },
+    {
+      "path": "70ef1e51_6f78_11ef_8e0f_ac1f6badb50d",
+      "source": "https://obedmoscow.ru/data/pictures/70ef1e51_6f78_11ef_8e0f_ac1f6badb50d.jpg",
+      "photoVersions": [
+        "AAAAAAAVajk="
+      ],
+      "bytes": 69370,
+      "sha256": "6fa97c2febbe550178f83e2d20fe5d0388bc9396d3802b7417cc8d07368c6055",
+      "status": "ok"
+    },
+    {
+      "path": "72532560_f57f_11e5_a79a_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/72532560_f57f_11e5_a79a_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWrdo="
+      ],
+      "bytes": 26869,
+      "sha256": "6609517bbb05e18ce253906c18adf82743ea139e3a867c2ae7f6c0b6ad111834",
+      "status": "ok"
+    },
+    {
+      "path": "73bddff7_ef01_11f0_8ddc_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/73bddff7_ef01_11f0_8ddc_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaHU="
+      ],
+      "bytes": 63827,
+      "sha256": "4ae161e0f63043e60dfc833017f8127ee95640258450fee3d29d1a7a4003a8f7",
+      "status": "ok"
+    },
+    {
+      "path": "7487128f_f62f_11e5_871d_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/7487128f_f62f_11e5_871d_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZbc="
+      ],
+      "bytes": 67873,
+      "sha256": "93d176df541d7c0d02f0ab139c242b47d7b958581cc53b979b333f85f3b285a8",
+      "status": "ok"
+    },
+    {
+      "path": "76c798e0_defd_11e5_9d47_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/76c798e0_defd_11e5_9d47_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcHE="
+      ],
+      "bytes": 30286,
+      "sha256": "7c8b247f3c5762b72411a03f553deb14492177aa00176639b6b5b721ab4414ac",
+      "status": "ok"
+    },
+    {
+      "path": "77d13978_91d7_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/77d13978_91d7_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZy0="
+      ],
+      "bytes": 73725,
+      "sha256": "bb12df72282161f038535cced7c819cb5291b1050dc4330cc02973effbb760d3",
+      "status": "ok"
+    },
+    {
+      "path": "77ebed44_e5d2_11e5_a716_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/77ebed44_e5d2_11e5_a716_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdBs="
+      ],
+      "bytes": 31427,
+      "sha256": "d857e0add66bf3a422a1230396a8c626a438da6b347fd6ae028bb5e3ef0ac15a",
+      "status": "ok"
+    },
+    {
+      "path": "79d1649e_babf_11ee_8df9_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/79d1649e_babf_11ee_8df9_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAWvx0="
+      ],
+      "bytes": 59654,
+      "sha256": "18fb492ff5c9e7f1f01bc66090f1c621ab9a0aa7597043d471946fa39cd10b55",
+      "status": "ok"
+    },
+    {
+      "path": "7a3072b8_5b54_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/7a3072b8_5b54_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7o="
+      ],
+      "bytes": 70157,
+      "sha256": "a46e1a1908409892e57876e0a556cbc14727d25bb229d62c0ac909bb5665ed34",
+      "status": "ok"
+    },
+    {
+      "path": "7b061b8d_dc43_11e4_a7fe_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/7b061b8d_dc43_11e4_a7fe_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdFI="
+      ],
+      "bytes": 61223,
+      "sha256": "62c4701450376a4c5750f60fba751028509679e2959c95c3185dc48d2d1c7a6a",
+      "status": "ok"
+    },
+    {
+      "path": "7bb16593_ec4b_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/7bb16593_ec4b_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVeK0="
+      ],
+      "bytes": 72473,
+      "sha256": "40cf845b4d4ec2f475afce55de2502d174c2876c557742310f43dcd88a91eec1",
+      "status": "ok"
+    },
+    {
+      "path": "7d50a6c6_eda1_11e0_93ef_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/7d50a6c6_eda1_11e0_93ef_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVbSI="
+      ],
+      "bytes": 69795,
+      "sha256": "6b95f330749a5070d79831bee6cae40e4d81beb9c199d25704b1711d900c9e23",
+      "status": "ok"
+    },
+    {
+      "path": "7e3c2790_9f86_11f1_88c2_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/7e3c2790_9f86_11f1_88c2_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZfw="
+      ],
+      "bytes": 69170,
+      "sha256": "ce90f088b83b66a3cfa4b90f3e6660ecea1f1f9aaef413ac999a2e0b7858ca44",
+      "status": "ok"
+    },
+    {
+      "path": "7e5ac7b1_73d1_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/7e5ac7b1_73d1_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaRM="
+      ],
+      "bytes": 64269,
+      "sha256": "720ab6cb9ee9e84942078872c12b735f0cf0ba522d7a872e18f464655bf05d59",
+      "status": "ok"
+    },
+    {
+      "path": "7eea05b6_8904_11f1_88bc_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/7eea05b6_8904_11f1_88bc_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZe0="
+      ],
+      "bytes": 67615,
+      "sha256": "0b4ed299e7fc3550a61e8a5958cf63ccd7ecdf452d0b2a8ce6e4f9f8deaf8615",
+      "status": "ok"
+    },
+    {
+      "path": "7eea82a2_6a5f_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/7eea82a2_6a5f_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaQQ="
+      ],
+      "bytes": 60018,
+      "sha256": "cf62bb24daaea15dba647f3b9d1a54e42a3aa2382c3159b00f5ab59f62112e91",
+      "status": "ok"
+    },
+    {
+      "path": "7efc51d3_6c7c_11f0_8dd1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/7efc51d3_6c7c_11f0_8dd1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ8s="
+      ],
+      "bytes": 58566,
+      "sha256": "6d8240b6c53834057510944aae4126951c16dc043aa4bbc1da3f678ebfd8dd58",
+      "status": "ok"
+    },
+    {
+      "path": "7f0578bc_8904_11f1_88bc_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/7f0578bc_8904_11f1_88bc_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZe4="
+      ],
+      "bytes": 66673,
+      "sha256": "c4cd663970e1bbf0abb1e9483e078b9637c603803edc76d96428bcff02ddb5d4",
+      "status": "ok"
+    },
+    {
+      "path": "7f81b8b4_57ff_11ec_8dd8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/7f81b8b4_57ff_11ec_8dd8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaDs="
+      ],
+      "bytes": 29939,
+      "sha256": "3a45be2f0e9dd771ea699f1b903af10cfaada24aecabb4c6389e2bcbb3260a87",
+      "status": "ok"
+    },
+    {
+      "path": "7fd60fa3_40c1_11e5_91bb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/7fd60fa3_40c1_11e5_91bb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVapA="
+      ],
+      "bytes": 30033,
+      "sha256": "47929489a1227a03db37735ba8f62f49408cab1d1d5edbe1d7b3da2352e7e08b",
+      "status": "ok"
+    },
+    {
+      "path": "7fe99d15_41d0_11ee_8df1_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/7fe99d15_41d0_11ee_8df1_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaas="
+      ],
+      "bytes": 66509,
+      "sha256": "cddb71d9db7d55ac3f0c9d3639e900d0501c20c47aca8b524476740454909faf",
+      "status": "ok"
+    },
+    {
+      "path": "80bab12f_1912_11e3_8d67_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/80bab12f_1912_11e3_8d67_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZnI="
+      ],
+      "bytes": 71806,
+      "sha256": "e6012ac6507acd4dfda1675e34bef652e81f611e86482e304e738f2dafe43b8c",
+      "status": "ok"
+    },
+    {
+      "path": "83d011e2_4b7f_11ec_8dd8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/83d011e2_4b7f_11ec_8dd8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaCg="
+      ],
+      "bytes": 30119,
+      "sha256": "e46e9223b8809897f8f90e836828ec685c9fa2a86f633604e91ca5febaf995e6",
+      "status": "ok"
+    },
+    {
+      "path": "86c748c2_1bc7_11f1_8dde_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/86c748c2_1bc7_11f1_8dde_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWQOU="
+      ],
+      "bytes": 66511,
+      "sha256": "0b3dd779dfe0e7f5be37ef4d9bc70050e27c8a1e6a0db232dc9e1b9a1f03fafe",
+      "status": "ok"
+    },
+    {
+      "path": "8786f588_9892_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/8786f588_9892_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYgs="
+      ],
+      "bytes": 65295,
+      "sha256": "915c474d69eaf9854012b9d8983a650027061b0acd499c1e38af08959b5e6c3a",
+      "status": "ok"
+    },
+    {
+      "path": "897b8665_21b5_11ec_8dd1_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/897b8665_21b5_11ec_8dd1_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ8U="
+      ],
+      "bytes": 67787,
+      "sha256": "589ce7e40e1ae0d14cd0b0a3b1264df5c6034b2b98e2a5e9e614d20bb6f5b24f",
+      "status": "ok"
+    },
+    {
+      "path": "8bf09c9c_315b_11ec_8dd3_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/8bf09c9c_315b_11ec_8dd3_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ/4="
+      ],
+      "bytes": 66502,
+      "sha256": "5d117f67e8737825dd6a2551964d15462e7e0e740d818510b4437864a5dda601",
+      "status": "ok"
+    },
+    {
+      "path": "8c40c0ff_6700_11ec_8dda_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/8c40c0ff_6700_11ec_8dda_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaFg="
+      ],
+      "bytes": 29983,
+      "sha256": "47560ca898aa0858f96dacb4acc63d3741d5588dc6bd2b72a8ba10ee31c63ad1",
+      "status": "ok"
+    },
+    {
+      "path": "8f432aab_e65d_11e8_95bc_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/8f432aab_e65d_11e8_95bc_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVb6Q="
+      ],
+      "bytes": 73026,
+      "sha256": "0147729a1fc6d46200c22d68f859b68f3ac1553a02289d2df3ee1e13373a18b0",
+      "status": "ok"
+    },
+    {
+      "path": "90349c00_930b_11ec_8ddb_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/90349c00_930b_11ec_8ddb_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaGc="
+      ],
+      "bytes": 31802,
+      "sha256": "3fbad09dbd0e027deb5392c5f843e562a4d584fbf2291a74328c439dc757c30f",
+      "status": "ok"
+    },
+    {
+      "path": "9062d32f_eda1_11e0_93ef_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/9062d32f_eda1_11e0_93ef_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVbic="
+      ],
+      "bytes": 70091,
+      "sha256": "be4cb43261a6220b690c95484c733f683438db517ee4251f74576e776e4322ce",
+      "status": "ok"
+    },
+    {
+      "path": "9062d34f_eda1_11e0_93ef_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/9062d34f_eda1_11e0_93ef_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVbkc="
+      ],
+      "bytes": 29970,
+      "sha256": "7645863ee54cc317f6e6584ef9fa60382139e209d2934a5fdbf4a7417cf60d31",
+      "status": "ok"
+    },
+    {
+      "path": "91238d70_1491_11e9_b77f_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/91238d70_1491_11e9_b77f_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeXc="
+      ],
+      "bytes": 69230,
+      "sha256": "e0120ddc2ba3c85933b13d086b11e282af6b3582c971e23d842d946c9a9f73a0",
+      "status": "ok"
+    },
+    {
+      "path": "9156a233_faf1_11eb_8dcd_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/9156a233_faf1_11eb_8dcd_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ38="
+      ],
+      "bytes": 71494,
+      "sha256": "f8396ac2be85fa73147d31dd644f34077f3f5b3bcd591c74233c8c626970fd01",
+      "status": "ok"
+    },
+    {
+      "path": "91afe2b2_1634_11f0_8dce_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/91afe2b2_1634_11f0_8dce_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ6E="
+      ],
+      "bytes": 73191,
+      "sha256": "1bc996bf3e41830d71a4b9e647eb8d57df4fd990e6d72ef150e890935b9f2e6f",
+      "status": "ok"
+    },
+    {
+      "path": "91e6c895_a44a_11ec_8ddf_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/91e6c895_a44a_11ec_8ddf_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaJk="
+      ],
+      "bytes": 67394,
+      "sha256": "b98e359d1016fb91651ebebbdc1266b280d4412b07a87931fa3663117706a2d6",
+      "status": "ok"
+    },
+    {
+      "path": "92604522_4188_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/92604522_4188_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaOU="
+      ],
+      "bytes": 69199,
+      "sha256": "49ea109919e568714c6db5f7c280ad356ec78080e4d5816cd8d04713a13fe53e",
+      "status": "ok"
+    },
+    {
+      "path": "92f38f70_b047_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/92f38f70_b047_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeeg="
+      ],
+      "bytes": 59445,
+      "sha256": "4c1e209a2b5223adbbd9db5edc1802dbfb671006080db12e7e239c7f590e258e",
+      "status": "ok"
+    },
+    {
+      "path": "92ffe110_9e11_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/92ffe110_9e11_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ+0="
+      ],
+      "bytes": 68900,
+      "sha256": "dffd6e56c82dcb877ec271ce4a0bc697a7e7c4456da78efb5791ab4455a993b3",
+      "status": "ok"
+    },
+    {
+      "path": "933edb96_bf97_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/933edb96_bf97_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaL8="
+      ],
+      "bytes": 63647,
+      "sha256": "05f2001727bae4b078932f5c86a215924f07ef96889f2b1593eb060342511635",
+      "status": "ok"
+    },
+    {
+      "path": "95210ddf_54e4_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/95210ddf_54e4_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7g="
+      ],
+      "bytes": 70118,
+      "sha256": "1c36c5343081f76cd8f5efd7d5ef2ed5c56bc78800f0352e0d5ca356a95d29a4",
+      "status": "ok"
+    },
+    {
+      "path": "95989ba5_9fb0_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/95989ba5_9fb0_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ+8="
+      ],
+      "bytes": 72379,
+      "sha256": "1d5d5b7016fff9854499485f3f1890ba550b93f9606e311941f5026b34eea150",
+      "status": "ok"
+    },
+    {
+      "path": "983057a5_1509_11ee_8def_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/983057a5_1509_11ee_8def_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaZo="
+      ],
+      "bytes": 70986,
+      "sha256": "0ce442b6358f9fe957fd3b17418a9f17e9014f8f2617b2a52bde8fe9a7bfe58a",
+      "status": "ok"
+    },
+    {
+      "path": "98907007_4e3f_11e6_875e_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/98907007_4e3f_11e6_875e_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZdE="
+      ],
+      "bytes": 31201,
+      "sha256": "241f2faeadfc645f92e1aebaa2d09477c917d1294a313bd6ca9bffb910dbefaf",
+      "status": "ok"
+    },
+    {
+      "path": "999e9b18_ab2b_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/999e9b18_ab2b_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaKU="
+      ],
+      "bytes": 66718,
+      "sha256": "60395494a445f7ebc191ab8531c169b5a8d2532357ca9868cdc0424ecf1c2e30",
+      "status": "ok"
+    },
+    {
+      "path": "99e95e8c_fb78_11f0_8ddc_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/99e95e8c_fb78_11f0_8ddc_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWvxs="
+      ],
+      "bytes": 61037,
+      "sha256": "dadae707a14eb6fb887cb7c6d3c472841d060f7f32001f988ce5f732532da850",
+      "status": "ok"
+    },
+    {
+      "path": "9a01a85d_6552_11ef_8e0e_ac1f6badb50d",
+      "source": "https://obedmoscow.ru/data/pictures/9a01a85d_6552_11ef_8e0e_ac1f6badb50d.jpg",
+      "photoVersions": [
+        "AAAAAAAVajc="
+      ],
+      "bytes": 63101,
+      "sha256": "23635937504eafd7f3a498254870d833c4a4d38f47fcad73ad8384a274c56fe4",
+      "status": "ok"
+    },
+    {
+      "path": "9a98306c_ac9f_11ed_8ded_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/9a98306c_ac9f_11ed_8ded_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaXw="
+      ],
+      "bytes": 71935,
+      "sha256": "4c1558d7cd0a22767efd81950ede3037717fc66f2273a3c1f6c23378370325ad",
+      "status": "ok"
+    },
+    {
+      "path": "9bec73f2_f57e_11e5_a79a_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/9bec73f2_f57e_11e5_a79a_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWraY="
+      ],
+      "bytes": 64493,
+      "sha256": "c42d21251101088377c31b6e880ed5a29dc2f4bf710cba359557fe27b807a848",
+      "status": "ok"
+    },
+    {
+      "path": "9d9de949_5d5d_11ec_8dda_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/9d9de949_5d5d_11ec_8dda_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaFI="
+      ],
+      "bytes": 29285,
+      "sha256": "8d3b76dbdc02faa6b68a2763ddb332704975103b00bf5607246983193877ee76",
+      "status": "ok"
+    },
+    {
+      "path": "9db1f8e9_a84f_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/9db1f8e9_a84f_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYhc="
+      ],
+      "bytes": 70523,
+      "sha256": "04d4cceee089dd2c42ae3397a46a2c98c18797042a9520434143f157d346528e",
+      "status": "ok"
+    },
+    {
+      "path": "9e070bd0_00f9_11ed_8de2_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/9e070bd0_00f9_11ed_8de2_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaNs="
+      ],
+      "bytes": 71809,
+      "sha256": "c923cbef36bf4acabb05160711af28b51a238878fa9e27315aa96b3fc9ea76b9",
+      "status": "ok"
+    },
+    {
+      "path": "9ee08980_28ce_11eb_8db5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/9ee08980_28ce_11eb_8db5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZuM="
+      ],
+      "bytes": 71722,
+      "sha256": "59295b427fabe42fd9b6a9f3bb25653133bbc05f3e95e9e4b024e23510ac2e67",
+      "status": "ok"
+    },
+    {
+      "path": "a0bf5535_1a94_11ec_8dd0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/a0bf5535_1a94_11ec_8dd0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7w="
+      ],
+      "bytes": 62957,
+      "sha256": "2665ce85c0b90f4ea7bcc32337c704ae50f690b562a63721372114ef9cf08e57",
+      "status": "ok"
+    },
+    {
+      "path": "a0d74d11_85e5_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/a0d74d11_85e5_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSs="
+      ],
+      "bytes": 68794,
+      "sha256": "e61fe29080e162c34224db1ef96cfbd8269e864e969ce01ce4028fc10351f8c0",
+      "status": "ok"
+    },
+    {
+      "path": "a29027ae_ae80_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/a29027ae_ae80_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaKg="
+      ],
+      "bytes": 67179,
+      "sha256": "1843d0176ac56ba5e3c8bd4e03cddc66d795ebc79240e8a6ae22ec3e613bca68",
+      "status": "ok"
+    },
+    {
+      "path": "a3a74231_4ada_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/a3a74231_4ada_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7Y="
+      ],
+      "bytes": 70157,
+      "sha256": "a46e1a1908409892e57876e0a556cbc14727d25bb229d62c0ac909bb5665ed34",
+      "status": "ok"
+    },
+    {
+      "path": "a67079b2_b979_11eb_8dba_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/a67079b2_b979_11eb_8dba_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ10="
+      ],
+      "bytes": 70335,
+      "sha256": "f5242b27d0a0e58891bc258e5fbb06b1beb2e7873b923359de736491ed0e9b7b",
+      "status": "ok"
+    },
+    {
+      "path": "a6fea446_e502_11e9_bf3c_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/a6fea446_e502_11e9_bf3c_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeoU="
+      ],
+      "bytes": 71402,
+      "sha256": "a44e99414f992467dcbb33e40336229d0fd7ef84a2761325705c620a38e0813f",
+      "status": "ok"
+    },
+    {
+      "path": "a882a596_4a04_11e0_b08f_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/a882a596_4a04_11e0_b08f_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdz8="
+      ],
+      "bytes": 71306,
+      "sha256": "27c1bd482641a40491503fbec11a28355c0153fcac126e2c24167da1a9bba8b6",
+      "status": "ok"
+    },
+    {
+      "path": "a8c2cd73_8ad5_11e6_b36c_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/a8c2cd73_8ad5_11e6_b36c_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVd/8="
+      ],
+      "bytes": 29747,
+      "sha256": "cb145ce589edf05f5aa62f8fa717d5482a9740d6f137ee862b818384cb3e29b4",
+      "status": "ok"
+    },
+    {
+      "path": "aaeebc80_ee27_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/aaeebc80_ee27_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVePw="
+      ],
+      "bytes": 70491,
+      "sha256": "dd4803ad3733032c1e059d9c522638e42661f39b0778c17649244ad29435b0b7",
+      "status": "ok"
+    },
+    {
+      "path": "ab0a3114_4917_11ed_8deb_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/ab0a3114_4917_11ed_8deb_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaTI="
+      ],
+      "bytes": 69729,
+      "sha256": "4126d316716f4f01694f617870259b6e6cb77a5d1e09c47bb940e4f903fbb295",
+      "status": "ok"
+    },
+    {
+      "path": "ab1233e3_a22f_11f1_88c2_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/ab1233e3_a22f_11f1_88c2_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZgQ="
+      ],
+      "bytes": 61901,
+      "sha256": "92542dabfe042747b94552b35a3dfe07a2b63903ba0f2de82fddf2705aa65db6",
+      "status": "ok"
+    },
+    {
+      "path": "ab8cf58c_2996_11e7_9da7_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ab8cf58c_2996_11e7_9da7_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWXng="
+      ],
+      "bytes": 63640,
+      "sha256": "0dcedf3c22da73ec89d1a7beb1587cc9ed0fa4adcda8a4b83c5cad4f14dfb2f3",
+      "status": "ok"
+    },
+    {
+      "path": "ac16928a_806c_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/ac16928a_806c_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSQ="
+      ],
+      "bytes": 70752,
+      "sha256": "446a86a142b2319544ac678b02640a37e9057d175dbcfa6923d0f5c7eed0e47e",
+      "status": "ok"
+    },
+    {
+      "path": "ac44afe6_9e12_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/ac44afe6_9e12_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ+4="
+      ],
+      "bytes": 67132,
+      "sha256": "a7b7976c021692355c585b3350aa323fb2adf52971354c645d0fa5b0f9aa684c",
+      "status": "ok"
+    },
+    {
+      "path": "ae2501d0_21a8_11e0_aef1_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/ae2501d0_21a8_11e0_aef1_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdrg="
+      ],
+      "bytes": 68150,
+      "sha256": "b9070a7da7f9d2d7780b97fa22daa5eabf12e2df4774ceb1d355cce581723e77",
+      "status": "ok"
+    },
+    {
+      "path": "ae2501e7_21a8_11e0_aef1_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/ae2501e7_21a8_11e0_aef1_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdsE="
+      ],
+      "bytes": 67580,
+      "sha256": "b04eb59f3b2051fbffe10359668e00b162e0764cde9289fb47b91b15f2a52573",
+      "status": "ok"
+    },
+    {
+      "path": "ae2501f8_21a8_11e0_aef1_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/ae2501f8_21a8_11e0_aef1_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdsY="
+      ],
+      "bytes": 62618,
+      "sha256": "617621dfd31c89b35c8e2ce1a65a8e7bdb5a19c04631710bbfe7990dc800e6ce",
+      "status": "ok"
+    },
+    {
+      "path": "ae2ed8c7_deda_11eb_8dc5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/ae2ed8c7_deda_11eb_8dc5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ3Y="
+      ],
+      "bytes": 66986,
+      "sha256": "6579c3dbfdb273003d01eb152585ef84a0b664a6a0dac69650003fe1b4ea762e",
+      "status": "ok"
+    },
+    {
+      "path": "ae67409b_b03f_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ae67409b_b03f_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeeA="
+      ],
+      "bytes": 70385,
+      "sha256": "b56cedaafe8221e19a675f37a6e95d9b7ecae5b34f937292bbe724c31acc2ba0",
+      "status": "ok"
+    },
+    {
+      "path": "aff7e338_4a0e_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/aff7e338_4a0e_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7M="
+      ],
+      "bytes": 70157,
+      "sha256": "a46e1a1908409892e57876e0a556cbc14727d25bb229d62c0ac909bb5665ed34",
+      "status": "ok"
+    },
+    {
+      "path": "b0da0a4f_643f_11e6_925d_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/b0da0a4f_643f_11e6_925d_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVaxQ="
+      ],
+      "bytes": 29597,
+      "sha256": "e81751b8af4b9a14b2c1049df294e801f54c6c65d439dbd83cfb86ad5ae2abe2",
+      "status": "ok"
+    },
+    {
+      "path": "b1d31495_1d1e_11ed_8de6_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/b1d31495_1d1e_11ed_8de6_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaS0="
+      ],
+      "bytes": 69967,
+      "sha256": "f3f884b1adbcf71744e6872cac6b852f5ce661cafe21e15361f65d1d956d2946",
+      "status": "ok"
+    },
+    {
+      "path": "b211eaa2_8450_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/b211eaa2_8450_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSo="
+      ],
+      "bytes": 69018,
+      "sha256": "07b7aad7736f717c6cff30b4afc3498d18f30dd6449b320aaaa86b58ef1dd614",
+      "status": "ok"
+    },
+    {
+      "path": "b2705064_3b54_11ee_8df1_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/b2705064_3b54_11ee_8df1_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaao="
+      ],
+      "bytes": 68359,
+      "sha256": "417a7ae386edefba4ffb51bae7e0ae005def9418085d7bd4254a53c83d27e455",
+      "status": "ok"
+    },
+    {
+      "path": "b2d34971_ec01_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/b2d34971_ec01_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVeHU="
+      ],
+      "bytes": 70030,
+      "sha256": "aba43774e7b50ddd7b480425c65c29061049bb56d4c5d8deb415079cec1c61c1",
+      "status": "ok"
+    },
+    {
+      "path": "b2ddf07b_4a08_11e9_a093_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/b2ddf07b_4a08_11e9_a093_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcOg="
+      ],
+      "bytes": 66989,
+      "sha256": "2480cdea39b857f9e0a868e8ca28958a19234ac85bf125da15c7346bf9b7c816",
+      "status": "ok"
+    },
+    {
+      "path": "b3599df7_1133_11ea_b702_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/b3599df7_1133_11ea_b702_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeVg="
+      ],
+      "bytes": 69084,
+      "sha256": "0cda1f68fdc7f7759afb20aa7d760492533d19ae9b3de501cdf4330bd1bb137b",
+      "status": "ok"
+    },
+    {
+      "path": "b363c77f_7a77_11ef_8e10_ac1f6badb50d",
+      "source": "https://obedmoscow.ru/data/pictures/b363c77f_7a77_11ef_8e10_ac1f6badb50d.jpg",
+      "photoVersions": [
+        "AAAAAAAVakA="
+      ],
+      "bytes": 69535,
+      "sha256": "a290def17299ba39eadf8068fa7d3fb6c455626b16db3fc63adc13623299b566",
+      "status": "ok"
+    },
+    {
+      "path": "b3d148b0_5263_11ec_8dd8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/b3d148b0_5263_11ec_8dd8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaDU="
+      ],
+      "bytes": 71631,
+      "sha256": "fdd97a0170a61503ea587fd249c090a0c7fcc096dc5ecd2bedcb8abff7024b89",
+      "status": "ok"
+    },
+    {
+      "path": "b5e83d85_67b1_11ee_8df5_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/b5e83d85_67b1_11ee_8df5_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVabU="
+      ],
+      "bytes": 28534,
+      "sha256": "cc268e8e70ec43f41d544cb4a3dd6c30e18c2e0ca5e2fd589df7540622661c68",
+      "status": "ok"
+    },
+    {
+      "path": "b618b74b_5ebd_11e6_89c3_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/b618b74b_5ebd_11e6_89c3_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZiY="
+      ],
+      "bytes": 3910,
+      "sha256": "83fc0da5d405d74103b5d390ab2ded11e69371e10619328946e3e89e8b9a2321",
+      "status": "ok"
+    },
+    {
+      "path": "b63727f4_a1de_11f1_88c2_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/b63727f4_a1de_11f1_88c2_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZgM="
+      ],
+      "bytes": 68198,
+      "sha256": "f7a7a08c73141b01f607ad36fbcafc4b555380af3471de021e39bec334dea685",
+      "status": "ok"
+    },
+    {
+      "path": "b7e4ac51_ec4d_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/b7e4ac51_ec4d_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVeN0="
+      ],
+      "bytes": 30942,
+      "sha256": "bef8ce337309229d01ba70d02ca0389e50dbbd56dfb533926271bbe2c62372ec",
+      "status": "ok"
+    },
+    {
+      "path": "b999860e_8c13_11e0_a343_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/b999860e_8c13_11e0_a343_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVcY8="
+      ],
+      "bytes": 32145,
+      "sha256": "c6c3bb94b8d36c93d2b9428a7fb29ca813fb91cb8dac799c84dce845143b5d6e",
+      "status": "ok"
+    },
+    {
+      "path": "ba7f6cbb_8df9_11ee_8df7_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/ba7f6cbb_8df9_11ee_8df7_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAWQOM="
+      ],
+      "bytes": 27080,
+      "sha256": "4512b70e1981c4728dad0199aa88864cfdd0766078abad725fd45210e19fdf00",
+      "status": "ok"
+    },
+    {
+      "path": "bc11dd0b_42d7_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/bc11dd0b_42d7_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaOg="
+      ],
+      "bytes": 60222,
+      "sha256": "e12dd92b04195aa8e004352c6e9ad0e9cd5715dc1e151dfdd1f976327aeb6102",
+      "status": "ok"
+    },
+    {
+      "path": "bc26e61c_fb5c_11f0_8ddc_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/bc26e61c_fb5c_11f0_8ddc_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaHo="
+      ],
+      "bytes": 66147,
+      "sha256": "eba4b2eadb06e6d552be4d8fd7211b66943a1b08de11a30902d95519ff9d6438",
+      "status": "ok"
+    },
+    {
+      "path": "bcce3498_5ddc_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/bcce3498_5ddc_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaP0="
+      ],
+      "bytes": 68979,
+      "sha256": "04a62236ee734ac240b142ff7cc07a5c1ac74435864c8e348968e9fd4121e3c2",
+      "status": "ok"
+    },
+    {
+      "path": "beca3e8e_266f_11ec_8dd2_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/beca3e8e_266f_11ec_8dd2_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ+A="
+      ],
+      "bytes": 30192,
+      "sha256": "3af52e78d40711d6f48650403e4a66fe1a5245a503e3f79f38d5d6954ac981e0",
+      "status": "ok"
+    },
+    {
+      "path": "c07b5959_4b81_11ec_8dd8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/c07b5959_4b81_11ec_8dd8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaCk="
+      ],
+      "bytes": 31517,
+      "sha256": "a448767bd39e8853ef38732db8458103486e4796fcecc59fc12101222e642d50",
+      "status": "ok"
+    },
+    {
+      "path": "c17b2006_b03e_11f1_88c4_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/c17b2006_b03e_11f1_88c4_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZgo="
+      ],
+      "bytes": 68368,
+      "sha256": "dddc6d9cf8c503920e081569fd9e5b753d44b021582e9f3090d350ca5f518f99",
+      "status": "ok"
+    },
+    {
+      "path": "c1a737df_2d79_11e2_84b1_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/c1a737df_2d79_11e2_84b1_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZVI="
+      ],
+      "bytes": 40732,
+      "sha256": "0d8b6df97ff89f942d4ec6b19c00ba5e9be37e929384697faec3b606bf4bd3cd",
+      "status": "ok"
+    },
+    {
+      "path": "c2815d7d_4961_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/c2815d7d_4961_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaOo="
+      ],
+      "bytes": 63260,
+      "sha256": "e52c079ed8d0782855ca66e096e4e1b17cc2cc8d29f07ce84f91f4c4f2b23059",
+      "status": "ok"
+    },
+    {
+      "path": "c2be4c66_bfdf_11f0_8dd7_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/c2be4c66_bfdf_11f0_8dd7_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYzo="
+      ],
+      "bytes": 58660,
+      "sha256": "e3faa3c9009c9eda7551042fbc76bd928b3e7964aef7e72ad173ea0c014de955",
+      "status": "ok"
+    },
+    {
+      "path": "c348b45c_0f17_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/c348b45c_0f17_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ5A="
+      ],
+      "bytes": 66741,
+      "sha256": "95aa3d54164577265750ec70789595cb3829d7c84e9a272e94f443a79c6f15b8",
+      "status": "ok"
+    },
+    {
+      "path": "c8663ced_8317_11ec_8dda_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/c8663ced_8317_11ec_8dda_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaFw="
+      ],
+      "bytes": 29916,
+      "sha256": "d14cf300568d9f806411fb6e599f864e973880a61370853cd2359c9de9f0572b",
+      "status": "ok"
+    },
+    {
+      "path": "c969e8d3_0de7_11e5_928e_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/c969e8d3_0de7_11e5_928e_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVay8="
+      ],
+      "bytes": 68392,
+      "sha256": "776fba7a75b04ca9f9188f85ca61aa8c28a66e6a18c893fb92c9010210b48590",
+      "status": "ok"
+    },
+    {
+      "path": "cb4c0ffd_b041_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/cb4c0ffd_b041_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWYyw="
+      ],
+      "bytes": 29942,
+      "sha256": "205dc3246947ca35caf20298908f9e7a42ee79c13ad3697fae2869aeaeaea6ca",
+      "status": "ok"
+    },
+    {
+      "path": "ccac09cc_b02d_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ccac09cc_b02d_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWYhk="
+      ],
+      "bytes": 73528,
+      "sha256": "b4451cf80d8e1497b28dc07168d8e9d094358fdc0c3136c1d9e89be2ce72cf2e",
+      "status": "ok"
+    },
+    {
+      "path": "ccef1f17_4ad9_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/ccef1f17_4ad9_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ7U="
+      ],
+      "bytes": 70157,
+      "sha256": "a46e1a1908409892e57876e0a556cbc14727d25bb229d62c0ac909bb5665ed34",
+      "status": "ok"
+    },
+    {
+      "path": "ce8d4614_b046_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ce8d4614_b046_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWYg8="
+      ],
+      "bytes": 71665,
+      "sha256": "85859741cbee57df21fe030033e6ceeeef5ffae65602456737013559c0923f1c",
+      "status": "ok"
+    },
+    {
+      "path": "d0342000_dc05_11e6_a73d_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/d0342000_dc05_11e6_a73d_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdCE="
+      ],
+      "bytes": 32410,
+      "sha256": "6ad8dee3fbf7e376ecc53939021fc24ff587661c3c94d4867bc5651484035853",
+      "status": "ok"
+    },
+    {
+      "path": "d1038199_1134_11ea_b702_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/d1038199_1134_11ea_b702_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeVk="
+      ],
+      "bytes": 65499,
+      "sha256": "68084de7fa1ad5b1e26d1203fc7fd8c18bbce9992c10b326f228640b3f4fff2d",
+      "status": "ok"
+    },
+    {
+      "path": "d1222d93_806f_11f1_8de5_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/d1222d93_806f_11f1_8de5_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaSU="
+      ],
+      "bytes": 62133,
+      "sha256": "82e3537c4674a265dc1c9bb2f75504d890be3e7f39f5a717ac60030a89e2cc77",
+      "status": "ok"
+    },
+    {
+      "path": "d18013be_af01_11ee_8df7_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/d18013be_af01_11ee_8df7_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVad0="
+      ],
+      "bytes": 61233,
+      "sha256": "e6c56a5c1cc07b9be3c628c68d6a9dde682c20fe383c889ec298f2f32f548301",
+      "status": "ok"
+    },
+    {
+      "path": "d1ac601d_c3ce_11f0_8dd7_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/d1ac601d_c3ce_11f0_8dd7_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaBw="
+      ],
+      "bytes": 73385,
+      "sha256": "fa8ff270d9d88cfad355c3aa24876d1e67d94db435600f9d7ff00df65fa60702",
+      "status": "ok"
+    },
+    {
+      "path": "d1dc8b87_8676_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/d1dc8b87_8676_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZyU="
+      ],
+      "bytes": 70939,
+      "sha256": "a2fce2d9b9a4185a1d8c3a6876523d9de877329439f1e82cead411ca908c12fc",
+      "status": "ok"
+    },
+    {
+      "path": "d2a85e29_b03b_11f1_88c4_e89c2528dd7e",
+      "source": "https://obedmoscow.ru/data/pictures/d2a85e29_b03b_11f1_88c4_e89c2528dd7e.jpg",
+      "photoVersions": [
+        "AAAAAAAVZgk="
+      ],
+      "bytes": 65321,
+      "sha256": "3f53c6d95dbc41659570ae8aa5341cd6e541fb3f26095bd5775c9511cb9be8ba",
+      "status": "ok"
+    },
+    {
+      "path": "d3ef7bb9_448b_11e0_b08f_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/d3ef7bb9_448b_11e0_b08f_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdyk="
+      ],
+      "bytes": 71947,
+      "sha256": "734c9bfae1a24807cd97f4f2e9de10ae2feea439e4c3812f0cde9a4c83f0a5a4",
+      "status": "ok"
+    },
+    {
+      "path": "d4f94af4_6b9e_11e3_abb1_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/d4f94af4_6b9e_11e3_abb1_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdOw="
+      ],
+      "bytes": 73187,
+      "sha256": "c574e7acce058be0082c2600500b76edfc4bd32fa3cfa879c0cac88739579dd4",
+      "status": "ok"
+    },
+    {
+      "path": "d57a173d_5c30_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/d57a173d_5c30_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWrc4="
+      ],
+      "bytes": 66605,
+      "sha256": "f946da0d959b8084cb18262305b4c887e53cbd44b9d3eb199b7efcd69e7baad3",
+      "status": "ok"
+    },
+    {
+      "path": "d674728d_030e_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/d674728d_030e_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ4A="
+      ],
+      "bytes": 72680,
+      "sha256": "c59277c859d48942988915b3870dbab7ac400c9c8c8dd3758bed47e36abb5d0b",
+      "status": "ok"
+    },
+    {
+      "path": "d675a984_0f2a_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/d675a984_0f2a_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ5Q="
+      ],
+      "bytes": 69284,
+      "sha256": "f39e4726e252543f847ffd3b053a4224173424e4ff0937c51c3d9d29f7dc04e3",
+      "status": "ok"
+    },
+    {
+      "path": "d6817979_91d6_11eb_8db8_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/d6817979_91d6_11eb_8db8_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZyw="
+      ],
+      "bytes": 67664,
+      "sha256": "1753f3869f7db23fbc5b5510f8c1ff140e9e9687e3f6fe7ccc5dc9fbc149368c",
+      "status": "ok"
+    },
+    {
+      "path": "d8dd5cb8_b038_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/d8dd5cb8_b038_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVedk="
+      ],
+      "bytes": 69604,
+      "sha256": "9b8817a543f7d00484d6e847cdea61933bee7e128face2ad6f9a8f07f19eb67c",
+      "status": "ok"
+    },
+    {
+      "path": "d9caef22_ee2b_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/d9caef22_ee2b_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVeQE="
+      ],
+      "bytes": 72649,
+      "sha256": "43e843928310db859f0116f12be91321ecc72e6f31cc6db1a01826e49fd1efb9",
+      "status": "ok"
+    },
+    {
+      "path": "db6208a1_bf9a_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/db6208a1_bf9a_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaMA="
+      ],
+      "bytes": 68591,
+      "sha256": "fb0e74e074ef06f99da88a8a473de5dcae04244927f08f7916af6fe0663431d0",
+      "status": "ok"
+    },
+    {
+      "path": "dbdb2dbb_b04a_11e4_bc12_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/dbdb2dbb_b04a_11e4_bc12_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWYyo="
+      ],
+      "bytes": 72641,
+      "sha256": "efe24e6b25a864cba0d3c9d88591ac77d09e4c817b41aa7cdde6f3bd6eb90c54",
+      "status": "ok"
+    },
+    {
+      "path": "de1deaf7_87c2_11e5_b1ed_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/de1deaf7_87c2_11e5_b1ed_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVd44="
+      ],
+      "bytes": 65037,
+      "sha256": "49a6f12419a1f1f853bc817b59e8260337341d16fb38b53e1781b3d7c686575e",
+      "status": "ok"
+    },
+    {
+      "path": "df5c3c04_9512_11ee_8df7_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/df5c3c04_9512_11ee_8df7_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVadM="
+      ],
+      "bytes": 69965,
+      "sha256": "bb722974ca9fd911a29d75c41f970b7f3c5664136c38748950e911656cf1a0bb",
+      "status": "ok"
+    },
+    {
+      "path": "df95d0d9_b4a4_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/df95d0d9_b4a4_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaLM="
+      ],
+      "bytes": 65443,
+      "sha256": "e63fe6648d3eee65fc2b896532564083d9063f96121904d896956fb1b4bad998",
+      "status": "ok"
+    },
+    {
+      "path": "e3ad2d8d_ae81_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/e3ad2d8d_ae81_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaKk="
+      ],
+      "bytes": 63118,
+      "sha256": "429a96921cf286bfb6ade9e15b836d305e2a9ad0e4d64d2100ca1d86e0457991",
+      "status": "ok"
+    },
+    {
+      "path": "e457d1fd_4246_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/e457d1fd_4246_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaOc="
+      ],
+      "bytes": 60514,
+      "sha256": "23904744a4d67ce4473f4e8d7490fc1d2d005af9fec19753e91770710c3f589e",
+      "status": "ok"
+    },
+    {
+      "path": "e4885b4b_3852_11e6_9d05_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e4885b4b_3852_11e6_9d05_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcDk="
+      ],
+      "bytes": 19887,
+      "sha256": "5bfd10d41caaf64768130ab53c18c3961a05287831fd8d33dfe8c5cbeba4c7c1",
+      "status": "ok"
+    },
+    {
+      "path": "e53a23f0_ffef_11e1_aecb_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e53a23f0_ffef_11e1_aecb_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVdak="
+      ],
+      "bytes": 72481,
+      "sha256": "ddfa20848093e362d98f2f0978930c28e00af77e80e532a14359fea30d04418c",
+      "status": "ok"
+    },
+    {
+      "path": "e5e89f80_883e_11e5_a64d_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e5e89f80_883e_11e5_a64d_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVc+Q="
+      ],
+      "bytes": 68178,
+      "sha256": "1fee98c4c28629d00c96d92b0c92052771572134ceeb84b5527e8a082f64de9b",
+      "status": "ok"
+    },
+    {
+      "path": "e657374a_c45f_11e3_9b18_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/e657374a_c45f_11e3_9b18_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcAg="
+      ],
+      "bytes": 73657,
+      "sha256": "f1c6517d5bfd3c95b6cc7acf0e0011c15ebb81a208fe20f587ffb0cedead23bc",
+      "status": "ok"
+    },
+    {
+      "path": "e801285a_1511_11ee_8def_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/e801285a_1511_11ee_8def_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAWYyg="
+      ],
+      "bytes": 71093,
+      "sha256": "71c9a9d62c66ebc154a8be8284932cea5e90c4cb4c4771ae2aaaa01fbc8328b8",
+      "status": "ok"
+    },
+    {
+      "path": "ea19d932_5b46_11e9_b747_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ea19d932_5b46_11e9_b747_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVeWo="
+      ],
+      "bytes": 30985,
+      "sha256": "524808500fd25d63162b163051aa23b2365bd8b6d7238a870d85ae8275f57fed",
+      "status": "ok"
+    },
+    {
+      "path": "eb047b9e_9705_11f0_8dd2_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/eb047b9e_9705_11f0_8dd2_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ+I="
+      ],
+      "bytes": 72425,
+      "sha256": "4eb7bdbdc36bb5901356ad07e1fed2c65c92aa977a04c93e13f9967456d6e743",
+      "status": "ok"
+    },
+    {
+      "path": "eb0ce3c6_5906_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/eb0ce3c6_5906_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaO8="
+      ],
+      "bytes": 60509,
+      "sha256": "cacfb398c0c4e7da09b3dcb1173f5df7069e96b436f2b57453aa18593d6c8c4b",
+      "status": "ok"
+    },
+    {
+      "path": "ec00275e_3774_11e6_88d7_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/ec00275e_3774_11e6_88d7_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZhQ="
+      ],
+      "bytes": 61851,
+      "sha256": "3dcdc4f42928af5867411ad83db05c7fa6e0e4207288ced1b99c45578e08c4bc",
+      "status": "ok"
+    },
+    {
+      "path": "eda84cf9_60d6_11f0_8dd1_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/eda84cf9_60d6_11f0_8dd1_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAWYzg="
+      ],
+      "bytes": 67006,
+      "sha256": "97d1ef74a5e7d6513dd505b5aaecf7a1df7847fbcf1a17f42a99ec18fbd8bcba",
+      "status": "ok"
+    },
+    {
+      "path": "ee086148_52da_11f1_8de3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/ee086148_52da_11f1_8de3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaOw="
+      ],
+      "bytes": 72257,
+      "sha256": "12eab4654aa92186ed9450a7970ec24e2d1c3967094a376140218c1c906c8051",
+      "status": "ok"
+    },
+    {
+      "path": "efac5e76_ae86_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/efac5e76_ae86_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaKo="
+      ],
+      "bytes": 67202,
+      "sha256": "83f971b2c2880f61d693b20681120761e02a8bd4269e14c75e57704b8a53437c",
+      "status": "ok"
+    },
+    {
+      "path": "f094ec42_f770_11ea_8db1_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/f094ec42_f770_11ea_8db1_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZrU="
+      ],
+      "bytes": 31898,
+      "sha256": "48d86878d414a66225ccef4e6b8061a637005c5ea6576ec8da0dbe024a24880b",
+      "status": "ok"
+    },
+    {
+      "path": "f0c20291_617f_11e7_b341_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/f0c20291_617f_11e7_b341_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVd9w="
+      ],
+      "bytes": 72481,
+      "sha256": "b4bf2111e0064c5175647fd6de69f4deac16e823599a42effadfe286ebfc9aa0",
+      "status": "ok"
+    },
+    {
+      "path": "f20eac1b_eb4f_11df_b5cc_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/f20eac1b_eb4f_11df_b5cc_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAWYg0="
+      ],
+      "bytes": 67109,
+      "sha256": "06106632e470d14a43ee086ea432f8e07772d58f5dd91d0e50943510b812f3f5",
+      "status": "ok"
+    },
+    {
+      "path": "f4b67a10_ac50_11f0_8dd3_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/f4b67a10_ac50_11f0_8dd3_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaAY="
+      ],
+      "bytes": 68871,
+      "sha256": "b7d8388e216866d253c32c31cc7a9d8427e761c9c2e9964458cb91ee291e37c1",
+      "status": "ok"
+    },
+    {
+      "path": "f4fda809_2f44_11f0_8dcf_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/f4fda809_2f44_11f0_8dcf_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ6Q="
+      ],
+      "bytes": 64408,
+      "sha256": "b82997628e064d3fa2fd5e758950cf8987a0bfeedc2be2eb437a81d3d385e399",
+      "status": "ok"
+    },
+    {
+      "path": "f6237513_1ace_11ec_8dd0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/f6237513_1ace_11ec_8dd0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ78="
+      ],
+      "bytes": 71186,
+      "sha256": "651dafaacae8402e5d108d15e4f64e40941e5ab33a56a34adfbc98d46132af3c",
+      "status": "ok"
+    },
+    {
+      "path": "f881f950_f145_11ec_8de0_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/f881f950_f145_11ec_8de0_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAWYxU="
+      ],
+      "bytes": 64552,
+      "sha256": "860c552c2230d24789ca7885c1b4806f6d217ba15bcd81f8c261978a100ddf34",
+      "status": "ok"
+    },
+    {
+      "path": "f982a1c3_c224_11e8_9d78_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/f982a1c3_c224_11e8_9d78_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWQKA="
+      ],
+      "bytes": 100722,
+      "sha256": "4037bad2fbc03f981c4e815e2d82333c72596d31035a974e67dbf4fdf451c8d6",
+      "status": "ok"
+    },
+    {
+      "path": "fa896609_5c40_11e5_8770_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/fa896609_5c40_11e5_8770_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZdk="
+      ],
+      "bytes": 23122,
+      "sha256": "2f56130e7974789d92e0a99107a80bca07640da7534de754324f75d9863bf64c",
+      "status": "ok"
+    },
+    {
+      "path": "fb6f9fb0_456a_11e0_b08f_0002b39d8690",
+      "source": "https://obedmoscow.ru/data/pictures/fb6f9fb0_456a_11e0_b08f_0002b39d8690.jpg",
+      "photoVersions": [
+        "AAAAAAAVdzE="
+      ],
+      "bytes": 26351,
+      "sha256": "dde8e43bb6f0cd504018084f0c86c9f46ca0e3ed8196beabc4528ba5dd9aaec9",
+      "status": "ok"
+    },
+    {
+      "path": "fb9d2612_0f20_11f0_8dcd_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/fb9d2612_0f20_11f0_8dcd_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVZ5I="
+      ],
+      "bytes": 59988,
+      "sha256": "4daf7934ad0787456bd019112c4f562b43b16f61f85b8301ca56bb250113f3e9",
+      "status": "ok"
+    },
+    {
+      "path": "fbd761b9_eae9_11e7_860b_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/fbd761b9_eae9_11e7_860b_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVZWc="
+      ],
+      "bytes": 67208,
+      "sha256": "d1666f4bd56355ff0c51579de4c0a3de93f16b0c8330b4704d42802c2544d13d",
+      "status": "ok"
+    },
+    {
+      "path": "fca0b8e5_1776_11ef_8e07_ac1f6badb50c",
+      "source": "https://obedmoscow.ru/data/pictures/fca0b8e5_1776_11ef_8e07_ac1f6badb50c.jpg",
+      "photoVersions": [
+        "AAAAAAAVaiU="
+      ],
+      "bytes": 72101,
+      "sha256": "d4b1d8b5ad1c441297cb4c7c5f0d78ea3015b190fb449b43ff4e185da920559e",
+      "status": "ok"
+    },
+    {
+      "path": "fda7ecfe_3ce1_11ea_a177_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/fda7ecfe_3ce1_11ea_a177_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcRA="
+      ],
+      "bytes": 31242,
+      "sha256": "d479fe949f25ada0a2ecaf3e0153fca63afa828a24ffd101a8c481094d51d4b7",
+      "status": "ok"
+    },
+    {
+      "path": "fdba7ec1_0f39_11ea_ac67_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/fdba7ec1_0f39_11ea_ac67_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAWS2w="
+      ],
+      "bytes": 30407,
+      "sha256": "bb7eb42a977104660effb741c79a0d6fc8181fa9e51f5881f6cd72ccf1072c3b",
+      "status": "ok"
+    },
+    {
+      "path": "fe08f139_bb14_11e8_9c0e_f46d0464acc0",
+      "source": "https://obedmoscow.ru/data/pictures/fe08f139_bb14_11e8_9c0e_f46d0464acc0.jpg",
+      "photoVersions": [
+        "AAAAAAAVcBc="
+      ],
+      "bytes": 60833,
+      "sha256": "39ae4821d9acaa664eb441b3962b22c7ed5d00983c71d78f4c737f2a6c1f9da8",
+      "status": "ok"
+    },
+    {
+      "path": "ff37cab6_c308_11f0_8dd7_d843ae1ea6fc",
+      "source": "https://obedmoscow.ru/data/pictures/ff37cab6_c308_11f0_8dd7_d843ae1ea6fc.jpg",
+      "photoVersions": [
+        "AAAAAAAVaBs="
+      ],
+      "bytes": 60410,
+      "sha256": "40d0829480579c8b2599a8e8cbc576057bf9116d0f1c958613613913c1a15b83",
+      "status": "ok"
+    }
+  ]
+}

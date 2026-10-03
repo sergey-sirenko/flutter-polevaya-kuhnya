@@ -1,0 +1,7 @@
+{
+  "web/version.json": "954276fed74513764dcd7d69888403ca121f78e9d2d24f38f0f9dc5758b91dff",
+  "lib/features/menu/menu_page.dart": "1f7ea72edcd89fc735de70136f6e1bf0597b64044ac671c17c0b571b302799d9",
+  "lib/features/cart/cart_page.dart": "9c4d96658cf3a432205c9b303e006c2f43f38bbf1060458a3c4ed6038c15a9c8",
+  "pubspec.yaml": "b4b57c4f3c41c296acf7a036b1d4841aa1c887a520049c1c77c314234d475e71",
+  "build/web/main.dart.js": "35f53c82a6e8e5f5c76149f7ac6d3692835a92409eba211a37157b931a2d10c6"
+}

@@ -1,0 +1,4211 @@
+{
+  "checkedAt": "2026-10-01T17:09:37.674Z",
+  "cases": [
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 305,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 585,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 753,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1009,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 13,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1185,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 305,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 375,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 585,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 753,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1009,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1185,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 305,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 585,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 753,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1009,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 13,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1185,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 305,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 375,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 585,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 753,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1009,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1185,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 305,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 585,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 753,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1009,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 13,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1185,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 305,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 375,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 585,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 753,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1009,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1185,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 305,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 585,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 753,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1009,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 13,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1185,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 305,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 375,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 600,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 600,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 753,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1024,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 1024,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1185,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "1-white-kitchen.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 305,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 585,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 753,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1009,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 13,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1185,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 305,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 375,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 600,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 600,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 768,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 768,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1024,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 1024,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1185,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 305,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 585,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 585,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 753,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 753,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1009,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 13,
+      "placeholders": 0,
+      "scrollWidth": 1009,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1185,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "home",
+      "scale": 1.6,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 305,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 305,
+      "smallControls": [],
+      "smallText": [],
+      "width": 320
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 375,
+      "columns": 1,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "width": 390
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 600,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 600,
+      "smallControls": [],
+      "smallText": [],
+      "width": 600
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 768,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 768,
+      "smallControls": [],
+      "smallText": [],
+      "width": 768
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1024,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 1024,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1024
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1185,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1185,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1200
+    },
+    {
+      "file": "3-green-standard.html",
+      "page": "menu",
+      "scale": 1.6,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 17,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "width": 1440
+    }
+  ],
+  "interactions": [
+    {
+      "file": "1-white-kitchen.html",
+      "total": "355 ₽",
+      "cardHeightBefore": 379.359375,
+      "cardHeightAfter": 379.359375,
+      "resize": "355 ₽",
+      "otherDay": "0 ₽",
+      "restored": "355 ₽",
+      "form": {
+        "overflow": false,
+        "value": "Пример"
+      },
+      "dialogClosed": true
+    },
+    {
+      "file": "2-warm-lunch.html",
+      "total": "355 ₽",
+      "cardHeightBefore": 387.359375,
+      "cardHeightAfter": 387.359375,
+      "resize": "355 ₽",
+      "otherDay": "0 ₽",
+      "restored": "355 ₽",
+      "form": {
+        "overflow": false,
+        "value": "Пример"
+      },
+      "dialogClosed": true
+    },
+    {
+      "file": "3-green-standard.html",
+      "total": "355 ₽",
+      "cardHeightBefore": 368.359375,
+      "cardHeightAfter": 368.359375,
+      "resize": "355 ₽",
+      "otherDay": "0 ₽",
+      "restored": "355 ₽",
+      "form": {
+        "overflow": false,
+        "value": "Пример"
+      },
+      "dialogClosed": true
+    }
+  ],
+  "finalScreens": [
+    {
+      "name": "1-home-desktop",
+      "width": 1440,
+      "height": 1080,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": null,
+      "cardHeightAfter": null
+    },
+    {
+      "name": "1-home-mobile",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": null,
+      "cardHeightAfter": null
+    },
+    {
+      "name": "1-menu-desktop",
+      "width": 1440,
+      "height": 1080,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 19,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": 465.28125,
+      "cardHeightAfter": 465.28125
+    },
+    {
+      "name": "1-menu-mobile",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": 379.359375,
+      "cardHeightAfter": 379.359375
+    },
+    {
+      "name": "2-home-desktop",
+      "width": 1440,
+      "height": 1080,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": null,
+      "cardHeightAfter": null
+    },
+    {
+      "name": "2-home-mobile",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": null,
+      "cardHeightAfter": null
+    },
+    {
+      "name": "2-menu-desktop",
+      "width": 1440,
+      "height": 1080,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 19,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": 475.28125,
+      "cardHeightAfter": 475.28125
+    },
+    {
+      "name": "2-menu-mobile",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": 387.359375,
+      "cardHeightAfter": 387.359375
+    },
+    {
+      "name": "3-home-desktop",
+      "width": 1440,
+      "height": 1080,
+      "clientWidth": 1425,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": null,
+      "cardHeightAfter": null
+    },
+    {
+      "name": "3-home-mobile",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "columns": null,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 14,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": null,
+      "cardHeightAfter": null
+    },
+    {
+      "name": "3-menu-desktop",
+      "width": 1440,
+      "height": 1080,
+      "clientWidth": 1425,
+      "columns": 3,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 19,
+      "placeholders": 0,
+      "scrollWidth": 1425,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": 444.28125,
+      "cardHeightAfter": 444.28125
+    },
+    {
+      "name": "3-menu-mobile",
+      "width": 390,
+      "height": 844,
+      "clientWidth": 375,
+      "columns": 2,
+      "failedPhotos": [],
+      "overflow": false,
+      "photoStyles": [
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        },
+        {
+          "background": "rgb(255, 255, 255)",
+          "fit": "contain"
+        }
+      ],
+      "photos": 9,
+      "placeholders": 0,
+      "scrollWidth": 375,
+      "smallControls": [],
+      "smallText": [],
+      "scrollY": 0,
+      "cardHeightBefore": 368.359375,
+      "cardHeightAfter": 368.359375
+    }
+  ],
+  "bottomPanel": {
+    "file": "3-green-standard.html",
+    "lastButtonBottom": 529.265625,
+    "scrollY": 1129,
+    "summaryTop": 691,
+    "totalText": "4 порций · 05.10425 ₽В корзину →",
+    "width": 390
+  }
+}

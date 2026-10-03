@@ -103,13 +103,10 @@ void main() {
 
     test('C-2: распределение A→B', () {
       final c = conditions(dc: 150);
-      final day = dayOf(
-        [
-          PricingLineInput(price: 100, quantity: 1, menuOrder: 1),
-          PricingLineInput(price: 100, quantity: 1, menuOrder: 2),
-        ],
-        c,
-      );
+      final day = dayOf([
+        PricingLineInput(price: 100, quantity: 1, menuOrder: 1),
+        PricingLineInput(price: 100, quantity: 1, menuOrder: 2),
+      ], c);
       expect(day.effectiveDiscountClient, 150);
       expect(day.lines[0].discountClientAmount, 100);
       expect(day.lines[0].finalTotal, 0);
@@ -120,10 +117,9 @@ void main() {
     });
 
     test('C-3: без оплаты больше суммы дня', () {
-      final day = dayOf(
-        [PricingLineInput(price: 100, quantity: 1)],
-        conditions(dc: 500),
-      );
+      final day = dayOf([
+        PricingLineInput(price: 100, quantity: 1),
+      ], conditions(dc: 500));
       expect(day.lines.single.discountClientAmount, 100);
       expect(day.lines.single.finalTotal, 0);
     });
@@ -132,13 +128,10 @@ void main() {
   group('§5.3 DiscountPromotion + MPA', () {
     test('D-1: дотация с MPA', () {
       final c = conditions(dc: 250, promo: true, mpa: 100);
-      final day = dayOf(
-        [
-          PricingLineInput(price: 200, quantity: 1, menuOrder: 1),
-          PricingLineInput(price: 200, quantity: 1, menuOrder: 2),
-        ],
-        c,
-      );
+      final day = dayOf([
+        PricingLineInput(price: 200, quantity: 1, menuOrder: 1),
+        PricingLineInput(price: 200, quantity: 1, menuOrder: 2),
+      ], c);
       expect(day.effectiveDiscountClient, 250);
       expect(day.lines[0].discountClientAmount, 200);
       expect(day.lines[0].finalTotal, 0);
@@ -148,19 +141,17 @@ void main() {
     });
 
     test('D-2: день ≤ MPA → дотация 0', () {
-      final day = dayOf(
-        [PricingLineInput(price: 80, quantity: 1)],
-        conditions(dc: 50, promo: true, mpa: 100),
-      );
+      final day = dayOf([
+        PricingLineInput(price: 80, quantity: 1),
+      ], conditions(dc: 50, promo: true, mpa: 100));
       expect(day.effectiveDiscountClient, 0);
       expect(day.totals.finalTotal, 80);
     });
 
     test('D-3: promo=1, MPA выкл.', () {
-      final day = dayOf(
-        [PricingLineInput(price: 300, quantity: 1)],
-        conditions(dc: 50, promo: true, mpa: 0),
-      );
+      final day = dayOf([
+        PricingLineInput(price: 300, quantity: 1),
+      ], conditions(dc: 50, promo: true, mpa: 0));
       expect(day.effectiveDiscountClient, 50);
       expect(day.totals.finalTotal, 250);
     });
@@ -168,10 +159,9 @@ void main() {
 
   group('§5.4 процент и без оплаты', () {
     test('X-1: % затем фиксированная сумма', () {
-      final day = dayOf(
-        [PricingLineInput(price: 250, quantity: 1)],
-        conditions(pct: 10, dc: 50),
-      );
+      final day = dayOf([
+        PricingLineInput(price: 250, quantity: 1),
+      ], conditions(pct: 10, dc: 50));
       final line = day.lines.single;
       expect(line.baseTotal, 250);
       expect(line.discountAmount, 25);
@@ -181,13 +171,10 @@ void main() {
     });
 
     test('X-2: % на строках, остаток без оплаты', () {
-      final day = dayOf(
-        [
-          PricingLineInput(price: 100, quantity: 1, menuOrder: 1),
-          PricingLineInput(price: 100, quantity: 1, menuOrder: 2),
-        ],
-        conditions(pct: 10, dc: 50),
-      );
+      final day = dayOf([
+        PricingLineInput(price: 100, quantity: 1, menuOrder: 1),
+        PricingLineInput(price: 100, quantity: 1, menuOrder: 2),
+      ], conditions(pct: 10, dc: 50));
       expect(day.lines[0].discountAmount, 10);
       expect(day.lines[0].totalAfterPercentage, 90);
       expect(day.lines[0].discountClientAmount, 50);
@@ -199,13 +186,10 @@ void main() {
     });
 
     test('X-3: % + дотация с MPA', () {
-      final day = dayOf(
-        [
-          PricingLineInput(price: 200, quantity: 1, menuOrder: 1),
-          PricingLineInput(price: 200, quantity: 1, menuOrder: 2),
-        ],
-        conditions(pct: 10, dc: 250, promo: true, mpa: 100),
-      );
+      final day = dayOf([
+        PricingLineInput(price: 200, quantity: 1, menuOrder: 1),
+        PricingLineInput(price: 200, quantity: 1, menuOrder: 2),
+      ], conditions(pct: 10, dc: 250, promo: true, mpa: 100));
       expect(day.lines[0].totalAfterPercentage, 180);
       expect(day.lines[1].totalAfterPercentage, 180);
       expect(day.effectiveDiscountClient, 250);

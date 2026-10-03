@@ -27,47 +27,50 @@ ClientPricingConditions conditions({
 
 void main() {
   group('пустой день', () {
-    test('пустой день в корзине не даёт вклад в неделю и не ломает минимум', () {
-      final c = conditions(minOrder: 200, limit: 500, weekLimit: true);
-      final days = [
-        PricingDayInput(
-          weekType: 'current',
+    test(
+      'пустой день в корзине не даёт вклад в неделю и не ломает минимум',
+      () {
+        final c = conditions(minOrder: 200, limit: 500, weekLimit: true);
+        final days = [
+          PricingDayInput(
+            weekType: 'current',
+            dayKey: 'empty',
+            lines: const [],
+          ),
+          PricingDayInput(
+            weekType: 'current',
+            dayKey: 'full',
+            lines: [PricingLineInput(price: 250, quantity: 1)],
+          ),
+        ];
+        final cart = calculateCart(days: days, conditions: c);
+
+        final empty = cart.days.firstWhere((d) => d.dayKey == 'empty');
+        expect(empty.totals.finalTotal, 0);
+        expect(empty.effectiveDiscountClient, 0);
+
+        final emptyMin = checkDayMinimum(
           dayKey: 'empty',
           lines: const [],
-        ),
-        PricingDayInput(
-          weekType: 'current',
-          dayKey: 'full',
-          lines: [PricingLineInput(price: 250, quantity: 1)],
-        ),
-      ];
-      final cart = calculateCart(days: days, conditions: c);
+          dayTotals: empty.totals,
+          conditions: c,
+        );
+        expect(emptyMin.skippedEmptyDay, isTrue);
+        expect(emptyMin.isBelowMinimum, isFalse);
 
-      final empty = cart.days.firstWhere((d) => d.dayKey == 'empty');
-      expect(empty.totals.finalTotal, 0);
-      expect(empty.effectiveDiscountClient, 0);
+        final full = cart.days.firstWhere((d) => d.dayKey == 'full');
+        expect(full.totals.finalTotal, 250);
+        expect(cart.weekTotalsByType['current']!.finalTotal, 250);
 
-      final emptyMin = checkDayMinimum(
-        dayKey: 'empty',
-        lines: const [],
-        dayTotals: empty.totals,
-        conditions: c,
-      );
-      expect(emptyMin.skippedEmptyDay, isTrue);
-      expect(emptyMin.isBelowMinimum, isFalse);
-
-      final full = cart.days.firstWhere((d) => d.dayKey == 'full');
-      expect(full.totals.finalTotal, 250);
-      expect(cart.weekTotalsByType['current']!.finalTotal, 250);
-
-      final weekLimit = previewLimit(
-        conditions: c,
-        dayTotals: empty.totals,
-        weekTotals: cart.weekTotalsByType['current']!,
-      );
-      expect(weekLimit.comparedFinalTotal, 250);
-      expect(weekLimit.isExceeded, isFalse);
-    });
+        final weekLimit = previewLimit(
+          conditions: c,
+          dayTotals: empty.totals,
+          weekTotals: cart.weekTotalsByType['current']!,
+        );
+        expect(weekLimit.comparedFinalTotal, 250);
+        expect(weekLimit.isExceeded, isFalse);
+      },
+    );
 
     test('количество 0 на единственной строке — нулевой день', () {
       final day = calculateDayResult(

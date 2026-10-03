@@ -16,6 +16,37 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  test(
+    'оплата истории: скидка, окончательная сумма и защита от повторной скидки',
+    () {
+      UserOrderDay parse(Map<String, Object?> extra) =>
+          UserOrderDay.fromJson({'sum': 115, 'discount': 6, ...extra});
+      expect(parse({}).payable, 109);
+      expect(
+        parse({'finalPayable': 100.5, 'finalPayableScope': 'document'}).payable,
+        100.5,
+      );
+      expect(
+        parse({'finalPayable': 0, 'finalPayableScope': 'employee_dishes'})
+            .payable,
+        0,
+      );
+      for (final value in [-1, 1.001, double.nan, '109']) {
+        expect(
+          parse({'finalPayable': value, 'finalPayableScope': 'document'})
+              .payable,
+          109,
+        );
+      }
+      expect(
+        parse({'finalPayable': 20, 'finalPayableScope': 'unknown'}).payable,
+        109,
+      );
+      expect(parse({'discount': 200}).payable, 0);
+      expect(parse({'discount': 0}).payable, 115);
+    },
+  );
+
   final fullJson = jsonDecode(
     File('test/fixtures/api/login_token_profile_full.json').readAsStringSync(),
   ) as Map<String, dynamic>;
@@ -45,11 +76,55 @@ void main() {
       expect(profile.login, isEmpty);
       expect(profile.orders, isEmpty);
     });
+
+    test('снимок профиля не меняется через исходный JSON или коллекции', () {
+      final source =
+          jsonDecode(jsonEncode(fullJson['user'])) as Map<String, dynamic>;
+      final profile = UserProfile.fromUserJson(source);
+      (source['order'] as List).clear();
+      expect(profile.orders, hasLength(1));
+      expect(profile.rawUser['order'], isA<List>());
+      expect((profile.rawUser['order'] as List), hasLength(1));
+      expect(() => profile.orders.clear(), throwsUnsupportedError);
+      expect(
+        () => profile.orders.single.dishes.clear(),
+        throwsUnsupportedError,
+      );
+      expect(() => profile.rawUser.clear(), throwsUnsupportedError);
+      expect(
+        () => (profile.rawUser['order'] as List).clear(),
+        throwsUnsupportedError,
+      );
+    });
+
+    test('повреждённая история не принимается как полный профиль', () {
+      expect(
+        () => UserProfile.fromUserJson({'order': 'не массив'}),
+        throwsFormatException,
+      );
+      expect(
+        () => UserProfile.fromUserJson({
+          'order': [null],
+        }),
+        throwsFormatException,
+      );
+      expect(
+        () => UserProfile.fromUserJson({
+          'order': [
+            {
+              'dishes': [null],
+            },
+          ],
+        }),
+        throwsFormatException,
+      );
+    });
   });
 
   group('SessionRepository.verify', () {
     late SessionStorage storage;
     final config = AppConfig.parse(
+      appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
       environment: 'test',
       apiBaseUrl: 'https://api.example.test/Obmen/',
       dataBaseUrl: 'https://data.example.test/data/',
@@ -60,36 +135,38 @@ void main() {
       storage = SessionStorage(config: config);
     });
 
-    test('успешный token refresh возвращает профиль и сохраняет токен ответа', () async {
-      final client = MockClient((request) async {
-        expect(request.url.path, '/Obmen/V1/User/login');
-        final body = jsonDecode(request.body) as Map;
-        expect(body.keys, unorderedEquals(['token', 'deviceId']));
-        return http.Response.bytes(
-          utf8.encode(jsonEncode(fullJson)),
-          200,
-          headers: const {'content-type': 'application/json; charset=utf-8'},
+    test(
+      'успешный token refresh возвращает профиль и сохраняет токен ответа',
+      () async {
+        final client = MockClient((request) async {
+          expect(request.url.path, '/Obmen/V1/User/login');
+          final body = jsonDecode(request.body) as Map;
+          expect(body.keys, unorderedEquals(['token', 'deviceId']));
+          return http.Response.bytes(
+            utf8.encode(jsonEncode(fullJson)),
+            200,
+            headers: const {'content-type': 'application/json; charset=utf-8'},
+          );
+        });
+        final repo = SessionRepository(
+          api: ApiClient(config: config, client: client),
+          storage: storage,
         );
-      });
-      final repo = SessionRepository(
-        api: ApiClient(config: config, client: client),
-        storage: storage,
-      );
-      final verified = await repo.verify(
-        const SessionCredentials(
-          token: 'old-token',
-          deviceId: '00000000-0000-4000-8000-000000000099',
-        ),
-      );
-      expect(verified.credentials.token, 'FIXTURE_TOKEN_REFRESH_SAME');
-      expect(verified.profile.login, 'fixture-user');
-      expect(verified.profile.orders, hasLength(1));
-    });
+        final verified = await repo.verify(
+          const SessionCredentials(
+            token: 'old-token',
+            deviceId: '00000000-0000-4000-8000-000000000099',
+          ),
+        );
+        expect(verified.credentials.token, 'FIXTURE_TOKEN_REFRESH_SAME');
+        expect(verified.profile.login, 'fixture-user');
+        expect(verified.profile.orders, hasLength(1));
+      },
+    );
 
     test('неверный токен (HTTP 400) пробрасывает ApiException', () async {
-      final body = File(
-        'test/fixtures/api/login_token_invalid.json',
-      ).readAsBytesSync();
+      final body = File('test/fixtures/api/login_token_invalid.json')
+          .readAsBytesSync();
       final client = MockClient(
         (_) async => http.Response.bytes(
           body,
@@ -102,17 +179,14 @@ void main() {
         storage: storage,
       );
       await expectLater(
-        repo.verify(
-          const SessionCredentials(token: 'bad', deviceId: 'dev'),
-        ),
+        repo.verify(const SessionCredentials(token: 'bad', deviceId: 'dev')),
         throwsA(isA<Object>()),
       );
     });
 
     test('отказ доступа (HTTP 400) пробрасывает ApiException', () async {
-      final body = File(
-        'test/fixtures/api/login_token_access_denied.json',
-      ).readAsBytesSync();
+      final body = File('test/fixtures/api/login_token_access_denied.json')
+          .readAsBytesSync();
       final client = MockClient(
         (_) async => http.Response.bytes(
           body,

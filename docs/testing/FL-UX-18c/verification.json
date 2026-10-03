@@ -1,0 +1,30 @@
+{
+  "task": "FL-UX-18c",
+  "date": "2026-10-01",
+  "version": "0.1.0+54",
+  "publicVersionAtStart": "0.1.0+53",
+  "analyze": "passed",
+  "fullTests": 700,
+  "newSnapshotTests": 30,
+  "releaseWeb": "built, not published",
+  "serverLoading": "both modules confirmed loaded by user; not verified on platform by agent",
+  "platformConcurrency": "not run",
+  "android": "not rebuilt",
+  "ios": "not run",
+  "sha256": {
+    "lib/features/cart/cart_snapshot.dart": "79666322da48bfa87e40b87ed6ada144cfba1f19386b859671a322639a00d413",
+    "lib/features/cart/cart_repository.dart": "5886440033f72fea80ea6b8f5182e0394fe6a5bd04b2e899859ae8e423765571",
+    "lib/features/cart/cart_edit_controller.dart": "5d6bf9608d098b3e858b887a1e30dd08a2deba25da5a842bc0db5a27f717c07b",
+    "lib/core/auth/session_controller.dart": "6ffb323fda149f1e884c4337a9ff29d75a7409b4e00b467e2b09f9be47e6fd56",
+    "lib/features/menu/menu_repository.dart": "99ae1d608788a2ffe256fe79b489af73fa39dd0cbb106e215da65e3ce75310be",
+    "lib/features/menu/menu_page.dart": "75d10e2b89b092286deaf984832fa846e765233908218863e884bedf5a5e96a2",
+    "test/features/cart/cart_snapshot_test.dart": "e0a43db0f7ffb93936c3feaf69c429342da7ebf7031e2d2185642004f2cf22a9",
+    "test/features/cart/cart_edit_flow_test.dart": "a7d4ea9df94d7165a9aa09cb0dfc1fcd754decd240905f07f6a8791abf9e14fa",
+    "pubspec.yaml": "791473ef016a5b1643327663e1b5925380812c2e14f57d8deaba3fe321b8edec",
+    "web/version.json": "920644732f95b3e39c56309808cedf017184e7f3bfc8f82a0d3676ef649f6dd6",
+    "build/web/main.dart.js": "febe3987739b2e8e76ad7a4dfe36f2a8db17eecc72e1a4846176256672b6ffc6",
+    "build/web/version.json": "920644732f95b3e39c56309808cedf017184e7f3bfc8f82a0d3676ef649f6dd6",
+    "../Zak/Konf/CommonModules/ОбменHTTP/Ext/Module.bsl": "4518cf4bdd36f38d43b3ab2b44b8e5e3972155cf5a6c7c03a51ed33a4bea46c2",
+    "../Zak/Konf/HTTPServices/Obmen/Ext/Module.bsl": "ef6eda420e6e94ba3565d96b29341c4046205c58754b9d5cfb8a156767a1d568"
+  }
+}

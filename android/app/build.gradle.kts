@@ -4,8 +4,25 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val releaseKeystorePath = providers.environmentVariable("POLEVAYA_KEYSTORE_PATH").orNull
+val releaseKeystorePassword = providers.environmentVariable("POLEVAYA_KEYSTORE_PASSWORD").orNull
+val releaseKeyAlias = providers.environmentVariable("POLEVAYA_KEY_ALIAS").orNull
+val releaseKeyPassword = providers.environmentVariable("POLEVAYA_KEY_PASSWORD").orNull
+val releaseSigningReady = listOf(
+    releaseKeystorePath,
+    releaseKeystorePassword,
+    releaseKeyAlias,
+    releaseKeyPassword,
+).all { !it.isNullOrBlank() }
+
+gradle.taskGraph.whenReady {
+    if (!releaseSigningReady && allTasks.any { it.path.startsWith(":app:") && it.name.contains("Release") }) {
+        throw GradleException("Android release signing variables are required. Use tools/build_android_release.ps1.")
+    }
+}
+
 android {
-    namespace = "com.example.polevaya_kuhnya"
+    namespace = "ru.obedmoscow.polevayakuhnya"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -15,12 +32,11 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.polevaya_kuhnya"
+        applicationId = "ru.obedmoscow.polevayakuhnya"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        targetSdk = 36
         // Uses the version code from pubspec.yaml. When using split APKs, 1000 * ABI_VERSION
         // is added automatically by Flutter. (https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)
         // You can force using the value of versionCode by specifying the `-P force-version-code-ignoring-abi=true`
@@ -29,11 +45,22 @@ android {
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        if (releaseSigningReady) {
+            create("ownerRelease") {
+                storeFile = file(requireNotNull(releaseKeystorePath))
+                storePassword = requireNotNull(releaseKeystorePassword)
+                keyAlias = requireNotNull(releaseKeyAlias)
+                keyPassword = requireNotNull(releaseKeyPassword)
+            }
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            if (releaseSigningReady) {
+                signingConfig = signingConfigs.getByName("ownerRelease")
+            }
         }
     }
 }

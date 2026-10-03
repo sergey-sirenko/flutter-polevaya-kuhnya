@@ -1,0 +1,32 @@
+[
+  {
+    "idx": 1,
+    "prompt": "Edit this existing warm terracotta mobile menu screenshot. Preserve the palette, recognizable logo with plate and cutlery, two-column grid, soup photographs, date, bottom summary and navigation. Remove the invented subtitle under the brand, leave ONLY 'Полевая кухня'. Make this a genuinely comfortable 390x844 logical viewport: show ONLY the first FOUR dishes (vegetable soup, borscht, kharcho, chicken noodle soup) in two rows. Remove the fish soup and cream soup row from this visible viewport (they exist below the scroll). Enlarge the four remaining cards and text. Price goes on its own line, and below price a full-width large minus/quantity/plus control, each minus and plus button at least 44x44 logical pixels. Preserve quantities 1,2,0,0 and prices 110 ₽,135 ₽,145 ₽,115 ₽; all weights 350 г. Header selectors Среда, 30.09 and Первые блюда. Bottom bar EXACT '3 порции · 380 ₽' and 'В корзину'. Bottom navigation День / Меню / Корзина / Профиль. No hero or marketing content. Keep portrait aspect 390:844.",
+    "id": "01-warm-kitchen/menu-mobile",
+    "source": "C:\\Users\\Sergey\\.codex\\generated_images\\01a0ea42-537f-73a0-8810-ee9e9ab2644c\\exec-55a03fcc-2d33-4436-9f2d-b1dd4e7da678.png"
+  },
+  {
+    "idx": 3,
+    "prompt": "Edit this existing warm terracotta desktop ordering screenshot. Preserve ALL product cards, photos, quantities, numeric prices, cart, current week and selected Wednesday 30.09, layout and colors. Correct ONLY the left category list, brand icon and invented brand subtitle. Replace left sidebar with EXACT eight entries in this order: 'Первые блюда', 'Вторые блюда', 'Блюда для диет', 'Салаты', 'Салаты без заправки', 'Соусы', 'Выпечка и блины', 'Прочее'. Remove Гарниры and Напитки. Fit eight rows without clipping. First row remains selected. Remove subtitle 'Вкусная еда каждый день' under name, no replacement tagline. Logo MUST be white round plate between fork and knife inside orange circle, recognizable current brand. Everything else unchanged. Landscape aspect 1440:1000.",
+    "id": "01-warm-kitchen/menu-desktop",
+    "source": "C:\\Users\\Sergey\\.codex\\generated_images\\01a0ea42-537f-73a0-8810-ee9e9ab2644c\\exec-651061dd-cbaa-4720-a6f8-65d22331fad4.png"
+  },
+  {
+    "idx": 5,
+    "prompt": "Edit this existing sage green mobile ordering screenshot. Preserve style, colors, logo, horizontal product rows, date and bottom controls. Remove the invented brand subtitle 'Вкусная еда рядом', leave only 'Полевая кухня'. Show ONLY FOUR horizontal rows in the visible viewport: vegetable soup 110 ₽ qty1, borscht 135 ₽ qty2, kharcho 145 ₽ qty0, chicken noodle soup 115 ₽ qty0; all 350 г. Fish soup and cream soup are BELOW scroll and must NOT be shown. Enlarge remaining four rows, readable 16 logical pixel names, photo left and text right. Place a LARGE quantity stepper with separate 44x44 logical px minus and plus buttons below text in each row. Preserve exact full dish names from image; no ellipses. Bottom summary '3 порции · 380 ₽', CTA 'В корзину', navigation День/Меню/Корзина/Профиль unchanged. This is a real 390x844 logical px phone viewport scaled up, NOT an entire long page compressed into phone. Keep portrait aspect ratio.",
+    "id": "02-fresh-day/menu-mobile",
+    "source": "C:\\Users\\Sergey\\.codex\\generated_images\\01a0ea42-537f-73a0-8810-ee9e9ab2644c\\exec-355e5452-8083-41d6-a21f-60e1d64ce5f4.png"
+  },
+  {
+    "idx": 7,
+    "prompt": "Edit this existing green desktop ordering screenshot. Change ONLY the left category list; keep all product photos, dishes, quantities, prices, cart total380 ₽, selected Wednesday30.09, tabs, typography and layout. Replace sidebar with eight rows EXACTLY: 'Первые блюда', 'Вторые блюда', 'Блюда для диет', 'Салаты', 'Салаты без заправки', 'Соусы', 'Выпечка и блины', 'Прочее'. No Гарниры, no Напитки. First category selected. Fit all eight without overlap. Everything else unchanged. Keep 1440:1000 landscape aspect.",
+    "id": "02-fresh-day/menu-desktop",
+    "source": "C:\\Users\\Sergey\\.codex\\generated_images\\01a0ea42-537f-73a0-8810-ee9e9ab2644c\\exec-4264668f-c775-4b9a-81ca-97db622d7f9f.png"
+  },
+  {
+    "idx": 16,
+    "prompt": "Edit this existing dark charcoal and amber mobile homepage screenshot. Preserve hero, brand logo/name, colors, photography style and two CTA buttons. Fix the overly dense categories: replace the four-column tiny card grid with TWO columns of larger category tiles with readable 16 logical px labels. Only first FOUR categories need to be visible below the hero in this 390x844 logical viewport: 'Первые блюда', 'Вторые блюда', 'Блюда для диет', 'Салаты'. Remaining categories and the three benefit blocks continue BELOW THE FOLD; do not compress them into this screenshot. Remove currently visible benefit block from this viewport and give the four category tiles comfortable space. Main text must be readable at actual smartphone scale. No invented texts or features, no footer required. Keep portrait 390:844 aspect.",
+    "id": "05-evening-bistro/home-mobile",
+    "source": "C:\\Users\\Sergey\\.codex\\generated_images\\01a0ea42-537f-73a0-8810-ee9e9ab2644c\\exec-609e9764-2a80-45f1-a94b-80cd11d70d6b.png"
+  }
+]

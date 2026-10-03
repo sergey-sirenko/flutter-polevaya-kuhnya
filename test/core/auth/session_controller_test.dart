@@ -15,6 +15,7 @@ import 'package:polevaya_kuhnya/core/config/app_config.dart';
 import 'package:polevaya_kuhnya/core/config/app_config_provider.dart';
 
 final config = AppConfig.parse(
+  appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
   environment: 'test',
   apiBaseUrl: 'https://api.example.test/Obmen/',
   dataBaseUrl: 'https://data.example.test/data/',
@@ -84,13 +85,46 @@ void main() {
       SessionStatus.restoring,
     );
     expect(container.read(sessionApiProvider), isNull);
+    expect(container.read(sessionProfileProvider), isNull);
     final body = jsonDecode(request.body) as Map;
     expect(body.keys, unorderedEquals(['token', 'deviceId']));
     expect(body['deviceId'], await storage.deviceId());
     expect(request.url.path, '/Obmen/V1/User/login');
-    reply.complete(accepted());
+    reply.complete(
+      http.Response.bytes(
+        utf8.encode('{"success":true,"user":{"name":"Свежий профиль"}}'),
+        200,
+      ),
+    );
     await untilStatus(container, SessionStatus.signedIn);
     expect(await storage.readToken(), 'test-token');
+    expect(container.read(sessionProfileProvider)?.name, 'Свежий профиль');
+  });
+
+  test('повторный старт получает профиль заново только по токену', () async {
+    await storage.writeToken('test-token');
+    var requests = 0;
+    final client = MockClient((request) async {
+      requests++;
+      expect(jsonDecode(request.body), {
+        'token': 'test-token',
+        'deviceId': await storage.deviceId(),
+      });
+      return http.Response.bytes(
+        utf8.encode('{"success":true,"user":{"name":"Версия $requests"}}'),
+        200,
+      );
+    });
+    final first = mount(storage, client);
+    await untilStatus(first, SessionStatus.signedIn);
+    expect(first.read(sessionProfileProvider)?.name, 'Версия 1');
+    first.dispose();
+
+    final second = mount(storage, client);
+    expect(second.read(sessionProfileProvider), isNull);
+    await untilStatus(second, SessionStatus.signedIn);
+    expect(second.read(sessionProfileProvider)?.name, 'Версия 2');
+    expect(requests, 2);
   });
 
   for (final status in [400, 401, 503]) {
@@ -109,8 +143,50 @@ void main() {
       );
       expect(await storage.readToken(), status == 401 ? isNull : 'test-token');
       expect(container.read(sessionApiProvider), isNull);
+      expect(container.read(sessionProfileProvider), isNull);
     });
   }
+
+  for (final fixture in <(String, int, String)>[
+    (
+      '400 invalid_session',
+      400,
+      '{"success":false,"code":"invalid_session","message":"session","error":""}',
+    ),
+    (
+      '403 device_mismatch',
+      403,
+      '{"success":false,"code":"device_mismatch","message":"device","error":""}',
+    ),
+  ]) {
+    test('восстановление ${fixture.$1} очищает токен', () async {
+      await storage.writeToken('test-token');
+      final container = mount(
+        storage,
+        MockClient((_) async => http.Response(fixture.$3, fixture.$2)),
+      );
+      await untilStatus(container, SessionStatus.signedOut);
+      expect(await storage.readToken(), isNull);
+    });
+  }
+
+  test(
+    'восстановление 403 access_denied сохраняет токен как unavailable',
+    () async {
+      await storage.writeToken('test-token');
+      final container = mount(
+        storage,
+        MockClient(
+          (_) async => http.Response(
+            '{"success":false,"code":"access_denied","message":"denied","error":""}',
+            403,
+          ),
+        ),
+      );
+      await untilStatus(container, SessionStatus.unavailable);
+      expect(await storage.readToken(), 'test-token');
+    },
+  );
 
   test(
     'ошибка сети сохраняет токен и допускает явную повторную проверку',
@@ -170,8 +246,83 @@ void main() {
       container.read(sessionControllerProvider).status,
       SessionStatus.signedOut,
     );
+    expect(container.read(sessionProfileProvider), isNull);
     expect(await storage.readToken(), isNull);
     expect(await storage.deviceId(), id);
+  });
+
+  test('выход удаляет локальный токен до ответа сервера', () async {
+    final logoutRequest = Completer<http.Request>();
+    final logoutResponse = Completer<http.Response>();
+    final container = mount(
+      storage,
+      MockClient((request) {
+        if (request.url.path.endsWith('/logout')) {
+          logoutRequest.complete(request);
+          return logoutResponse.future;
+        }
+        return Future.value(accepted());
+      }),
+    );
+    await untilStatus(container, SessionStatus.signedOut);
+    final controller = container.read(sessionControllerProvider.notifier);
+    await controller.signIn((_) async => 'test-token');
+    final deviceId = await storage.deviceId();
+    expect(
+      container.read(sessionControllerProvider).status,
+      SessionStatus.signedIn,
+    );
+
+    await controller.signOut();
+    expect(
+      container.read(sessionControllerProvider).status,
+      SessionStatus.signedOut,
+    );
+    expect(await storage.readToken(), isNull);
+    expect(await storage.deviceId(), deviceId);
+    final request = await logoutRequest.future.timeout(
+      const Duration(seconds: 3),
+    );
+    expect(request.url.path, '/Obmen/V1/User/logout');
+    expect(jsonDecode(request.body), {
+      'token': 'test-token',
+      'deviceId': deviceId,
+    });
+
+    logoutResponse.complete(
+      http.Response('{"success":false,"code":"server_error"}', 503),
+    );
+    await Future<void>.delayed(Duration.zero);
+    expect(
+      container.read(sessionControllerProvider).status,
+      SessionStatus.signedOut,
+    );
+  });
+
+  test('сбой сети при отзыве не возвращает локальную сессию', () async {
+    final revokeSent = Completer<void>();
+    final container = mount(
+      storage,
+      MockClient((request) async {
+        if (request.url.path.endsWith('/logout')) {
+          revokeSent.complete();
+          throw http.ClientException('offline');
+        }
+        return accepted();
+      }),
+    );
+    await untilStatus(container, SessionStatus.signedOut);
+    final controller = container.read(sessionControllerProvider.notifier);
+    await controller.signIn((_) async => 'test-token');
+
+    await controller.signOut();
+    await revokeSent.future.timeout(const Duration(seconds: 3));
+    await Future<void>.delayed(Duration.zero);
+    expect(
+      container.read(sessionControllerProvider).status,
+      SessionStatus.signedOut,
+    );
+    expect(await storage.readToken(), isNull);
   });
 
   test('поздний login A не заменяет подтверждённый вход B', () async {
@@ -242,10 +393,15 @@ void main() {
   }
 
   test('401 защищённого запроса очищает текущую сессию', () async {
+    var logoutCalls = 0;
     final container = mount(
       storage,
       MockClient((request) async {
         if (request.url.path.endsWith('/login')) return accepted();
+        if (request.url.path.endsWith('/logout')) {
+          logoutCalls++;
+          return accepted();
+        }
         final body = jsonDecode(request.body) as Map;
         expect(body['token'], 'test-token');
         expect(body['deviceId'], await storage.deviceId());
@@ -264,6 +420,100 @@ void main() {
       container.read(sessionControllerProvider).status,
       SessionStatus.signedOut,
     );
+    expect(await storage.readToken(), isNull);
+    expect(container.read(sessionProfileProvider), isNull);
+    expect(logoutCalls, 0);
+  });
+
+  test('код invalid_session на HTTP 400 завершает сессию', () async {
+    final container = mount(
+      storage,
+      MockClient(
+        (request) async => request.url.path.endsWith('/login')
+            ? accepted()
+            : http.Response(
+                '{"success":false,"code":"invalid_session","message":"session"}',
+                400,
+              ),
+      ),
+    );
+    await untilStatus(container, SessionStatus.signedOut);
+    await container
+        .read(sessionControllerProvider.notifier)
+        .signIn((_) async => 'test-token');
+    await expectLater(
+      container.read(sessionApiProvider)!.postJson('V1/Orders/menudates', {}),
+      throwsException,
+    );
+    expect(
+      container.read(sessionControllerProvider).status,
+      SessionStatus.signedOut,
+    );
+    expect(await storage.readToken(), isNull);
+    expect(container.read(sessionProfileProvider), isNull);
+  });
+
+  test('сбой сети защищённого запроса не считается истечением', () async {
+    final container = mount(
+      storage,
+      MockClient((request) async {
+        if (request.url.path.endsWith('/login')) return accepted();
+        throw http.ClientException('offline');
+      }),
+    );
+    await untilStatus(container, SessionStatus.signedOut);
+    await container
+        .read(sessionControllerProvider.notifier)
+        .signIn((_) async => 'test-token');
+    await expectLater(
+      container.read(sessionApiProvider)!.postJson('V1/Orders/menudates', {}),
+      throwsException,
+    );
+    expect(
+      container.read(sessionControllerProvider).status,
+      SessionStatus.signedIn,
+    );
+    expect(await storage.readToken(), 'test-token');
+    expect(container.read(sessionProfileProvider), isNotNull);
+  });
+
+  test('поздний успех после истечения не возвращает личные данные', () async {
+    final firstSent = Completer<void>();
+    final firstReply = Completer<http.Response>();
+    var protectedCalls = 0;
+    final container = mount(
+      storage,
+      MockClient((request) {
+        if (request.url.path.endsWith('/login')) {
+          return Future.value(accepted());
+        }
+        protectedCalls++;
+        if (protectedCalls == 1) {
+          firstSent.complete();
+          return firstReply.future;
+        }
+        return Future.value(http.Response('', 401));
+      }),
+    );
+    await untilStatus(container, SessionStatus.signedOut);
+    await container
+        .read(sessionControllerProvider.notifier)
+        .signIn((_) async => 'test-token');
+    final api = container.read(sessionApiProvider)!;
+    final late = api.postJson('V1/Orders/menudates', {});
+    final lateAssertion = expectLater(
+      late,
+      throwsA(isA<StaleSessionException>()),
+    );
+    await firstSent.future;
+    await expectLater(api.postJson('V1/Orders/menudates', {}), throwsException);
+    firstReply.complete(http.Response('{"success":true,"order":[]}', 200));
+    await lateAssertion;
+    expect(
+      container.read(sessionControllerProvider).status,
+      SessionStatus.signedOut,
+    );
+    expect(container.read(sessionProfileProvider), isNull);
     expect(await storage.readToken(), isNull);
   });
 

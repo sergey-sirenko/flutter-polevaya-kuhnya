@@ -1,0 +1,30 @@
+{
+  "name": {
+    "characters": 13,
+    "limit": 30,
+    "result": "pass"
+  },
+  "shortDescription": {
+    "characters": 66,
+    "limit": 80,
+    "result": "pass"
+  },
+  "fullDescription": {
+    "characters": 1134,
+    "limit": 4000,
+    "result": "pass"
+  },
+  "appleSubtitle": {
+    "characters": 20,
+    "limit": 30,
+    "result": "pass"
+  },
+  "appleKeywords": {
+    "characters": 37,
+    "utf8Bytes": 69,
+    "byteLimit": 100,
+    "result": "pass"
+  },
+  "checkedOn": "2026-09-28",
+  "scope": "local_document_validation_not_store_acceptance"
+}

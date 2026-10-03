@@ -10,6 +10,7 @@ import 'package:polevaya_kuhnya/core/config/app_config.dart';
 
 void main() {
   final config = AppConfig.parse(
+    appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
     environment: 'test',
     apiBaseUrl: 'https://api.example.test/Obmen/',
     dataBaseUrl: 'https://data.example.test/data/',

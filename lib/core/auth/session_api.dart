@@ -19,6 +19,7 @@ final class SessionApi {
   });
 
   final ApiClient _api;
+  String get deviceId => _credentials.deviceId;
   final SessionCredentials _credentials;
   final bool Function() _isCurrent;
   final Future<void> Function() _onUnauthorized;
@@ -41,7 +42,7 @@ final class SessionApi {
       return response;
     } on ApiException catch (error) {
       _checkCurrent();
-      if (error.invalidSession) await _onUnauthorized();
+      if (error.requiresReauth) await _onUnauthorized();
       rethrow;
     }
   }

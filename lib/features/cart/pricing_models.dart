@@ -42,11 +42,14 @@ final class ClientPricingConditions {
 }
 
 /// Вход одной позиции дня (блюдо в корзине).
+/// Наибольшее целое, точно представимое и в Dart VM, и в JavaScript.
+const int missingMenuOrder = 0x1fffffffffffff;
+
 final class PricingLineInput {
   const PricingLineInput({
     required this.price,
     required this.quantity,
-    this.menuOrder = 0x7fffffffffffffff,
+    this.menuOrder = missingMenuOrder,
   });
 
   final Object? price;

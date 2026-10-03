@@ -8,9 +8,13 @@ import 'package:polevaya_kuhnya/core/api/api_client.dart';
 import 'package:polevaya_kuhnya/core/api/api_exception.dart';
 import 'package:polevaya_kuhnya/core/config/app_config.dart';
 import 'package:polevaya_kuhnya/features/menu/menu_repository.dart';
+import 'package:polevaya_kuhnya/features/menu/menu_photo_versions.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  setUp(() => SharedPreferences.setMockInitialValues({}));
   final config = AppConfig.parse(
+    appVersionUrl: 'https://flutter-test.obedmoscow.ru/version.json',
     environment: 'test',
     apiBaseUrl: 'https://api.example.test/Obmen/',
     dataBaseUrl: 'https://data.example.test/data/',
@@ -21,6 +25,7 @@ void main() {
 
   MenuRepository repositoryFor(String body, int status) {
     return MenuRepository(
+      photoVersions: MenuPhotoVersions(config: config),
       api: ApiClient(
         config: config,
         client: MockClient(
@@ -106,6 +111,7 @@ void main() {
 
   test('сетевой отказ транспорта передаётся без изменений', () async {
     final repository = MenuRepository(
+      photoVersions: MenuPhotoVersions(config: config),
       api: ApiClient(
         config: config,
         client: MockClient((_) async => throw http.ClientException('offline')),

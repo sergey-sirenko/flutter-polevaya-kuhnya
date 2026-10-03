@@ -42,10 +42,7 @@ final class SessionRepository {
     try {
       profile = UserProfile.fromUserJson(response['user']);
     } on FormatException catch (error) {
-      throw ApiException(
-        kind: ApiErrorKind.format,
-        message: error.message,
-      );
+      throw ApiException(kind: ApiErrorKind.format, message: error.message);
     }
     // Токеновая ветка 1С может не возвращать новый токен (или вернуть прежний).
     return SessionVerification(
@@ -57,5 +54,13 @@ final class SessionRepository {
       ),
       profile: profile,
     );
+  }
+
+  /// Отзыв текущего токена; вызывающий не должен ждать сеть для локального выхода.
+  Future<void> revoke(SessionCredentials credentials) async {
+    await api.postJson('V1/User/logout', {
+      'token': credentials.token,
+      'deviceId': credentials.deviceId,
+    });
   }
 }

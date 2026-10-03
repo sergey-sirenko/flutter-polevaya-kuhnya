@@ -1,0 +1,26 @@
+# Фрагмент для flutter-test.obedmoscow.ru (FL-06-14).
+# Применён на сервере 28.09.2026: отдаёт сборку из /var/www/flutter-test.
+# /data/* и /api/* не подменяются index.html. Заголовок noindex сохранён от служебного vhost.
+
+flutter-test.obedmoscow.ru {
+	encode gzip
+	root * /var/www/flutter-test
+	header {
+		X-Robots-Tag "noindex, nofollow, noarchive"
+		X-Content-Type-Options "nosniff"
+	}
+	handle /data/* {
+		respond "Сервис данных не опубликован для этого vhost" 503
+	}
+	handle /api/* {
+		respond "API этого vhost не публикует HTML" 503
+	}
+	handle /version.json {
+		header Cache-Control "no-cache"
+		file_server
+	}
+	handle {
+		try_files {path} /index.html
+		file_server
+	}
+}

@@ -1,0 +1,21 @@
+{
+  "lib/features/cart/cart_page.dart": "9904c5b5373a1b033d4233b2758496cd5575468454ed0bf1b50404e7948c3fdd",
+  "lib/features/cart/cart_work_banner.dart": "0fd8ce971e6fd0542ffb6d47db819de754e477cab090a9119662d466a1ff9990",
+  "lib/features/cart/cart_repeat_banner.dart": "cc2cb15dfbb236f8625a70a425c7392a147884e11ab633babb111555bfe014a2",
+  "lib/features/cart/orders_page.dart": "0556be689b69e6662d89915529d8f94f98a129ae5aef9b58a5228b867b59ea46",
+  "lib/features/cart/cart_summary_bar.dart": "adbf3199e5f583f82e3323cf6da1a8476d291fdd94ce9557a526c85fcb5d0c48",
+  "pubspec.yaml": "ac7d5c437896ead7ad6a865a9daa3998aa45f4c6874ba9d0ec29bc84ab4c7927",
+  "web/version.json": "e5ca779a02a946b7cffaa888120d2cf456fe03ee49cc215991cc3f218117abc0",
+  "build/web/version.json": "e5ca779a02a946b7cffaa888120d2cf456fe03ee49cc215991cc3f218117abc0",
+  "build/web/main.dart.js": "8b66f5ccc468715b10fb77c3a91a808a8d59f80264b7b1f583b4a5d983088242",
+  "test/features/cart/cart_actions_flow_test.dart": "96b5bc1305cc70d95874266d31191105a5a678f1a35158993aff8fab3ffd33ee",
+  "test/features/cart/cart_saved_result_test.dart": "221e6235e07403563b83e480fc56a85cb4d6534665b4fc960259df2a83bfe075",
+  "test/features/cart/cart_submission_flow_test.dart": "02061e8b740a48ac971fc475ec4520d0bea27d6c3c4cc00bdccee2dc109032e7",
+  "test/features/cart/cart_multiday_flow_test.dart": "4b9c409d3eda83e32165facfa7852704953763ca29b4f9001c6bd7b7062bc73c",
+  "test/features/cart/cart_repeat_flow_test.dart": "c4f50b0cecb6fce8c5f3c5a82fa68628a7a7537ed9f86e56f140a86ff318f30d",
+  "test/features/cart/cart_readability_test.dart": "8259ccbabb7897d4493fdbeaee22ab51ee3acb5361c862b56e7c880d6203b064",
+  "tools/ux/cart_actions_preview_test.dart": "5bfa5705838813b3e933036be3b062c6f9824b38cc7519f831a71e03936b13a2",
+  "docs/cart-multiday.md": "15c399298cbfd27a5c92c2c82704e7ab2a09052bcb8ae281c3d0d52d3b47f743",
+  "docs/tasks/FL-UX-28.md": "3e2f5b39a130667139066aaa7e23378da1610e6e75a1efd52a00504e740e57b5",
+  "docs/testing/FL-UX-28/README.md": "c048f2fbb6cf56c4d7ce9bf22b2a4a77e795295d97a261b390605bb6ec25855c"
+}

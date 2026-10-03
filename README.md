@@ -4,6 +4,6 @@
 
 Каркас создан Flutter 3.47.1. Для проверки исходников: `flutter pub get` и `flutter analyze`. Сборки и интеграция с API выполняются в отдельных задачах.
 
-Для запуска требуются публичные параметры `APP_ENV`, `API_BASE_URL` и `DATA_BASE_URL`; значения и ограничения описаны в [окружениях](docs/environments.md).
+Для запуска требуются публичные параметры `APP_ENV`, `API_BASE_URL`, `DATA_BASE_URL` и `APP_VERSION_URL`; значения и ограничения описаны в [окружениях](docs/environments.md).
 
 `com.example.polevaya_kuhnya` — временный идентификатор, созданный шаблоном. Постоянные Android application ID и iOS bundle ID определяются в FL-07-03 до подписей и выпусков. Исходники iOS созданы, но iOS-сборка не проверена; выбор среды отложен пользователем.
