@@ -9,6 +9,53 @@
 #           docs.codemagic.io/flutter-configuration/flutter-projects/
 
 workflows:
+  android-release-prepare:
+    name: Android signed artifacts (no store upload)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    inputs:
+      accepted_commit:
+        description: Full Git SHA to prepare (must match selected branch or commit)
+        type: string
+      stores:
+        description: Android artifacts to prepare
+        type: choice
+        default: google_play,rustore
+        options:
+          - google_play,rustore
+          - google_play
+          - rustore
+      release_notes:
+        description: What is new (saved in report only)
+        type: string
+      mode:
+        description: Preparation only; store submission is not implemented here
+        type: choice
+        default: prepare
+        options:
+          - prepare
+    environment:
+      flutter: 3.47.1
+      java: 17
+      xcode: "26.6"
+      groups:
+        - android_release_signing
+      vars:
+        RELEASE_COMMIT: ${{ inputs.accepted_commit }}
+        RELEASE_STORES: ${{ inputs.stores }}
+        RELEASE_NOTES: ${{ inputs.release_notes }}
+        RELEASE_MODE: ${{ inputs.mode }}
+    scripts:
+      - name: Prepare and verify Android artifacts without store access
+        script: |
+          set +x
+          python3 tools/prepare_android_ci.py
+    artifacts:
+      - build/release/android/*.aab
+      - build/release/android/*.apk
+      - build/release/android/*.json
+      - build/release/android/*.txt
+
   google-play-api-check:
     name: Google Play API access check (no release)
     max_build_duration: 15
