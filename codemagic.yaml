@@ -9,6 +9,32 @@
 #           docs.codemagic.io/flutter-configuration/flutter-projects/
 
 workflows:
+  ios-existing-ipa-upload:
+    name: Existing verified IPA upload or status (no rebuild)
+    max_build_duration: 20
+    instance_type: mac_mini_m2
+    inputs:
+      action:
+        description: Upload requires separate owner approval; status is read-only
+        type: choice
+        default: status
+        options:
+          - status
+          - upload
+    environment:
+      xcode: "26.6"
+      groups:
+        - app_store_connect_release
+      vars:
+        IPA_ACTION: ${{ inputs.action }}
+    scripts:
+      - name: Verify existing artifact and upload or check Apple status
+        script: |
+          set +x
+          python3 tools/upload_existing_ios.py
+    artifacts:
+      - build/release/ios-upload/*.json
+
   ios-release-prepare:
     name: iOS signed IPA (no store upload)
     max_build_duration: 60
