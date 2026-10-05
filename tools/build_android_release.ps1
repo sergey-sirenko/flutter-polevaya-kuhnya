@@ -34,7 +34,7 @@ function Invoke-SignedBuild([string]$Alias, [string]$Keystore, [string]$Target) 
             '--dart-define=APP_ENV=prod' `
             '--dart-define=API_BASE_URL=https://hleb-sol.su/Zakaz_http/hs/Obmen/' `
             '--dart-define=DATA_BASE_URL=https://obedmoscow.ru/data/' `
-            '--dart-define=APP_VERSION_URL=https://new.obedmoscow.ru/version.json'
+            '--dart-define=APP_VERSION_URL=https://obedmoscow.ru/version.json'
         if ($LASTEXITCODE -ne 0) { throw "Сборка $Target завершилась с ошибкой." }
     }
     finally {

@@ -1,5 +1,7 @@
 # Окружения Flutter
 
+**Решение владельца 05.10.2026 ([FL-WEB-PROD-01](tasks/FL-WEB-PROD-01.md)):** разработка/приёмка Flutter остаются на `https://flutter-test.obedmoscow.ru/`; принятый выпуск размещается на `https://obedmoscow.ru/`, прежний сайт сохраняется на `https://test.obedmoscow.ru/`. Предыдущая схема с `new.obedmoscow.ru` отменена. Подготовлены [production-скрипт](../tools/build_web_prod.ps1) и [порядок переноса](hosting/flutter-production.md); сервер ещё не переключён. Android-скрипт использует `https://obedmoscow.ru/version.json`, но до размещения prod-policy сборку не запускать: текущий ответ 404. Минимум сохраняется `0.1.0+1`, мобильные каналы null. Исторические записи ниже не подтверждают выполненный перенос.
+
 Задача: [FL-01-06](tasks/FL-01-06.md). Конфигурация одного приложения задаётся при сборке через `--dart-define`. Значения попадают в клиентскую сборку и являются публичными: пароли, токены и ключи сюда не передаются. Исходники и рабочий запуск читают параметры через [AppConfig](../lib/core/config/app_config.dart).
 
 | Параметр | Значение | Проверка |
@@ -16,12 +18,12 @@
 | Окружение | Web origin | API | Данные |
 |---|---|---|---|
 | test | `https://flutter-test.obedmoscow.ru/` | `https://hleb-sol.su/Zakaz_http/hs/Obmen/` | `https://obedmoscow.ru/data/` |
-| prod (старый сайт/PWA) | `https://obedmoscow.ru/` / `https://www.obedmoscow.ru/` | тот же API | runtime `…/data/` старого сайта |
-| prod (Flutter Web) | `https://new.obedmoscow.ru/` | `https://hleb-sol.su/Zakaz_http/hs/Obmen/` | `https://obedmoscow.ru/data/` |
+| prod (Flutter, после переноса) | `https://obedmoscow.ru/` / `https://www.obedmoscow.ru/` | тот же API | прежний runtime-каталог `data/` |
+| архив (после переноса) | `https://test.obedmoscow.ru/` | тот же рабочий API | прежний runtime-каталог |
 
 В [ТЗ, INF-2](<../Техническое задание.md>) указан `test.obedmoscow.ru`; он занят прежним сайтом. Для нового Flutter test выбран отдельный `flutter-test.obedmoscow.ru` по [FL-00-14c](tasks/FL-00-14c.md).
 
-**Размещение prod (решение пользователя 27.09.2026):** старый сайт/PWA prod и Flutter Web prod работают **параллельно**. Apex/`www` остаются у старого сайта; Flutter Web prod — `https://new.obedmoscow.ru/` (O-05) с возможностью в любой момент переключиться на старый сайт и обратно. CORS API: [cors-policy](../../Zak/docs/cors-policy.md) v1.0.3.
+**Историческое решение 27.09.2026, заменено 05.10.2026:** старый сайт/PWA prod и Flutter Web prod работают **параллельно**. Apex/`www` остаются у старого сайта; Flutter Web prod — `https://new.obedmoscow.ru/` (O-05) с возможностью в любой момент переключиться на старый сайт и обратно. CORS API: [cors-policy](../../Zak/docs/cors-policy.md) v1.0.3.
 
 Выбор `APP_ENV` определяет конфигурацию приложения, а опубликованный origin задаётся размещением сборки. Оба окружения обращаются к **одному рабочему API и базе 1С** по решению пользователя. Тестовые сценарии выполняются только выделенными тестовыми пользователями после подтверждения их роли и данных; `test` не означает изоляцию базы.
 
@@ -40,7 +42,7 @@ flutter run -d chrome --dart-define=APP_ENV=test --dart-define=API_BASE_URL=http
 ```
 
 ```powershell
-flutter build web --dart-define=APP_ENV=prod --dart-define=API_BASE_URL=https://hleb-sol.su/Zakaz_http/hs/Obmen/ --dart-define=DATA_BASE_URL=https://obedmoscow.ru/data/ --dart-define=APP_VERSION_URL=https://new.obedmoscow.ru/version.json
+pwsh -File .\tools\build_web_prod.ps1 -AcceptedCommit <полный-SHA-принятого-выпуска>
 ```
 
 Для Android и будущей iOS-сборки передаются те же три параметра с выбранными значениями. Адреса картинок и меню не подменяются API. Общий транспорт реализован в FL-01-12 без живых вызовов; внедрение сессии и вызовы конкретных модулей выполняются далее. Версии пакетов проверены в FL-01-07. Проверка сборок и публикация находятся в отдельных задачах.

@@ -1,0 +1,50 @@
+# Candidate replacement for ONLY obedmoscow.ru and test.obedmoscow.ru blocks.
+# Preserve the existing www redirect and flutter-test block without changes.
+# Deploy requires accepted production build, backup, caddy validate and reload.
+obedmoscow.ru {
+    encode gzip
+    root * /var/www/flutter-prod/current
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "no-referrer-when-downgrade"
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    }
+    handle /data/* {
+        root * /var/www/polewaya
+        header Access-Control-Allow-Origin "*"
+        file_server
+    }
+    handle /api/* {
+        respond "Use the configured 1C API" 404
+    }
+    @fresh path / /index.html /version.json /flutter_bootstrap.js /main.dart.js /manifest.json /service-worker.js /flutter_service_worker.js /release-manifest.json /robots.txt /sitemap.xml
+    header @fresh Cache-Control "no-cache, max-age=0, must-revalidate"
+    handle /service-worker.js {
+        header Content-Type "application/javascript"
+        file_server
+    }
+    @static path /assets/* /icons/* /canvaskit/* *.js *.wasm *.json *.png *.ico *.svg *.webp /robots.txt /sitemap.xml
+    handle @static {
+        file_server
+    }
+    handle {
+        try_files {path} /index.html
+        file_server
+    }
+}
+
+test.obedmoscow.ru {
+    root * /var/www/polewaya
+    encode gzip
+    header {
+        X-Robots-Tag "noindex, nofollow, noarchive"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Access-Control-Allow-Origin "*"
+        Cache-Control "no-cache, max-age=0, must-revalidate"
+    }
+    file_server {
+        hide .git .git/* .env .env.*
+    }
+}
