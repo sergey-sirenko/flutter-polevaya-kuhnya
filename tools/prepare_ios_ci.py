@@ -121,10 +121,10 @@ def prepare(report):
             profile = decode_profile(directory / "profile.mobileprovision", env)
             check_profile(profile)
             report["profileUuid"] = profile["UUID"]
-            run(["keychain", "--path", str(keychain_path), "initialize"], env)
+            run(["keychain", "initialize", "--path", str(keychain_path)], env)
             keychain_ready = True
             signing_env = dict(env, P12_PASSWORD=os.environ["IOS_DISTRIBUTION_P12_PASSWORD"])
-            run(["keychain", "--path", str(keychain_path), "add-certificates", "--certificate", str(directory / "certificate.p12"),
+            run(["keychain", "add-certificates", "--path", str(keychain_path), "--certificate", str(directory / "certificate.p12"),
                  "--certificate-password", "@env:P12_PASSWORD"], signing_env)
             profile_dir = Path.home() / "Library/MobileDevice/Provisioning Profiles"
             profile_dir.mkdir(parents=True, exist_ok=True)
@@ -165,7 +165,7 @@ def prepare(report):
             if profile_created and installed_profile is not None and installed_profile.exists():
                 installed_profile.unlink()
             if keychain_ready:
-                run(["keychain", "--path", str(keychain_path), "delete"], env)
+                run(["keychain", "delete", "--path", str(keychain_path)], env)
 
 
 def main():
