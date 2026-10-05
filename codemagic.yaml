@@ -9,6 +9,21 @@
 #           docs.codemagic.io/flutter-configuration/flutter-projects/
 
 workflows:
+  google-play-api-check:
+    name: Google Play API access check (no release)
+    max_build_duration: 15
+    instance_type: linux_x2
+    environment:
+      groups:
+        - google_play_release
+    scripts:
+      - name: Check Google Play access to existing build 71
+        script: |
+          set +x
+          python3 tools/check_google_play_access.py
+    artifacts:
+      - build/release-check/google-play-access.json
+
   ios-simulator-test:
     name: iOS Simulator (test)
     max_build_duration: 60
