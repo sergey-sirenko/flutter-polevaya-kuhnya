@@ -9,6 +9,35 @@
 #           docs.codemagic.io/flutter-configuration/flutter-projects/
 
 workflows:
+  ios-release-prepare:
+    name: iOS signed IPA (no store upload)
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    inputs:
+      accepted_commit:
+        description: Full Git SHA matching the selected checkout
+        type: string
+      release_notes:
+        description: What is new (report only)
+        type: string
+    environment:
+      flutter: 3.47.1
+      xcode: "26.6"
+      groups:
+        - ios_release_signing
+      vars:
+        RELEASE_COMMIT: ${{ inputs.accepted_commit }}
+        RELEASE_NOTES: ${{ inputs.release_notes }}
+    scripts:
+      - name: Prepare and verify IPA without App Store access
+        script: |
+          set +x
+          python3 tools/prepare_ios_ci.py
+    artifacts:
+      - build/release/ios/*.ipa
+      - build/release/ios/*.json
+      - build/release/ios/*.txt
+
   android-release-prepare:
     name: Android signed artifacts (no store upload)
     max_build_duration: 60
