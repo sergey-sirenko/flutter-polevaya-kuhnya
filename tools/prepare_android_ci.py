@@ -23,7 +23,8 @@ API = "https://hleb-sol.su/Zakaz_http/hs/Obmen/"
 DATA = "https://obedmoscow.ru/data/"
 VERSION_URL = "https://obedmoscow.ru/version.json"
 BUNDLE_URL = "https://github.com/google/bundletool/releases/download/1.18.3/bundletool-all-1.18.3.jar"
-BUNDLE_HASH = "fb05065f66c1d56e6f1d543399e8334d275f65659def98c79426bf94f1bc136c"
+# Official google/bundletool release asset digest (GitHub API, tag 1.18.3).
+BUNDLE_HASH = "a099cfa1543f55593bc2ed16a70a7c67fe54b1747bb7301f37fdfd6d91028e29"
 OUTPUT = Path("build/release/android")
 
 
