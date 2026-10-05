@@ -70,7 +70,7 @@ def verify_ipa(ipa, directory, profile, name, build, env):
     require(embedded["UUID"] == profile["UUID"], "Unexpected embedded profile.")
     run(["codesign", "--verify", "--deep", "--strict", str(app)], env)
     prefix = directory / "signer"
-    run(["codesign", "-d", "--extract-certificates", str(prefix), str(app)], env)
+    run(["codesign", "-d", f"--extract-certificates={prefix}", str(app)], env)
     require(hashlib.sha1(Path(str(prefix) + "0").read_bytes()).hexdigest() == CERT_SHA1,
             "IPA signer differs from accepted certificate.")
 
