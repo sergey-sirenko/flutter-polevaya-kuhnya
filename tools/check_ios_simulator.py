@@ -16,6 +16,9 @@ from prepare_ios_ci import BUNDLE
 from upload_existing_ios import download_artifact, safe_apple_diagnostics
 
 OUTPUT = Path("build/release/ios-simulator-smoke")
+NAVIGATION = "--navigation" in sys.argv[1:]
+if NAVIGATION:
+    OUTPUT = Path("build/release/ios-simulator-navigation")
 URL = ("https://api.codemagic.io/artifacts/8c12313f-674f-43c0-a5bd-312e5f808c4b/"
        "dc8798d2-281e-4b86-8410-0101b97acb9f/ios-simulator-1.0.072.zip")
 SHA = "a7df177db6f5b19e9558da54f90c024648e954072d03d9b5615e7782c8091b35"
@@ -65,6 +68,9 @@ def main():
             require(info.get("CFBundleIdentifier") == BUNDLE and info.get("CFBundleVersion") == "72"
                     and info.get("CFBundleShortVersionString") == "1.0.0"
                     and info.get("DTPlatformName") == "iphonesimulator", "Wrong app identity/platform.")
+            if NAVIGATION:
+                from ios_simulator_navigation import install_maestro, run_navigation
+                maestro = install_maestro(root, env, command, report)
             for family, preferred in [("iPhone", "iPhone 16"), ("iPad", "iPad (A16)")]:
                 candidates = [d for d in types if d["name"].startswith(family)]
                 require(candidates, f"No {family} Simulator device type.")
@@ -99,6 +105,9 @@ def main():
                 command(sim("io", udid, "screenshot", str(OUTPUT / f"{family}-relaunch.png")), env, report)
                 device.update(status="captured", processStableDuringObservation=True,
                               relaunchProcessStable=True, visualReview="pending")
+                if NAVIGATION:
+                    run_navigation(maestro, udid, family, env, command, report, OUTPUT)
+                    device["navigationStatus"] = "assertions_passed_pending_visual_review"
                 command(sim("shutdown", udid), env, report)
         report.update(status="captured", acceptanceStatus="pending_visual_review")
         return 0
@@ -119,7 +128,9 @@ def main():
             log.write_text(safe_apple_diagnostics(log.read_text(encoding="utf-8", errors="replace")),
                            encoding="utf-8")
         report["finishedAtUtc"] = datetime.now(timezone.utc).isoformat()
-        (OUTPUT / "smoke-report.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+        name = "navigation-report.json" if NAVIGATION else "smoke-report.json"
+        report["navigationRequested"] = NAVIGATION
+        (OUTPUT / name).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
