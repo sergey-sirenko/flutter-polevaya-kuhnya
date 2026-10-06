@@ -78,6 +78,7 @@ def main():
     env = {k: v for k, v in os.environ.items() if not k.startswith(
         ("IOS_", "ANDROID_", "APP_STORE_CONNECT_", "GOOGLE_PLAY_", "CODEMAGIC_ARTIFACT_"))}
     created = []
+    log_processes = []
     try:
         require(sys.platform == "darwin" and os.environ.get("CM_BUILD_ID"), "Run on Codemagic macOS.")
         sim = lambda *args: ["xcrun", "simctl", *args]
@@ -122,6 +123,18 @@ def main():
                 command(sim("install", udid, str(app)), env, report)
                 stdout = (OUTPUT / f"{family}-stdout.txt").resolve()
                 stderr = (OUTPUT / f"{family}-stderr.txt").resolve()
+                vm_logs = [stdout, stderr]
+                if STORE_SHOTS:
+                    # Flutter's own Simulator log reader discovers the VM URI
+                    # via unified logging, rather than simctl stdout on modern iOS.
+                    vm_log = root / f"{family}-vm-log.txt"
+                    log_file = vm_log.open("wb")
+                    log_process = subprocess.Popen(sim("spawn", udid, "log", "stream", "--style", "compact",
+                        "--predicate", 'processImagePath ENDSWITH "/Runner" AND senderImagePath ENDSWITH "/Flutter"'),
+                        env=env, stdout=log_file, stderr=subprocess.STDOUT)
+                    log_processes.append((log_process, log_file))
+                    vm_logs.append(vm_log)
+                    time.sleep(2)
                 def launch():
                     text = command(sim("launch", f"--stdout={stdout}", f"--stderr={stderr}",
                                        udid, BUNDLE, *(["--enable-checked-mode", "--verify-entry-points", "--vm-service-port=54321"] if STORE_SHOTS else [])), env, report)
@@ -130,7 +143,7 @@ def main():
                     return match.group(1)
                 pid = launch()
                 if STORE_SHOTS:
-                    hide_banner([stdout, stderr])
+                    hide_banner(vm_logs)
                 time.sleep(10)
                 command(sim("io", udid, "screenshot", str(OUTPUT / f"{family}-launch.png")), env, report)
                 time.sleep(20)
@@ -139,7 +152,7 @@ def main():
                 command(sim("terminate", udid, BUNDLE), env, report)
                 relaunch_pid = launch()
                 if STORE_SHOTS:
-                    hide_banner([stdout, stderr])
+                    hide_banner(vm_logs)
                     device["debugBannerDisabledViaVmService"] = True
                 time.sleep(15)
                 require(launch() == relaunch_pid, f"{family} app did not remain running after relaunch.")
@@ -157,6 +170,14 @@ def main():
         print(report["error"], file=sys.stderr)
         return 1
     finally:
+        for process, log_file in log_processes:
+            process.terminate()
+            try:
+                process.wait(timeout=10)
+            except subprocess.TimeoutExpired:
+                process.kill()
+                process.wait(timeout=10)
+            log_file.close()
         for udid in created:
             for action in ("shutdown", "delete"):
                 try:
