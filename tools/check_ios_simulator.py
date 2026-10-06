@@ -10,6 +10,8 @@ import sys
 import tempfile
 import time
 import zipfile
+import urllib.request
+import urllib.parse
 
 from prepare_android_ci import digest, require
 from prepare_ios_ci import BUNDLE
@@ -17,11 +19,43 @@ from upload_existing_ios import download_artifact, safe_apple_diagnostics
 
 OUTPUT = Path("build/release/ios-simulator-smoke")
 NAVIGATION = "--navigation" in sys.argv[1:]
+STORE_SHOTS = "--store-screenshots" in sys.argv[1:]
+NAVIGATION = NAVIGATION or STORE_SHOTS
 if NAVIGATION:
     OUTPUT = Path("build/release/ios-simulator-navigation")
+if STORE_SHOTS:
+    OUTPUT = Path("build/release/ios-store-screenshots")
 URL = ("https://api.codemagic.io/artifacts/8c12313f-674f-43c0-a5bd-312e5f808c4b/"
        "dc8798d2-281e-4b86-8410-0101b97acb9f/ios-simulator-1.0.072.zip")
 SHA = "a7df177db6f5b19e9558da54f90c024648e954072d03d9b5615e7782c8091b35"
+
+
+def hide_banner(logs):
+    """Use the running app's authenticated loopback VM service, no image edits."""
+    deadline = time.monotonic() + 60
+    while time.monotonic() < deadline:
+        text = "\n".join(p.read_text(encoding="utf-8", errors="replace")
+                         for p in logs if p.exists())
+        uris = re.findall(r"http://(?:127\.0\.0\.1|localhost):\d+/[A-Za-z0-9_=-]+/", text)
+        for uri in reversed(uris):
+            def rpc(method, **params):
+                request = uri + method + "?" + urllib.parse.urlencode(params)
+                with urllib.request.urlopen(request, timeout=5) as response:
+                    result = json.load(response)
+                require("error" not in result, "VM service rejected screenshot configuration.")
+                return result["result"]
+            try:
+                for isolate in rpc("getVM").get("isolates", []):
+                    details = rpc("getIsolate", isolateId=isolate["id"])
+                    if "ext.flutter.debugAllowBanner" in details.get("extensionRPCs", []):
+                        result = rpc("ext.flutter.debugAllowBanner", isolateId=isolate["id"], enabled="false")
+                        require(str(result.get("enabled")).lower() == "false", "Banner state not confirmed.")
+                        time.sleep(2)
+                        return
+            except (OSError, KeyError, ValueError):
+                pass
+        time.sleep(1)
+    raise RuntimeError("Cannot reach Flutter banner extension; no clean screenshots produced.")
 
 
 def command(args, env, report, timeout=180):
@@ -71,10 +105,12 @@ def main():
             if NAVIGATION:
                 from ios_simulator_navigation import install_maestro, run_navigation
                 maestro = install_maestro(root, env, command, report)
-            for family, preferred in [("iPhone", "iPhone 16"), ("iPad", "iPad (A16)")]:
+            models = [("iPhone", "iPhone 16 Pro Max"), ("iPad", "iPad Pro 13-inch (M4)")] if STORE_SHOTS else [("iPhone", "iPhone 16"), ("iPad", "iPad (A16)")]
+            for family, preferred in models:
                 candidates = [d for d in types if d["name"].startswith(family)]
                 require(candidates, f"No {family} Simulator device type.")
                 device_type = next((d for d in candidates if d["name"] == preferred), candidates[-1])
+                require(not STORE_SHOTS or device_type["name"] == preferred, "Required store screenshot device unavailable.")
                 udid = command(sim("create", f"Polevaya72-{family}", device_type["identifier"],
                                    runtime["identifier"]), env, report).strip()
                 require(re.fullmatch(r"[0-9A-Fa-f-]{36}", udid), "Invalid created simulator UUID.")
@@ -88,11 +124,13 @@ def main():
                 stderr = (OUTPUT / f"{family}-stderr.txt").resolve()
                 def launch():
                     text = command(sim("launch", f"--stdout={stdout}", f"--stderr={stderr}",
-                                       udid, BUNDLE), env, report)
+                                       udid, BUNDLE, *(["--enable-checked-mode", "--verify-entry-points", "--vm-service-port=54321"] if STORE_SHOTS else [])), env, report)
                     match = re.search(re.escape(BUNDLE) + r":\s*(\d+)", text)
                     require(match, "Simulator did not return app PID.")
                     return match.group(1)
                 pid = launch()
+                if STORE_SHOTS:
+                    hide_banner([stdout, stderr])
                 time.sleep(10)
                 command(sim("io", udid, "screenshot", str(OUTPUT / f"{family}-launch.png")), env, report)
                 time.sleep(20)
@@ -100,13 +138,16 @@ def main():
                 command(sim("io", udid, "screenshot", str(OUTPUT / f"{family}-settled.png")), env, report)
                 command(sim("terminate", udid, BUNDLE), env, report)
                 relaunch_pid = launch()
+                if STORE_SHOTS:
+                    hide_banner([stdout, stderr])
+                    device["debugBannerDisabledViaVmService"] = True
                 time.sleep(15)
                 require(launch() == relaunch_pid, f"{family} app did not remain running after relaunch.")
                 command(sim("io", udid, "screenshot", str(OUTPUT / f"{family}-relaunch.png")), env, report)
                 device.update(status="captured", processStableDuringObservation=True,
                               relaunchProcessStable=True, visualReview="pending")
                 if NAVIGATION:
-                    run_navigation(maestro, udid, family, env, command, report, OUTPUT)
+                    run_navigation(maestro, udid, family, env, command, report, OUTPUT, store_shots=STORE_SHOTS)
                     device["navigationStatus"] = "assertions_passed_pending_visual_review"
                 command(sim("shutdown", udid), env, report)
         report.update(status="captured", acceptanceStatus="pending_visual_review")
@@ -125,7 +166,8 @@ def main():
                     report.setdefault("cleanupWarnings", []).append(f"{action} timed out for {udid}")
         # Only anonymous launches are exercised; redact credentials/URLs from captured logs.
         for log in OUTPUT.glob("*.txt"):
-            log.write_text(safe_apple_diagnostics(log.read_text(encoding="utf-8", errors="replace")),
+            sanitized = re.sub(r"http://(?:127\.0\.0\.1|localhost):\d+/[^\s]+", "[local VM service]", log.read_text(encoding="utf-8", errors="replace"))
+            log.write_text(safe_apple_diagnostics(sanitized),
                            encoding="utf-8")
         report["finishedAtUtc"] = datetime.now(timezone.utc).isoformat()
         name = "navigation-report.json" if NAVIGATION else "smoke-report.json"

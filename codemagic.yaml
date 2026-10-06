@@ -9,6 +9,23 @@
 #           docs.codemagic.io/flutter-configuration/flutter-projects/
 
 workflows:
+  ios-store-screenshots:
+    name: iOS 72 clean App Store screenshots (no rebuild)
+    max_build_duration: 45
+    instance_type: mac_mini_m2
+    environment:
+      xcode: "26.6"
+      groups:
+        - app_store_connect_release
+    scripts:
+      - name: Capture genuine screens without debug banner
+        script: |
+          set +x
+          set -eu
+          python3 tools/check_ios_simulator.py --store-screenshots
+    artifacts:
+      - build/release/ios-store-screenshots/**
+
   ios-simulator-navigation:
     name: iOS 72 menu navigation and iPad rotations (no rebuild)
     max_build_duration: 45

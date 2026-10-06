@@ -81,7 +81,7 @@ def install_maestro(root, env, command, report):
     return executable
 
 
-def run_navigation(maestro, udid, family, env, command, report, output):
+def run_navigation(maestro, udid, family, env, command, report, output, store_shots=False):
     folder = (output / family).resolve()
     folder.mkdir()
     steps = [
@@ -134,6 +134,21 @@ def run_navigation(maestro, udid, family, env, command, report, output):
         {"assertVisible": "Заказать обед"},
         {"takeScreenshot": "05-home-return"},
     ])
+    if store_shots:
+        steps = [
+            {"assertVisible": "Заказать обед"},
+            {"takeScreenshot": "home"},
+            {"tapOn": "Разделы сайта"},
+            {"tapOn": "Меню"},
+            {"extendedWaitUntil": {"visible": "Чтобы выбрать блюда, войдите в аккаунт.", "timeout": 60000}},
+            {"takeScreenshot": "menu"},
+            {"tapOn": {"point": home_point}},
+            {"assertVisible": "Заказать обед"},
+            {"tapOn": "Разделы сайта"},
+            {"tapOn": "Доставка"},
+            {"extendedWaitUntil": {"visible": "Условия доставки", "timeout": 30000}},
+            {"takeScreenshot": "delivery"},
+        ]
     flow = folder / "flow.yaml"
     # JSON values are valid YAML; preserve Unicode labels, no external parser needed.
     flow.write_text("appId: " + BUNDLE + "\n---\n" +
@@ -143,7 +158,13 @@ def run_navigation(maestro, udid, family, env, command, report, output):
         command([maestro, "--device", udid, "test", "--format", "junit",
                  "--output", str(folder / "junit.xml"), "--test-output-dir", str(folder),
                  "--debug-output", str(folder / "debug"), str(flow)], env, report, timeout=900)
-        if family == "iPad":
+        if store_shots:
+            expected = [1320, 2868] if family == "iPhone" else [2064, 2752]
+            for name in ["home", "menu", "delivery"]:
+                files = list(folder.rglob(name + ".png"))
+                require(len(files) == 1, "Missing or ambiguous store screenshot.")
+                require(png_dimensions(files[0])["displayDimensions"] == expected, "Wrong store screenshot size.")
+        elif family == "iPad":
             dimensions = {}
             metadata = {}
             for orientation in ["landscape_left", "landscape_right", "upside_down", "portrait"]:
