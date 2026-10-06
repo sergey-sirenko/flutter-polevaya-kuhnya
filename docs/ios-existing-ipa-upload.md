@@ -14,6 +14,18 @@ App `6819387151`, bundle `ru.obedmoscow.polevayakuhnya`. Codemagic app-level
 - `APP_STORE_CONNECT_KEY_ID` — `KQA8285DNK`.
 - `APP_STORE_CONNECT_ISSUER_ID` — `52f09cc4-4799-4d5e-bcd6-b0c0569b46a4`.
 
+Для скачивания IPA в режиме `upload` в этой же app-level группе нужен Secret
+`CODEMAGIC_ARTIFACT_API_TOKEN`: личный Codemagic API token пользователя,
+имеющего доступ к исходному build. Скрипт использует его только для GET
+фиксированного адреса артефакта. Это не отдельный read-only token: реальные
+права определяются ролью пользователя Codemagic. Хранение в группе этой app
+не ограничивает права самого токена. Владелец подключает его отдельно;
+значение не помещается в Git, manifest, URL или журнал. `status` и найденная
+существующая сборка Apple не требуют этого токена.
+
+Источник: [Codemagic API authentication](https://docs.codemagic.io/rest-api/codemagic-rest-api/)
+и [Artifacts API](https://docs.codemagic.io/rest-api/artifacts/).
+
 Apple Team key имеет App Manager scope ко всем приложениям Apple команды.
 App-level хранение в Codemagic этот scope не сужает. Скрипт обращается только
 к указанной app; код CI имеет доступ к ключу, поэтому изменения CI нужно
@@ -46,7 +58,13 @@ preReleaseVersion (version/platform). Existing build не перезагружа
 требуют ручного решения с новым номером; старые сборки не удаляются.
 
 Если build отсутствует, IPA скачивается по фиксированному HTTPS Codemagic
-artifact URL без Apple credentials. Проверяются SHA256, Info.plist,
+artifact URL с Codemagic `x-auth-token`, без Apple credentials.
+Публичная ссылка не создаётся. При HTTPS redirect на хранилище token удаляется
+из заголовков, HTTP redirect запрещён. Token исключён из окружения дочерних
+команд проверки/публикации. HTTP-код скачивания записывается как
+`artifactHttpStatus`, тела ошибок/URL перенаправлений не раскрываются.
+Отсутствующий token останавливает скачивание с понятной причиной.
+Проверяются SHA256, Info.plist,
 embedded profile/expiry/Team/App ID и codesign strict/deep с фактическим
 сертификатом. Затем занятость номера проверяется повторно, выполняется
 `app-store-connect publish` с package validation и одним upload attempt.

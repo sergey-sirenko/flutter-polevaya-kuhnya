@@ -12,6 +12,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import zipfile
@@ -22,6 +23,48 @@ from prepare_ios_ci import decode_profile, verify_ipa, CERT_SHA1
 MANIFEST = Path("docs/releases/ios-1.0.0-71.json")
 OUTPUT = Path("build/release/ios-upload")
 API = "https://api.appstoreconnect.apple.com"
+ARTIFACT_TOKEN = "CODEMAGIC_ARTIFACT_API_TOKEN"
+
+
+def download_artifact(url, ipa, report):
+    parsed = urllib.parse.urlsplit(url)
+    require(parsed.scheme == "https" and parsed.netloc == "api.codemagic.io"
+            and parsed.path.startswith("/artifacts/") and not parsed.query,
+            "Expected reviewed Codemagic artifact URL.")
+    token = os.environ.get(ARTIFACT_TOKEN, "")
+    require(token and not any(c in token for c in "\r\n"),
+            "Missing or invalid CODEMAGIC_ARTIFACT_API_TOKEN Secret for authenticated artifact download.")
+
+    class ArtifactRedirect(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, request, fp, code, msg, headers, newurl):
+            destination = urllib.parse.urlsplit(newurl)
+            require(destination.scheme == "https" and destination.hostname
+                    and not destination.username and not destination.password,
+                    "Refusing unsafe artifact redirect.")
+            redirected = super().redirect_request(request, fp, code, msg, headers, newurl)
+            if redirected is not None:
+                # A signed storage URL may be returned; never forward the API token.
+                for header in list(redirected.headers):
+                    if header.lower() == "x-auth-token":
+                        redirected.remove_header(header)
+            return redirected
+
+    request = urllib.request.Request(url, headers={"x-auth-token": token})
+    opener = urllib.request.build_opener(ArtifactRedirect())
+    try:
+        with opener.open(request, timeout=60) as response, ipa.open("wb") as stream:
+            report["artifactHttpStatus"] = response.status
+            require(response.status == 200, "Unexpected artifact response status.")
+            total = 0
+            while chunk := response.read(1024 * 1024):
+                total += len(chunk)
+                require(total <= 500 * 1024 * 1024, "IPA exceeds download size limit.")
+                stream.write(chunk)
+    except urllib.error.HTTPError as error:
+        report["artifactHttpStatus"] = error.code
+        raise PreparationError(f"Artifact download HTTP {error.code}; check Codemagic token access and artifact retention.") from None
+    except urllib.error.URLError:
+        raise PreparationError("Artifact download network/TLS error; credentials and URL diagnostics suppressed.") from None
 
 
 def b64(value):
@@ -106,7 +149,7 @@ def perform(report, action):
     require(all(os.environ.get(n) for n in names), "Missing Apple API Secret.")
     issuer, key_id = os.environ[names[2]], os.environ[names[1]]
     env = {k: v for k, v in os.environ.items()
-           if not k.startswith(("APP_STORE_CONNECT_", "IOS_", "ANDROID_", "GOOGLE_PLAY_"))}
+           if not k.startswith(("APP_STORE_CONNECT_", "IOS_", "ANDROID_", "GOOGLE_PLAY_", "CODEMAGIC_ARTIFACT_"))}
     cli = run(["app-store-connect", "--version"], env).strip()
     report["codemagicCli"] = cli
     installed_version = package_version("codemagic-cli-tools")
@@ -130,18 +173,8 @@ def perform(report, action):
             return
         report["step"] = "artifact_verification"
         url = manifest["artifactUrl"]
-        parsed = urllib.parse.urlsplit(url)
-        require(parsed.scheme == "https" and parsed.netloc == "api.codemagic.io"
-                and parsed.path.startswith("/artifacts/") and not parsed.query,
-                "Expected reviewed Codemagic artifact URL.")
         ipa = directory / "app.ipa"
-        # No Apple credentials are used for downloading the artifact.
-        with urllib.request.urlopen(url, timeout=60) as response, ipa.open("wb") as stream:
-            total = 0
-            while chunk := response.read(1024 * 1024):
-                total += len(chunk)
-                require(total <= 500 * 1024 * 1024, "IPA exceeds download size limit.")
-                stream.write(chunk)
+        download_artifact(url, ipa, report)
         require(hashlib.sha256(ipa.read_bytes()).hexdigest() == manifest["sha256"], "Downloaded IPA hash mismatch.")
         with zipfile.ZipFile(ipa) as archive:
             entries = [n for n in archive.namelist() if n.startswith("Payload/")
