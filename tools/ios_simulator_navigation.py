@@ -81,7 +81,7 @@ def install_maestro(root, env, command, report):
     return executable
 
 
-def run_navigation(maestro, udid, family, env, command, report, output, store_shots=False):
+def run_navigation(maestro, udid, family, env, command, report, output, store_shots=False, store_size=None):
     folder = (output / family).resolve()
     folder.mkdir()
     steps = [
@@ -159,7 +159,7 @@ def run_navigation(maestro, udid, family, env, command, report, output, store_sh
                  "--output", str(folder / "junit.xml"), "--test-output-dir", str(folder),
                  "--debug-output", str(folder / "debug"), str(flow)], env, report, timeout=900)
         if store_shots:
-            expected = [1320, 2868] if family == "iPhone" else [2064, 2752]
+            expected = store_size or ([1320, 2868] if family == "iPhone" else [2064, 2752])
             for name in ["home", "menu", "delivery"]:
                 files = list(folder.rglob(name + ".png"))
                 require(len(files) == 1, "Missing or ambiguous store screenshot.")

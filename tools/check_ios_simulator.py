@@ -20,6 +20,7 @@ from upload_existing_ios import download_artifact, safe_apple_diagnostics
 OUTPUT = Path("build/release/ios-simulator-smoke")
 NAVIGATION = "--navigation" in sys.argv[1:]
 STORE_SHOTS = "--store-screenshots" in sys.argv[1:]
+MEDIUM_IPHONE = "--iphone-medium" in sys.argv[1:]
 NAVIGATION = NAVIGATION or STORE_SHOTS
 if NAVIGATION:
     OUTPUT = Path("build/release/ios-simulator-navigation")
@@ -107,6 +108,8 @@ def main():
                 from ios_simulator_navigation import install_maestro, run_navigation
                 maestro = install_maestro(root, env, command, report)
             models = [("iPhone", "iPhone 16 Pro Max"), ("iPad", "iPad Pro 13-inch (M4)")] if STORE_SHOTS else [("iPhone", "iPhone 16"), ("iPad", "iPad (A16)")]
+            if STORE_SHOTS and MEDIUM_IPHONE:
+                models = [("iPhone", "iPhone 16")]
             for family, preferred in models:
                 candidates = [d for d in types if d["name"].startswith(family)]
                 require(candidates, f"No {family} Simulator device type.")
@@ -160,7 +163,8 @@ def main():
                 device.update(status="captured", processStableDuringObservation=True,
                               relaunchProcessStable=True, visualReview="pending")
                 if NAVIGATION:
-                    run_navigation(maestro, udid, family, env, command, report, OUTPUT, store_shots=STORE_SHOTS)
+                    run_navigation(maestro, udid, family, env, command, report, OUTPUT, store_shots=STORE_SHOTS,
+                                   store_size=[1179, 2556] if MEDIUM_IPHONE else None)
                     device["navigationStatus"] = "assertions_passed_pending_visual_review"
                 command(sim("shutdown", udid), env, report)
         report.update(status="captured", acceptanceStatus="pending_visual_review")
