@@ -9,6 +9,25 @@
 #           docs.codemagic.io/flutter-configuration/flutter-projects/
 
 workflows:
+  ios-simulator-smoke:
+    name: iOS 72 simulator launch screenshots (no rebuild)
+    max_build_duration: 20
+    instance_type: mac_mini_m2
+    environment:
+      xcode: "26.6"
+      groups:
+        - app_store_connect_release
+    scripts:
+      - name: Launch verified simulator 72 on iPhone and iPad
+        script: |
+          set +x
+          set -eu
+          python3 tools/check_ios_simulator.py
+    artifacts:
+      - build/release/ios-simulator-smoke/*.json
+      - build/release/ios-simulator-smoke/*.png
+      - build/release/ios-simulator-smoke/*.txt
+
   ios-simulator-acceptance:
     name: iOS 72 simulator for manual acceptance (no store upload)
     max_build_duration: 45
