@@ -54,6 +54,18 @@ def run_navigation(maestro, udid, family, env, command, report, output):
         {"assertVisible": "Полевая кухня"},
         {"tapOn": "Разделы сайта"},
         {"tapOn": "Меню"},
+        {"extendedWaitUntil": {"visible": "Чтобы выбрать блюда, войдите в аккаунт.", "timeout": 60000}},
+        {"takeScreenshot": "00-menu-dishes"},
+    ]
+    if family == "iPhone":
+        # Observed +72 accessibility tree: date occurs in the selection heading
+        # and then in the bottom navigation. Tap the second occurrence, not a
+        # fixed production date or a screen coordinate.
+        steps.extend([
+            {"tapOn": {"text": "(Пн|Вт|Ср|Чт|Пт|Сб|Вс) [0-9]{2}\\.[0-9]{2}", "index": 1}},
+            {"assertVisible": "День"},
+        ])
+    steps.extend([
         {"extendedWaitUntil": {"visible": "Текущая неделя", "timeout": 60000}},
         {"assertVisible": "Следующая неделя"},
         {"takeScreenshot": "01-menu-current"},
@@ -61,7 +73,13 @@ def run_navigation(maestro, udid, family, env, command, report, output):
         {"assertVisible": "Текущая неделя"},
         {"takeScreenshot": "02-menu-next"},
         {"tapOn": "Текущая неделя"},
-    ]
+    ])
+    if family == "iPhone":
+        steps.extend([
+            {"tapOn": "Закрыть"},
+            {"assertVisible": "Чтобы выбрать блюда, войдите в аккаунт."},
+            {"takeScreenshot": "02-menu-after-week-selection"},
+        ])
     if family == "iPad":
         for orientation in ["LANDSCAPE_LEFT", "LANDSCAPE_RIGHT", "UPSIDE_DOWN", "PORTRAIT"]:
             steps.extend([{"setOrientation": orientation},
