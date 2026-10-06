@@ -15,11 +15,12 @@ workflows:
     instance_type: mac_mini_m2
     inputs:
       action:
-        description: Upload requires separate owner approval; status is read-only
+        description: status checks API; validate checks IPA with Apple; upload sends build
         type: choice
         default: status
         options:
           - status
+          - validate
           - upload
     environment:
       xcode: "26.6"

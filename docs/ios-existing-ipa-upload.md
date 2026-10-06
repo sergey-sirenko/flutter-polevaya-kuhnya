@@ -39,6 +39,23 @@ App-level хранение в Codemagic этот scope не сужает. Скр
    По умолчанию `status`: только GET Apple API, без скачивания IPA/отправки.
 3. Для `upload` нужно отдельное разрешение передать конкретный IPA Apple.
    Запуск не включает пересборку, review или распространение тестерам.
+4. Для диагностики выбрать `validate`: проверка SHA/подписи и Apple package
+   validation через publish --enable-package-validation --skip-package-upload.
+   Сборка в магазине не создаётся; передача прежнего IPA Apple уже разрешена.
+   По исходникам CLI0.69.0 этот набор флагов выполняет validation и пропускает
+   upload. Ни группы, ни review flags не задаются.
+
+Вывод неудачной команды Apple сохраняется в `appleDiagnostics` (до20KB),
+после удаления PEM/private keys, известных Secret значений, JWT, auth headers
+и URL. Исходный вывод не печатается и не публикуется отдельным артефактом.
+Отчёт содержит `validationAttempted`, `validationPassed`, `validationExitCode`
+и при отправке `uploadExitCode`. Режим upload сначала выполняет отдельную
+валидацию, затем повторно проверяет существующие builds и запускает upload.
+Ошибка валидации оставляет `uploadAttempted=false`; ошибка upload означает
+`upload_unknown`, требует проверки Apple перед повтором.
+
+Источник поведения validation/skip flags:
+[Codemagic CLI0.69.0 publish action](https://github.com/codemagic-ci-cd/cli-tools/blob/v0.69.0/src/codemagic/tools/app_store_connect/actions/publish_action.py).
 
 Xcode image 26.6. Workflow устанавливает codemagic-cli-tools==0.69.0 из PyPI
 в отдельный venv build/ios-upload-tools и использует его Python/PATH.

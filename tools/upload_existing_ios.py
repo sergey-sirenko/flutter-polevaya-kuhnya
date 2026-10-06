@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import plistlib
+import re
 import subprocess
 import sys
 import tempfile
@@ -24,6 +25,34 @@ MANIFEST = Path("docs/releases/ios-1.0.0-71.json")
 OUTPUT = Path("build/release/ios-upload")
 API = "https://api.appstoreconnect.apple.com"
 ARTIFACT_TOKEN = "CODEMAGIC_ARTIFACT_API_TOKEN"
+
+
+def safe_apple_diagnostics(output):
+    """Preserve Apple errors, redact credentials before persisting any output."""
+    output = re.sub(r"\x1b\[[0-?]*[ -/]*[@-~]", "", output)
+    output = re.sub(r"-----BEGIN [^-]*KEY-----.*?-----END [^-]*KEY-----", "[private key removed]",
+                    output, flags=re.S)
+    for name, value in os.environ.items():
+        if name.startswith(("APP_STORE_CONNECT_", "IOS_", "ANDROID_", "GOOGLE_PLAY_", "CODEMAGIC_ARTIFACT_")) and value:
+            output = output.replace(value, "[secret removed]")
+    output = re.sub(r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+", "[JWT removed]", output)
+    output = re.sub(r"(?i)((?:authorization|x-auth-token)\s*[:=]\s*)[^\r\n]+", r"\1[removed]", output)
+    output = re.sub(r"https?://[^\s\"<>]+", "[URL removed]", output)
+    return output[-20000:]
+
+
+def apple_command(ipa, key, issuer, key_id, env, report, validate_only):
+    args = ["app-store-connect", "publish", "--path", str(ipa), "--issuer-id", issuer,
+            "--key-id", key_id, "--private-key", "@file:" + str(key), "--altool-retries", "1"]
+    if validate_only:
+        args.extend(["--enable-package-validation", "--skip-package-upload"])
+    # CLI 0.69.0 validates only with --enable-package-validation. No review/group flags.
+    result = subprocess.run(args, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=1200)
+    operation = "validation" if validate_only else "upload"
+    report[operation + "ExitCode"] = result.returncode
+    if result.returncode:
+        report["appleDiagnostics"] = safe_apple_diagnostics(result.stdout.decode("utf-8", errors="replace"))
+        raise PreparationError(f"Apple {operation} command failed (exit {result.returncode}); see appleDiagnostics in report.")
 
 
 def download_artifact(url, ipa, report):
@@ -135,7 +164,7 @@ def record_build(report, build):
 
 def perform(report, action):
     require(sys.platform == "darwin" and os.environ.get("CM_BUILD_ID"), "Run only on Codemagic macOS.")
-    require(action in ("status", "upload"), "Unknown action.")
+    require(action in ("status", "validate", "upload"), "Unknown action.")
     manifest = json.loads(MANIFEST.read_text())
     report["workflowCommit"] = run(["git", "rev-parse", "HEAD"]).strip()
     require(not run(["git", "status", "--porcelain", "--untracked-files=no"]).strip(),
@@ -185,27 +214,32 @@ def perform(report, action):
         profile = decode_profile(profile_path, env)
         require(manifest["certificateSha1"] == CERT_SHA1, "Manifest signer differs from accepted signer.")
         verify_ipa(ipa, directory, profile, manifest["version"], manifest["buildNumber"], env)
+        report.update(step="apple_validation", validationAttempted=True)
+        apple_command(ipa, key, issuer, key_id, env, report, validate_only=True)
+        report["validationPassed"] = True
+        if action == "validate":
+            report.update(status="validated", step="complete")
+            return
         # Recheck immediately before submission. Never delete/cancel any existing build.
         build = existing(manifest, key, issuer, key_id)
         if build:
             record_build(report, build)
             return
         report.update(step="upload", status="upload_unknown", uploadAttempted=True)
-        run(["app-store-connect", "publish", "--path", str(ipa), "--issuer-id", issuer,
-             "--key-id", key_id, "--private-key", "@file:" + str(key),
-             "--enable-package-validation", "--altool-retries", "1"], env)
+        apple_command(ipa, key, issuer, key_id, env, report, validate_only=False)
         report.update(status="uploaded", storeUploadPerformed=True, step="complete")
         # No beta review, groups, testers or App Review flags: only binary upload.
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--action", required=True, choices=("status", "upload"))
+    parser.add_argument("--action", required=True, choices=("status", "validate", "upload"))
     action = parser.parse_args().action
     report = {"status": "failed", "step": "preflight", "appId": "6819387151",
               "storeUploadPerformed": False, "uploadAttempted": False,
               "storeVersionAvailabilityChecked": False, "reviewSubmitted": False,
               "testerDistributionRequested": False, "startedAtUtc": datetime.now(timezone.utc).isoformat()}
+    report.update(validationAttempted=False, validationPassed=False)
     try:
         perform(report, action)
     except Exception as error:
