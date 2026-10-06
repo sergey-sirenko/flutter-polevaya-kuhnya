@@ -65,6 +65,13 @@ def verify_ipa(ipa, directory, profile, name, build, env):
     info = plistlib.loads((app / "Info.plist").read_bytes())
     require(info.get("CFBundleIdentifier") == BUNDLE and info.get("CFBundleShortVersionString") == name
             and info.get("CFBundleVersion") == build, "IPA bundle/version differs from pubspec.")
+    if 2 in info.get("UIDeviceFamily", []) and not info.get("UIRequiresFullScreen", False):
+        ipad_orientations = info.get("UISupportedInterfaceOrientations~ipad",
+                                     info.get("UISupportedInterfaceOrientations", []))
+        required = {"UIInterfaceOrientationPortrait", "UIInterfaceOrientationPortraitUpsideDown",
+                    "UIInterfaceOrientationLandscapeLeft", "UIInterfaceOrientationLandscapeRight"}
+        require(set(ipad_orientations) == required,
+                "iPad multitasking requires all four interface orientations (Apple 90474).")
     embedded = decode_profile(app / "embedded.mobileprovision", env)
     check_profile(embedded)
     require(embedded["UUID"] == profile["UUID"], "Unexpected embedded profile.")

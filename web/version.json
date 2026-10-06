@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "build": 71,
+  "build": 72,
   "policy": {
     "schema": 1,
     "environment": "test",
@@ -11,7 +11,7 @@
     "releases": {
       "web": {
         "version": "1.0.0",
-        "build": 71,
+        "build": 72,
         "url": "https://flutter-test.obedmoscow.ru/"
       },
       "android": null,

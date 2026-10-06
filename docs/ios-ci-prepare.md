@@ -53,10 +53,32 @@ P12/profile/keychain временные, пароль передаётся CLI �
 диагностики команд подавлены. Xcode signing edits восстановлены в finally.
 В artifacts не включаются archive, temporary keys или исходные журналы.
 
-Первый macOS CI ещё не выполнен: совместимость Xcode/CLI/SwiftPM и фактическая
-подпись не подтверждены. IPA, загрузка TestFlight, проверка на iPhone,
-App Privacy/FR-A6, metadata, Apple API и публичный выпуск — следующие этапы.
+05.10.2026 macOS CI из 594c889 успешно подготовил и проверил IPA 1.0.0+71.
+Xcode 26.6 / Codemagic CLI 0.69.0 / подпись подтверждены этим запуском.
+Apple API подключён и read-only доступ проверен. Прежний IPA71 отклонён
+валидацией90474. Исправленный IPA72, TestFlight, проверка на iPhone/iPad,
+App Privacy/FR-A6, metadata и публичный выпуск — следующие этапы.
 
 Источники: [ручная подпись Codemagic](https://docs.codemagic.io/yaml-code-signing/alternative-code-signing-methods/),
 [use-profiles](https://github.com/codemagic-ci-cd/cli-tools/blob/master/docs/xcode-project/use-profiles.md),
 [безопасный аргумент пароля](https://github.com/codemagic-ci-cd/cli-tools/blob/master/docs/keychain/add-certificates.md).
+
+## Исправление Apple 90474 (06.10.2026)
+
+Apple validation исходного IPA1.0.0+71 отклонила пакет: iPad multitasking
+требует четыре ориентации. В Info.plist для iPad добавлены portrait upside down
+и оба landscape; iPhone по-прежнему использует portrait. Приложение сохраняет
+поддержку iPad (TARGETED_DEVICE_FAMILY=1,2). Flutter orientation lock на iPad
+при включённой многозадачности не применяется; повороты/размеры окна требуют
+ручной приёмки на iPad. UIRequiresFullScreen не добавлялся.
+
+Номер исправленной сборки —1.0.0+72; pubspec/web version согласованы.
+verify_ipa дополнительно проверяет ориентации для iPad с multitasking до
+сохранения артефактов. Исправленный IPA пока не собран и Apple не проверен.
+Manifest docs/releases/ios-1.0.0-71.json остаётся историческим: перенаправлять
+его на новый IPA без проверенного prepare/SHA/source build нельзя.
+До нового manifest существующий upload workflow на checkout+72 остановится
+из-за несовпадения версии, как предусмотрено.
+
+Источники: [Apple supported orientations](https://developer.apple.com/documentation/uikit/uiviewcontroller/supportedinterfaceorientations),
+[Flutter setPreferredOrientations](https://api.flutter.dev/flutter/services/SystemChrome/setPreferredOrientations.html).

@@ -1,7 +1,7 @@
 name: polevaya_kuhnya
 description: "Приложение «Полевая кухня» для Web, Android и iOS."
 publish_to: 'none'
-version: 1.0.0+71
+version: 1.0.0+72
 environment:
   sdk: ^3.13.1
 
