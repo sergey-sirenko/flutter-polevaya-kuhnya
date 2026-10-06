@@ -1,0 +1,11 @@
+{
+  "appId": "6819387151",
+  "bundleId": "ru.obedmoscow.polevayakuhnya",
+  "version": "1.0.0",
+  "buildNumber": "72",
+  "sourceCommit": "f47895509bcf1da287accb68f45b27acdff63d25",
+  "sourceBuildId": "6ac528287394575b200bbaa9",
+  "artifactUrl": "https://api.codemagic.io/artifacts/a23136e1-3476-4c6a-a2d1-7197feeb20f5/5d0af473-2881-4e15-a74c-335f5b374fa3/app_store-1.0.072.ipa",
+  "sha256": "e0e4006d6b8ee457338e63e7e7cf0fd88d28549a6c59d59d82dbec55006b1334",
+  "certificateSha1": "0556df536ee5f42d407b48b6029fce1fd1ed5e37"
+}

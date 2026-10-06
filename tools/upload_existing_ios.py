@@ -21,7 +21,7 @@ import zipfile
 from prepare_android_ci import PreparationError, require, run
 from prepare_ios_ci import decode_profile, verify_ipa, CERT_SHA1
 
-MANIFEST = Path("docs/releases/ios-1.0.0-71.json")
+MANIFEST = Path("docs/releases/ios-1.0.0-72.json")
 OUTPUT = Path("build/release/ios-upload")
 API = "https://api.appstoreconnect.apple.com"
 ARTIFACT_TOKEN = "CODEMAGIC_ARTIFACT_API_TOKEN"
