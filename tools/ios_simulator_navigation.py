@@ -67,25 +67,22 @@ def run_navigation(maestro, udid, family, env, command, report, output):
         ])
     steps.extend([
         {"extendedWaitUntil": {"visible": "Текущая неделя", "timeout": 60000}},
-        {"assertVisible": "Следующая неделя"},
         {"takeScreenshot": "01-menu-current"},
-        {"tapOn": "Следующая неделя"},
-        {"assertVisible": "Текущая неделя"},
-        {"takeScreenshot": "02-menu-next"},
         {"tapOn": "Текущая неделя"},
+        {"assertVisible": "Текущая неделя"},
     ])
     if family == "iPhone":
         steps.extend([
             {"tapOn": "Закрыть"},
             {"assertVisible": "Чтобы выбрать блюда, войдите в аккаунт."},
-            {"takeScreenshot": "02-menu-after-week-selection"},
+            {"takeScreenshot": "02-menu-after-current-week-selection"},
         ])
     if family == "iPad":
         for orientation in ["LANDSCAPE_LEFT", "LANDSCAPE_RIGHT", "UPSIDE_DOWN", "PORTRAIT"]:
             steps.extend([{"setOrientation": orientation},
                           {"assertVisible": "Текущая неделя"},
-                          {"assertVisible": "Следующая неделя"},
                           {"takeScreenshot": "03-menu-" + orientation.lower()}])
+    report["weekCheckScope"] = "current_week_only_owner_requested"
     steps.extend([
         {"tapOn": "Полевая кухня"},
         {"assertVisible": "Заказать обед"},
