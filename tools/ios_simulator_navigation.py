@@ -14,6 +14,40 @@ URL = f"https://github.com/mobile-dev-inc/Maestro/releases/download/cli-{VERSION
 SHA = "5384593cb4e7a106489e75a821d157dd43f4e438df6bc308b72e82c685e1283a"
 
 
+def png_dimensions(path):
+    """Return displayed dimensions, accounting for Maestro PNG eXIf rotation."""
+    data = path.read_bytes()
+    require(data[:8] == b"\x89PNG\r\n\x1a\n" and len(data) >= 24, "Invalid screenshot PNG.")
+    width, height = struct.unpack(">II", data[16:24])
+    require(width > 0 and height > 0, "Invalid screenshot dimensions.")
+    orientation = 1
+    position = 8
+    while position + 12 <= len(data):
+        size = struct.unpack(">I", data[position:position + 4])[0]
+        require(position + size + 12 <= len(data), "Truncated screenshot PNG chunk.")
+        kind = data[position + 4:position + 8]
+        if kind == b"eXIf":
+            tiff = data[position + 8:position + 8 + size]
+            require(len(tiff) >= 8 and tiff[:2] in (b"MM", b"II"), "Invalid screenshot EXIF.")
+            endian = ">" if tiff[:2] == b"MM" else "<"
+            require(struct.unpack(endian + "H", tiff[2:4])[0] == 42, "Invalid TIFF header.")
+            offset = struct.unpack(endian + "I", tiff[4:8])[0]
+            require(offset + 2 <= len(tiff), "Invalid EXIF directory offset.")
+            count = struct.unpack(endian + "H", tiff[offset:offset + 2])[0]
+            require(offset + 2 + count * 12 <= len(tiff), "Truncated EXIF directory.")
+            for index in range(count):
+                entry = offset + 2 + index * 12
+                tag, datatype, length = struct.unpack(endian + "HHI", tiff[entry:entry + 8])
+                if tag == 0x0112:
+                    require(datatype == 3 and length == 1, "Unexpected EXIF orientation format.")
+                    orientation = struct.unpack(endian + "H", tiff[entry + 8:entry + 10])[0]
+                    require(1 <= orientation <= 8, "Invalid EXIF orientation value.")
+        position += size + 12
+    displayed = [height, width] if orientation in (5, 6, 7, 8) else [width, height]
+    return dict(rawDimensions=[width, height], exifOrientation=orientation,
+                displayDimensions=displayed)
+
+
 def install_maestro(root, env, command, report):
     env.update(MAESTRO_CLI_NO_ANALYTICS="true", MAESTRO_DISABLE_UPDATE_CHECK="true",
                MAESTRO_CLI_ANALYSIS_NOTIFICATION_DISABLED="true",
@@ -111,16 +145,17 @@ def run_navigation(maestro, udid, family, env, command, report, output):
                  "--debug-output", str(folder / "debug"), str(flow)], env, report, timeout=900)
         if family == "iPad":
             dimensions = {}
+            metadata = {}
             for orientation in ["landscape_left", "landscape_right", "upside_down", "portrait"]:
                 images = list(folder.rglob("03-menu-" + orientation + ".png"))
                 require(len(images) == 1, "Expected orientation screenshot missing or ambiguous.")
-                header = images[0].read_bytes()[:24]
-                require(header[:8] == b"\x89PNG\r\n\x1a\n", "Invalid screenshot PNG.")
-                width, height = struct.unpack(">II", header[16:24])
+                metadata[orientation] = png_dimensions(images[0])
+                width, height = metadata[orientation]["displayDimensions"]
                 require((width > height) if orientation.startswith("landscape") else (height > width),
                         "Screenshot dimensions do not match requested orientation.")
                 dimensions[orientation] = [width, height]
             report["iPadOrientationScreenshotDimensions"] = dimensions
+            report["iPadOrientationScreenshotMetadata"] = metadata
     finally:
         for path in folder.rglob("*"):
             if path.is_file() and path.suffix in (".log", ".txt", ".json", ".xml"):
