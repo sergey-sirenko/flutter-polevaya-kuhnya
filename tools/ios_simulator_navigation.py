@@ -83,8 +83,14 @@ def run_navigation(maestro, udid, family, env, command, report, output):
                           {"assertVisible": "Текущая неделя"},
                           {"takeScreenshot": "03-menu-" + orientation.lower()}])
     report["weekCheckScope"] = "current_week_only_owner_requested"
+    # The order screen's nested Scaffold omits the outer brand from Maestro's
+    # accessibility hierarchy. Use its observed portrait screenshot location;
+    # all iPad rotations finish in PORTRAIT before this action.
+    home_point = "20%,11%" if family == "iPhone" else "15%,6%"
+    report.setdefault("coordinateFallbacks", []).append(
+        {"family": family, "action": "order_header_brand_home", "point": home_point})
     steps.extend([
-        {"tapOn": "Полевая кухня"},
+        {"tapOn": {"point": home_point}},
         {"assertVisible": "Заказать обед"},
         {"tapOn": "Разделы сайта"},
         {"tapOn": "Доставка"},
