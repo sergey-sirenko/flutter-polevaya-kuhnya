@@ -1,5 +1,7 @@
 """Upload one reviewed, existing IPA; no rebuild, beta review or distribution."""
 from datetime import datetime, timezone
+import argparse
+from importlib.metadata import version as package_version
 import base64
 import hashlib
 import json
@@ -88,9 +90,8 @@ def record_build(report, build):
             "Existing build is expired or invalid; do not reupload the same number.")
 
 
-def perform(report):
+def perform(report, action):
     require(sys.platform == "darwin" and os.environ.get("CM_BUILD_ID"), "Run only on Codemagic macOS.")
-    action = os.environ.get("IPA_ACTION", "status")
     require(action in ("status", "upload"), "Unknown action.")
     manifest = json.loads(MANIFEST.read_text())
     report["workflowCommit"] = run(["git", "rev-parse", "HEAD"]).strip()
@@ -107,8 +108,11 @@ def perform(report):
     env = {k: v for k, v in os.environ.items()
            if not k.startswith(("APP_STORE_CONNECT_", "IOS_", "ANDROID_", "GOOGLE_PLAY_"))}
     cli = run(["app-store-connect", "--version"], env).strip()
-    require("app-store-connect 0.69.0" in cli, "Expected Codemagic CLI 0.69.0; review tool upgrade explicitly.")
     report["codemagicCli"] = cli
+    installed_version = package_version("codemagic-cli-tools")
+    report["codemagicCliPackageVersion"] = installed_version
+    require(installed_version == "0.69.0" and "0.69.0" in cli,
+            "Expected Codemagic CLI 0.69.0; review tool upgrade explicitly.")
     with tempfile.TemporaryDirectory(prefix="polevaya-upload-") as tmp:
         directory = Path(tmp)
         key = directory / "api.p8"
@@ -162,12 +166,15 @@ def perform(report):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--action", required=True, choices=("status", "upload"))
+    action = parser.parse_args().action
     report = {"status": "failed", "step": "preflight", "appId": "6819387151",
               "storeUploadPerformed": False, "uploadAttempted": False,
               "storeVersionAvailabilityChecked": False, "reviewSubmitted": False,
               "testerDistributionRequested": False, "startedAtUtc": datetime.now(timezone.utc).isoformat()}
     try:
-        perform(report)
+        perform(report, action)
     except Exception as error:
         report["reason"] = str(error) if isinstance(error, PreparationError) else f"Stopped ({type(error).__name__}); diagnostics suppressed."
         if not report["uploadAttempted"]:

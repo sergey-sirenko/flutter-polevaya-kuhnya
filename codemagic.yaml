@@ -25,13 +25,19 @@ workflows:
       xcode: "26.6"
       groups:
         - app_store_connect_release
-      vars:
-        IPA_ACTION: ${{ inputs.action }}
     scripts:
+      - name: Install pinned Codemagic upload tools
+        script: |
+          set +x
+          set -eu
+          python3 -m venv "$CM_BUILD_DIR/build/ios-upload-tools"
+          "$CM_BUILD_DIR/build/ios-upload-tools/bin/python" -m pip install --disable-pip-version-check "codemagic-cli-tools==0.69.0"
       - name: Verify existing artifact and upload or check Apple status
         script: |
           set +x
-          python3 tools/upload_existing_ios.py
+          set -eu
+          export PATH="$CM_BUILD_DIR/build/ios-upload-tools/bin:$PATH"
+          python tools/upload_existing_ios.py --action "${{ inputs.action }}"
     artifacts:
       - build/release/ios-upload/*.json
 
