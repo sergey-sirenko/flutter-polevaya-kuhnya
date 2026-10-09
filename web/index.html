@@ -39,18 +39,25 @@
   </script>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #FFFFFF; color: #223027; }
-    #app-boot { max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+    #app-boot { position: fixed; inset: 0; display: grid; place-items: center; background: #FFFFFF; }
+    #app-boot-spinner { box-sizing: border-box; width: 28px; height: 28px; border: 3px solid transparent; border-top-color: #305F3D; border-right-color: #305F3D; border-radius: 50%; animation: app-boot-spin 0.9s linear infinite; }
+    @keyframes app-boot-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { #app-boot-spinner { animation: none; } }
   </style>
 </head>
 <body>
-  <div id="app-boot">
-    <h1>Полевая кухня</h1>
-    <p>Доставка обедов в офис. Телефон 8-903-128-57-15, почта zakaz@obedmoscow.ru.</p>
-    <p>Пн–Чт: с 8 до 12. Пт: с 8 до 15.</p>
+  <div id="app-boot" role="status" aria-label="Загрузка">
+    <div id="app-boot-spinner" aria-hidden="true"></div>
   </div>
   <noscript>
+    <style>#app-boot { display: none; }</style>
     <p>Для заказа нужен JavaScript. Связаться можно по телефону 8-903-128-57-15 или почте zakaz@obedmoscow.ru.</p>
   </noscript>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      document.getElementById('app-boot')?.remove();
+    }, { once: true });
+  </script>
   <script>{{flutter_bootstrap_js}}</script>
 </body>
 </html>

@@ -133,6 +133,9 @@ class _DaySheet extends ConsumerWidget {
                 fontWeight: selection?.weekType == item.weekType
                     ? FontWeight.bold
                     : FontWeight.normal,
+                decoration: selection?.weekType == item.weekType
+                    ? TextDecoration.underline
+                    : TextDecoration.none,
               ),
             ),
           ),
@@ -215,6 +218,9 @@ class _DayChoice extends StatelessWidget {
           style: TextStyle(
             fontSize: 18,
             fontWeight: selected ? FontWeight.bold : FontWeight.normal,
+            decoration: selected
+                ? TextDecoration.underline
+                : TextDecoration.none,
             color: available ? Theme.of(context).colorScheme.primary : null,
           ),
         ),

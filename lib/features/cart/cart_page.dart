@@ -13,6 +13,7 @@ import 'package:polevaya_kuhnya/features/cart/cart_edit_controller.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_work_banner.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_repeat_banner.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_repeat_controller.dart';
+import 'package:polevaya_kuhnya/features/cart/cart_repeat_work.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_freshness.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_pricing_bridge.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_submit_controller.dart';
@@ -21,7 +22,7 @@ import 'package:polevaya_kuhnya/features/menu/menu_repository.dart';
 import 'package:polevaya_kuhnya/features/menu/menu_selection.dart';
 import 'package:polevaya_kuhnya/shared/display_formats.dart';
 
-class CartPage extends ConsumerWidget {
+class CartPage extends ConsumerStatefulWidget {
   const CartPage({this.onOpenDay, this.onAddDishes, super.key});
 
   /// Открыть меню на дате этой позиции корзины.
@@ -29,15 +30,47 @@ class CartPage extends ConsumerWidget {
   final ValueChanged<String>? onAddDishes;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<CartPage> createState() => _CartPageState();
+}
+
+class _CartPageState extends ConsumerState<CartPage> {
+  bool _autoRestoreAttempted = false;
+  bool _restoringSaved = false;
+
+  ValueChanged<String>? get onOpenDay => widget.onOpenDay;
+  ValueChanged<String>? get onAddDishes => widget.onAddDishes;
+
+  Future<void> _restoreSaved(Uri? source) async {
+    try {
+      if (!mounted ||
+          GoRouter.maybeOf(context)?.routerDelegate.state.uri != source) {
+        return;
+      }
+      final ready = await ref
+          .read(cartEditControllerProvider.notifier)
+          .resume(restoreOpenedCart: true);
+      if (!mounted ||
+          !ready ||
+          GoRouter.maybeOf(context)?.routerDelegate.state.uri != source) {
+        return;
+      }
+      final date = ref.read(cartEditControllerProvider).dateKey;
+      final weeks = ref.read(menuControllerProvider).asData?.value;
+      if (date != null && weeks != null) {
+        await ref.read(menuSelectionProvider.notifier).openDate(date, weeks);
+      }
+    } finally {
+      if (mounted) setState(() => _restoringSaved = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     ref.watch(cartPersistenceControllerProvider);
     final status = ref.watch(sessionStatusProvider);
     if (status != SessionStatus.signedIn) {
       final (heading, message) = switch (status) {
-        SessionStatus.restoring => (
-          AppStrings.checkingSession,
-          AppStrings.pleaseWait,
-        ),
+        SessionStatus.restoring => (AppStrings.cart, AppStrings.pleaseWait),
         SessionStatus.unavailable => (
           AppStrings.sessionUnavailable,
           AppStrings.sessionUnavailableMessage,
@@ -48,6 +81,8 @@ class CartPage extends ConsumerWidget {
         title: heading,
         message: message,
         isLoading: status == SessionStatus.restoring,
+        quietLoading: true,
+        showTitle: MediaQuery.sizeOf(context).width < orderColumnsMinWidth,
         onHome: () => context.go('/'),
         onRetry: status == SessionStatus.unavailable
             ? () => ref.read(sessionControllerProvider.notifier).restore()
@@ -61,6 +96,31 @@ class CartPage extends ConsumerWidget {
     final repeatUri = GoRouter.maybeOf(context)?.routerDelegate.state.uri;
     final cart = ref.watch(editingCartProvider);
     final edit = ref.watch(cartEditControllerProvider);
+    final recovery = edit.recovery;
+    if (!_autoRestoreAttempted &&
+        !_restoringSaved &&
+        (recovery != null || (!edit.active && !edit.recoveryError)) &&
+        !edit.isRepeat &&
+        !edit.loading &&
+        !edit.restoring &&
+        !ref.watch(cartRepeatWorkProvider).loading &&
+        !ref.watch(cartSubmitControllerProvider).editingLocked &&
+        !versionBlocksWork(ref.watch(appVersionControllerProvider))) {
+      _autoRestoreAttempted = true;
+      _restoringSaved = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _restoreSaved(repeatUri);
+      });
+    }
+    if (edit.restoring || _restoringSaved) {
+      return RoutePage(
+        title: AppStrings.cart,
+        isLoading: true,
+        quietLoading: true,
+        showTitle: MediaQuery.sizeOf(context).width < orderColumnsMinWidth,
+        onHome: () => context.go('/'),
+      );
+    }
     final changed = ref.watch(cartChangedDatesProvider);
     final cancelled = ref.watch(cartCancelledDatesProvider).toSet();
     final editable =
@@ -111,14 +171,19 @@ class CartPage extends ConsumerWidget {
         titleSpacing: 8,
         title: Row(
           children: [
-            const Expanded(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                alignment: Alignment.centerLeft,
-                child: Text(AppStrings.cart, key: ValueKey('route-page-title')),
+            if (MediaQuery.sizeOf(context).width < orderColumnsMinWidth) ...[
+              const Expanded(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    AppStrings.cart,
+                    key: ValueKey('route-page-title'),
+                  ),
+                ),
               ),
-            ),
-            const SizedBox(width: 8),
+              const SizedBox(width: 8),
+            ],
             Expanded(
               flex: 2,
               child: _CartActions(
@@ -194,7 +259,12 @@ class CartPage extends ConsumerWidget {
                   key: const ValueKey('cart-items-scroll'),
                   padding: const EdgeInsets.all(16),
                   children: [
-                    const CartWorkBanner(showDiscard: false),
+                    const CartWorkBanner(
+                      showDiscard: false,
+                      autoRestore: false,
+                    ),
+                    if (edit.message != null && edit.recovery != null)
+                      Text(edit.message!),
                     CartRepeatBanner(
                       showDiscard: false,
                       viewCurrent: () =>

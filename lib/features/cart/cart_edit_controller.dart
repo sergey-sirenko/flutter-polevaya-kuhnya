@@ -185,7 +185,7 @@ class CartEditController extends Notifier<CartEditState> {
   @override
   CartEditState build() {
     final api = ref.watch(sessionApiProvider);
-    final store = ref.watch(cartWorkStoreProvider);
+    ref.watch(cartWorkStoreProvider);
     final owner = ref.read(sessionProfileProvider)?.login;
     final epoch = ++_epoch;
     _writeVersion++;
@@ -201,7 +201,7 @@ class CartEditController extends Notifier<CartEditState> {
       if (api == null || owner == null || !_current(epoch)) return;
       try {
         await ref.read(cartWorkQueueProvider).run(() async {
-          final result = await store.load(owner, api.deviceId);
+          final result = await _loadSavedChanges(owner, api.deviceId);
           if (_current(epoch)) state = CartEditState(recovery: result);
         });
       } catch (_) {
@@ -217,6 +217,17 @@ class CartEditController extends Notifier<CartEditState> {
   }
 
   bool _current(int epoch) => ref.mounted && epoch == _epoch;
+
+  Future<CartWorkSnapshot?> _loadSavedChanges(
+    String owner,
+    String device,
+  ) async {
+    final saved = await ref.read(cartWorkStoreProvider).load(owner, device);
+    // Само открытие корзины сохраняет исходный состав. Продолжение требуется
+    // только для локальных правок, включая удаление всех блюд выбранного дня.
+    return saved != null && saved.changedDates.isNotEmpty ? saved : null;
+  }
+
   bool get _locked =>
       ref.read(cartSubmitControllerProvider).editingLocked ||
       versionBlocksWork(ref.read(appVersionControllerProvider)) ||
@@ -395,14 +406,47 @@ class CartEditController extends Notifier<CartEditState> {
     return _prepare(dateKey);
   }
 
-  Future<bool> resume() async {
+  Future<bool> resume({bool restoreOpenedCart = false}) async {
     await ready;
     if (!ref.mounted || state.loading || _locked || state.isRepeat) {
       return false;
     }
-    final saved = state.recovery ?? workSnapshot();
-    if (saved == null) return false;
-    return _prepare(saved.selectedDateKey, saved: saved);
+    var saved = state.recovery ?? workSnapshot();
+    if (saved == null && restoreOpenedCart && !state.recoveryError) {
+      final api = ref.read(sessionApiProvider);
+      final owner = ref.read(sessionProfileProvider)?.login;
+      if (api == null || owner == null) return false;
+      final epoch = _epoch;
+      final store = ref.read(cartWorkStoreProvider);
+      try {
+        // На /cart после F5 восстанавливаем и открытый исходный заказ.
+        // На остальных страницах recovery по-прежнему содержит только правки.
+        await ref.read(cartWorkQueueProvider).run(() async {
+          saved = await store.load(owner, api.deviceId);
+        });
+      } catch (_) {
+        if (_current(epoch)) {
+          state = state.copy(
+            recoveryError: true,
+            message:
+                'Не удалось прочитать сохранённый набор. Повторите чтение.',
+          );
+        }
+        return false;
+      }
+      if (!_current(epoch) ||
+          !identical(api, ref.read(sessionApiProvider)) ||
+          state.active ||
+          state.loading ||
+          _locked ||
+          state.isRepeat) {
+        return false;
+      }
+      if (saved != null) state = CartEditState(recovery: saved);
+    }
+    final work = saved;
+    if (work == null) return false;
+    return _prepare(work.selectedDateKey, saved: work);
   }
 
   Future<void> retryRead() async {
@@ -413,9 +457,7 @@ class CartEditController extends Notifier<CartEditState> {
     final epoch = ++_epoch;
     state = state.copy(loading: true);
     try {
-      final saved = await ref
-          .read(cartWorkStoreProvider)
-          .load(owner, api.deviceId);
+      final saved = await _loadSavedChanges(owner, api.deviceId);
       if (_current(epoch)) state = CartEditState(recovery: saved);
     } catch (_) {
       if (_current(epoch)) {
@@ -473,7 +515,6 @@ class CartEditController extends Notifier<CartEditState> {
       final revisions = <String, String>{};
       final originals = <String, Map<String, int>>{};
       final names = <String, Map<String, String>>{};
-      final excluded = <String>[];
       for (final date in requested) {
         final orders = snapshot.profile.orders
             .where((d) => d.dateRaw.startsWith(date))
@@ -494,7 +535,6 @@ class CartEditController extends Notifier<CartEditState> {
           if (date == selected || saved != null) {
             throw FormatException('$date: $reason. Набор сохранён.');
           }
-          excluded.add('$date: $reason.');
           continue;
         }
         final quantities = <String, int>{};
@@ -590,7 +630,6 @@ class CartEditController extends Notifier<CartEditState> {
               '${day.key}|${item.key}': item.value,
         },
         snapshotScope: work.ownerScope,
-        message: excluded.isEmpty ? null : excluded.join('\n'),
       );
       _pauseWrites = false;
       ref.read(cartSubmitControllerProvider.notifier).acknowledge();

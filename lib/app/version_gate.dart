@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:polevaya_kuhnya/shared/boot_loading.dart';
 import 'package:polevaya_kuhnya/shared/content_panel.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:polevaya_kuhnya/app/strings.dart';
@@ -24,6 +25,9 @@ class _VersionGatePageState extends ConsumerState<VersionGatePage> {
         version.checking ||
         version.status == AppVersionStatus.checking ||
         (version.status == AppVersionStatus.unknown && version.failure == null);
+    if (loading && !version.requiresUpdate && _information == null) {
+      return const BootLoading();
+    }
     final title =
         _information ??
         (version.requiresUpdate

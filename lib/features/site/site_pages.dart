@@ -49,6 +49,7 @@ class SiteHomePage extends StatelessWidget {
     this.storeLauncher,
     this.heroDishes = const [],
     this.heroDayKey,
+    this.onRetryMenu,
     super.key,
   });
 
@@ -59,6 +60,7 @@ class SiteHomePage extends StatelessWidget {
   final ExternalUrlLauncher? storeLauncher;
   final List<SiteHomeDish> heroDishes;
   final String? heroDayKey;
+  final VoidCallback? onRetryMenu;
 
   @override
   Widget build(BuildContext context) {
@@ -90,6 +92,21 @@ class SiteHomePage extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              if (onRetryMenu != null) ...[
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 12,
+                  children: [
+                    const Text('Не удалось загрузить меню.'),
+                    TextButton(
+                      onPressed: onRetryMenu,
+                      child: const Text('Повторить загрузку'),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+              ],
               _HomeHero(
                 key: ValueKey(heroDayKey),
                 destinations: destinations,
@@ -273,12 +290,7 @@ class _HomeHeroState extends State<_HomeHero> {
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      dish?.image ??
-                          Image.asset(
-                            'assets/branding/app-logo-cb1bbbb6c0df.png',
-                            fit: BoxFit.contain,
-                            excludeFromSemantics: true,
-                          ),
+                      dish?.image ?? const ColoredBox(color: Colors.white),
                       if (widget.dishes.length > 1)
                         Align(
                           alignment: Alignment.center,

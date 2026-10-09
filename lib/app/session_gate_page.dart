@@ -17,10 +17,7 @@ class SessionGatePage extends ConsumerWidget {
     final status = ref.watch(sessionStatusProvider);
     final (heading, message) = switch (status) {
       SessionStatus.signedIn => (title, AppStrings.sectionUnavailable),
-      SessionStatus.restoring => (
-        AppStrings.checkingSession,
-        AppStrings.pleaseWait,
-      ),
+      SessionStatus.restoring => (title, AppStrings.pleaseWait),
       SessionStatus.unavailable => (
         AppStrings.sessionUnavailable,
         AppStrings.sessionUnavailableMessage,
@@ -31,6 +28,7 @@ class SessionGatePage extends ConsumerWidget {
       title: heading,
       message: message,
       isLoading: status == SessionStatus.restoring,
+      quietLoading: true,
       onHome: () => context.go('/'),
       onRetry: status == SessionStatus.unavailable
           ? () => ref.read(sessionControllerProvider.notifier).restore()

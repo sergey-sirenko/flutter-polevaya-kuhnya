@@ -1,6 +1,8 @@
 import 'package:polevaya_kuhnya/shared/display_formats.dart';
+import 'package:polevaya_kuhnya/shared/boot_loading.dart';
 import 'package:polevaya_kuhnya/app/navigation.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_edit_controller.dart';
+import 'package:polevaya_kuhnya/features/cart/cart_work_banner.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_summary_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:polevaya_kuhnya/app/order_layout.dart';
@@ -276,7 +278,9 @@ final routerProvider = Provider<GoRouter>((ref) {
                   return const SizedBox.shrink();
                 }
                 final config = ref.watch(appConfigProvider);
-                final weeks = ref.watch(menuControllerProvider).asData?.value;
+                final menu = ref.watch(menuControllerProvider);
+                if (menu.isLoading) return const BootLoading();
+                final weeks = menu.asData?.value;
                 final days = (weeks ?? const <MenuWeek>[])
                     .expand((week) => week.deliveryDays)
                     .toList();
@@ -303,6 +307,9 @@ final routerProvider = Provider<GoRouter>((ref) {
                         .toList();
                 return SiteHomePage(
                   destinations: _siteDestinations(context),
+                  onRetryMenu: menu.hasError
+                      ? () => ref.read(menuControllerProvider.notifier).reload()
+                      : null,
                   heroDayKey: heroDay?.dateKey,
                   heroDishes: [
                     for (final dish in heroDishes)
@@ -797,13 +804,25 @@ class _OrderPreparationPageState extends ConsumerState<_OrderPreparationPage> {
       });
       return;
     }
+    await _openPrepared(widget.dateKey, source);
+  }
+
+  Future<void> _openPrepared(String dateKey, Uri source) async {
+    if (!mounted) return;
+    final router = GoRouter.of(context);
+    bool current() => mounted && router.routerDelegate.state.uri == source;
+    if (!current() ||
+        source.path != AppRoutes.cart ||
+        source.queryParameters['prepare'] != widget.dateKey) {
+      return;
+    }
     final weeks = ref.read(menuControllerProvider).asData?.value ?? const [];
     final opened = await ref
         .read(menuSelectionProvider.notifier)
-        .openDate(widget.dateKey, weeks);
+        .openDate(dateKey, weeks);
     if (!mounted || !current()) return;
     if (!opened ||
-        ref.read(cartEditControllerProvider).dateKey != widget.dateKey ||
+        ref.read(cartEditControllerProvider).dateKey != dateKey ||
         versionBlocksWork(ref.read(appVersionControllerProvider))) {
       setState(() {
         _loading = false;
@@ -813,7 +832,9 @@ class _OrderPreparationPageState extends ConsumerState<_OrderPreparationPage> {
     }
     final skipCart =
         MediaQuery.sizeOf(context).width < orderColumnsMinWidth &&
-        ref.read(editingCartProvider).isEmpty;
+        ref.read(cartEditControllerProvider).originals[dateKey]?.isEmpty ==
+            true &&
+        ref.read(editingCartProvider).dayFor(dateKey) == null;
     appNavigationOf(router)!.startOrder(skipCart: skipCart);
     if (skipCart) {
       _navigate(context, AppRoutes.categories);
@@ -823,48 +844,71 @@ class _OrderPreparationPageState extends ConsumerState<_OrderPreparationPage> {
     }
   }
 
+  void _retry() {
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
+    _prepare();
+  }
+
   @override
-  Widget build(BuildContext context) => Scaffold(
-    key: const ValueKey('order-preparation-page'),
-    appBar: AppBar(
-      automaticallyImplyLeading: false,
-      title: const Text(AppStrings.cart, key: ValueKey('route-page-title')),
-    ),
-    body: Center(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(formatMenuDayLabel(widget.dateKey)),
-            const SizedBox(height: 16),
-            if (_loading) ...[
-              const CircularProgressIndicator(),
+  Widget build(BuildContext context) {
+    final edit = ref.watch(cartEditControllerProvider);
+    final savedWork = !edit.isRepeat && (edit.hasSavedWork || edit.blocked);
+    final source = GoRouter.of(context).routerDelegate.state.uri;
+    return Scaffold(
+      key: const ValueKey('order-preparation-page'),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: MediaQuery.sizeOf(context).width < orderColumnsMinWidth
+            ? const Text(AppStrings.cart, key: ValueKey('route-page-title'))
+            : null,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(formatMenuDayLabel(widget.dateKey)),
               const SizedBox(height: 16),
-              const Text('Подготовка заказа…'),
-            ] else ...[
-              Text(_error!, textAlign: TextAlign.center),
-              const SizedBox(height: 16),
-              FilledButton(
-                key: const ValueKey('order-preparation-retry'),
-                onPressed: () {
-                  setState(() {
-                    _loading = true;
-                    _error = null;
-                  });
-                  _prepare();
-                },
-                child: const Text('Повторить загрузку'),
+              if (_loading) ...[
+                const CircularProgressIndicator(),
+                const SizedBox(height: 16),
+                const Text('Подготовка заказа…'),
+              ] else if (savedWork) ...[
+                CartWorkBanner(
+                  onReady: () {
+                    final date = ref.read(cartEditControllerProvider).dateKey;
+                    if (date != null) _openPrepared(date, source);
+                  },
+                  onDiscarded: () {
+                    if (mounted &&
+                        GoRouter.of(context).routerDelegate.state.uri ==
+                            source) {
+                      _retry();
+                    }
+                  },
+                ),
+              ] else ...[
+                Text(_error!, textAlign: TextAlign.center),
+                const SizedBox(height: 16),
+                FilledButton(
+                  key: const ValueKey('order-preparation-retry'),
+                  onPressed: _retry,
+                  child: const Text('Повторить загрузку'),
+                ),
+              ],
+              TextButton(
+                key: const ValueKey('order-preparation-back'),
+                onPressed: () => _navigate(context, AppRoutes.orders),
+                child: const Text('Вернуться в заказы'),
               ),
             ],
-            TextButton(
-              key: const ValueKey('order-preparation-back'),
-              onPressed: () => _navigate(context, AppRoutes.orders),
-              child: const Text('Вернуться в заказы'),
-            ),
-          ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

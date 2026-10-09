@@ -162,10 +162,7 @@ class _OrdersPageState extends ConsumerState<OrdersPage> {
     final status = ref.watch(sessionStatusProvider);
     if (status != SessionStatus.signedIn) {
       final (heading, message) = switch (status) {
-        SessionStatus.restoring => (
-          AppStrings.checkingSession,
-          AppStrings.pleaseWait,
-        ),
+        SessionStatus.restoring => (AppStrings.orders, AppStrings.pleaseWait),
         SessionStatus.unavailable => (
           AppStrings.sessionUnavailable,
           AppStrings.sessionUnavailableMessage,
@@ -176,6 +173,7 @@ class _OrdersPageState extends ConsumerState<OrdersPage> {
         title: heading,
         message: message,
         isLoading: status == SessionStatus.restoring,
+        quietLoading: true,
         onHome: () => context.go('/'),
         onRetry: status == SessionStatus.unavailable
             ? () => ref.read(sessionControllerProvider.notifier).restore()
@@ -248,24 +246,6 @@ class _OrdersPageState extends ConsumerState<OrdersPage> {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
-        actions: [
-          Tooltip(
-            message: AppStrings.repeatOrder,
-            child: SizedBox(
-              width: math.min(200, MediaQuery.sizeOf(context).width * 0.55),
-              child: TextButton(
-                key: const ValueKey('orders-repeat'),
-                onPressed: repeatLocked || emptyDates.isEmpty
-                    ? null
-                    : () => _chooseRepeat(allDates, emptyDates, selected),
-                child: const FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(AppStrings.repeatOrder),
-                ),
-              ),
-            ),
-          ),
-        ],
       ),
       body: profile == null
           ? const Center(child: Text(AppStrings.ordersLoadError))
@@ -351,10 +331,39 @@ class _OrdersPageState extends ConsumerState<OrdersPage> {
                   ),
                   if (selectedDay != null) ...[
                     const SizedBox(height: 24),
-                    Text(
-                      formatCartDayTitle(selectedDay.menuDay.dateKey),
-                      key: const ValueKey('orders-selected-heading'),
-                      style: Theme.of(context).textTheme.titleMedium,
+                    LayoutBuilder(
+                      builder: (context, constraints) => Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              formatCartDayTitle(selectedDay!.menuDay.dateKey),
+                              key: const ValueKey('orders-selected-heading'),
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Tooltip(
+                            message: AppStrings.repeatOrder,
+                            child: SizedBox(
+                              width: math.min(200, constraints.maxWidth * 0.55),
+                              child: TextButton(
+                                key: const ValueKey('orders-repeat'),
+                                onPressed: repeatLocked || emptyDates.isEmpty
+                                    ? null
+                                    : () => _chooseRepeat(
+                                        allDates,
+                                        emptyDates,
+                                        selected,
+                                      ),
+                                child: const FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(AppStrings.repeatOrder),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 12),
                     if (selectedDay.order != null)

@@ -578,6 +578,9 @@ class _WeekTabs extends ConsumerWidget {
                     fontWeight: selection?.weekType == week.weekType
                         ? FontWeight.bold
                         : FontWeight.normal,
+                    decoration: selection?.weekType == week.weekType
+                        ? TextDecoration.underline
+                        : TextDecoration.none,
                   ),
                 ),
               ),
@@ -623,6 +626,9 @@ class _DayTabs extends ConsumerWidget {
                     fontWeight: selection.dateKey == day.dateKey
                         ? FontWeight.bold
                         : FontWeight.normal,
+                    decoration: selection.dateKey == day.dateKey
+                        ? TextDecoration.underline
+                        : TextDecoration.none,
                     color:
                         allowedDates != null &&
                             isOrderDateAllowed(allowedDates, day.dateKey)
@@ -821,11 +827,10 @@ class _DishesScroll extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    status == SessionStatus.restoring
-                        ? AppStrings.menuCheckingSignIn
-                        : AppStrings.menuSignInToChoose,
-                  ),
+                  if (status == SessionStatus.restoring)
+                    const LinearProgressIndicator()
+                  else
+                    const Text(AppStrings.menuSignInToChoose),
                   if (status != SessionStatus.restoring && onSignIn != null)
                     TextButton(
                       key: const ValueKey('menu-guest-sign-in'),

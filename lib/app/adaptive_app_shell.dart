@@ -102,14 +102,18 @@ class _AdaptiveAppShellState extends State<AdaptiveAppShell> {
                 NavigationRail(
                   selectedIndex: selectedIndex,
                   labelType: NavigationRailLabelType.all,
-                  onDestinationSelected: onDestinationSelected,
+                  onDestinationSelected: (index) {
+                    final destinations = [0, 1, if (selectedIndex != 1) 2, 3];
+                    onDestinationSelected(destinations[index]);
+                  },
                   destinations: [
                     for (var index = 0; index < _labels.length; index++)
-                      NavigationRailDestination(
-                        icon: Icon(_icons[index]),
-                        selectedIcon: Icon(_selectedIcons[index]),
-                        label: Text(_labels[index]),
-                      ),
+                      if (selectedIndex != 1 || index != 2)
+                        NavigationRailDestination(
+                          icon: Icon(_icons[index]),
+                          selectedIcon: Icon(_selectedIcons[index]),
+                          label: Text(_labels[index]),
+                        ),
                   ],
                 ),
                 const VerticalDivider(width: 1),
@@ -194,20 +198,22 @@ class _OrderSideNav extends StatelessWidget {
   final int selectedIndex;
   final ValueChanged<int> onDestinationSelected;
 
-  static const _items = <(int, String, ValueKey<String>)>[
-    (2, AppStrings.ordersTab, ValueKey('order-side-orders')),
-    (3, AppStrings.profile, ValueKey('order-side-profile')),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final items = <(int, String, ValueKey<String>)>[
+      if (selectedIndex == 1)
+        (1, AppStrings.cart, const ValueKey('order-side-cart'))
+      else
+        (2, AppStrings.ordersTab, const ValueKey('order-side-orders')),
+      (3, AppStrings.profile, const ValueKey('order-side-profile')),
+    ];
     return Material(
       key: const ValueKey('order-side-nav'),
       color: scheme.surface,
       child: Row(
         children: [
-          for (final (index, label, key) in _items)
+          for (final (index, label, key) in items)
             Expanded(
               child: TextButton(
                 key: key,
@@ -277,12 +283,12 @@ class _OrderBottomBar extends ConsumerWidget {
       ),
       _OrderBottomItem(
         itemKey: const ValueKey('order-bottom-order'),
-        label: AppStrings.orderAction,
-        icon: selectedIndex == 2
+        label: selectedIndex == 1 ? AppStrings.cart : AppStrings.orderAction,
+        icon: selectedIndex == 1 || selectedIndex == 2
             ? Icons.shopping_cart
             : Icons.shopping_cart_outlined,
-        selected: selectedIndex == 2,
-        onTap: () => onDestinationSelected(2),
+        selected: selectedIndex == 1 || selectedIndex == 2,
+        onTap: () => onDestinationSelected(selectedIndex == 1 ? 1 : 2),
       ),
       _OrderBottomItem(
         itemKey: const ValueKey('order-bottom-profile'),

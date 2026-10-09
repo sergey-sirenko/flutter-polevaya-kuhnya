@@ -55,10 +55,7 @@ class ProfilePage extends ConsumerWidget {
     final status = ref.watch(sessionStatusProvider);
     if (status != SessionStatus.signedIn) {
       final (heading, message) = switch (status) {
-        SessionStatus.restoring => (
-          AppStrings.checkingSession,
-          AppStrings.pleaseWait,
-        ),
+        SessionStatus.restoring => (AppStrings.profile, AppStrings.pleaseWait),
         SessionStatus.unavailable => (
           AppStrings.sessionUnavailable,
           AppStrings.sessionUnavailableMessage,
@@ -69,6 +66,7 @@ class ProfilePage extends ConsumerWidget {
         title: heading,
         message: message,
         isLoading: status == SessionStatus.restoring,
+        quietLoading: true,
         onHome: () => context.go('/'),
         onRetry: status == SessionStatus.unavailable
             ? () => ref.read(sessionControllerProvider.notifier).restore()
