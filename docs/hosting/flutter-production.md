@@ -50,3 +50,6 @@ pwsh -File .\tools\build_web_prod.ps1 -AcceptedCommit <полный-40-симв�
 
 ## Актуальный выпуск 09.10.2026
 Production обновлён до 1.0.0+87, source b611b3897983dc1d2c6cbf2a1bab7cb0d67c467a (origin/master). Резерв /var/backups/flutter/WEBPROD-20261009T001522Z. Подробные проверки, current и возврат — docs/tasks/FL-WEB-PROD-01.md, раздел «Выпуск +87 — 09.10.2026, опубликовано». Test также +87; Caddy/runtime не менялись.
+
+## Актуальный выпуск 11.10.2026
+Production обновлён до 1.0.0+93/prod, source `afec18756ced1a49b2067869f5e397b4a919a5e0` подтверждён в origin/master до публикации. Test +93/test побайтово совпал с принятой локальной сборкой. Current `/var/www/flutter-prod/releases/afec18756ced1a49b2067869f5e397b4a919a5e0-93`, резерв `/var/backups/flutter/WEBPROD-20261010T224815Z`. Полные файлы/HTTP/menu/CORS/archive/test проверки успешны; Caddy/runtime не менялись. Подробный журнал и ограничения — [FL-WEB-PROD-02](../tasks/FL-WEB-PROD-02.md). Скрипт возврата на +87 прошёл синтаксическую проверку, live-возврат не запускался; контроль прежней вкладки/PWA остаётся владельцу.
