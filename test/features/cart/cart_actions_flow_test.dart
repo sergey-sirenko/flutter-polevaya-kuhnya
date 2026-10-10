@@ -72,7 +72,7 @@ void main() {
       final save = find.byKey(const ValueKey('cart-save-all'));
       final cancel = find.byKey(const ValueKey('cart-cancel-all'));
       final title = find.byKey(const ValueKey('route-page-title'));
-      expect(find.widgetWithText(FilledButton, 'Сохранить'), findsOneWidget);
+      expect(find.widgetWithText(FilledButton, 'Подтвердить'), findsOneWidget);
       expect(tester.getCenter(cancel).dy, tester.getCenter(save).dy);
       expect(
         (tester.getCenter(title).dy - tester.getCenter(save).dy).abs(),

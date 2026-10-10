@@ -604,7 +604,7 @@ class _CartActions extends ConsumerWidget {
                 : () => _discard(context, ref),
             child: const FittedBox(
               fit: BoxFit.scaleDown,
-              child: Text('Отменить'),
+              child: Text('Не сохранять'),
             ),
           ),
         ),
@@ -621,7 +621,7 @@ class _CartActions extends ConsumerWidget {
                 : () => _save(context, ref),
             child: const FittedBox(
               fit: BoxFit.scaleDown,
-              child: Text('Сохранить'),
+              child: Text('Подтвердить'),
             ),
           ),
         ),

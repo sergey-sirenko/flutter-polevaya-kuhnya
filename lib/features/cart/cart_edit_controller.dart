@@ -208,7 +208,7 @@ class CartEditController extends Notifier<CartEditState> {
         if (_current(epoch)) {
           state = const CartEditState(
             recoveryError: true,
-            message: 'Не удалось прочитать сохранённый набор. Повторите чтение или начните заново.',
+            message: 'Не удалось прочитать сохранённый набор. Повторите чтение или выберите «Оставить как есть».',
           );
         }
       }
@@ -390,7 +390,7 @@ class CartEditController extends Notifier<CartEditState> {
     if (state.active) {
       if (state.blocked || !state.preparedRevisions.containsKey(dateKey)) {
         state = state.copy(
-          message: 'Этот день не подготовлен или набор заблокирован. Начните заново после сброса правок.',
+          message: 'Этот день не подготовлен или набор заблокирован. Выберите «Оставить как есть» и подтвердите сброс локальных правок.',
         );
         return false;
       }
@@ -399,7 +399,7 @@ class CartEditController extends Notifier<CartEditState> {
     }
     if (state.hasSavedWork) {
       state = state.copy(
-        message: 'Есть сохранённый набор. Продолжите его или подтвердите начало заново.',
+        message: 'Есть сохранённые изменения. Выберите «Восстановить изменения» или «Оставить как есть».',
       );
       return false;
     }
@@ -481,6 +481,7 @@ class CartEditController extends Notifier<CartEditState> {
     final previous = state;
     state = state.copy(loading: true, clearMessage: true);
     _pauseWrites = true;
+    var resetSavedChanges = false;
     try {
       await ref.read(cartPersistenceControllerProvider.notifier).ready;
       if (!_current(epoch)) return false;
@@ -495,7 +496,7 @@ class CartEditController extends Notifier<CartEditState> {
       };
       final requested = (saved?.revisions.keys.toList() ?? menuDates.toList())
         ..sort();
-      if (!menuDates.contains(selected) ||
+      if ((saved == null && !menuDates.contains(selected)) ||
           requested.isEmpty ||
           requested.length > 31) {
         throw const FormatException(
@@ -521,15 +522,15 @@ class CartEditController extends Notifier<CartEditState> {
             .toList();
         final revision = snapshot.revisions[date];
         String? reason;
-        if (!menuDates.contains(date)) {
-          reason = 'день отсутствует в меню';
-        } else if (revision == null ||
-            revision == 'ambiguous' ||
-            orders.length > 1) {
-          reason = 'заказ неоднозначен';
-        } else if (!isOrderDateAllowed(snapshot.allowedDates, date) ||
+        // Закрытие даты сбрасывает только её локальный набор. Версия и
+        // состав закрытого заказа уже не нужны для восстановления корзины.
+        if (!menuDates.contains(date) ||
+            !isOrderDateAllowed(snapshot.allowedDates, date) ||
             orders.any((o) => !o.changes)) {
-          reason = 'день закрыт';
+          continue;
+        }
+        if (revision == null || revision == 'ambiguous' || orders.length > 1) {
+          reason = 'заказ неоднозначен';
         }
         if (reason != null) {
           if (date == selected || saved != null) {
@@ -563,27 +564,34 @@ class CartEditController extends Notifier<CartEditState> {
         if (saved != null &&
             (saved.revisions[date] != revision ||
                 !mapEquals(saved.originals[date], quantities))) {
-          throw FormatException(
-            '$date: заказ изменился. Локальный набор сохранён; начните заново после подтверждения сброса.',
-          );
+          // При единственном доступном действии автоматически оставляем
+          // серверный заказ как есть. Применяем его только после проверки
+          // всего ответа и успешной записи нового локального снимка.
+          resetSavedChanges = true;
         }
         revisions[date] = revision!;
         originals[date] = quantities;
         names[date] = dishNames;
       }
-      final work =
-          saved ??
-          CartWorkSnapshot(
-            ownerScope: snapshot.ownerScope,
-            selectedDateKey: selected,
-            revisions: revisions,
-            originals: originals,
-            names: names,
-            quantities: {
-              for (final e in originals.entries)
-                if (e.value.isNotEmpty) e.key: e.value,
-            },
-          );
+      final restoredQuantities = resetSavedChanges
+          ? originals
+          : saved?.quantities ?? originals;
+      final work = revisions.isEmpty
+          ? null
+          : CartWorkSnapshot(
+              ownerScope: snapshot.ownerScope,
+              selectedDateKey: revisions.containsKey(selected)
+                  ? selected
+                  : revisions.keys.first,
+              revisions: revisions,
+              originals: originals,
+              names: names,
+              quantities: {
+                for (final date in revisions.keys)
+                  if (restoredQuantities[date]?.isNotEmpty ?? false)
+                    date: restoredQuantities[date]!,
+              },
+            );
       if (!_current(epoch) || _locked) return false;
       ref
           .read(sessionControllerProvider.notifier)
@@ -592,11 +600,15 @@ class CartEditController extends Notifier<CartEditState> {
             generation: generation,
             ownerScope: snapshot.ownerScope,
           );
-      if (saved == null) {
+      {
         final store = ref.read(cartWorkStoreProvider);
         await ref.read(cartWorkQueueProvider).run(() async {
           if (!_current(epoch)) return;
-          await store.save(owner, api.deviceId, work);
+          if (work == null) {
+            await store.clear(owner, api.deviceId);
+          } else {
+            await store.save(owner, api.deviceId, work);
+          }
           // Очистка выполняется в той же очереди, до сохранения нового набора.
           if (!_current(epoch)) await store.clear(owner, api.deviceId);
         });
@@ -609,13 +621,17 @@ class CartEditController extends Notifier<CartEditState> {
           .read(menuAllowedDatesProvider.notifier)
           .applySnapshot(snapshot.allowedDates);
       final next = {...ref.read(cartDraftProvider)};
-      for (final date in work.revisions.keys) {
+      for (final date in requested) {
         next.remove(date);
-        if (work.quantities[date]?.isNotEmpty ?? false) {
-          next[date] = work.quantities[date]!;
+        if (work?.quantities[date]?.isNotEmpty ?? false) {
+          next[date] = work!.quantities[date]!;
         }
       }
       ref.read(cartDraftProvider.notifier).replaceAll(next);
+      if (work == null) {
+        state = const CartEditState();
+        return false;
+      }
       state = CartEditState(
         dateKey: work.selectedDateKey,
         owner: owner,

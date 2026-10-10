@@ -13,6 +13,7 @@ import 'package:polevaya_kuhnya/features/cart/cart_edit_controller.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_pricing_bridge.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_submit_controller.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_work_store.dart';
+import 'package:polevaya_kuhnya/features/cart/cart_work_banner.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_page.dart';
 import 'package:polevaya_kuhnya/features/cart/cart_repeat_controller.dart';
 import 'package:polevaya_kuhnya/features/menu/menu_controller.dart';
@@ -20,6 +21,22 @@ import 'package:polevaya_kuhnya/features/menu/menu_models.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'cart_edit_flow_test.dart' show Harness, date, other, config;
+
+class _WithoutDate extends _ManyMenu {
+  _WithoutDate() : super(2);
+
+  @override
+  Future<List<MenuWeek>> build() async => [
+    for (final week in await super.build())
+      MenuWeek(
+        weekType: week.weekType,
+        days: week.days.where((day) => day.dateKey != date).toList(),
+      ),
+  ];
+
+  @override
+  Future<void> reload() async => state = AsyncData(await build());
+}
 
 class _FailingStore extends CartWorkStore {
   _FailingStore() : super(config);
@@ -126,13 +143,13 @@ void main() {
       }
     });
   }
-  test('M03: закрытый ненажатый день исключён с объяснением', () async {
+  test('M03: закрытый ненажатый день автоматически исключён', () async {
     final h = Harness();
     h.allowed.remove(other);
     await h.init();
     expect(await h.edit.begin(date), isTrue);
     expect(h.state.preparedRevisions.keys, [date]);
-    expect(h.state.message, contains(other));
+    expect(h.state.message, isNull);
     expect(h.container.read(cartDayEditableProvider(other)), isFalse);
   });
   test('M10: ошибка первой записи сохраняет прежний draft', () async {
@@ -240,7 +257,7 @@ void main() {
         () => h.container.read(cartRepeatControllerProvider.notifier).ready,
       );
       await tester.pumpAndSettle();
-      final save = find.widgetWithText(FilledButton, 'Сохранить');
+      final save = find.byKey(const ValueKey('cart-save-all'));
       await tester.ensureVisible(save);
       await tester.pumpAndSettle();
       await tester.tap(save);
@@ -269,11 +286,12 @@ void main() {
       });
       expect(
         h.container.read(cartSubmitControllerProvider).phase,
-        CartSubmitPhase.idle,
+        CartSubmitPhase.succeeded,
         reason: 'requests: ${h.requests.length}',
       );
-      await tester.pumpAndSettle();
       expect(h.requests.single['order'], hasLength(2));
+      // Изолированная CartPage без router не проверяет переход квитанции.
+      await tester.pumpWidget(const SizedBox.shrink());
       expect(tester.takeException(), isNull);
     },
   );
@@ -364,33 +382,194 @@ void main() {
       expect(h.container.read(cartDraftProvider)[other]!['dish'], 1);
     },
   );
-  for (final kind in ['revision', 'closed', 'scope', 'quantity']) {
-    test('M09: восстановление $kind не затирает локальный снимок', () async {
+  for (final closure in ['allowed', 'profile', 'menu', 'all']) {
+    test('FL-UX-49: восстановление исключает закрытые дни: $closure', () async {
       final first = Harness();
       await first.init();
-      await first.edit.begin(date);
+      expect(await first.edit.begin(date), isTrue);
       first.draft.increment(date, 'dish');
+      first.draft.increment(other, 'dish');
       await first.edit.persistNow();
       final h = Harness();
-      await h.init();
-      final before = jsonEncode(h.state.recovery!.toJson());
-      if (kind == 'revision') h.revision = 'changed';
-      if (kind == 'closed') h.allowed.remove(other);
-      if (kind == 'quantity') {
-        (h.user['order'] as List).first['dishes'].first['quantity'] = 9;
+      if (closure == 'allowed') h.allowed.remove(date);
+      if (closure == 'all') h.allowed = {'2031-01-01'};
+      if (closure == 'profile') {
+        (h.user['order'] as List).first['changes'] = 'Закрыт';
       }
-      if (kind == 'scope') {
-        h.snapshotOverride = {
-          ...h.snapshotBody(),
-          'ownerScope': 'snapshot-v1:33333333-3333-4333-8333-333333333333:22222222-2222-4222-8222-222222222222',
-        };
+      await h.init(menuFactory: closure == 'menu' ? _WithoutDate.new : null);
+      expect(await h.edit.resume(), closure != 'all');
+      expect(h.state.recovery, isNull);
+      expect(h.container.read(cartDraftProvider).containsKey(date), isFalse);
+      if (closure == 'all') {
+        expect(h.state.active, isFalse);
+        expect(h.container.read(cartDraftProvider).containsKey(other), isFalse);
+      } else {
+        expect(h.state.dateKey, other);
+        expect(h.state.preparedRevisions.keys, [other]);
+        expect(h.container.read(cartDraftProvider)[other], {'dish': 1});
+        expect(h.container.read(cartChangedDatesProvider), [other]);
       }
-      expect(await h.edit.resume(), isFalse);
-      expect(h.state.active, isFalse);
-      expect(jsonEncode(h.state.recovery!.toJson()), before);
+      // Ещё один запуск не должен возвращать удалённые даты из хранилища.
+      final again = Harness();
+      await again.init();
+      expect(
+        again.state.recovery?.revisions.containsKey(date) ?? false,
+        isFalse,
+      );
       expect(h.requests, isEmpty);
     });
   }
+  test(
+    'FL-UX-49: подготовка выбирает доступный день вместо закрытого',
+    () async {
+      final h = Harness();
+      h.allowed.remove(date);
+      await h.init();
+      h.draft.setQuantity(date, 'dish', 9);
+      expect(await h.edit.begin(date), isTrue);
+      expect(h.state.dateKey, other);
+      expect(h.state.preparedRevisions.keys, [other]);
+      expect(h.container.read(cartDraftProvider).containsKey(date), isFalse);
+      expect(h.requests, isEmpty);
+    },
+  );
+  for (final conflict in [true, false]) {
+    testWidgets('FL-UX-52: автоматическое восстановление, конфликт $conflict', (
+      tester,
+    ) async {
+      final first = Harness();
+      await tester.runAsync(first.init);
+      await tester.runAsync(() async {
+        await first.edit.begin(date);
+        first.draft.increment(date, 'dish');
+        first.draft.increment(other, 'dish');
+        await first.edit.persistNow();
+      });
+      final h = Harness();
+      await tester.runAsync(h.init);
+      if (conflict) {
+        h.revision = 'changed';
+      } else {
+        h.profileFail = true;
+      }
+      await tester.pumpWidget(
+        UncontrolledProviderScope(
+          container: h.container,
+          child: const MaterialApp(home: Scaffold(body: CartWorkBanner())),
+        ),
+      );
+      for (var frame = 0; frame < 3; frame++) {
+        await tester.pump();
+        await tester.runAsync(() async {
+          for (var i = 0; i < 100; i++) {
+            await Future<void>.delayed(Duration.zero);
+          }
+        });
+      }
+      await tester.pump();
+      if (conflict) {
+        expect(h.state.active, isTrue);
+        expect(h.state.recovery, isNull);
+        expect(h.state.message, isNull);
+        expect(h.container.read(cartDraftProvider)[date], {'dish': 2});
+        expect(h.container.read(cartDraftProvider).containsKey(other), isFalse);
+        expect(h.container.read(cartChangedDatesProvider), isEmpty);
+        expect(find.byKey(const ValueKey('work-resume')), findsNothing);
+        expect(find.byKey(const ValueKey('work-discard')), findsNothing);
+        expect(find.byType(AlertDialog), findsNothing);
+      } else {
+        expect(h.state.active, isFalse);
+        expect(h.state.recovery, isNotNull);
+        expect(find.byKey(const ValueKey('work-resume')), findsOneWidget);
+        expect(find.byKey(const ValueKey('work-discard')), findsOneWidget);
+        h.profileFail = false;
+        await tester.runAsync(() async {
+          await tester.tap(find.byKey(const ValueKey('work-resume')));
+          for (var i = 0; i < 100 && !h.state.active; i++) {
+            await Future<void>.delayed(Duration.zero);
+          }
+        });
+        await tester.pump();
+        expect(h.state.active, isTrue);
+        expect(h.container.read(cartDraftProvider)[date], {'dish': 3});
+        expect(h.container.read(cartDraftProvider)[other], {'dish': 1});
+      }
+      expect(h.requests, isEmpty);
+      expect(tester.takeException(), isNull);
+    });
+  }
+  for (final kind in ['revision', 'quantity']) {
+    test(
+      'FL-UX-52: конфликт $kind сохраняет актуальный исходный набор',
+      () async {
+        final first = Harness();
+        await first.init();
+        await first.edit.begin(date);
+        first.draft.clearDay(date);
+        first.draft.increment(other, 'dish');
+        await first.edit.persistNow();
+        final h = Harness();
+        await h.init();
+        if (kind == 'revision') h.revision = 'changed';
+        if (kind == 'quantity') {
+          (h.user['order'] as List).first['dishes'].first['quantity'] = 9;
+        }
+        expect(await h.edit.resume(), isTrue);
+        expect(h.state.revision, h.revision);
+        expect(h.container.read(cartDraftProvider)[date], {
+          'dish': kind == 'quantity' ? 9 : 2,
+        });
+        expect(h.container.read(cartDraftProvider).containsKey(other), isFalse);
+        expect(h.container.read(cartChangedDatesProvider), isEmpty);
+        expect(h.container.read(cartCancelledDatesProvider), isEmpty);
+        await h.submit.submit();
+        expect(h.requests, isEmpty);
+        final again = Harness();
+        await again.init();
+        expect(again.state.recovery, isNull);
+      },
+    );
+  }
+  test('FL-UX-52: сбой записи при конфликте не сбрасывает правки', () async {
+    final store = _FailingStore();
+    final h = Harness();
+    await h.init(workStore: store);
+    await h.edit.begin(date);
+    h.draft.increment(date, 'dish');
+    h.draft.increment(other, 'dish');
+    await h.edit.persistNow();
+    final before = h.edit.workSnapshot()!.toJson();
+    final draft = h.container.read(cartDraftProvider);
+    h.revision = 'changed';
+    store.failSave = true;
+    expect(await h.edit.resume(), isFalse);
+    expect(h.container.read(cartDraftProvider), draft);
+    expect(h.edit.workSnapshot()!.toJson(), before);
+    expect(h.state.blocked, isTrue);
+    store.failSave = false;
+    expect(await h.edit.resume(), isTrue);
+    expect(h.container.read(cartChangedDatesProvider), isEmpty);
+    expect(h.container.read(cartDraftProvider)[date], {'dish': 2});
+    expect(h.requests, isEmpty);
+  });
+  test('M09: чужой scope не затирает локальный снимок', () async {
+    final first = Harness();
+    await first.init();
+    await first.edit.begin(date);
+    first.draft.increment(date, 'dish');
+    await first.edit.persistNow();
+    final h = Harness();
+    await h.init();
+    final before = jsonEncode(h.state.recovery!.toJson());
+    h.snapshotOverride = {
+      ...h.snapshotBody(),
+      'ownerScope': 'snapshot-v1:33333333-3333-4333-8333-333333333333:22222222-2222-4222-8222-222222222222',
+    };
+    expect(await h.edit.resume(), isFalse);
+    expect(h.state.active, isFalse);
+    expect(jsonEncode(h.state.recovery!.toJson()), before);
+    expect(h.requests, isEmpty);
+  });
   test(
     'M10/M12: ошибка записи блокирует POST; ошибка очистки сохраняет pending',
     () async {

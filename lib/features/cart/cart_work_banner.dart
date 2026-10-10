@@ -95,7 +95,7 @@ class _CartWorkBannerState extends ConsumerState<CartWorkBanner> {
       onPressed: locked ? null : _resume,
       child: const FittedBox(
         fit: BoxFit.scaleDown,
-        child: Text('Продолжить набор'),
+        child: Text('Восстановить изменения'),
       ),
     );
     final discardButton = TextButton(
@@ -107,7 +107,9 @@ class _CartWorkBannerState extends ConsumerState<CartWorkBanner> {
               final confirmed = await showDialog<bool>(
                 context: context,
                 builder: (context) => AlertDialog(
-                  title: const Text('Начать набор заново?'),
+                  title: const Text(
+                    'Оставить сохранённые заказы без изменений?',
+                  ),
                   content: const Text(
                     'Локальные правки всех дней будут удалены. Сохранённые заказы в 1С останутся. Затем нажмите корзину нужного дня.',
                   ),
@@ -118,7 +120,7 @@ class _CartWorkBannerState extends ConsumerState<CartWorkBanner> {
                     ),
                     TextButton(
                       onPressed: () => Navigator.pop(context, true),
-                      child: const Text('Начать заново'),
+                      child: const Text('Оставить как есть'),
                     ),
                   ],
                 ),
@@ -138,7 +140,7 @@ class _CartWorkBannerState extends ConsumerState<CartWorkBanner> {
             },
       child: const FittedBox(
         fit: BoxFit.scaleDown,
-        child: Text('Начать заново'),
+        child: Text('Оставить как есть'),
       ),
     );
     return Column(

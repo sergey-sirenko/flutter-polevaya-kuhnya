@@ -631,7 +631,6 @@ void main() {
     'profile',
     'dates',
     'quantity',
-    'closed',
     'ambiguous',
   ]) {
     test('ошибка подготовки $kind сохраняет черновики', () async {
@@ -653,8 +652,6 @@ void main() {
           ((h.user['order'] as List).first['dishes'] as List)
                   .first['quantity'] =
               1.5;
-        case 'closed':
-          h.allowed = {other};
         case 'ambiguous':
           h.revision = 'ambiguous';
       }
